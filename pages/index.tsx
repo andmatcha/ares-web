@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <main>
         <h1 css={styles.title}>Sample Page</h1>
-        <Image src="/cat.jpg" width={640} height={360} objectFit="cover" />
+        <Image src="/cat.jpg" alt="" width={640} height={360} objectFit="cover" />
         <p>This is a sample page.</p>
       </main>
     </div>
