@@ -9,6 +9,7 @@ const MainVisual: NextPage = () => {
         <div css={styles.imageBox}>
           <Image
             src="/images/main_visual.jpg"
+            alt=""
             layout="fill"
             objectFit="cover"
             priority={true}
