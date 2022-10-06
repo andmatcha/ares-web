@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { ReactNode } from "react";
-import { css } from "@emotion/react";
 import Header from "../objects/common/Header";
 
 interface Props {
