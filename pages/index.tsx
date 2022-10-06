@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import Layout from "../components/layouts/Layout";
 import MainVisual from "../components/objects/MainVisual";
 import Section from "../components/objects/common/Section";
+import MainButton from "../components/objects/common/MainButton";
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
           test. This is a test. This is a test. This is a test. This is a test.
           This is a test. This is a test. This is a test. This is a test.
         </Section>
+        <Section title="ROVERS"><MainButton text="SEE OUR ROVERS" /></Section>
       </div>
     </Layout>
   );
