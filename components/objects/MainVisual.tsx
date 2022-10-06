@@ -24,7 +24,7 @@ const MainVisual: NextPage = () => {
           next generation of Mars and Lunar rovers.
         </p>
         <p css={styles.subParagraph}>
-          We work towards the world's most prestigious university robotics
+          We work towards the world&apos;s most prestigious university robotics
           competitions, as vehicles to develop new skills, innovate and promote
           STEM-based courses and careers.
         </p>
