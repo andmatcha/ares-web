@@ -80,6 +80,7 @@ const styles = {
     font-size: 4em;
     margin-top: 180px;
     margin-bottom: 120px;
+    letter-spacing: 2px;
     @media (max-width: 1170px) {
       margin-top: 80px;
       margin-bottom: 64px;
@@ -89,9 +90,14 @@ const styles = {
     font-size: 2.5em;
     width: 60%;
     margin-bottom: 40px;
+    line-height: 1.5;
+    letter-spacing: 2px;
   `,
   subParagraph: css`
     font-size: 1.5em;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    width: 840px;
   `,
 };
 
