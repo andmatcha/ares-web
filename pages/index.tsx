@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { css } from "@emotion/react";
 import Layout from "../components/layouts/Layout";
-import MainVisual from "../components/objects/MainVisual";
-import Section from "../components/objects/common/Section";
-import MainButton from "../components/objects/common/MainButton";
+import MainVisual from "../components/objects/organisms/MainVisual";
+import Section from "../components/objects/molecules/Section";
+import MainButton from "../components/objects/atoms/MainButton";
 
 const Home: NextPage = () => {
   return (
