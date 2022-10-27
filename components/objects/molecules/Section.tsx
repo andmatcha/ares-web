@@ -6,7 +6,7 @@ const Section: NextPage<{ title: string; children: ReactNode }> = ({ title, chil
   return (
     <section css={styles.section}>
       <h3 css={styles.title}>{title}</h3>
-      <p>{children}</p>
+      <div css={styles.content}>{children}</div>
     </section>
   );
 };
@@ -24,6 +24,9 @@ const styles = {
   title: css`
     font-size: 2em;
     margin-top: 40px;
+  `,
+  content: css`
+    width: 100%;
   `
 };
 
