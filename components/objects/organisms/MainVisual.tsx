@@ -38,6 +38,7 @@ const styles = {
     position: relative;
     display: flex;
     min-height: 100vh;
+    font-family: 'Roboto';
   `,
   imageOuter: css`
     padding-top: 80px;
