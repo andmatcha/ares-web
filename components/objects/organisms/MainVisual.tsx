@@ -18,7 +18,7 @@ const MainVisual: NextPage = () => {
         </div>
       </div>
       <div css={styles.body}>
-        <h2 css={styles.title}>Building rovers since 2017.</h2>
+        <h2 css={styles.title}>We are the A<span className="text-red-600">R</span>ES.</h2>
         <p css={styles.paragraph}>
           We are a team of students passionate about designing and building the
           next generation of Mars and Lunar rovers.
