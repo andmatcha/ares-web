@@ -2,8 +2,10 @@ import { css } from "@emotion/react";
 
 const Header = () => {
   return (
-    <header css={styles.header}>
-      <h1 css={styles.title}>A<span className="text-red-600">R</span>ES Project</h1>
+    <header className="fixed w-screen h-20 flex items-center px-12 justify-between z-20 bg-gradient-to-b from-main-bg/70 to-black/0">
+      <h1 className="text-xl">
+        A<span className="text-red-600">R</span>ES Project
+      </h1>
       <ul className="flex items-center gap-10 text-xs">
         <li className="cursor-pointer">TEAM</li>
         <li className="cursor-pointer">WHAT'S URC?</li>
@@ -13,22 +15,6 @@ const Header = () => {
       </ul>
     </header>
   );
-};
-
-const styles = {
-  header: css`
-    position: fixed;
-    width: 100vw;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    padding: 0 48px;
-    justify-content: space-between;
-    z-index: 10;
-  `,
-  title: css`
-    font-size: 24px;
-  `
 };
 
 export default Header;
