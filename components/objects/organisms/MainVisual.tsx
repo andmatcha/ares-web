@@ -22,7 +22,7 @@ const MainVisual: NextPage = () => {
           </p>
         </div>
       </div>
-      <div className="absolute bottom-20 right-20 animate-arrow-up-down">
+      <div className="absolute bottom-20 left-5 md:right-20 animate-arrow-up-down">
         <svg
           className="w-20 h-20"
           fill="none"
