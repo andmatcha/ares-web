@@ -12,6 +12,14 @@ const Home: NextPage = () => {
     <Layout title="ARES Project">
       <MainVisual />
       <Section id="team" title="TEAM" className="flex flex-col gap-20">
+        <div className="flex flex-col justify-center items-center gap-4">
+          <img src="/images/logo.jpg" alt="" className="w-4/5 md:w-1/5" />
+          <Paragraph className="md:w-3/5 md:text-center">
+            URCの日本初の出場を目指して活動している学生団体です。
+            2022年2月に現在の幹部3人から発足しました。
+            現在のメンバーは慶應、東北、東大、筑波の学生で構成されており、慶應と東北を活動拠点として活動しています。
+          </Paragraph>
+        </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]">
           <img src="/images/arm2.png" alt="" className="md:w-[45%]" />
           <div className="md:w-[45%]">
