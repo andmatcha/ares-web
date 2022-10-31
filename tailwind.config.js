@@ -16,6 +16,21 @@ module.exports = {
           '45%': { transform: 'translateY(-40px)', opacity: 0 },
           '100%': { transform: 'translateY(0)', opacity: 0.4 },
         },
+        'emerge1': {
+          '0%': {opacity: 0},
+          '20%': {opacity: 0},
+          '100%': {opacity:1}
+        },
+        'emerge2': {
+          '0%': { opacity: 0 },
+          '60%': { opacity: 0 },
+          '100%': { opacity: 1 }
+        },
+        'emerge3': {
+          '0%': { opacity: 0 },
+          '80%': { opacity: 0 },
+          '100%': { opacity: 1 }
+        },
       },
       animation: {
         'arrow-up-down': 'up-down 5s infinite',
