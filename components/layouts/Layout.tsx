@@ -13,7 +13,10 @@ const Layout: NextPage<Props> = ({ title, children }) => {
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="This is a sample page." />
+        <meta
+          name="description"
+          content="URC日本初出場をめざす学生団体ARES オフィシャルウェブサイト"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
