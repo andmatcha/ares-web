@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { css } from "@emotion/react";
 import Layout from "../components/layouts/Layout";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import Section from "../components/objects/molecules/Section";
