@@ -13,24 +13,7 @@ const Home: NextPage = () => {
     <Layout title="ARES Project">
       <div css={styles.container}>
         <MainVisual></MainVisual>
-        <Section title="NEWS">
-          <NewsRow
-            date={dayjs()}
-            tag="慶応班"
-            title="10万のアームレンタルしました！"
-          />
-          <NewsRow
-            date={dayjs()}
-            tag="慶応班"
-            title="10万のアームレンタルしました！"
-          />
-          <NewsRow
-            date={dayjs()}
-            tag="慶応班"
-            title="10万のアームレンタルしました！"
-          />
-        </Section>
-        <Section title="ABOUT US">
+        <Section title="TEAM">
           <div css={styles.about}>
             <div css={styles.imageBox}>
               <Image
@@ -48,8 +31,28 @@ const Home: NextPage = () => {
             </p>
           </div>
         </Section>
+        <Section title="WHAT'S URC?"></Section>
         <Section title="ROVERS">
-          <MainButton text="SEE OUR ROVERS" />
+          <div className="flex flex-col items-center">
+            <MainButton text="SEE OUR ROVERS" />
+          </div>
+        </Section>
+        <Section title="NEWS">
+          <NewsRow
+            date={dayjs()}
+            tag="慶応班"
+            title="10万のアームレンタルしました！"
+          />
+          <NewsRow
+            date={dayjs()}
+            tag="慶応班"
+            title="10万のアームレンタルしました！"
+          />
+          <NewsRow
+            date={dayjs()}
+            tag="慶応班"
+            title="10万のアームレンタルしました！"
+          />
         </Section>
       </div>
     </Layout>
@@ -57,8 +60,7 @@ const Home: NextPage = () => {
 };
 
 const styles = {
-  container: css`
-  `,
+  container: css``,
   title: css`
     font-size: 36px;
     color: #c7dc68;
@@ -77,7 +79,7 @@ const styles = {
     letter-spacing: 1.5px;
     line-height: 1.5;
     font-weight: 300;
-  `
+  `,
 };
 
 export default Home;
