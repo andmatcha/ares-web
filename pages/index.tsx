@@ -46,7 +46,7 @@ const Home: NextPage = () => {
           <MainButton text="SEE OUR ROVERS" />
         </div>
       </Section>
-      <Section title="NEWS">
+      <Section title="NEWS" className="flex flex-col items-center">
         <NewsRow
           date={dayjs()}
           tag="慶応班"
