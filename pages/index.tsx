@@ -69,6 +69,9 @@ const Home: NextPage = () => {
           />
         </div>
       </footer>
+      <Section id="contact" title="CONTACT">
+        <p className="flex justify-center">Email</p>
+      </Section>
     </Layout>
   );
 };
