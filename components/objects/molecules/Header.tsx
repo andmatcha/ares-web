@@ -16,7 +16,7 @@ const Header = () => {
           <a href="#team">TEAM</a>
         </li>
         <li className="cursor-pointer">
-          <a href="#urc">WHAT'S URC?</a>
+          <a href="#urc">WHAT&apos;S URC?</a>
         </li>
         <li className="cursor-pointer">
           <a href="#rovers">ROVERS</a>

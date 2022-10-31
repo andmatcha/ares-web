@@ -39,7 +39,7 @@ const Home: NextPage = () => {
           <img src="/images/rover2.png" alt="" className="md:w-[45%]" />
         </div>
       </Section>
-      <Section id="urc" title="WHAT'S URC?">
+      <Section id="urc" title="WHAT&apos;S URC?">
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
           <img src="/images/mars1.png" alt="" className="md:w-[48%]" />
           <Paragraph className="md:w-[48%]">
