@@ -6,25 +6,18 @@ const MainButton: NextPage<{ href?: string; text?: string }> = ({
   text,
 }) => {
   return (
-    <a href={href} css={styles.button}>
-      <span>{text}</span>
+    <a
+      href={href}
+      css={styles.button}
+      className="inline-block relative overflow-hidden py-4 px-16 text-white cursor-pointer border border-white duration-500 hover:text-main-bg"
+    >
+      <span className="relative">{text}</span>
     </a>
   );
 };
 
 const styles = {
   button: css`
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    padding: 16px 64px;
-    color: #fff;
-    border: #fff 1px solid;
-    cursor: pointer;
-    transition: 0.4s;
-    & span {
-      position: relative;
-    }
     &::before {
       position: absolute;
       top: 0;
@@ -35,9 +28,6 @@ const styles = {
       transition: all 0.4s ease-in-out;
       transform: translateX(-100%);
       background: #fff;
-    }
-    &:hover {
-      color: #000;
     }
     &:hover::before {
       -webkit-transform: translateX(0%);

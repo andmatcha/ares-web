@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-
 const Header = () => {
   return (
     <header className="fixed w-screen h-20 flex items-center px-12 justify-between z-20 bg-gradient-to-b from-main-bg/70 to-black/0">
