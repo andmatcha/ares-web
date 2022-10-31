@@ -1,33 +1,13 @@
-import { css } from "@emotion/react";
 import { NextPage } from "next";
 import { ReactNode } from "react";
 
-const Section: NextPage<{ title: string; children: ReactNode }> = ({ title, children }) => {
+const Section: NextPage<{ title: string; id: string; children?: ReactNode, className?: string }> = ({ title, id, children, className }) => {
   return (
-    <section css={styles.section}>
-      <h3 css={styles.title}>{title}</h3>
-      <div css={styles.content}>{children}</div>
+    <section id={id} className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
+      <h3 className="text-3xl md:text-4xl mt-10 tracking-wider">{title}</h3>
+      <div className={`w-full ${className}`}>{children}</div>
     </section>
   );
-};
-
-const styles = {
-  section: css`
-    height: 100vh;
-    padding: 80px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    font-size: 18px;
-  `,
-  title: css`
-    font-size: 2em;
-    margin-top: 40px;
-  `,
-  content: css`
-    width: 100%;
-  `
 };
 
 export default Section;

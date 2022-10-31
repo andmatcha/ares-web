@@ -1,43 +1,35 @@
-import { css } from "@emotion/react";
-
 const Header = () => {
   return (
-    <header css={styles.header}>
-      <h1 css={styles.title}>ARES Project</h1>
-      <ul css={styles.menu}>
-        <li css={styles.menuItem}>NEWS</li>
-        <li css={styles.menuItem}>ABOUT US</li>
-        <li css={styles.menuItem}>OUR ROVERS</li>
-        <li css={styles.menuItem}>BLOG</li>
-        <li css={styles.menuItem}>CONTACT</li>
+    <header className="fixed w-screen h-20 flex items-center px-12 justify-center md:justify-between z-20 bg-gradient-to-b from-main-bg/70 to-black/0">
+      <h1 className="text-lg h-16 flex gap-2 items-center">
+        <img
+          src="/images/logo_transparent.png"
+          alt=""
+          className="h-3/4 md:h-full object-contain"
+        />
+        <span>
+          A<span className="text-red-600">R</span>ES Project
+        </span>
+      </h1>
+      <ul className="hidden md:flex items-center gap-10 text-xs">
+        <li className="cursor-pointer">
+          <a href="#team">TEAM</a>
+        </li>
+        <li className="cursor-pointer">
+          <a href="#urc">WHAT&apos;S URC?</a>
+        </li>
+        <li className="cursor-pointer">
+          <a href="#rovers">ROVERS</a>
+        </li>
+        <li className="cursor-pointer">
+          <a href="#news">NEWS</a>
+        </li>
+        <li className="cursor-pointer">
+          <a href="#contact">CONTACT</a>
+        </li>
       </ul>
     </header>
   );
-};
-
-const styles = {
-  header: css`
-    position: fixed;
-    width: 100vw;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    padding: 0 48px;
-    justify-content: space-between;
-    z-index: 10;
-  `,
-  title: css`
-    font-size: 24px;
-  `,
-  menu: css`
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  `,
-  menuItem: css`
-    font-size: 14px;
-    cursor: pointer;
-  `,
 };
 
 export default Header;

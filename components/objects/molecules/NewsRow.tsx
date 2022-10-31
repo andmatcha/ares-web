@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import { Dayjs } from "dayjs";
 import { NextPage } from "next";
 
@@ -8,34 +7,18 @@ const NewsRow: NextPage<{ date: Dayjs; tag: string; title: string }> = ({
   title,
 }) => {
   return (
-    <div css={styles.row}>
-      <p css={styles.date}>{date.format("YYYY/MM/DD")}</p>
-      <p css={styles.tag}>{tag}</p>
-      <h4 css={styles.title}>{title}</h4>
+    <div className="flex flex-col md:flex-row md:items-center w-4/5 md:max-w-8xl md:w-[80%] md:px-8 py-4 gap-2 md:gap-8 text-sm border-b border-gray-700">
+      <div className="flex flex-row items-center gap-4">
+        <p className="text-ares-red tracking-wider text-xs">
+          {date.format("YYYY/MM/DD")}
+        </p>
+        <p className="border border-white rounded-3xl px-3 py-1 tracking-wider text-xs">
+          {tag}
+        </p>
+      </div>
+      <h4 className="text-white tracking-wider">{title}</h4>
     </div>
   );
-};
-
-const styles = {
-  row: css`
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 14px;
-    line-height: 1.5;
-    border-bottom: 1px #555 solid;
-    padding: 12px 0;
-  `,
-  date: css`
-    color: #e60013;
-  `,
-  tag: css`
-    border: 1px #fff solid;
-    padding: 4px 16px;
-  `,
-  title: css`
-    color: #fff;
-  `,
 };
 
 export default NewsRow;
