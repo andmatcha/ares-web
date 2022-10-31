@@ -42,7 +42,13 @@ const Home: NextPage = () => {
         </div>
       </Section>
       <Section title="ROVERS">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-8">
+          <video
+            src="/videos/ares_rover_cad2.mov"
+            autoPlay={true}
+            muted={true}
+            loop={true}
+          ></video>
           <MainButton text="SEE OUR ROVERS" />
         </div>
       </Section>
@@ -63,6 +69,16 @@ const Home: NextPage = () => {
           title="10万のアームレンタルしました！"
         />
       </Section>
+      <footer className="w-full bg-black flex flex-col items-center py-10">
+        <h3 className="text-sm font-light">Sponsored by</h3>
+        <div className="flex justify-center">
+          <img
+            src="/images/ABLab_logo_white(black)_sq.png"
+            alt=""
+            className="max-w-sm"
+          />
+        </div>
+      </footer>
     </Layout>
   );
 };
