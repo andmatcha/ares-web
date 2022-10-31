@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import { ReactNode } from "react";
 
-const Section: NextPage<{ title: string; children?: ReactNode }> = ({ title, children }) => {
+const Section: NextPage<{ title: string; children?: ReactNode, className?: string }> = ({ title, children, className }) => {
   return (
     <section className="min-h-screen py-20 px-[10%] flex flex-col items-center gap-10 text-lg">
       <h3 className="text-4xl mt-10 tracking-wider">{title}</h3>
-      <div className="w-full">{children}</div>
+      <div className={`w-full ${className}`}>{children}</div>
     </section>
   );
 };
