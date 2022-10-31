@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       <MainVisual />
       <Section id="team" title="TEAM" className="flex flex-col gap-20">
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]">
-          <img src="/images/rover2.png" alt="" className="md:w-[45%]" />
+          <img src="/images/arm2.png" alt="" className="md:w-[45%]" />
           <div className="md:w-[45%]">
             <h4 className="text-2xl">東京班</h4>
             <Paragraph>
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
               東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています
             </Paragraph>
           </div>
-          <img src="/images/arm2.png" alt="" className="md:w-[45%]" />
+          <img src="/images/rover2.png" alt="" className="md:w-[45%]" />
         </div>
       </Section>
       <Section id="urc" title="WHAT'S URC?">
@@ -38,6 +38,13 @@ const Home: NextPage = () => {
             University Rober
             Challengeは大学生を対象とした世界最高峰のロボット工学コンテストです。
             URCは、毎年米国ユタ州南部の砂漠で開催され、それぞれのチームが、火星を調査する宇宙飛行士と一緒に働く次世代の火星探査機の設計と製作に挑戦しています。
+            <br />
+            <a
+              href="https://urc.marssociety.org/"
+              className="w-full text-left text-xs text-ares-red"
+            >
+              URC公式サイト
+            </a>
           </Paragraph>
         </div>
       </Section>
