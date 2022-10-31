@@ -26,9 +26,9 @@ const Home: NextPage = () => {
           </div>
           <div className="flex justify-center gap-[10%]">
             <div className="w-[45%]">
-              <h4 className="text-2xl">東京班</h4>
+              <h4 className="text-2xl">東北班</h4>
               <Paragraph>
-                東京班は主にアームの設計を行っています。この大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるためアームは重要な役割を果たします。
+                東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています
               </Paragraph>
             </div>
             <img src="/images/arm2.png" alt="" className="w-[45%]" />
