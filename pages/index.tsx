@@ -32,9 +32,9 @@ const Home: NextPage = () => {
         </div>
       </Section>
       <Section title="WHAT'S URC?">
-        <div className="flex gap-[4%]">
-          <img src="/images/mars1.png" alt="" className="w-[48%]" />
-          <Paragraph className="w-[48%]">
+        <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
+          <img src="/images/mars1.png" alt="" className="md:w-[48%]" />
+          <Paragraph className="md:w-[48%]">
             University Rober
             Challengeは大学生を対象とした世界最高峰のロボット工学コンテストです。
             URCは、毎年米国ユタ州南部の砂漠で開催され、それぞれのチームが、火星を調査する宇宙飛行士と一緒に働く次世代の火星探査機の設計と製作に挑戦しています。
