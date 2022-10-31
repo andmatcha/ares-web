@@ -12,11 +12,21 @@ const Header = () => {
         </span>
       </h1>
       <ul className="hidden md:flex items-center gap-10 text-xs">
-        <li className="cursor-pointer">TEAM</li>
-        <li className="cursor-pointer">WHAT'S URC?</li>
-        <li className="cursor-pointer">ROVERS</li>
-        <li className="cursor-pointer">NEWS</li>
-        <li className="cursor-pointer">CONTACT</li>
+        <li className="cursor-pointer">
+          <a href="#team">TEAM</a>
+        </li>
+        <li className="cursor-pointer">
+          <a href="#urc">WHAT'S URC?</a>
+        </li>
+        <li className="cursor-pointer">
+          <a href="#rovers">ROVERS</a>
+        </li>
+        <li className="cursor-pointer">
+          <a href="#news">NEWS</a>
+        </li>
+        <li className="cursor-pointer">
+          <a href="#contact">CONTACT</a>
+        </li>
       </ul>
     </header>
   );

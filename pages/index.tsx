@@ -11,27 +11,27 @@ const Home: NextPage = () => {
   return (
     <Layout title="ARES Project">
       <MainVisual />
-      <Section title="TEAM" className="flex flex-col gap-20">
-        <div className="flex justify-center gap-[10%]">
-          <img src="/images/rover2.png" alt="" className="w-[45%]" />
-          <div className="w-[45%]">
+      <Section id="team" title="TEAM" className="flex flex-col gap-20">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]">
+          <img src="/images/rover2.png" alt="" className="md:w-[45%]" />
+          <div className="md:w-[45%]">
             <h4 className="text-2xl">東京班</h4>
             <Paragraph>
               東京班は主にアームの設計を行っています。この大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるためアームは重要な役割を果たします。
             </Paragraph>
           </div>
         </div>
-        <div className="flex justify-center gap-[10%]">
-          <div className="w-[45%]">
+        <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-4 md:gap-[10%]">
+          <div className="md:w-[45%]">
             <h4 className="text-2xl">東北班</h4>
             <Paragraph>
               東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています
             </Paragraph>
           </div>
-          <img src="/images/arm2.png" alt="" className="w-[45%]" />
+          <img src="/images/arm2.png" alt="" className="md:w-[45%]" />
         </div>
       </Section>
-      <Section title="WHAT'S URC?">
+      <Section id="urc" title="WHAT'S URC?">
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
           <img src="/images/mars1.png" alt="" className="md:w-[48%]" />
           <Paragraph className="md:w-[48%]">
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
           </Paragraph>
         </div>
       </Section>
-      <Section title="ROVERS">
+      <Section id="rovers" title="ROVERS">
         <div className="flex flex-col items-center gap-8">
           <video
             src="/videos/ares_rover_cad2.mov"
@@ -52,21 +52,11 @@ const Home: NextPage = () => {
           <MainButton text="SEE OUR ROVERS" />
         </div>
       </Section>
-      <Section title="NEWS" className="flex flex-col items-center">
+      <Section id="news" title="NEWS" className="flex flex-col items-center">
         <NewsRow
-          date={dayjs()}
-          tag="慶応班"
-          title="10万のアームレンタルしました！"
-        />
-        <NewsRow
-          date={dayjs()}
-          tag="慶応班"
-          title="10万のアームレンタルしました！"
-        />
-        <NewsRow
-          date={dayjs()}
-          tag="慶応班"
-          title="10万のアームレンタルしました！"
+          date={dayjs("2022-11-01")}
+          tag="広報局"
+          title="公式webサイトをオープンしました！"
         />
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">
