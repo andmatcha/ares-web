@@ -3,13 +3,13 @@ import { css } from "@emotion/react";
 const Header = () => {
   return (
     <header css={styles.header}>
-      <h1 css={styles.title}>ARES Project</h1>
-      <ul css={styles.menu}>
-        <li css={styles.menuItem}>NEWS</li>
-        <li css={styles.menuItem}>ABOUT US</li>
-        <li css={styles.menuItem}>OUR ROVERS</li>
-        <li css={styles.menuItem}>BLOG</li>
-        <li css={styles.menuItem}>CONTACT</li>
+      <h1 css={styles.title}>A<span className="text-red-600">R</span>ES Project</h1>
+      <ul className="flex items-center gap-10 text-xs">
+        <li className="cursor-pointer">TEAM</li>
+        <li className="cursor-pointer">WHAT'S URC?</li>
+        <li className="cursor-pointer">ROVERS</li>
+        <li className="cursor-pointer">NEWS</li>
+        <li className="cursor-pointer">CONTACT</li>
       </ul>
     </header>
   );
@@ -28,16 +28,7 @@ const styles = {
   `,
   title: css`
     font-size: 24px;
-  `,
-  menu: css`
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  `,
-  menuItem: css`
-    font-size: 14px;
-    cursor: pointer;
-  `,
+  `
 };
 
 export default Header;
