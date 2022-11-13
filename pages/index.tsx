@@ -7,6 +7,7 @@ import NewsRow from "../components/objects/molecules/NewsRow";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import dayjs from "dayjs";
 import contents from "../contents/top";
+import newsContents from "../contents/news";
 
 const Home: NextPage = () => {
   return (
@@ -74,11 +75,13 @@ const Home: NextPage = () => {
         title={contents.news.title}
         className="flex flex-col items-center"
       >
-        <NewsRow
-          date={dayjs("2022-11-01")}
-          tag="広報局"
-          title="公式webサイトをオープンしました！"
-        />
+        {newsContents.map((newsContent) => (
+          <NewsRow
+            date={dayjs(newsContent.date)}
+            tag={newsContent.tag}
+            title={newsContent.title}
+          />
+        ))}
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">
         <h3 className="text-sm font-light">{contents.sponsor.title}</h3>
