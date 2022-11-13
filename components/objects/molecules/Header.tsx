@@ -1,3 +1,5 @@
+import contents from "../../../contents/header";
+
 const Header = () => {
   return (
     <header className="fixed w-screen h-20 flex items-center px-12 justify-center md:justify-between z-20 bg-gradient-to-b from-main-bg/70 to-black/0">
@@ -12,21 +14,11 @@ const Header = () => {
         </span>
       </h1>
       <ul className="hidden md:flex items-center gap-10 text-xs">
-        <li className="cursor-pointer">
-          <a href="#team">TEAM</a>
-        </li>
-        <li className="cursor-pointer">
-          <a href="#urc">WHAT&apos;S URC?</a>
-        </li>
-        <li className="cursor-pointer">
-          <a href="#rovers">ROVERS</a>
-        </li>
-        <li className="cursor-pointer">
-          <a href="#news">NEWS</a>
-        </li>
-        <li className="cursor-pointer">
-          <a href="#contact">CONTACT</a>
-        </li>
+        {contents.menu.map((menuItem) => (
+          <li className="cursor-pointer">
+            <a href={`#${menuItem.id}`}>{menuItem.label}</a>
+          </li>
+        ))}
       </ul>
     </header>
   );

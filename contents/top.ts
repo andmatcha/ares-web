@@ -1,4 +1,5 @@
 const topContents = {
+  title: "ARES Project",
   team: {
     id: "team",
     title: "TEAM",
@@ -52,6 +53,10 @@ const topContents = {
   news: {
     id: "news",
     title: "NEWS",
+  },
+  contact: {
+    id: "contact",
+    title: "CONTACT",
   },
 };
 

@@ -10,7 +10,7 @@ import contents from "../contents/top";
 
 const Home: NextPage = () => {
   return (
-    <Layout title="ARES Project">
+    <Layout title={contents.title}>
       <MainVisual />
       <Section
         id={contents.team.id}
@@ -92,7 +92,7 @@ const Home: NextPage = () => {
           ))}
         </div>
       </footer>
-      <Section id="contact" title="CONTACT">
+      <Section id={contents.contact.id} title={contents.contact.title}>
         <p className="flex justify-center">Email</p>
       </Section>
     </Layout>
