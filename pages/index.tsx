@@ -71,6 +71,26 @@ const Home: NextPage = () => {
         </div>
       </Section>
       <Section
+        id="members"
+        title="MEMBERS"
+        className="flex flex-col md:flex-row justify-center items-center gap-4"
+      >
+        <div className="flex md:flex-col justify-center items-center gap-2">
+          <div className="w-1/4 md:w-1/5 rounded-full overflow-hidden">
+            <img src="/images/members/ryoji.png" alt="" />
+          </div>
+          <div className="flex flex-col md:items-center gap-1 tracking-wide">
+            <h5 className="text-sm md:text-base flex items-baseline gap-2">
+              Ryoji Nagahara
+            </h5>
+            <p className="text-xs">慶應義塾大学理工学部</p>
+            <p className="text-xs mt-1">
+              天才エンジニア。なんでも3Dプリンターで印刷する。
+            </p>
+          </div>
+        </div>
+      </Section>
+      <Section
         id={contents.news.id}
         title={contents.news.title}
         className="flex flex-col items-center"
