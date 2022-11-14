@@ -30,6 +30,7 @@ const Home: NextPage = () => {
         </div>
         {contents.team.branches.map((branch, index) => (
           <div
+            key={index}
             className={`flex ${
               index % 2 === 0
                 ? "flex-col md:flex-row"
@@ -75,8 +76,9 @@ const Home: NextPage = () => {
         title={contents.news.title}
         className="flex flex-col items-center"
       >
-        {newsContents.map((newsContent) => (
+        {newsContents.map((newsContent, index) => (
           <NewsRow
+            key={index}
             date={dayjs(newsContent.date)}
             tag={newsContent.tag}
             title={newsContent.title}
@@ -86,8 +88,9 @@ const Home: NextPage = () => {
       <footer className="w-full bg-black flex flex-col items-center py-10">
         <h3 className="text-sm font-light">{contents.sponsor.title}</h3>
         <div className="flex justify-center">
-          {contents.sponsor.sponsors.map((sponsor) => (
+          {contents.sponsor.sponsors.map((sponsor, index) => (
             <img
+              key={index}
               src={sponsor.imagePath}
               alt={sponsor.name}
               className="max-w-sm"

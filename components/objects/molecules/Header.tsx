@@ -14,8 +14,8 @@ const Header = () => {
         </span>
       </h1>
       <ul className="hidden md:flex items-center gap-10 text-xs">
-        {contents.menu.map((menuItem) => (
-          <li className="cursor-pointer">
+        {contents.menu.map((menuItem, index) => (
+          <li key={index} className="cursor-pointer">
             <a href={`#${menuItem.id}`}>{menuItem.label}</a>
           </li>
         ))}
