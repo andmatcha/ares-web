@@ -1,17 +1,17 @@
 import { NextPage } from "next";
 import { css } from "@emotion/react";
 
-const MainButton: NextPage<{ href?: string; text?: string }> = ({
-  href,
-  text,
+const MainButton: NextPage<{ url?: string; label?: string }> = ({
+  url,
+  label,
 }) => {
   return (
     <a
-      href={href}
+      href={url}
       css={styles.button}
       className="inline-block relative overflow-hidden py-4 px-16 text-white cursor-pointer border border-white duration-500 hover:text-main-bg"
     >
-      <span className="relative">{text}</span>
+      <span className="relative">{label}</span>
     </a>
   );
 };

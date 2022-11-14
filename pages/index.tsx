@@ -6,85 +6,99 @@ import MainButton from "../components/objects/atoms/MainButton";
 import NewsRow from "../components/objects/molecules/NewsRow";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import dayjs from "dayjs";
+import contents from "../contents/top";
+import newsContents from "../contents/news";
 
 const Home: NextPage = () => {
   return (
-    <Layout title="ARES Project">
+    <Layout title={contents.title}>
       <MainVisual />
-      <Section id="team" title="TEAM" className="flex flex-col gap-20">
+      <Section
+        id={contents.team.id}
+        title={contents.team.title}
+        className="flex flex-col gap-20"
+      >
         <div className="flex flex-col justify-center items-center gap-4">
-          <img src="/images/logo.jpg" alt="" className="w-4/5 md:w-1/5" />
+          <img
+            src={contents.team.aresLogo.imagePath}
+            alt={contents.team.aresLogo.label}
+            className="w-4/5 md:w-1/5"
+          />
           <Paragraph className="md:w-3/5 md:text-center">
-            URCの日本初の出場を目指して活動している学生団体です。
-            2022年2月に現在の幹部3人から発足しました。
-            現在のメンバーは慶應、東北、東大、筑波の学生で構成されており、慶應と東北を活動拠点として活動しています。
+            {contents.team.paragraph}
           </Paragraph>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]">
-          <img src="/images/arm2.png" alt="" className="md:w-[45%]" />
-          <div className="md:w-[45%]">
-            <h4 className="text-2xl">東京班</h4>
-            <Paragraph>
-              東京班は主にアームの設計を行っています。この大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるためアームは重要な役割を果たします。
-            </Paragraph>
+        {contents.team.branches.map((branch, index) => (
+          <div
+            key={index}
+            className={`flex ${
+              index % 2 === 0
+                ? "flex-col md:flex-row"
+                : "flex-col-reverse md:flex-row-reverse"
+            } justify-center items-center gap-4 md:gap-[10%]`}
+          >
+            <img src={branch.imagePath} alt="" className="md:w-[45%]" />
+            <div className="md:w-[45%]">
+              <h4 className="text-2xl">{branch.title}</h4>
+              <Paragraph>{branch.paragraph}</Paragraph>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-4 md:gap-[10%]">
-          <div className="md:w-[45%]">
-            <h4 className="text-2xl">東北班</h4>
-            <Paragraph>
-              東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています
-            </Paragraph>
-          </div>
-          <img src="/images/rover2.png" alt="" className="md:w-[45%]" />
-        </div>
+        ))}
       </Section>
-      <Section id="urc" title="WHAT&apos;S URC?">
+      <Section id={contents.urc.id} title={contents.urc.title}>
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
-          <img src="/images/mars1.png" alt="" className="md:w-[48%]" />
+          <img src={contents.urc.imagePath} alt="" className="md:w-[48%]" />
           <Paragraph className="md:w-[48%]">
-            University Rober
-            Challengeは大学生を対象とした世界最高峰のロボット工学コンテストです。
-            URCは、毎年米国ユタ州南部の砂漠で開催され、それぞれのチームが、火星を調査する宇宙飛行士と一緒に働く次世代の火星探査機の設計と製作に挑戦しています。
+            {contents.urc.paragraph}
             <br />
             <a
-              href="https://urc.marssociety.org/"
+              href={contents.urc.urcOfficial.url}
               className="w-full text-left text-xs text-ares-red"
             >
-              URC公式サイト
+              {contents.urc.urcOfficial.label}
             </a>
           </Paragraph>
         </div>
       </Section>
-      <Section id="rovers" title="ROVERS">
+      <Section id={contents.rovers.id} title={contents.rovers.title}>
         <div className="flex flex-col items-center gap-8">
           <video
-            src="/videos/ares_rover_cad2.mov"
+            src={contents.rovers.videoPath}
             autoPlay={true}
             muted={true}
             loop={true}
           ></video>
-          <MainButton text="SEE OUR ROVERS" />
+          <MainButton label={contents.rovers.button.label} />
         </div>
       </Section>
-      <Section id="news" title="NEWS" className="flex flex-col items-center">
-        <NewsRow
-          date={dayjs("2022-11-01")}
-          tag="広報局"
-          title="公式webサイトをオープンしました！"
-        />
+      <Section
+        id={contents.news.id}
+        title={contents.news.title}
+        className="flex flex-col items-center"
+      >
+        {newsContents.map((newsContent, index) => (
+          <NewsRow
+            key={index}
+            date={dayjs(newsContent.date)}
+            tag={newsContent.tag}
+            title={newsContent.title}
+          />
+        ))}
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">
-        <h3 className="text-sm font-light">Sponsored by</h3>
+        <h3 className="text-sm font-light">{contents.sponsor.title}</h3>
         <div className="flex justify-center">
-          <img
-            src="/images/ABLab_logo_white(black)_sq.png"
-            alt=""
-            className="max-w-sm"
-          />
+          {contents.sponsor.sponsors.map((sponsor, index) => (
+            <img
+              key={index}
+              src={sponsor.imagePath}
+              alt={sponsor.name}
+              className="max-w-sm"
+            />
+          ))}
         </div>
       </footer>
-      <Section id="contact" title="CONTACT">
+      <Section id={contents.contact.id} title={contents.contact.title}>
         <p className="flex justify-center">Email</p>
       </Section>
     </Layout>
