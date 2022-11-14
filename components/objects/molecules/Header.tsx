@@ -5,8 +5,8 @@ const Header = () => {
     <header className="fixed w-screen h-20 flex items-center px-12 justify-center md:justify-between z-20 bg-gradient-to-b from-main-bg/70 to-black/0">
       <h1 className="text-lg h-16 flex gap-2 items-center">
         <img
-          src="/images/logo_transparent.png"
-          alt=""
+          src={contents.aresLogo.imagePath}
+          alt={contents.aresLogo.label}
           className="h-3/4 md:h-full object-contain"
         />
         <span>

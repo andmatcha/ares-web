@@ -20,8 +20,8 @@ const Home: NextPage = () => {
       >
         <div className="flex flex-col justify-center items-center gap-4">
           <img
-            src={contents.team.imagePath}
-            alt=""
+            src={contents.team.aresLogo.imagePath}
+            alt={contents.team.aresLogo.label}
             className="w-4/5 md:w-1/5"
           />
           <Paragraph className="md:w-3/5 md:text-center">

@@ -1,6 +1,11 @@
+import globalContents from "./global";
 import topContents from "./top";
 
 const headerContents = {
+  aresLogo: {
+    label: globalContents.aresLogo.label,
+    imagePath: globalContents.aresLogo.imagePath,
+  },
   menu: [
     {
       id: topContents.team.id,
