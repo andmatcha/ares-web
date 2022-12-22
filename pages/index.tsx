@@ -62,12 +62,7 @@ const Home: NextPage = () => {
       </Section>
       <Section id={contents.rovers.id} title={contents.rovers.title}>
         <div className="flex flex-col items-center gap-8">
-          <video
-            src={contents.rovers.videoPath}
-            autoPlay={true}
-            muted={true}
-            loop={true}
-          ></video>
+          <img src={contents.rovers.imagePath} alt="" className="max-w-lg" />
           <MainButton label={contents.rovers.button.label} />
         </div>
       </Section>
@@ -105,7 +100,10 @@ const Home: NextPage = () => {
             alt=""
             className="h-full object-contain"
           />
-          <a href={contents.contact.twitter.url} className="underline hover:text-red-600 duration-300">
+          <a
+            href={contents.contact.twitter.url}
+            className="underline hover:text-red-600 duration-300"
+          >
             @{contents.contact.twitter.userName}
           </a>
         </p>

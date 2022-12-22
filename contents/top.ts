@@ -40,7 +40,7 @@ const topContents = {
   rovers: {
     id: "rovers",
     title: "ROVERS",
-    videoPath: "/videos/ares_rover_cad2.mov",
+    imagePath: "/images/kabuto_cad.gif",
     button: {
       label: "SEE OUR ROVERS",
       url: "",
