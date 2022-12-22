@@ -62,7 +62,7 @@ const Home: NextPage = () => {
       </Section>
       <Section id={contents.rovers.id} title={contents.rovers.title}>
         <div className="flex flex-col items-center gap-8">
-          <img src={contents.rovers.imagePath} alt="" className="max-w-lg" />
+          <img src={contents.rovers.imagePath} alt="" className="max-w-xs md:max-w-lg" />
           <MainButton label={contents.rovers.button.label} />
         </div>
       </Section>
