@@ -34,7 +34,7 @@ const Home: NextPage = () => {
             className={`flex ${
               index % 2 === 0
                 ? "flex-col md:flex-row"
-                : "flex-col-reverse md:flex-row-reverse"
+                : "flex-col md:flex-row-reverse"
             } justify-center items-center gap-4 md:gap-[10%]`}
           >
             <img src={branch.imagePath} alt="" className="md:w-[45%]" />
