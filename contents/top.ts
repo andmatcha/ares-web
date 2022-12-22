@@ -14,13 +14,13 @@ const topContents = {
     branches: [
       {
         title: "東京班",
-        imagePath: "/images/arm2.png",
+        imagePath: "/images/keio_members.jpg",
         paragraph:
           "東京班は主にアームの設計を行っています。この大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるためアームは重要な役割を果たします。",
       },
       {
         title: "東北班",
-        imagePath: "/images/rover2.png",
+        imagePath: "/images/tohoku_members.jpg",
         paragraph:
           "東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています。",
       },
