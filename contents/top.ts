@@ -62,6 +62,11 @@ const topContents = {
   contact: {
     id: "contact",
     title: "CONTACT",
+    twitter: {
+      iconImagePath: "/images/icons/twitter_logo_white.png",
+      userName: "AresPjt2022",
+      url: "https://twitter.com/AresPjt2022",
+    },
   },
 };
 

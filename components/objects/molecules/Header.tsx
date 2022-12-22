@@ -15,7 +15,10 @@ const Header = () => {
       </h1>
       <ul className="hidden md:flex items-center gap-10 text-xs">
         {contents.menu.map((menuItem, index) => (
-          <li key={index} className="cursor-pointer">
+          <li
+            key={index}
+            className="cursor-pointer hover:text-red-600 duration-300"
+          >
             <a href={`#${menuItem.id}`}>{menuItem.label}</a>
           </li>
         ))}
