@@ -99,7 +99,16 @@ const Home: NextPage = () => {
         </div>
       </footer>
       <Section id={contents.contact.id} title={contents.contact.title}>
-        <p className="flex justify-center">Email</p>
+        <p className="h-10 flex justify-center items-center gap-4 py-1">
+          <img
+            src={contents.contact.twitter.iconImagePath}
+            alt=""
+            className="h-full object-contain"
+          />
+          <a href={contents.contact.twitter.url} className="underline hover:text-red-600 duration-300">
+            @{contents.contact.twitter.userName}
+          </a>
+        </p>
       </Section>
     </Layout>
   );
