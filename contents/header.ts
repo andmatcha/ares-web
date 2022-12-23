@@ -3,8 +3,8 @@ import topContents from "./top";
 
 const headerContents = {
   aresLogo: {
-    label: globalContents.aresLogo.label,
-    imagePath: globalContents.aresLogo.imagePath,
+    label: globalContents.aresLogoWhite.label,
+    imagePath: globalContents.aresLogoWhite.imagePath,
   },
   menu: [
     {
