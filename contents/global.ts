@@ -1,7 +1,11 @@
 const globalContents = {
-  aresLogo: {
+  aresLogoBlack: {
     label: "ARES",
-    imagePath: "/images/ares_logo.png",
+    imagePath: "/images/ares_logo_black.png",
+  },
+  aresLogoWhite: {
+    label: "ARES",
+    imagePath: "/images/ares_logo_white.png",
   },
 };
 
