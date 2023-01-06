@@ -78,4 +78,10 @@ export const updateArticle = (
 };
 
 // 記事を削除
-export const deleteArticle = () => {};
+export const deleteArticle = async (id: string): Promise<FindArticle> => {
+  const result = await prisma.article.delete({
+    where: { id },
+    include: { tags: true },
+  });
+  return result;
+};
