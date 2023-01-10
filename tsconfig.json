@@ -16,6 +16,11 @@
     "incremental": true,
     "types": ["@emotion/react/types/css-prop", "node"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "prisma/seeders/tagSeeder.ts"
+  ],
   "exclude": ["node_modules"]
 }
