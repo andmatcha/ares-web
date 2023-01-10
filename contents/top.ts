@@ -11,6 +11,10 @@ const topContents = {
     },
     paragraph:
       "URCの日本初の出場を目指して活動している学生団体です。2022年2月に現在の幹部3人から発足しました。現在のメンバーは慶應、東北、東大、筑波の学生で構成されており、慶應と東北を活動拠点として活動しています。",
+    button: {
+      label: "SEE MORE",
+      url: "/team",
+    },
     branches: [
       {
         title: "東京班",
