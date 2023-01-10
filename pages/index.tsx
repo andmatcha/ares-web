@@ -98,11 +98,13 @@ const Home: NextPage = () => {
         </div>
       </footer>
       <Section id={contents.contact.id} title={contents.contact.title}>
-        <p className="text-center">{contents.contact.paragraph}</p>
+        <p className="text-center  text-sm md:text-base">
+          {contents.contact.paragraph}
+        </p>
         <div className="max-w-2xl mx-auto mt-5">
           <a
             className="twitter-timeline"
-            data-height="1500"
+            data-height="1200"
             data-theme="dark"
             href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
           >
