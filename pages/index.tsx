@@ -62,7 +62,11 @@ const Home: NextPage = () => {
       </Section>
       <Section id={contents.rovers.id} title={contents.rovers.title}>
         <div className="flex flex-col items-center gap-8">
-          <img src={contents.rovers.imagePath} alt="" className="w-full max-w-xs md:max-w-lg" />
+          <img
+            src={contents.rovers.imagePath}
+            alt=""
+            className="w-full max-w-xs md:max-w-lg"
+          />
           <MainButton label={contents.rovers.button.label} />
         </div>
       </Section>
@@ -94,19 +98,18 @@ const Home: NextPage = () => {
         </div>
       </footer>
       <Section id={contents.contact.id} title={contents.contact.title}>
-        <p className="h-10 flex justify-center items-center gap-4 py-1">
-          <img
-            src={contents.contact.twitter.iconImagePath}
-            alt=""
-            className="h-full object-contain"
-          />
+        <p className="text-center">{contents.contact.paragraph}</p>
+        <div className="max-w-2xl mx-auto mt-5">
           <a
-            href={contents.contact.twitter.url}
-            className="underline hover:text-red-600 duration-300"
+            className="twitter-timeline"
+            data-height="1500"
+            data-theme="dark"
+            href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
           >
-            @{contents.contact.twitter.userName}
+            Tweets by AresPjt2022
           </a>
-        </p>
+          <script async src="https://platform.twitter.com/widgets.js"></script>
+        </div>
       </Section>
     </Layout>
   );
