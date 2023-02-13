@@ -8,6 +8,7 @@ import Paragraph from "../components/objects/atoms/Paragraph";
 import dayjs from "dayjs";
 import contents from "../contents/top";
 import newsContents from "../contents/news";
+import supporters from "../contents/supporters";
 
 const Home: NextPage = () => {
   return (
@@ -96,6 +97,12 @@ const Home: NextPage = () => {
             />
           ))}
         </div>
+        <h3 className="mb-4">クラウドファンディングで支援いただいた方々</h3>
+        <ul className="flex gap-4 flex-wrap px-32">
+          {supporters.map((supporter, i) => (
+            <li key={i} className="inline-block">{supporter}</li>
+          ))}
+        </ul>
       </footer>
       <Section id={contents.contact.id} title={contents.contact.title}>
         <p className="text-center  text-sm md:text-base">
