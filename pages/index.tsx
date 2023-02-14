@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       <Section
         id={contents.team.id}
         title={contents.team.title}
-        className="flex flex-col gap-20"
+        className="flex flex-col gap-20 items-center"
       >
         <div className="flex flex-col justify-center items-center gap-4">
           <img
@@ -44,6 +44,10 @@ const Home: NextPage = () => {
             </div>
           </div>
         ))}
+        <MainButton
+          url={contents.team.button.url}
+          label={contents.team.button.label}
+        />
       </Section>
       <Section id={contents.urc.id} title={contents.urc.title}>
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
