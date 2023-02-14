@@ -1,13 +1,14 @@
-import type { NextPage } from "next";
-import Layout from "../components/layouts/Layout";
-import MainVisual from "../components/objects/organisms/MainVisual";
-import Section from "../components/objects/molecules/Section";
-import MainButton from "../components/objects/atoms/MainButton";
-import NewsRow from "../components/objects/molecules/NewsRow";
-import Paragraph from "../components/objects/atoms/Paragraph";
 import dayjs from "dayjs";
-import contents from "../contents/top";
+import type { NextPage } from "next";
+
+import Layout from "../components/layouts/Layout";
+import MainButton from "../components/objects/atoms/MainButton";
+import Paragraph from "../components/objects/atoms/Paragraph";
+import NewsRow from "../components/objects/molecules/NewsRow";
+import Section from "../components/objects/molecules/Section";
+import MainVisual from "../components/objects/organisms/MainVisual";
 import newsContents from "../contents/news";
+import contents from "../contents/top";
 
 const Home: NextPage = () => {
   return (

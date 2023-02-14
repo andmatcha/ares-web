@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { ReactNode } from "react";
+
 import Header from "../objects/molecules/Header";
 
 interface Props {
