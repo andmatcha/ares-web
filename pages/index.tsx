@@ -11,7 +11,7 @@ import newsContents from "../contents/news";
 
 const Home: NextPage = () => {
   return (
-    <Layout title={contents.title}>
+    <Layout title={contents.title} needTopSpace={false}>
       <MainVisual />
       <Section
         id={contents.team.id}

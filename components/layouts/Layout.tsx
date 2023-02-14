@@ -5,10 +5,11 @@ import Header from "../objects/molecules/Header";
 
 interface Props {
   title: string;
+  needTopSpace: boolean;
   children: ReactNode;
 }
 
-const Layout: NextPage<Props> = ({ title, children }) => {
+const Layout: NextPage<Props> = ({ title, needTopSpace, children }) => {
   return (
     <>
       <Head>
@@ -20,6 +21,7 @@ const Layout: NextPage<Props> = ({ title, children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      {needTopSpace ? <div className="w-full h-20"></div> : undefined}
       <main>{children}</main>
     </>
   );
