@@ -21,8 +21,8 @@ const Home: NextPage = () => {
       >
         <div className="flex flex-col justify-center items-center gap-4">
           <img
-            src={contents.team.aresLogo.imagePath}
-            alt={contents.team.aresLogo.label}
+            src="/images/ares_logo_white.png"
+            alt="ARES"
             className="w-4/5 md:w-1/5"
           />
           <Paragraph className="md:w-3/5 md:text-center">
@@ -90,15 +90,11 @@ const Home: NextPage = () => {
         ))}
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">
-        <h3 className="text-sm font-light">{contents.sponsor.title}</h3>
         <div className="flex justify-center">
           {contents.sponsor.sponsors.map((sponsor, index) => (
-            <img
-              key={index}
-              src={sponsor.imagePath}
-              alt={sponsor.name}
-              className="w-full md:max-w-sm"
-            />
+            <div key={index} className="w-full md:max-w-sm flex items-center">
+              <img src={sponsor.imagePath} alt={sponsor.name} />
+            </div>
           ))}
         </div>
       </footer>

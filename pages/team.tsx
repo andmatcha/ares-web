@@ -17,7 +17,11 @@ const Team: NextPage = () => {
           <p>東北班の説明</p>
         </div>
         <div>
-          <Card id="mechanical-div" title="機構班" imagePath="/images/keio_members.jpg">
+          <Card
+            id="mechanical-div"
+            title="機構班"
+            imagePath="/images/keio_members.jpg"
+          >
             aaaafeafefafaefa
           </Card>
           <div>
@@ -55,8 +59,8 @@ const Team: NextPage = () => {
       </div>
       <div className="flex flex-col justify-center items-center gap-4">
         <img
-          src={topContents.team.aresLogo.imagePath}
-          alt={topContents.team.aresLogo.label}
+          src="/images/ares_logo_white.png"
+          alt="ARES"
           className="w-4/5 md:w-1/5"
         />
         <Paragraph className="md:w-3/5 md:text-center">
