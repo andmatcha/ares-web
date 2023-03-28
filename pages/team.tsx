@@ -16,8 +16,8 @@ const Team: NextPage = () => {
       >
         <div className="flex flex-col justify-center items-center gap-4">
           <img
-            src={topContents.team.aresLogo.imagePath}
-            alt={topContents.team.aresLogo.label}
+            src="/images/ares_logo_white.png"
+            alt="ARES"
             className="w-4/5 md:w-1/5"
           />
           <Paragraph className="md:w-3/5 md:text-center">
