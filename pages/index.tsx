@@ -8,7 +8,9 @@ import NewsRow from "../components/objects/molecules/NewsRow";
 import Section from "../components/objects/molecules/Section";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import newsContents from "../contents/news";
+import supporters from "../contents/supporters";
 import contents from "../contents/top";
+
 
 const Home: NextPage = () => {
   return (
@@ -75,7 +77,7 @@ const Home: NextPage = () => {
           <MainButton label={contents.rovers.button.label} />
         </div>
       </Section>
-      <Section
+      {/* <Section
         id={contents.news.id}
         title={contents.news.title}
         className="flex flex-col items-center"
@@ -88,15 +90,44 @@ const Home: NextPage = () => {
             title={newsContent.title}
           />
         ))}
-      </Section>
+      </Section> */}
       <footer className="w-full bg-black flex flex-col items-center py-10">
-        <div className="flex justify-center">
+        <div className="flex flex-col md:flex-row justify-center gap-8 p-8">
           {contents.sponsor.sponsors.map((sponsor, index) => (
-            <div key={index} className="w-full md:max-w-sm flex items-center">
+            <div
+              key={index}
+              className="w-full max-w-sm md:max-w-sm flex items-center"
+            >
               <img src={sponsor.imagePath} alt={sponsor.name} />
             </div>
           ))}
         </div>
+        <h3 className="mb-4 text-xl pt-10 pb-4">
+          ご支援ありがとうございました!
+        </h3>
+        <div className="flex justify-center items-center gap-4 py-4">
+          <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
+            <h4 className="text-sm">支援者数</h4>
+            <p className="text-4xl md:text-5xl font-bold">37</p>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
+            <h4 className="text-sm">支援総額</h4>
+            <p className="text-4xl md:text-5xl font-bold">¥230,500</p>
+          </div>
+        </div>
+        <ul className="flex gap-2 flex-wrap px-4 md:px-32 text-sm pb-4 justify-center">
+          {supporters.map((supporter, i) => (
+            <>
+              <li key={i} className="inline-block">
+                {supporter} 様
+              </li>
+              {i + 1 < supporters.length ? (
+                <span className=" text-gray-600">/</span>
+              ) : undefined}
+            </>
+          ))}
+          <span className="text-sm">他</span>
+        </ul>
       </footer>
       <Section id={contents.contact.id} title={contents.contact.title}>
         <p className="text-center  text-sm md:text-base">
