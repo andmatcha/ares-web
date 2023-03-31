@@ -74,7 +74,7 @@ const Home: NextPage = () => {
           <MainButton label={contents.rovers.button.label} />
         </div>
       </Section>
-      <Section
+      {/* <Section
         id={contents.news.id}
         title={contents.news.title}
         className="flex flex-col items-center"
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
             title={newsContent.title}
           />
         ))}
-      </Section>
+      </Section> */}
       <footer className="w-full bg-black flex flex-col items-center py-10">
         <div className="flex justify-center gap-8">
           {contents.sponsor.sponsors.map((sponsor, index) => (
