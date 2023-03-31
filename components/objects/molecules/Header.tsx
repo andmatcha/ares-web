@@ -11,9 +11,6 @@ const Header = () => {
             alt={contents.aresLogo.label}
             className="h-3/4 md:h-full object-contain"
           />
-          <span>
-            A<span className="text-red-600">R</span>ES Project
-          </span>
         </h1>
       </Link>
       <ul className="hidden md:flex items-center gap-10 text-xs">
