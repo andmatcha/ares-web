@@ -8,24 +8,20 @@ const headerContents = {
   },
   menu: [
     {
-      id: topContents.team.id,
+      path: "/team",
       label: topContents.team.title,
     },
     {
-      id: topContents.urc.id,
+      path: "/",
       label: topContents.urc.title,
     },
     {
-      id: topContents.rovers.id,
+      path: "/",
       label: topContents.rovers.title,
     },
     {
-      id: topContents.news.id,
+      path: "/",
       label: topContents.news.title,
-    },
-    {
-      id: topContents.contact.id,
-      label: topContents.contact.title,
     },
   ],
 };

@@ -17,12 +17,12 @@ const Home: NextPage = () => {
       <Section
         id={contents.team.id}
         title={contents.team.title}
-        className="flex flex-col gap-20"
+        className="flex flex-col gap-20 items-center"
       >
         <div className="flex flex-col justify-center items-center gap-4">
           <img
-            src={contents.team.aresLogo.imagePath}
-            alt={contents.team.aresLogo.label}
+            src="/images/ares_logo_white.png"
+            alt="ARES"
             className="w-4/5 md:w-1/5"
           />
           <Paragraph className="md:w-3/5 md:text-center">
@@ -45,6 +45,10 @@ const Home: NextPage = () => {
             </div>
           </div>
         ))}
+        <MainButton
+          url={contents.team.button.url}
+          label={contents.team.button.label}
+        />
       </Section>
       <Section id={contents.urc.id} title={contents.urc.title}>
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
@@ -71,7 +75,7 @@ const Home: NextPage = () => {
           <MainButton label={contents.rovers.button.label} />
         </div>
       </Section>
-      <Section
+      {/* <Section
         id={contents.news.id}
         title={contents.news.title}
         className="flex flex-col items-center"
@@ -84,17 +88,13 @@ const Home: NextPage = () => {
             title={newsContent.title}
           />
         ))}
-      </Section>
+      </Section> */}
       <footer className="w-full bg-black flex flex-col items-center py-10">
-        <h3 className="text-sm font-light">{contents.sponsor.title}</h3>
-        <div className="flex justify-center">
+        <div className="flex flex-col md:flex-row justify-center gap-8 p-8">
           {contents.sponsor.sponsors.map((sponsor, index) => (
-            <img
-              key={index}
-              src={sponsor.imagePath}
-              alt={sponsor.name}
-              className="w-full md:max-w-sm"
-            />
+            <div key={index} className="w-full max-w-sm md:max-w-sm flex items-center">
+              <img src={sponsor.imagePath} alt={sponsor.name} />
+            </div>
           ))}
         </div>
         <h3 className="mb-4">クラウドファンディングで支援いただいた方々</h3>

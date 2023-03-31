@@ -9,7 +9,7 @@ const MainButton: NextPage<{ url?: string; label?: string }> = ({
     <a
       href={url}
       css={styles.button}
-      className="inline-block relative overflow-hidden text-xs md:text-base py-3 md:py-4 px-6 md:px-16 text-white cursor-pointer border border-white duration-500 hover:text-main-bg"
+      className="inline-block relative overflow-hidden w-fit text-xs md:text-base py-3 md:py-4 px-6 md:px-16 text-white text-center cursor-pointer border border-white duration-500 hover:text-main-bg max-w-xs"
     >
       <span className="relative">{label}</span>
     </a>
