@@ -30,18 +30,13 @@ const Card: NextPage<Props> = ({ id, title, imagePath, children }) => {
   return (
     <div
       onClick={onClickCard}
-      className={
-        "rounded-md " +
-        (isActive ? "w-3/4" : "max-w-xl max-h-[460px] bg-indigo-400")
-      }
+      className={isActive ? "w-3/4" : "max-w-lg max-h-[460px]"}
     >
-      <div className="overflow-hidden ">
+      <div
+        className={`w-full h-80 rounded-md overflow-hidde bg-[url('/images/keio_members.jpg')] bg-cover`}
+      >
         <h4>{title}</h4>
-        <img
-          src={imagePath}
-          alt={title}
-          className="object-cover overflow-hidden"
-        />
+        {/* <img src={imagePath} alt={title} className="object-cover" /> */}
       </div>
       {isActive ? <div>{children}</div> : undefined}
     </div>

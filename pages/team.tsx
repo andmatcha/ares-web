@@ -3,12 +3,11 @@ import { NextPage } from "next";
 import Layout from "../components/layouts/Layout";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Card from "../components/objects/molecules/Card";
-import contents from "../contents/team";
 import topContents from "../contents/top";
 
 const Team: NextPage = () => {
   return (
-    <Layout title={contents.title} needTopSpace>
+    <Layout title="チーム紹介" needTopSpace>
       <h2 className=" text-3xl">OUR TEAM</h2>
       <div>
         <h3>東北班</h3>
