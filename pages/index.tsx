@@ -89,7 +89,7 @@ const Home: NextPage = () => {
         ))}
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-8">
           {contents.sponsor.sponsors.map((sponsor, index) => (
             <div key={index} className="w-full md:max-w-sm flex items-center">
               <img src={sponsor.imagePath} alt={sponsor.name} />

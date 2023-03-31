@@ -51,11 +51,15 @@ const topContents = {
     sponsors: [
       {
         name: "ABLab",
-        imagePath: "/images/ABLab_logo_white(black)_sq.png",
+        imagePath: "/images/brand_marks/ablab.png",
       },
       {
         name: "マブチモーター",
-        imagePath: "/images/mabuchi_logo.png",
+        imagePath: "/images/brand_marks/mabuchi.png",
+      },
+      {
+        name: "工機ホールディングス",
+        imagePath: "/images/brand_marks/hikoki.jpg",
       },
     ],
   },
