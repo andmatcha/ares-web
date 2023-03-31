@@ -105,16 +105,16 @@ const Home: NextPage = () => {
           ご支援ありがとうございました!
         </h3>
         <div className="flex justify-center items-center gap-4 py-4">
-          <div className="flex flex-col justify-center items-center gap-2 p-4">
+          <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
             <h4 className="text-sm">支援者数</h4>
-            <p className="text-5xl font-bold">37</p>
+            <p className="text-4xl md:text-5xl font-bold">37</p>
           </div>
-          <div className="flex flex-col justify-center items-center gap-2 p-4">
+          <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
             <h4 className="text-sm">支援総額</h4>
-            <p className="text-5xl font-bold">¥230,500</p>
+            <p className="text-4xl md:text-5xl font-bold">¥230,500</p>
           </div>
         </div>
-        <ul className="flex gap-2 flex-wrap px-32 text-sm pb-4 justify-center">
+        <ul className="flex gap-2 flex-wrap px-4 md:px-32 text-sm pb-4 justify-center">
           {supporters.map((supporter, i) => (
             <>
               <li key={i} className="inline-block">
