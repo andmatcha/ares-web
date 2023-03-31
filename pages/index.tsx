@@ -9,6 +9,7 @@ import dayjs from "dayjs";
 import contents from "../contents/top";
 import newsContents from "../contents/news";
 import supporters from "../contents/supporters";
+import { spawn } from "child_process";
 
 const Home: NextPage = () => {
   return (
@@ -92,16 +93,39 @@ const Home: NextPage = () => {
       <footer className="w-full bg-black flex flex-col items-center py-10">
         <div className="flex flex-col md:flex-row justify-center gap-8 p-8">
           {contents.sponsor.sponsors.map((sponsor, index) => (
-            <div key={index} className="w-full max-w-sm md:max-w-sm flex items-center">
+            <div
+              key={index}
+              className="w-full max-w-sm md:max-w-sm flex items-center"
+            >
               <img src={sponsor.imagePath} alt={sponsor.name} />
             </div>
           ))}
         </div>
-        <h3 className="mb-4">クラウドファンディングで支援いただいた方々</h3>
-        <ul className="flex gap-4 flex-wrap px-32">
+        <h3 className="mb-4 text-xl pt-10 pb-4">
+          ご支援ありがとうございました!
+        </h3>
+        <div className="flex justify-center items-center gap-4 py-4">
+          <div className="flex flex-col justify-center items-center gap-2 p-4">
+            <h4 className="text-sm">支援者数</h4>
+            <p className="text-5xl font-bold">37</p>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-2 p-4">
+            <h4 className="text-sm">支援総額</h4>
+            <p className="text-5xl font-bold">¥230,500</p>
+          </div>
+        </div>
+        <ul className="flex gap-2 flex-wrap px-32 text-sm pb-4 justify-center">
           {supporters.map((supporter, i) => (
-            <li key={i} className="inline-block">{supporter}</li>
+            <>
+              <li key={i} className="inline-block">
+                {supporter} 様
+              </li>
+              {i + 1 < supporters.length ? (
+                <span className=" text-gray-600">/</span>
+              ) : undefined}
+            </>
           ))}
+          <span className="text-sm">他</span>
         </ul>
       </footer>
       <Section id={contents.contact.id} title={contents.contact.title}>
