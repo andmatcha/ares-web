@@ -55,7 +55,7 @@ const topContents = {
       },
       {
         name: "マブチモーター",
-        imagePath: "/images/brand_marks/mabuchi.png",
+        imagePath: "/images/brand_marks/mabuchi.jpg",
       },
       {
         name: "工機ホールディングス",
