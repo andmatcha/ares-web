@@ -5,7 +5,7 @@ const MainVisual: NextPage = () => {
     <div className="relative min-h-screen">
       <div className="absolute top-0 left-0 w-full h-full flex">
         <img
-          src="/images/sample_rover1.jpg"
+          src="/images/ares4.jpg"
           alt=""
           className="w-full object-cover"
         />
