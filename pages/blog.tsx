@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
-const Team: NextPage = () => {
+const Blog: NextPage = () => {
   return <div>coming soon...</div>;
 };
 
-export default Team;
+export default Blog;
