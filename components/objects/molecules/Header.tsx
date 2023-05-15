@@ -7,8 +7,8 @@ const Header = () => {
       <Link href="/">
         <h1 className="text-lg h-16 flex gap-2 items-center cursor-pointer">
           <img
-            src={contents.aresLogo.imagePath}
-            alt={contents.aresLogo.label}
+            src="/images/ares_logo_white.png"
+            alt="ARES"
             className="h-3/4 md:h-full object-contain"
           />
         </h1>

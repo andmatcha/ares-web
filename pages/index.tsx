@@ -4,12 +4,12 @@ import MainVisual from "../components/objects/organisms/MainVisual";
 import Section from "../components/objects/molecules/Section";
 import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
-import contents from "../contents/top";
 import supporters from "../contents/supporters";
+import sponsors from "../contents/sponsors";
 
 const Home: NextPage = () => {
   return (
-    <Layout title={contents.title}>
+    <Layout title="ARES Project">
       <MainVisual />
       <Section
         id="team"
@@ -48,39 +48,37 @@ const Home: NextPage = () => {
             </Paragraph>
           </div>
         </div>
-        <MainButton
-          url={contents.team.button.url}
-          label={contents.team.button.label}
-        />
+        <MainButton url="/team" label="SEE MORE" />
       </Section>
-      <Section id={contents.urc.id} title={contents.urc.title}>
+      <Section id="urc" title="WHAT'S URC?">
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
-          <img src={contents.urc.imagePath} alt="" className="md:w-[48%]" />
+          <img src="/images/mars1.png" alt="" className="md:w-[48%]" />
           <Paragraph className="md:w-[48%]">
-            {contents.urc.paragraph}
+            University Rover
+            Challengeは大学生を対象とした世界最高峰のロボット工学コンテストです。URCは、毎年米国ユタ州南部の砂漠で開催され、それぞれのチームが、火星を調査する宇宙飛行士と一緒に働く次世代の火星探査機の設計と製作に挑戦しています。
             <br />
             <a
-              href={contents.urc.urcOfficial.url}
+              href="https://urc.marssociety.org/"
               className="w-full text-left text-xs text-ares-red"
             >
-              {contents.urc.urcOfficial.label}
+              URC公式サイト
             </a>
           </Paragraph>
         </div>
       </Section>
-      <Section id={contents.rovers.id} title={contents.rovers.title}>
+      <Section id="rovers" title="ROVERS">
         <div className="flex flex-col items-center gap-8">
           <img
-            src={contents.rovers.imagePath}
+            src="/images/kabuto_cad.gif"
             alt=""
             className="w-full max-w-xs md:max-w-lg"
           />
-          <MainButton label={contents.rovers.button.label} />
+          <MainButton label="SEE OUR ROVERS" />
         </div>
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">
         <div className="flex flex-col md:flex-row justify-center gap-8 p-8">
-          {contents.sponsor.sponsors.map((sponsor, index) => (
+          {sponsors.map((sponsor, index) => (
             <div
               key={index}
               className="w-full max-w-sm md:max-w-sm flex items-center"
@@ -116,9 +114,9 @@ const Home: NextPage = () => {
           <span className="text-sm">他</span>
         </ul>
       </footer>
-      <Section id={contents.contact.id} title={contents.contact.title}>
+      <Section id="contact" title="FOLLOW US!">
         <p className="text-center  text-sm md:text-base">
-          {contents.contact.paragraph}
+          ↓日々の活動の様子や最新情報を発信しています↓
         </p>
         <div className="max-w-2xl mx-auto mt-5">
           <a

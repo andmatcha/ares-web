@@ -1,27 +1,22 @@
 import globalContents from "./global";
-import topContents from "./top";
 
 const headerContents = {
-  aresLogo: {
-    label: globalContents.aresLogoWhite.label,
-    imagePath: globalContents.aresLogoWhite.imagePath,
-  },
   menu: [
     {
       path: "/team",
-      label: topContents.team.title,
+      label: "TEAM",
     },
     {
       path: "/",
-      label: topContents.urc.title,
+      label: "WHAT'S URC?",
     },
     {
       path: "/",
-      label: topContents.rovers.title,
+      label: "ROVERS",
     },
     {
       path: "/",
-      label: topContents.news.title,
+      label: "BLOG",
     },
   ],
 };
