@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import contents from "../../../contents/header";
 
 const Header = () => {

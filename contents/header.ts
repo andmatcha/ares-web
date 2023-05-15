@@ -1,5 +1,3 @@
-import globalContents from "./global";
-
 const headerContents = {
   menu: [
     {
