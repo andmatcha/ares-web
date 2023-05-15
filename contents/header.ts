@@ -5,15 +5,11 @@ const headerContents = {
       label: "TEAM",
     },
     {
-      path: "/",
-      label: "WHAT'S URC?",
-    },
-    {
-      path: "/",
+      path: "/rover",
       label: "ROVERS",
     },
     {
-      path: "/",
+      path: "/blog",
       label: "BLOG",
     },
   ],
