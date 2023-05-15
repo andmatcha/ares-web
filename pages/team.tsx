@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 const Team: NextPage = () => {
-  return <div></div>;
+  return <div>coming soon...</div>;
 };
 
 export default Team;
