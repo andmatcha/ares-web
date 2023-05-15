@@ -5,8 +5,8 @@ import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
 import MainVisual from "../components/objects/organisms/MainVisual";
-import sponsors from "../contents/sponsors";
-import supporters from "../contents/supporters";
+import sponsors from "../const/sponsors";
+import supporters from "../const/supporters";
 
 const Home: NextPage = () => {
   return (
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
             alt=""
             className="w-full max-w-xs md:max-w-lg"
           />
-          <MainButton label="SEE OUR ROVERS" />
+          <MainButton url="/rover" label="SEE OUR ROVERS" />
         </div>
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">

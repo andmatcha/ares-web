@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import contents from "../../../contents/header";
+import contents from "../../../const/header";
 
 const Header = () => {
   return (
