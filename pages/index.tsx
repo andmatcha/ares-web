@@ -4,8 +4,8 @@ import Layout from "../components/layouts/Layout";
 import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
+import SponsorArea from "../components/objects/molecules/SponsorArea";
 import MainVisual from "../components/objects/organisms/MainVisual";
-import sponsors from "../const/sponsors";
 import supporters from "../const/supporters";
 import URL from "../const/url";
 
@@ -13,6 +13,7 @@ const Home: NextPage = () => {
   return (
     <Layout title="ARES Project">
       <MainVisual />
+      <SponsorArea />
       <Section
         id="team"
         title="TEAM"
@@ -79,16 +80,7 @@ const Home: NextPage = () => {
         </div>
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">
-        <div className="flex flex-col md:flex-row justify-center gap-8 p-8">
-          {sponsors.map((sponsor, index) => (
-            <div
-              key={index}
-              className="w-full max-w-sm md:max-w-sm flex items-center"
-            >
-              <img src={sponsor.imagePath} alt={sponsor.name} />
-            </div>
-          ))}
-        </div>
+        <SponsorArea />
         <h3 className="mb-4 text-xl pt-10 pb-4">
           ご支援ありがとうございました!
         </h3>
