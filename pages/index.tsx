@@ -6,7 +6,6 @@ import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
 import SponsorArea from "../components/objects/molecules/SponsorArea";
 import MainVisual from "../components/objects/organisms/MainVisual";
-import sponsors from "../const/sponsors";
 import supporters from "../const/supporters";
 import URL from "../const/url";
 
