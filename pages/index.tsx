@@ -3,21 +3,17 @@ import Layout from "../components/layouts/Layout";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import Section from "../components/objects/molecules/Section";
 import MainButton from "../components/objects/atoms/MainButton";
-import NewsRow from "../components/objects/molecules/NewsRow";
 import Paragraph from "../components/objects/atoms/Paragraph";
-import dayjs from "dayjs";
 import contents from "../contents/top";
-import newsContents from "../contents/news";
 import supporters from "../contents/supporters";
-import { spawn } from "child_process";
 
 const Home: NextPage = () => {
   return (
     <Layout title={contents.title}>
       <MainVisual />
       <Section
-        id={contents.team.id}
-        title={contents.team.title}
+        id="team"
+        title="TEAM"
         className="flex flex-col gap-20 items-center"
       >
         <div className="flex flex-col justify-center items-center gap-4">
@@ -27,25 +23,31 @@ const Home: NextPage = () => {
             className="w-4/5 md:w-1/5"
           />
           <Paragraph className="md:w-3/5 md:text-center">
-            {contents.team.paragraph}
+            URCの日本初の出場を目指して活動している学生団体です。2022年2月に現在の幹部3人から発足しました。現在のメンバーは慶應、東北、東大、筑波の学生で構成されており、慶應と東北を活動拠点として活動しています。
           </Paragraph>
         </div>
-        {contents.team.branches.map((branch, index) => (
-          <div
-            key={index}
-            className={`flex ${
-              index % 2 === 0
-                ? "flex-col md:flex-row"
-                : "flex-col md:flex-row-reverse"
-            } justify-center items-center gap-4 md:gap-[10%]`}
-          >
-            <img src={branch.imagePath} alt="" className="md:w-[45%]" />
-            <div className="md:w-[45%]">
-              <h4 className="text-2xl">{branch.title}</h4>
-              <Paragraph>{branch.paragraph}</Paragraph>
-            </div>
+        <div
+          className={`flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]`}
+        >
+          <img src="/images/keio_members.jpg" alt="" className="md:w-[45%]" />
+          <div className="md:w-[45%]">
+            <h4 className="text-2xl">東京班</h4>
+            <Paragraph>
+              東京班は主にアームの設計を行っています。この大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるためアームは重要な役割を果たします。
+            </Paragraph>
           </div>
-        ))}
+        </div>
+        <div
+          className={`flex flex-col md:flex-row-reverse justify-center items-center gap-4 md:gap-[10%]`}
+        >
+          <img src="/images/tohoku_members.jpg" alt="" className="md:w-[45%]" />
+          <div className="md:w-[45%]">
+            <h4 className="text-2xl">東北班</h4>
+            <Paragraph>
+              東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています。
+            </Paragraph>
+          </div>
+        </div>
         <MainButton
           url={contents.team.button.url}
           label={contents.team.button.label}
@@ -76,20 +78,6 @@ const Home: NextPage = () => {
           <MainButton label={contents.rovers.button.label} />
         </div>
       </Section>
-      {/* <Section
-        id={contents.news.id}
-        title={contents.news.title}
-        className="flex flex-col items-center"
-      >
-        {newsContents.map((newsContent, index) => (
-          <NewsRow
-            key={index}
-            date={dayjs(newsContent.date)}
-            tag={newsContent.tag}
-            title={newsContent.title}
-          />
-        ))}
-      </Section> */}
       <footer className="w-full bg-black flex flex-col items-center py-10">
         <div className="flex flex-col md:flex-row justify-center gap-8 p-8">
           {contents.sponsor.sponsors.map((sponsor, index) => (
