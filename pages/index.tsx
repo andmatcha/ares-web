@@ -7,6 +7,7 @@ import Section from "../components/objects/molecules/Section";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import sponsors from "../const/sponsors";
 import supporters from "../const/supporters";
+import URL from "../const/url";
 
 const Home: NextPage = () => {
   return (
@@ -49,7 +50,7 @@ const Home: NextPage = () => {
             </Paragraph>
           </div>
         </div>
-        <MainButton url="/team" label="SEE MORE" />
+        <MainButton url={URL.team} label="SEE MORE" />
       </Section>
       <Section id="urc" title="WHAT'S URC?">
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
@@ -59,7 +60,7 @@ const Home: NextPage = () => {
             Challengeは大学生を対象とした世界最高峰のロボット工学コンテストです。URCは、毎年米国ユタ州南部の砂漠で開催され、それぞれのチームが、火星を調査する宇宙飛行士と一緒に働く次世代の火星探査機の設計と製作に挑戦しています。
             <br />
             <a
-              href="https://urc.marssociety.org/"
+              href={URL.urc_official}
               className="w-full text-left text-xs text-ares-red"
             >
               URC公式サイト
@@ -74,7 +75,7 @@ const Home: NextPage = () => {
             alt=""
             className="w-full max-w-xs md:max-w-lg"
           />
-          <MainButton url="/rover" label="SEE OUR ROVERS" />
+          <MainButton url={URL.rover} label="SEE OUR ROVERS" />
         </div>
       </Section>
       <footer className="w-full bg-black flex flex-col items-center py-10">

@@ -1,15 +1,17 @@
+import URL from "./url";
+
 const headerContents = {
   menu: [
     {
-      path: "/team",
+      path: URL.team,
       label: "TEAM",
     },
     {
-      path: "/rover",
+      path: URL.rover,
       label: "ROVERS",
     },
     {
-      path: "/blog",
+      path: URL.blog,
       label: "BLOG",
     },
   ],
