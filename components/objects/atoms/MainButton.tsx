@@ -1,5 +1,5 @@
-import { NextPage } from "next";
 import { css } from "@emotion/react";
+import { NextPage } from "next";
 
 const MainButton: NextPage<{ url?: string; label?: string }> = ({
   url,
