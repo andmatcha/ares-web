@@ -5,7 +5,7 @@ const teamContents = {
       title: "機構班",
       imagePath: "/images/keio_members.jpg",
       paragraph:
-        "班の説明。",
+        "班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。",
       members: [
         {
           imagePath: "/images/arm1.png",
@@ -18,6 +18,34 @@ const teamContents = {
         {
           imagePath: "/images/arm3.png",
           name: "cccさん"
+        },
+        {
+          imagePath: "/images/arm3.png",
+          name: "dddさん"
+        },
+        {
+          imagePath: "/images/arm3.png",
+          name: "eeeさん"
+        },
+        {
+          imagePath: "/images/arm3.png",
+          name: "eeeさん"
+        },
+        {
+          imagePath: "/images/arm3.png",
+          name: "eeeさん"
+        },
+        {
+          imagePath: "/images/arm3.png",
+          name: "eeeさん"
+        },
+        {
+          imagePath: "/images/arm3.png",
+          name: "eeeさん"
+        },
+        {
+          imagePath: "/images/arm3.png",
+          name: "eeeさん"
         },
       ],
     },
