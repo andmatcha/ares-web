@@ -28,7 +28,7 @@ const Team: NextPage = () => {
         </div>
         {teamContents.branches.map((branch, index) => (
           <div key={index}>
-            {branch.title}
+            <p className="text-2xl font-bold ">{branch.title}</p>
             <div className="flex justify-center gap-20 m-10">
               <img
                 src={branch.imagePath}
@@ -37,18 +37,17 @@ const Team: NextPage = () => {
               />
               {branch.paragraph}
             </div>
-            <div className="flex justify-center gap-20">
+            <p>メンバー紹介</p>
+            <div className="grid grid-cols-4 gap-20 m-10">
               {branch.members.map((member, memberIndex) => (
                 <div
                   key={memberIndex}
-                  className={`flex justify-center items-center gap-4 md:gap-[10%]`}
+                  className={`flex justify-center items-center `}
                 >
-                  {Array.from({ length: 4 }).map((_, index) => (
-                    <div key={index}>
-                      <img src={member.imagePath} alt="" className="w-90" />
-                      <div className="text-center">{member.name}</div>
-                    </div>
-                  ))}
+                  <div key={index}>
+                    <img src={member.imagePath} alt="" />
+                    <div className="text-center">{member.name}</div>
+                  </div>
                 </div>
               ))}
             </div>

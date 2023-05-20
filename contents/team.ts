@@ -29,23 +29,23 @@ const teamContents = {
         },
         {
           imagePath: "/images/arm3.png",
-          name: "eeeさん"
+          name: "fffさん"
         },
         {
           imagePath: "/images/arm3.png",
-          name: "eeeさん"
+          name: "gggさん"
         },
         {
           imagePath: "/images/arm3.png",
-          name: "eeeさん"
+          name: "hhhさん"
         },
         {
           imagePath: "/images/arm3.png",
-          name: "eeeさん"
+          name: "iiiさん"
         },
         {
           imagePath: "/images/arm3.png",
-          name: "eeeさん"
+          name: "llllさん"
         },
       ],
     },
