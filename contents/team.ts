@@ -1,5 +1,5 @@
 const teamContents = {
-  title: "チーム紹介",
+  title: "ROLE",
   branches: [
     {
       title: "機構班",
@@ -50,10 +50,10 @@ const teamContents = {
       ],
     },
     {
-      title: "東北班",
+      title: "制御班",
       imagePath: "/images/tohoku_members.jpg",
       paragraph:
-        "東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています。",
+        "制御します！！！！制御します！！！！制御します！！！！制御します！！！！制御します！！！！",
       members: [
         {
           imagePath: "/images/arm1.png",

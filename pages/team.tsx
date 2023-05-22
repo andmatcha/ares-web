@@ -8,33 +8,45 @@ import teamContents from "../contents/team";
 
 const Team: NextPage = () => {
   return (
-    <Layout title={contents.title}>
-      <div className="w-full h-20"></div>
+    <Layout title={topContents.title}>
+      {/* <div className="w-full h-20"></div> */}
       <Section
-        id={teamContents.title}
-        title={teamContents.title}
-        className="flex flex-col gap-20"
+        id={topContents.title}
+        title={topContents.title}
+        className="flex flex-col gap-20 items-center"
       >
         <div className="flex flex-col justify-center items-center gap-4">
           <img
             src="/images/keio_members.jpg"
             alt="ARES"
-            className="w-1/6 md:w-3/5"
+            className="md:w-[45%]"
           />
           <Paragraph className="md:w-3/5 md:text-center">
-            {/* {topContents.team.paragraph} */}
-            texttexttexttexttexttexttextt exttexttexttexttexttexttext
+            {topContents.team.paragraph}
           </Paragraph>
         </div>
+
+        <p className="text-3xl font-bold text-center border-t w-full p-10">
+          {topContents.team.title}
+        </p>
+        {topContents.team.branches.map((branch, index) => (
+          <div key={index}>
+            <p className="text-2xl font-bold">{branch.title}</p>
+            <div className="flex md:flex-row justify-center items-center gap-4 md:gap-[10%] m-10">
+              <img src={branch.imagePath} className="md:w-[45%]" alt="" />
+              {branch.paragraph}
+            </div>
+          </div>
+        ))}
+
+        <p className="text-3xl font-bold text-center border-t w-full p-10">
+          {teamContents.title}
+        </p>
         {teamContents.branches.map((branch, index) => (
           <div key={index}>
             <p className="text-2xl font-bold ">{branch.title}</p>
             <div className="flex justify-center gap-20 m-10">
-              <img
-                src={branch.imagePath}
-                className="object-cover w-1/3"
-                alt=""
-              />
+              <img src={branch.imagePath} className="md:w-[45%]" alt="" />
               {branch.paragraph}
             </div>
             <p>メンバー紹介</p>
