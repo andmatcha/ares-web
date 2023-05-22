@@ -5,7 +5,7 @@ import sponsors from "../../../const/sponsors";
 const SponsorArea: NextPage = () => {
   return (
     <div className="py-10 bg-black">
-      <div className="flex flex-wrap justify-center items-center gap-8 px-8">
+      <div className="flex flex-wrap justify-center items-center gap-12 px-8">
         {sponsors.map((sponsor, index) => (
           <div
             key={index}

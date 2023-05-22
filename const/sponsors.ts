@@ -11,6 +11,10 @@ const sponsors = [
     name: "マブチモーター",
     imagePath: "/images/brand_marks/mabuchi.jpg",
   },
+  {
+    name: "Mazak",
+    imagePath: "/images/brand_marks/mazak.png",
+  }
 ];
 
 export default sponsors;
