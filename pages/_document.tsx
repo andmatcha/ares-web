@@ -7,11 +7,11 @@ class MyDocument extends Document {
         <Head>
           {/* google fonts */}
           <link
-            href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap"
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
             rel="stylesheet"
           />
           <link

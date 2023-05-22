@@ -14,7 +14,7 @@ const Header = () => {
           />
         </h1>
       </Link>
-      <ul className="hidden md:flex items-center gap-10 text-xs">
+      <ul className="hidden md:flex items-center gap-10 text-xs font-display">
         {contents.menu.map((menuItem, index) => (
           <li
             key={index}

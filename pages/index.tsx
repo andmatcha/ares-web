@@ -14,6 +14,23 @@ const Home: NextPage = () => {
     <Layout title="ARES Project">
       <MainVisual />
       <SponsorArea />
+      <div className="px-8 py-10 bg-black flex flex-col md:flex-row justify-center items-center gap-4">
+        <img
+          src="/images/brand_marks/100banch.png"
+          alt="100BANCH"
+          className="w-80 h-80"
+        />
+        <p className="font-sans">
+          GARAGE Program第70期プロジェクト
+          <br />
+          <a
+            href={URL.hyaku_banch_project}
+            className="w-full text-left text-xs text-ares-red"
+          >
+            100BANCH プロジェクトページ
+          </a>
+        </p>
+      </div>
       <Section
         id="team"
         title="TEAM"
@@ -79,8 +96,8 @@ const Home: NextPage = () => {
           <MainButton url={URL.rover} label="SEE OUR ROVERS" />
         </div>
       </Section>
+      <SponsorArea />
       <footer className="w-full bg-black flex flex-col items-center py-10">
-        <SponsorArea />
         <h3 className="mb-4 text-xl pt-10 pb-4">
           ご支援ありがとうございました!
         </h3>
