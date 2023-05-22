@@ -9,7 +9,6 @@ import teamContents from "../contents/team";
 const Team: NextPage = () => {
   return (
     <Layout title={topContents.title}>
-      {/* <div className="w-full h-20"></div> */}
       <Section
         id={topContents.title}
         title={topContents.title}
