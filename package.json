@@ -12,6 +12,7 @@
     "@babel/core": "^7.0.0",
     "@emotion/babel-plugin": "^11.10.2",
     "@emotion/react": "^11.10.4",
+    "@types/react-slick": "^0.23.10",
     "dayjs": "^1.11.5",
     "destyle.css": "^3.0.2",
     "next": "12.3.1",
