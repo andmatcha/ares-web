@@ -9,5 +9,4 @@ export const mainImages = [
   { src: "/images/rovers/ares4.jpg", alt: "ARES4" },
   { src: "/images/group_photo1.png", alt: "ARES members" },
   { src: "/images/rovers/ares4_1.png", alt: "ARES4" },
-
 ];
