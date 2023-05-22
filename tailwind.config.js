@@ -17,9 +17,9 @@ module.exports = {
           '100%': { transform: 'translateY(0)', opacity: 0.4 },
         },
         'emerge1': {
-          '0%': {opacity: 0},
-          '20%': {opacity: 0},
-          '100%': {opacity:1}
+          '0%': { opacity: 0 },
+          '20%': { opacity: 0 },
+          '100%': { opacity: 1 }
         },
         'emerge2': {
           '0%': { opacity: 0 },
