@@ -1,17 +1,18 @@
 import type { NextPage } from "next";
 
+import { mainImages } from "../../../const/images";
+import Slide from "../atoms/Slide";
+
 const MainVisual: NextPage = () => {
   return (
-    <div className="relative min-h-screen">
-      <div className="absolute top-0 left-0 w-full h-full flex">
-        <img
-          src="/images/ares4.jpg"
-          alt=""
-          className="w-full object-cover"
-        />
-      </div>
+    <div className="relative h-screen">
+      <div className="h-20 md:h-0"></div>
+      <Slide
+        images={mainImages}
+        className="absolute top-0 left-0 w-full h-full overflow-hidden"
+      />
       <div className="absolute top-0 left-0 w-full h-full bg-main-bg/75">
-        <div className="w-full h-full flex flex-col justify-end gap-2 pl-2 md:pl-20 pb-[40vh] md:pb-20">
+        <div className="w-full h-full flex flex-col justify-end gap-2 pl-2 md:pl-20 pb-[30vh] md:pb-20">
           <h2 className="text-4xl md:text-6xl animate-[emerge1_3s_ease-out]">
             We are A<span className="text-red-600">R</span>ES.
           </h2>
