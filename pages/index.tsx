@@ -96,8 +96,8 @@ const Home: NextPage = () => {
           <MainButton url={URL.rover} label="SEE OUR ROVERS" />
         </div>
       </Section>
+      <SponsorArea />
       <footer className="w-full bg-black flex flex-col items-center py-10">
-        <SponsorArea />
         <h3 className="mb-4 text-xl pt-10 pb-4">
           ご支援ありがとうございました!
         </h3>
