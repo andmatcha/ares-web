@@ -9,9 +9,9 @@ const SponsorArea: NextPage = () => {
         {sponsors.map((sponsor, index) => (
           <div
             key={index}
-            className="w-full max-w-xs flex items-center"
+            className="w-64 flex items-center"
           >
-            <img src={sponsor.imagePath} alt={sponsor.name} />
+            <img src={sponsor.imagePath} alt={sponsor.name} className="w-full h-full object-contain" />
           </div>
         ))}
       </div>
