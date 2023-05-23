@@ -35,6 +35,13 @@ const Home: NextPage = () => {
           </a>
         </p>
       </div>
+      <div className="w-screen overflow-hidden">
+        <img
+          src="/images/rovers/ares4_wide.jpg"
+          alt="ARES4"
+          className="w-full object-cover"
+        />
+      </div>
       <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
         <div className="flex gap-8 justify-center items-center pb-4">
           <h3 className="text-4xl md:text-5xl leading-relaxed md:leading-relaxed tracking-wider">
@@ -50,7 +57,7 @@ const Home: NextPage = () => {
           </Paragraph>
         </div>
         <div ref={ref} className="flex justify-center items-center gap-10 pb-4">
-          <div className="flex flex-col justify-center items-center gap-2 font-display">
+          <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
             <div className="text-4xl md:text-6xl flex items-center justify-center">
               <div className="w-28 flex justify-end">
                 <CountUp active={inView} from={0} to={30} time={1200} />
@@ -59,7 +66,7 @@ const Home: NextPage = () => {
             </div>
             <span className="text-sm">members</span>
           </div>
-          <div className="flex flex-col justify-center items-center gap-2 font-display">
+          <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
             <div className="text-4xl md:text-6xl flex items-center justify-center">
               <div className="w-28 flex justify-end">
                 <CountUp active={inView} from={0} to={40} time={1600} />
