@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
+import { useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layouts/Layout";
+import CountUp from "../components/objects/atoms/CountUp";
 import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
@@ -10,6 +13,7 @@ import supporters from "../const/supporters";
 import URL from "../const/url";
 
 const Home: NextPage = () => {
+  const { ref, inView } = useInView({ delay: 800 });
   return (
     <Layout title="ARES Project">
       <MainVisual />
@@ -31,20 +35,39 @@ const Home: NextPage = () => {
           </a>
         </p>
       </div>
-      <Section
-        id="team"
-        title="TEAM"
-        className="flex flex-col gap-20 items-center"
-      >
-        <div className="flex flex-col justify-center items-center gap-4">
-          <img
-            src="/images/ares_logo_white.png"
-            alt="ARES"
-            className="w-4/5 md:w-1/5"
-          />
-          <Paragraph className="md:w-3/5 md:text-center">
-            URCの日本初の出場を目指して活動している学生団体です。2022年2月に現在の幹部3人から発足しました。現在のメンバーは慶應、東北、東大、筑波の学生で構成されており、慶應と東北を活動拠点として活動しています。
+      <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
+        <div className="flex gap-8 justify-center items-center pb-4">
+          <h3 className="text-4xl md:text-5xl leading-relaxed md:leading-relaxed tracking-wider">
+            ARES
+            <br />
+            Project
+            <br />
+            とは？
+          </h3>
+          <Paragraph className="w-3/5 md:text-center">
+            火星探査機の学生世界大会 “University Rover Challenge (URC)”
+            へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
           </Paragraph>
+        </div>
+        <div ref={ref} className="flex justify-center items-center gap-10 pb-4">
+          <div className="flex flex-col justify-center items-center gap-2 font-display">
+            <div className="text-4xl md:text-6xl flex items-center justify-center">
+              <div className="w-28 flex justify-end">
+                <CountUp active={inView} from={0} to={30} time={1200} />
+              </div>
+              +
+            </div>
+            <span className="text-sm">members</span>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-2 font-display">
+            <div className="text-4xl md:text-6xl flex items-center justify-center">
+              <div className="w-28 flex justify-end">
+                <CountUp active={inView} from={0} to={40} time={1600} />
+              </div>
+              +
+            </div>
+            <span className="text-sm">patrons</span>
+          </div>
         </div>
         <div
           className={`flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]`}
@@ -69,7 +92,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <MainButton url={URL.team} label="SEE MORE" />
-      </Section>
+      </section>
       <Section id="urc" title="WHAT'S URC?">
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
           <img src="/images/mars1.png" alt="" className="md:w-[48%]" />
