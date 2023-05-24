@@ -139,7 +139,7 @@ const Home: NextPage = () => {
         </div>
       </FadeIn>
       <div className="flex flex-col justify-center items-center px-2 md:px-[10%]">
-        <h2 className="text-4xl">NEWS</h2>
+        <h2 className="text-4xl pb-4">NEWS</h2>
         <div className="w-full flex flex-col justify-center gap-4">
           {articles.map((article) => (
             <ArticleCard key={article.id} articleOverview={article} />

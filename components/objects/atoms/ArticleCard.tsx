@@ -17,7 +17,7 @@ const ArticleCard: NextPage<Props> = ({
     return description;
   };
   return (
-    <div className="w-full md:h-56 flex flex-col md:flex-row gap-2 md:gap-8 px-[10%] md:px-8 py-8">
+    <div className="w-full md:h-56 flex flex-col md:flex-row gap-2 md:gap-8 px-[10%] md:px-8 py-8 hover:bg-[#1f1f1f] duration-500">
       <div className="w-full md:w-1/4">
         <img src={thumbnail} alt="" className="w-full h-full object-contain" />
       </div>
