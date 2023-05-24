@@ -13,7 +13,8 @@ import supporters from "../const/supporters";
 import URL from "../const/url";
 
 const Home: NextPage = () => {
-  const { ref, inView } = useInView({ delay: 800 });
+  const { ref: teamRef, inView: teamInView } = useInView({ delay: 800 });
+  const { ref: fundingRef, inView: fundingInView } = useInView({ delay: 800 });
   return (
     <Layout title="ARES Project">
       <MainVisual />
@@ -56,11 +57,14 @@ const Home: NextPage = () => {
             へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
           </Paragraph>
         </div>
-        <div ref={ref} className="flex justify-center items-center gap-10 pb-4">
+        <div
+          ref={teamRef}
+          className="flex justify-center items-center gap-10 pb-4"
+        >
           <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
             <div className="text-4xl md:text-6xl flex items-center justify-center">
               <div className="w-28 flex justify-end">
-                <CountUp active={inView} from={0} to={30} time={1200} />
+                <CountUp active={teamInView} from={0} to={30} time={1200} />
               </div>
               +
             </div>
@@ -69,7 +73,7 @@ const Home: NextPage = () => {
           <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
             <div className="text-4xl md:text-6xl flex items-center justify-center">
               <div className="w-28 flex justify-end">
-                <CountUp active={inView} from={0} to={40} time={1600} />
+                <CountUp active={teamInView} from={0} to={40} time={1600} />
               </div>
               +
             </div>
@@ -127,18 +131,26 @@ const Home: NextPage = () => {
         </div>
       </Section>
       <SponsorArea />
-      <footer className="w-full bg-black flex flex-col items-center py-10">
+      <footer
+        ref={fundingRef}
+        className="w-full bg-black flex flex-col items-center py-10"
+      >
         <h3 className="mb-4 text-xl pt-10 pb-4">
           ご支援ありがとうございました!
         </h3>
         <div className="flex justify-center items-center gap-4 py-4">
           <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
             <h4 className="text-sm">支援者数</h4>
-            <p className="text-4xl md:text-5xl font-bold">37</p>
+            <p className="w-16 md:w-20 text-center text-4xl md:text-5xl font-display">
+              <CountUp active={fundingInView} to={37} time={1000} />
+            </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
             <h4 className="text-sm">支援総額</h4>
-            <p className="text-4xl md:text-5xl font-bold">¥230,500</p>
+            <p className="w-64 text-4xl md:text-5xl font-display">
+              ¥<CountUp active={fundingInView} from={190} to={230} time={1000} />,
+              <CountUp active={fundingInView} from={450} to={500} time={1500} />
+            </p>
           </div>
         </div>
         <ul className="flex gap-2 flex-wrap px-4 md:px-32 text-sm pb-4 justify-center">
