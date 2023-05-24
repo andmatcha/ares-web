@@ -35,9 +35,14 @@ module.exports = {
           '80%': { opacity: 0 },
           '100%': { opacity: 1 }
         },
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 }
+        },
       },
       animation: {
         'arrow-up-down': 'up-down 5s infinite',
+        'fade-in': 'fade-in 1s ease-in',
       },
     },
   },
