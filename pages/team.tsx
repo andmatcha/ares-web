@@ -5,6 +5,7 @@ import Section from "../components/objects/molecules/Section";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import topContents from "../contents/top";
 import teamContents from "../contents/team";
+import LeaderContents from "../contents/leader";
 
 const Team: NextPage = () => {
   return (
@@ -25,6 +26,24 @@ const Team: NextPage = () => {
           </Paragraph>
         </div>
 
+        {/* leader */}
+        <p className="text-3xl font-bold text-center border-t w-full p-10">
+          {LeaderContents.title}
+        </p>
+        {LeaderContents.leaders.map((leader, index) => (
+          <div key={index}>
+            <div className="flex justify-center gap-20 m-10">
+              <img src={leader.imagePath} className="md:w-[30%] object-contain w-1/4 h-1/4" alt="" />
+              <div >
+              <p className="text-xl">{leader.role}</p>
+              <p className="text-2xl font-bold m-3 mb-10">{leader.name}</p>
+                {leader.detail}
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* team */}
         <p className="text-3xl font-bold text-center border-t w-full p-10">
           {topContents.team.title}
         </p>
@@ -38,6 +57,7 @@ const Team: NextPage = () => {
           </div>
         ))}
 
+        {/* role */}
         <p className="text-3xl font-bold text-center border-t w-full p-10">
           {teamContents.title}
         </p>
