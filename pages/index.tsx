@@ -20,12 +20,12 @@ const Home: NextPage = () => {
   const { ref: teamRef, inView: teamInView } = useInView({ delay: 800 });
   const { ref: fundingRef, inView: fundingInView } = useInView({ delay: 800 });
 
-  const sortArticles = () => {
+  const sortArticlesDec = () => {
     return articles.sort((a, b) => {
       return dayjs(a.date).isAfter(b.date) ? -1 : 1;
     });
   };
-  const sortedArticles = useMemo(() => sortArticles(), []);
+  const sortedArticles = useMemo(() => sortArticlesDec(), []);
 
   return (
     <Layout title="ARES Project">
@@ -150,7 +150,7 @@ const Home: NextPage = () => {
       <div className="flex flex-col justify-center items-center px-2 md:px-[10%]">
         <h2 className="text-4xl pb-4">NEWS</h2>
         <div className="w-full flex flex-col justify-center gap-4">
-          {articles.map((article) => (
+          {sortedArticles.map((article) => (
             <ArticleCard key={article.id} articleOverview={article} />
           ))}
         </div>
@@ -206,6 +206,14 @@ const Home: NextPage = () => {
           ))}
           <span className="text-sm">他</span>
         </ul>
+        <div className="w-full text-center">
+          <a
+            href={URL.campfire_project}
+            className="w-full text-left text-xs text-ares-red"
+          >
+            CAMPFIRE プロジェクトページ
+          </a>
+        </div>
       </footer>
       <Section id="contact" title="FOLLOW US!">
         <p className="text-center  text-sm md:text-base">
