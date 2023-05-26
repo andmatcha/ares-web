@@ -1,5 +1,6 @@
+import dayjs from "dayjs";
 import type { NextPage } from "next";
-import { useRef } from "react";
+import { useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layouts/Layout";
@@ -18,6 +19,14 @@ import URL from "../const/url";
 const Home: NextPage = () => {
   const { ref: teamRef, inView: teamInView } = useInView({ delay: 800 });
   const { ref: fundingRef, inView: fundingInView } = useInView({ delay: 800 });
+
+  const sortArticles = () => {
+    return articles.sort((a, b) => {
+      return dayjs(a.date).isAfter(b.date) ? -1 : 1;
+    });
+  };
+  const sortedArticles = useMemo(() => sortArticles(), []);
+
   return (
     <Layout title="ARES Project">
       <MainVisual />

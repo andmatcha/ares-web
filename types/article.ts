@@ -7,8 +7,6 @@ export type ArticleOverview = {
 };
 
 export type Article = ArticleOverview & {
-  createdAt: string;
-  updatedAt: string;
   author: string;
   type: string;
   tags: string[];
