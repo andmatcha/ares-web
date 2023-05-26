@@ -1,8 +1,10 @@
+import dayjs from "dayjs";
 import type { NextPage } from "next";
-import { useRef } from "react";
+import { useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layouts/Layout";
+import ArticleCard from "../components/objects/atoms/ArticleCard";
 import CountUp from "../components/objects/atoms/CountUp";
 import FadeIn from "../components/objects/atoms/FadeIn";
 import MainButton from "../components/objects/atoms/MainButton";
@@ -10,12 +12,21 @@ import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
 import SponsorArea from "../components/objects/molecules/SponsorArea";
 import MainVisual from "../components/objects/organisms/MainVisual";
+import { articles } from "../const/articles";
 import supporters from "../const/supporters";
 import URL from "../const/url";
 
 const Home: NextPage = () => {
   const { ref: teamRef, inView: teamInView } = useInView({ delay: 800 });
   const { ref: fundingRef, inView: fundingInView } = useInView({ delay: 800 });
+
+  const sortArticles = () => {
+    return articles.sort((a, b) => {
+      return dayjs(a.date).isAfter(b.date) ? -1 : 1;
+    });
+  };
+  const sortedArticles = useMemo(() => sortArticles(), []);
+
   return (
     <Layout title="ARES Project">
       <MainVisual />
@@ -136,6 +147,14 @@ const Home: NextPage = () => {
           </Paragraph>
         </div>
       </FadeIn>
+      <div className="flex flex-col justify-center items-center px-2 md:px-[10%]">
+        <h2 className="text-4xl pb-4">NEWS</h2>
+        <div className="w-full flex flex-col justify-center gap-4">
+          {articles.map((article) => (
+            <ArticleCard key={article.id} articleOverview={article} />
+          ))}
+        </div>
+      </div>
       <FadeIn
         as="section"
         className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg"
