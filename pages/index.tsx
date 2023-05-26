@@ -39,7 +39,7 @@ const Home: NextPage = () => {
           <img
             src="/images/brand_marks/100banch.png"
             alt="100BANCH"
-            className="w-80 h-80"
+            className="w-64 h-64"
           />
           <p className="font-sans">
             GARAGE Program第70期プロジェクト
