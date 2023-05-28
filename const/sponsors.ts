@@ -18,6 +18,10 @@ const sponsors = [
   {
     name: "MISUMI",
     imagePath: "/images/brand_marks/misumi.png",
+  },
+  {
+    name: "TELSTAR",
+    imagePath: "/images/brand_marks/telstar.jpg",
   }
 ];
 
