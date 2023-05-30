@@ -3,4 +3,5 @@ export type Member = {
   university: string;
   introduction: string;
   imagePath: string;
+  isLeader: boolean;
 };

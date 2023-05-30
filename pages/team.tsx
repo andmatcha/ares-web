@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { useMemo } from "react";
 
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
@@ -10,6 +11,9 @@ import SponsorArea from "../components/objects/molecules/SponsorArea";
 import { branches, infoSets, members, teamContents } from "../const/team";
 
 const Team: NextPage = () => {
+  const leaders = useMemo(() => {
+    return members.filter((member) => member.isLeader);
+  }, []);
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
       <div className="w-full relative">
@@ -64,7 +68,7 @@ const Team: NextPage = () => {
       </Section>
       <Section id="leaders" title="Leaders">
         <ul className="flex flex-col gap-10 w-full items-center">
-          {members.map((member, index) => (
+          {leaders.map((member, index) => (
             <FadeIn key={index}>
               <MemberIntro member={member} />
             </FadeIn>
