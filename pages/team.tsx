@@ -3,9 +3,10 @@ import { NextPage } from "next";
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
 import ListItem from "../components/objects/atoms/ListItem";
+import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
-import { infoSets } from "../const/team";
+import { branches, infoSets, members } from "../const/team";
 
 const Team: NextPage = () => {
   const teamContents = {
@@ -90,26 +91,38 @@ const Team: NextPage = () => {
           className="w-full object-cover opacity-40"
         />
         <div className="absolute top-0 left-0 w-full h-full md:px-40 flex justify-center md:justify-start items-center">
-          <h2 className="text-4xl md:text-6xl tracking-widest">Our Team</h2>
+          <h2 className="text-3xl md:text-6xl tracking-widest">Our Team</h2>
         </div>
       </div>
-      <Section id="team" className="flex flex-col gap-10 items-center">
+      <Section id="about" className="flex flex-col gap-10 items-center">
         <div className="flex justify-center items-center gap-4">
           <div className="w-28 md:w-40">
             <img
               src="/images/ares_logo_white.png"
-              alt="w-full object-contain"
+              alt=""
+              className="w-full object-contain"
             />
           </div>
           <h3 className="text-3xl md:text-4xl tracking-widest">ARES Project</h3>
         </div>
-        <Paragraph className="px-4 sm:px-20">
-          火星探査機の学生世界大会 “University Rover Challenge (URC)” および “European Rover Challenge (ERC)”
-          へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
-        </Paragraph>
-        <div className="w-full flex pb-10">
-          <div className="w-full">
-            <ul className="w-full px-2 sm:px-10 md:px-[10%] flex flex-col gap-4">
+        <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4">
+          <div className="md:w-2/5">
+            <img
+              src="/images/group_photo1.png"
+              alt=""
+              className="w-full object-contain"
+            />
+          </div>
+          <Paragraph className="md:w-3/5">
+            火星探査機の学生世界大会 “University Rover Challenge (URC)” および
+            “European Rover Challenge (ERC)”
+            へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
+          </Paragraph>
+        </div>
+        <div className="w-full flex">
+          <div className="w-full px-2 sm:px-10 md:px-[10%]">
+            <h4 className="text-lg md:text-xl pb-4">基本情報</h4>
+            <ul className="w-full flex flex-col gap-4">
               {infoSets.map((infoSet, index) => (
                 <ListItem
                   key={index}
@@ -120,33 +133,34 @@ const Team: NextPage = () => {
             </ul>
           </div>
         </div>
-        <FadeIn
-          options={{ rootMargin: "-20% 0px" }}
-          className={`flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]`}
-        >
-          <img src="/images/keio_members.jpg" alt="" className="md:w-[45%]" />
-          <div className="md:w-[45%]">
-            <h4 className="text-2xl">東京班</h4>
-            <Paragraph>
-              東京班は主にアームの設計を行っています。この大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるためアームは重要な役割を果たします。
-            </Paragraph>
-          </div>
-        </FadeIn>
-        <FadeIn
-          className={`flex flex-col md:flex-row-reverse justify-center items-center gap-4 md:gap-[10%]`}
-        >
-          <img src="/images/tohoku_members.jpg" alt="" className="md:w-[45%]" />
-          <div className="md:w-[45%]">
-            <h4 className="text-2xl">東北班</h4>
-            <Paragraph>
-              東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています。
-            </Paragraph>
-          </div>
-        </FadeIn>
+      </Section>
+      <Section id="leaders" title="Leaders">
+        <ul className="flex flex-col gap-10 w-full items-center">
+          {members.map((member, index) => (
+            <MemberIntro key={index} member={member} />
+          ))}
+        </ul>
+      </Section>
+      <Section id="branches" title="Branches">
+        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10">
+          {branches.map(({ name, description, imagePath }, index) => (
+            <div
+              key={index}
+              className="w-full lg:w-1/2 flex flex-wrap justify-center items-center gap-2 lg:gap-4 px-2"
+            >
+              <div>
+                <h4 className="text-xl lg:text-2xl pb-2">{name}</h4>
+                <Paragraph className="lg:h-32">{description}</Paragraph>
+              </div>
+              <div className="w-full px-10">
+                <img src={imagePath} alt="" className="w-full object-contain" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
 
-        <p className="text-3xl font-bold text-center border-t w-full p-10">
-          ROLE
-        </p>
+      <Section id="sub-teams" title="Sub-Teams">
         {teamContents.branches.map((branch, index) => (
           <div key={index}>
             <p className="text-2xl font-bold ">{branch.title}</p>
