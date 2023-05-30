@@ -89,7 +89,7 @@ const Home: NextPage = () => {
         >
           <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
             <div className="text-4xl md:text-6xl flex items-center justify-center">
-              <div className="w-28 flex justify-end">
+              <div className="w-16 md:w-28 flex justify-end">
                 <CountUp active={teamInView} from={0} to={30} time={1200} />
               </div>
               +
@@ -98,7 +98,7 @@ const Home: NextPage = () => {
           </div>
           <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
             <div className="text-4xl md:text-6xl flex items-center justify-center">
-              <div className="w-28 flex justify-end">
+              <div className="w-16 md:w-28 flex justify-end">
                 <CountUp active={teamInView} from={0} to={40} time={1600} />
               </div>
               +
@@ -114,7 +114,7 @@ const Home: NextPage = () => {
               index % 2 === 0 ? "flex-row" : "flex-row-reverse"
             } justify-center items-center gap-4 md:gap-[10%]`}
           >
-            <img src={imagePath} alt="" className="md:w-[45%]" />
+            <img src={imagePath} alt="" className="w-4/5 md:w-[45%]" />
             <div className="md:w-[45%]">
               <h4 className="text-2xl">{name}</h4>
               <Paragraph>{description}</Paragraph>
@@ -123,14 +123,25 @@ const Home: NextPage = () => {
         ))}
         <MainButton url={URL.team} label="SEE MORE" />
       </section>
+      <div className="w-screen h-24 overflow-hidden mt-4">
+        <img
+          src="/images/mars1.png"
+          alt=""
+          className="block md:hidden w-screen"
+        />
+      </div>
       <FadeIn
         as="section"
         className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg"
       >
         <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
-          <img src="/images/mars1.png" alt="" className="md:w-[48%]" />
+          <img
+            src="/images/mars1.png"
+            alt=""
+            className="hidden md:block md:w-[48%]"
+          />
           <Paragraph className="md:w-[48%]">
-            <h3 className="text-3xl md:text-4xl mt-10 tracking-wider pb-4">
+            <h3 className="text-3xl md:text-4xl md:mt-10 tracking-wider pb-4">
               URCとは？
             </h3>
             University Rover
@@ -146,7 +157,7 @@ const Home: NextPage = () => {
         </div>
       </FadeIn>
       <div className="flex flex-col justify-center items-center px-2 md:px-[10%]">
-        <h2 className="text-4xl pb-4">NEWS</h2>
+        <h2 className="text-4xl pb-4">News</h2>
         <div className="w-full flex flex-col justify-center gap-4">
           {sortedArticles.map((article) => (
             <ArticleCard key={article.id} articleOverview={article} />
@@ -183,7 +194,7 @@ const Home: NextPage = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
             <h4 className="text-sm">支援総額</h4>
-            <p className="w-64 text-4xl md:text-5xl font-display">
+            <p className="w-56 md:w-64 text-4xl md:text-5xl font-display">
               ¥
               <CountUp active={fundingInView} from={190} to={230} time={1000} />
               ,
@@ -213,7 +224,7 @@ const Home: NextPage = () => {
           </a>
         </div>
       </footer>
-      <Section id="contact" title="FOLLOW US!">
+      <Section id="contact" title="Follow Us!">
         <p className="text-center  text-sm md:text-base">
           ↓日々の活動の様子や最新情報を発信しています↓
         </p>
