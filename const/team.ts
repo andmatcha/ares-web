@@ -32,6 +32,39 @@ export const branches = [
   },
 ];
 
+export const subTeams = [
+  {
+    name: "機構班",
+    description: "",
+    imagePath: "",
+    memberIds: [],
+  },
+  {
+    name: "制御班",
+    description: "",
+    imagePath: "",
+    memberIds: [],
+  },
+  {
+    name: "電装班",
+    description: "",
+    imagePath: "",
+    memberIds: [],
+  },
+  {
+    name: "バイオ班",
+    description: "",
+    imagePath: "",
+    memberIds: [],
+  },
+  {
+    name: "広報局・会計局",
+    description: "",
+    imagePath: "",
+    memberIds: [],
+  },
+];
+
 export const members = [
   {
     name: "阿依ダニシ",
