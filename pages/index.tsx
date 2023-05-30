@@ -78,7 +78,7 @@ const Home: NextPage = () => {
             <br />
             とは？
           </h3>
-          <Paragraph className="w-3/5 md:text-center">
+          <Paragraph className="w-3/5">
             火星探査機の学生世界大会 “University Rover Challenge (URC)”
             へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
           </Paragraph>
@@ -110,8 +110,10 @@ const Home: NextPage = () => {
           <FadeIn
             key={index}
             options={{ rootMargin: "-20% 0px" }}
-            className={`max-w-6xl flex flex-col md:${
-              index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+            className={`max-w-6xl flex ${
+              index % 2 === 0
+                ? "flex-col md:flex-row"
+                : "flex-col md:flex-row-reverse"
             } justify-center items-center gap-4 md:gap-[10%]`}
           >
             <img src={imagePath} alt="" className="w-4/5 md:w-[45%]" />
