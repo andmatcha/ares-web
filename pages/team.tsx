@@ -2,8 +2,10 @@ import { NextPage } from "next";
 
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
+import ListItem from "../components/objects/atoms/ListItem";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
+import { infoSets } from "../const/team";
 
 const Team: NextPage = () => {
   const teamContents = {
@@ -91,27 +93,30 @@ const Team: NextPage = () => {
           <h2 className="text-4xl md:text-6xl tracking-widest">Our Team</h2>
         </div>
       </div>
-      <Section id="team" className="flex flex-col gap-20 items-center">
+      <Section id="team" className="flex flex-col gap-10 items-center">
         <div className="flex justify-center items-center gap-4">
-          <div className="w-40">
+          <div className="w-28 md:w-40">
             <img
               src="/images/ares_logo_white.png"
               alt="w-full object-contain"
             />
           </div>
-          <h3 className="text-4xl tracking-widest">ARES Project</h3>
+          <h3 className="text-3xl md:text-4xl tracking-widest">ARES Project</h3>
         </div>
-        <div className="w-full flex">
+        <Paragraph className="px-4 sm:px-20">
+          火星探査機の学生世界大会 “University Rover Challenge (URC)” および “European Rover Challenge (ERC)”
+          へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
+        </Paragraph>
+        <div className="w-full flex pb-10">
           <div className="w-full">
             <ul className="w-full px-2 sm:px-10 md:px-[10%] flex flex-col gap-4">
-              <li className="w-full flex justify-between px-4 pb-4 border-b">
-                <h4 className="font-bold">所属人数</h4>
-                <p>約30人</p>
-              </li>
-              <li className="w-full flex justify-between px-4 pb-4 border-b">
-                <h4>拠点大学</h4>
-                <p>東北大学・慶應義塾大学</p>
-              </li>
+              {infoSets.map((infoSet, index) => (
+                <ListItem
+                  key={index}
+                  title={infoSet.title}
+                  description={infoSet.description}
+                />
+              ))}
             </ul>
           </div>
         </div>
