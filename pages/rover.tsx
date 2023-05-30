@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+
 import Layout from "../components/layouts/Layout";
 
 const Team: NextPage = () => {

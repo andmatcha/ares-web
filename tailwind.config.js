@@ -5,6 +5,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'sans': ['"Noto Sans JP"', 'sans-serif'],
+      'display': ['Orbitron', 'sans-serif'],
+    },
     extend: {
       colors: {
         'main-bg': '#1a1a1a',
@@ -17,9 +21,9 @@ module.exports = {
           '100%': { transform: 'translateY(0)', opacity: 0.4 },
         },
         'emerge1': {
-          '0%': {opacity: 0},
-          '20%': {opacity: 0},
-          '100%': {opacity:1}
+          '0%': { opacity: 0 },
+          '20%': { opacity: 0 },
+          '100%': { opacity: 1 }
         },
         'emerge2': {
           '0%': { opacity: 0 },
@@ -31,9 +35,14 @@ module.exports = {
           '80%': { opacity: 0 },
           '100%': { opacity: 1 }
         },
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 }
+        },
       },
       animation: {
         'arrow-up-down': 'up-down 5s infinite',
+        'fade-in': 'fade-in 1s ease-in',
       },
     },
   },
