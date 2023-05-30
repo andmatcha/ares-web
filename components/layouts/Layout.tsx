@@ -2,14 +2,16 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { ReactNode } from "react";
 
-import Header from "../objects/molecules/Header";
+import Footer from "./Footer";
+import Header from "./Header";
 
 interface Props {
   title: string;
   children: ReactNode;
+  allowTopSpace?: boolean;
 }
 
-const Layout: NextPage<Props> = ({ title, children }) => {
+const Layout: NextPage<Props> = ({ title, children, allowTopSpace }) => {
   return (
     <>
       <Head>
@@ -21,7 +23,9 @@ const Layout: NextPage<Props> = ({ title, children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      {allowTopSpace && <div className="h-20" />}
       <main>{children}</main>
+      <Footer />
     </>
   );
 };
