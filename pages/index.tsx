@@ -40,7 +40,12 @@ const Home: NextPage = () => {
           <img
             src="/images/brand_marks/100banch.png"
             alt="100BANCH"
-            className="w-64 h-64"
+            className="hidden md:block w-64"
+          />
+          <img
+            src="/images/brand_marks/100banch_wide.png"
+            alt="100BANCH"
+            className="block md:hidden w-64"
           />
           <p className="font-sans">
             GARAGE Program第70期プロジェクト
