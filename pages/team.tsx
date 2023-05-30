@@ -65,12 +65,14 @@ const Team: NextPage = () => {
       <Section id="leaders" title="Leaders">
         <ul className="flex flex-col gap-10 w-full items-center">
           {members.map((member, index) => (
-            <MemberIntro key={index} member={member} />
+            <FadeIn key={index}>
+              <MemberIntro member={member} />
+            </FadeIn>
           ))}
         </ul>
       </Section>
       <Section id="branches" title="Branches">
-        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10">
+        <FadeIn className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10">
           {branches.map(({ name, description, imagePath }, index) => (
             <div
               key={index}
@@ -85,7 +87,7 @@ const Team: NextPage = () => {
               </div>
             </div>
           ))}
-        </div>
+        </FadeIn>
       </Section>
 
       {/* 班紹介 一旦スコープアウト */}
