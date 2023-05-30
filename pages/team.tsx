@@ -6,6 +6,7 @@ import ListItem from "../components/objects/atoms/ListItem";
 import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
+import SponsorArea from "../components/objects/molecules/SponsorArea";
 import { branches, infoSets, members } from "../const/team";
 
 const Team: NextPage = () => {
@@ -160,7 +161,8 @@ const Team: NextPage = () => {
         </div>
       </Section>
 
-      <Section id="sub-teams" title="Sub-Teams">
+      {/* 班紹介 一旦スコープアウト */}
+      {/* <Section id="sub-teams" title="Sub-Teams">
         {teamContents.branches.map((branch, index) => (
           <div key={index}>
             <p className="text-2xl font-bold ">{branch.title}</p>
@@ -184,7 +186,9 @@ const Team: NextPage = () => {
             </div>
           </div>
         ))}
-      </Section>
+      </Section> */}
+
+      <SponsorArea />
     </Layout>
   );
 };
