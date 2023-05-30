@@ -6,102 +6,115 @@ import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
 
 const Team: NextPage = () => {
-const teamContents = {
-  title: "ROLE",
-  branches: [
-    {
-      title: "機構班",
-      imagePath: "/images/keio_members.jpg",
-      paragraph:
-        "班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。",
-      members: [
-        {
-          imagePath: "/images/arm1.png",
-          name: "aaaさん",
-        },
-        {
-          imagePath: "/images/arm2.png",
-          name: "bbbさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "cccさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "dddさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "eeeさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "fffさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "gggさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "hhhさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "iiiさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "llllさん",
-        },
-      ],
-    },
-    {
-      title: "制御班",
-      imagePath: "/images/tohoku_members.jpg",
-      paragraph:
-        "制御します！！！！制御します！！！！制御します！！！！制御します！！！！制御します！！！！",
-      members: [
-        {
-          imagePath: "/images/arm1.png",
-          name: "aaaさん",
-        },
-        {
-          imagePath: "/images/arm2.png",
-          name: "bbbさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "cccさん",
-        },
-      ],
-    },
-  ],
-};
+  const teamContents = {
+    branches: [
+      {
+        title: "機構班",
+        imagePath: "/images/keio_members.jpg",
+        paragraph:
+          "班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。",
+        members: [
+          {
+            imagePath: "/images/arm1.png",
+            name: "aaaさん",
+          },
+          {
+            imagePath: "/images/arm2.png",
+            name: "bbbさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "cccさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "dddさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "eeeさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "fffさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "gggさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "hhhさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "iiiさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "llllさん",
+          },
+        ],
+      },
+      {
+        title: "制御班",
+        imagePath: "/images/tohoku_members.jpg",
+        paragraph:
+          "制御します！！！！制御します！！！！制御します！！！！制御します！！！！制御します！！！！",
+        members: [
+          {
+            imagePath: "/images/arm1.png",
+            name: "aaaさん",
+          },
+          {
+            imagePath: "/images/arm2.png",
+            name: "bbbさん",
+          },
+          {
+            imagePath: "/images/arm3.png",
+            name: "cccさん",
+          },
+        ],
+      },
+    ],
+  };
 
   return (
-    <Layout title="チーム紹介 - ARES Project">
-      <Section
-        id="team"
-        title="ARES Project"
-        className="flex flex-col gap-20 items-center"
-      >
-        <div className="flex flex-col justify-center items-center gap-4">
-          <img
-            src="/images/keio_members.jpg"
-            alt="ARES"
-            className="md:w-[45%]"
-          />
-          <Paragraph className="md:w-3/5 md:text-center">
-            火星探査機の学生世界大会 “University Rover Challenge (URC)”
-            へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
-          </Paragraph>
+    <Layout title="チーム紹介 - ARES Project" allowTopSpace>
+      <div className="w-full relative">
+        <img
+          src="/images/leaders_wide.jpg"
+          alt=""
+          className="w-full object-cover opacity-40"
+        />
+        <div className="absolute top-0 left-0 w-full h-full md:px-40 flex justify-center md:justify-start items-center">
+          <h2 className="text-4xl md:text-6xl tracking-widest">Our Team</h2>
         </div>
-
-        <p className="text-3xl font-bold text-center border-t w-full p-10">
-          TEAM
-        </p>
+      </div>
+      <Section id="team" className="flex flex-col gap-20 items-center">
+        <div className="flex justify-center items-center gap-4">
+          <div className="w-40">
+            <img
+              src="/images/ares_logo_white.png"
+              alt="w-full object-contain"
+            />
+          </div>
+          <h3 className="text-4xl tracking-widest">ARES Project</h3>
+        </div>
+        <div className="w-full flex">
+          <div className="w-full">
+            <ul className="w-full px-2 sm:px-10 md:px-[10%] flex flex-col gap-4">
+              <li className="w-full flex justify-between px-4 pb-4 border-b">
+                <h4 className="font-bold">所属人数</h4>
+                <p>約30人</p>
+              </li>
+              <li className="w-full flex justify-between px-4 pb-4 border-b">
+                <h4>拠点大学</h4>
+                <p>東北大学・慶應義塾大学</p>
+              </li>
+            </ul>
+          </div>
+        </div>
         <FadeIn
           options={{ rootMargin: "-20% 0px" }}
           className={`flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]`}
@@ -127,7 +140,7 @@ const teamContents = {
         </FadeIn>
 
         <p className="text-3xl font-bold text-center border-t w-full p-10">
-          {teamContents.title}
+          ROLE
         </p>
         {teamContents.branches.map((branch, index) => (
           <div key={index}>
