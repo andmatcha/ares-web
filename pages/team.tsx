@@ -7,82 +7,9 @@ import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
 import SponsorArea from "../components/objects/molecules/SponsorArea";
-import { branches, infoSets, members } from "../const/team";
+import { branches, infoSets, members, teamContents } from "../const/team";
 
 const Team: NextPage = () => {
-  const teamContents = {
-    branches: [
-      {
-        title: "機構班",
-        imagePath: "/images/keio_members.jpg",
-        paragraph:
-          "班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。",
-        members: [
-          {
-            imagePath: "/images/arm1.png",
-            name: "aaaさん",
-          },
-          {
-            imagePath: "/images/arm2.png",
-            name: "bbbさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "cccさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "dddさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "eeeさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "fffさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "gggさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "hhhさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "iiiさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "llllさん",
-          },
-        ],
-      },
-      {
-        title: "制御班",
-        imagePath: "/images/tohoku_members.jpg",
-        paragraph:
-          "制御します！！！！制御します！！！！制御します！！！！制御します！！！！制御します！！！！",
-        members: [
-          {
-            imagePath: "/images/arm1.png",
-            name: "aaaさん",
-          },
-          {
-            imagePath: "/images/arm2.png",
-            name: "bbbさん",
-          },
-          {
-            imagePath: "/images/arm3.png",
-            name: "cccさん",
-          },
-        ],
-      },
-    ],
-  };
-
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
       <div className="w-full relative">
@@ -92,19 +19,19 @@ const Team: NextPage = () => {
           className="w-full object-cover opacity-40"
         />
         <div className="absolute top-0 left-0 w-full h-full md:px-40 flex justify-center md:justify-start items-center">
-          <h2 className="text-3xl md:text-6xl tracking-widest">Our Team</h2>
+          <h2 className="text-xl md:text-6xl tracking-widest">Our Team</h2>
         </div>
       </div>
       <Section id="about" className="flex flex-col gap-10 items-center">
-        <div className="flex justify-center items-center gap-4">
-          <div className="w-28 md:w-40">
+        <div className="flex -mb-8 md:mb-0 justify-center items-center gap-4">
+          <div className="w-20 md:w-40">
             <img
               src="/images/ares_logo_white.png"
               alt=""
               className="w-full object-contain"
             />
           </div>
-          <h3 className="text-3xl md:text-4xl tracking-widest">ARES Project</h3>
+          <h3 className="text-2xl md:text-4xl tracking-widest">ARES Project</h3>
         </div>
         <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4">
           <div className="md:w-2/5">
@@ -122,7 +49,7 @@ const Team: NextPage = () => {
         </div>
         <div className="w-full flex">
           <div className="w-full px-2 sm:px-10 md:px-[10%]">
-            <h4 className="text-lg md:text-xl pb-4">基本情報</h4>
+            <h4 className="md:text-xl pb-4">基本情報</h4>
             <ul className="w-full flex flex-col gap-4">
               {infoSets.map((infoSet, index) => (
                 <ListItem
