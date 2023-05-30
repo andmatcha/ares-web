@@ -4,6 +4,10 @@ const sponsors = [
     imagePath: "/images/brand_marks/ablab.png",
   },
   {
+    name: "iVicon Japan",
+    imagePath: "/images/brand_marks/ivicon_japan.png",
+  },
+  {
     name: "工機ホールディングス",
     imagePath: "/images/brand_marks/hikoki.jpg",
   },

@@ -14,6 +14,7 @@ import SponsorArea from "../components/objects/molecules/SponsorArea";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import { articles } from "../const/articles";
 import supporters from "../const/supporters";
+import { branches } from "../const/team";
 import URL from "../const/url";
 
 const Home: NextPage = () => {
@@ -39,7 +40,12 @@ const Home: NextPage = () => {
           <img
             src="/images/brand_marks/100banch.png"
             alt="100BANCH"
-            className="w-64 h-64"
+            className="hidden md:block w-64"
+          />
+          <img
+            src="/images/brand_marks/100banch_wide.png"
+            alt="100BANCH"
+            className="block md:hidden w-64"
           />
           <p className="font-sans">
             GARAGE Program第70期プロジェクト
@@ -100,29 +106,21 @@ const Home: NextPage = () => {
             <span className="text-sm">patrons</span>
           </div>
         </div>
-        <FadeIn
-          options={{ rootMargin: "-20% 0px" }}
-          className={`flex flex-col md:flex-row justify-center items-center gap-4 md:gap-[10%]`}
-        >
-          <img src="/images/keio_members.jpg" alt="" className="md:w-[45%]" />
-          <div className="md:w-[45%]">
-            <h4 className="text-2xl">東京班</h4>
-            <Paragraph>
-              東京班は主にアームの設計を行っています。この大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるためアームは重要な役割を果たします。
-            </Paragraph>
-          </div>
-        </FadeIn>
-        <FadeIn
-          className={`flex flex-col md:flex-row-reverse justify-center items-center gap-4 md:gap-[10%]`}
-        >
-          <img src="/images/tohoku_members.jpg" alt="" className="md:w-[45%]" />
-          <div className="md:w-[45%]">
-            <h4 className="text-2xl">東北班</h4>
-            <Paragraph>
-              東北班は機体の設計、開発を行っています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています。
-            </Paragraph>
-          </div>
-        </FadeIn>
+        {branches.map(({ name, description, imagePath }, index) => (
+          <FadeIn
+            key={index}
+            options={{ rootMargin: "-20% 0px" }}
+            className={`max-w-6xl flex flex-col md:${
+              index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+            } justify-center items-center gap-4 md:gap-[10%]`}
+          >
+            <img src={imagePath} alt="" className="md:w-[45%]" />
+            <div className="md:w-[45%]">
+              <h4 className="text-2xl">{name}</h4>
+              <Paragraph>{description}</Paragraph>
+            </div>
+          </FadeIn>
+        ))}
         <MainButton url={URL.team} label="SEE MORE" />
       </section>
       <FadeIn
