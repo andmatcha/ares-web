@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import type { NextPage } from "next";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layouts/Layout";
@@ -28,6 +28,13 @@ const Home: NextPage = () => {
   };
   const sortedArticles = useMemo(() => sortArticlesDec(), []);
 
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
+  }, []);
+
   return (
     <Layout title="ARES Project">
       <MainVisual />
@@ -52,6 +59,7 @@ const Home: NextPage = () => {
             <br />
             <a
               href={URL.hyaku_banch_project}
+              target="blank"
               className="w-full text-left text-xs text-ares-red"
             >
               100BANCH プロジェクトページ
@@ -151,6 +159,7 @@ const Home: NextPage = () => {
             <br />
             <a
               href={URL.urc_official}
+              target="blank"
               className="w-full text-left text-xs text-ares-red"
             >
               URC公式サイト
@@ -220,6 +229,7 @@ const Home: NextPage = () => {
         <div className="w-full text-center">
           <a
             href={URL.campfire_project}
+            target="blank"
             className="w-full text-left text-xs text-ares-red"
           >
             CAMPFIRE プロジェクトページ
@@ -239,7 +249,6 @@ const Home: NextPage = () => {
           >
             Tweets by AresPjt2022
           </a>
-          <script async src="https://platform.twitter.com/widgets.js"></script>
         </div>
       </Section>
     </Layout>
