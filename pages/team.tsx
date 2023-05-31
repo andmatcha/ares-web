@@ -121,7 +121,6 @@ const Team: NextPage = () => {
         ))}
       </Section> */}
 
-      <SponsorArea />
     </Layout>
   );
 };
