@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import React, { ReactNode } from "react";
 
 import { Member } from "../../../types";
 

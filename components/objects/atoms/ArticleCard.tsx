@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import React from "react";
 
 import { THUMBNAIL_BASE_URL } from "../../../const/articles";
 import { ArticleOverview } from "../../../types/article";
