@@ -7,7 +7,6 @@ import ListItem from "../components/objects/atoms/ListItem";
 import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
-import SponsorArea from "../components/objects/molecules/SponsorArea";
 import { branches, infoSets, members, teamContents } from "../const/team";
 
 const Team: NextPage = () => {
@@ -37,7 +36,7 @@ const Team: NextPage = () => {
           </div>
           <h3 className="text-2xl md:text-4xl tracking-widest">ARES Project</h3>
         </div>
-        <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4">
+        <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
           <div className="md:w-2/5">
             <img
               src="/images/group_photo1.png"
@@ -120,7 +119,6 @@ const Team: NextPage = () => {
           </div>
         ))}
       </Section> */}
-
     </Layout>
   );
 };

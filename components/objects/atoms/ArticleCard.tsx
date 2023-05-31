@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 
+import Paragraph from "./Paragraph";
 import { THUMBNAIL_BASE_URL } from "../../../const/articles";
 import { ArticleOverview } from "../../../types/article";
 
@@ -27,11 +28,11 @@ const ArticleCard: NextPage<Props> = ({
         />
       </div>
       <div className="w-full md:w-3/4 flex flex-col">
-        <h3 className="md:text-lg tracking-wider">{title}</h3>
-        <p className="pb-2 text-gray-500 tracking-wider text-xs md:text-sm">{date}</p>
-        <p className="tracking-wider leading-5 md:leading-6 text-xs md:text-sm">
-          {trimDescription(description)}
+        <h3 className="md:text-lg tracking-wider pb-1">{title}</h3>
+        <p className="pb-2 text-gray-500 tracking-wider text-xs md:text-sm">
+          {date}
         </p>
+        <Paragraph size="small">{trimDescription(description)}</Paragraph>
       </div>
     </div>
   );
