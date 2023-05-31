@@ -20,7 +20,6 @@ const Slide: NextPage<Props> = ({ images, settings }: Props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    lazyLoad: "ondemand" as const,
     ...settings,
   };
 
