@@ -1,40 +1,41 @@
+import URL from "./url";
 import { Sponsor } from "../types";
 
 const sponsors: Sponsor[] = [
   {
     name: "ABLab",
     imagePath: "/images/brand_marks/ablab.png",
-    url: "https://ablab.space/",
+    url: URL.ablab,
   },
   {
     name: "iVicon Japan",
     imagePath: "/images/brand_marks/ivicon_japan.png",
-    url: "https://ivicon.jp/",
+    url: URL.ivicon_japan,
   },
   {
     name: "工機ホールディングス",
     imagePath: "/images/brand_marks/hikoki.jpg",
-    url: "https://www.koki-holdings.co.jp/",
+    url: URL.hikoki,
   },
   {
     name: "マブチモーター",
     imagePath: "/images/brand_marks/mabuchi.jpg",
-    url: "https://www.mabuchi-motor.co.jp/",
+    url: URL.mabuchi,
   },
   {
     name: "Mazak",
     imagePath: "/images/brand_marks/mazak.png",
-    url: "https://www.mazak.jp/",
+    url: URL.mazak,
   },
   {
     name: "MISUMI",
     imagePath: "/images/brand_marks/misumi.png",
-    url: "https://www.misumi.co.jp/",
+    url: URL.misumi,
   },
   {
     name: "TELSTAR",
     imagePath: "/images/brand_marks/telstar.jpg",
-    url: "http://spacemgz-telstar.com/",
+    url: URL.telstar,
   },
 ];
 
