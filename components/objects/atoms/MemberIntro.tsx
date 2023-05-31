@@ -25,8 +25,8 @@ const MemberIntro: NextPage<Props> = ({
             </div>
           </div>
           <div>
-            <h4>{name}</h4>
-            <h5 className="text-xs md:text-sm">{university}</h5>
+            <h4 className="tracking-wider pb-1">{name}</h4>
+            <h5 className="text-xs text-gray-400">{university}</h5>
           </div>
         </div>
         <p className="text-xs md:text-sm leading-5 md:leading-6">
