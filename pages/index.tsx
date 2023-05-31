@@ -9,6 +9,7 @@ import CountUp from "../components/objects/atoms/CountUp";
 import FadeIn from "../components/objects/atoms/FadeIn";
 import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
+import HyakuBanch from "../components/objects/molecules/HyakuBanch";
 import Section from "../components/objects/molecules/Section";
 import SponsorArea from "../components/objects/molecules/SponsorArea";
 import MainVisual from "../components/objects/organisms/MainVisual";
@@ -39,34 +40,9 @@ const Home: NextPage = () => {
     <Layout title="ARES Project">
       <MainVisual />
       <SponsorArea />
-      <div className="px-8 py-10 bg-black">
-        <FadeIn
-          options={{ triggerOnce: true, delay: 400 }}
-          className="flex flex-col md:flex-row justify-center items-center gap-4"
-        >
-          <a href={URL.hyaku_banch} target="blank">
-            <img
-              src="/images/brand_marks/100banch.png"
-              alt="100BANCH"
-              className="hidden md:block w-64"
-            />
-            <img
-              src="/images/brand_marks/100banch_wide.png"
-              alt="100BANCH"
-              className="block md:hidden w-64"
-            />
-          </a>
-          <p className="font-sans">
-            GARAGE Program第70期プロジェクト
-            <br />
-            <a
-              href={URL.hyaku_banch_project}
-              target="blank"
-              className="w-full text-left text-xs text-ares-red"
-            >
-              100BANCH プロジェクトページ
-            </a>
-          </p>
+      <div className="bg-black">
+        <FadeIn>
+          <HyakuBanch />
         </FadeIn>
       </div>
       <div className="w-screen overflow-hidden">
@@ -135,12 +111,8 @@ const Home: NextPage = () => {
         ))}
         <MainButton url={URL.team} label="SEE MORE" />
       </section>
-      <div className="w-screen h-24 overflow-hidden mt-4">
-        <img
-          src="/images/mars1.png"
-          alt=""
-          className="block md:hidden w-screen"
-        />
+      <div className="block md:hidden w-screen h-24 overflow-hidden mt-4">
+        <img src="/images/mars1.png" alt="" className="w-screen" />
       </div>
       <FadeIn
         as="section"
@@ -190,8 +162,7 @@ const Home: NextPage = () => {
           <MainButton url={URL.rover} label="SEE OUR ROVERS" />
         </div>
       </FadeIn>
-      <SponsorArea />
-      <footer
+      <div
         ref={fundingRef}
         className="w-full bg-black flex flex-col items-center py-10"
       >
@@ -237,7 +208,7 @@ const Home: NextPage = () => {
             CAMPFIRE プロジェクトページ
           </a>
         </div>
-      </footer>
+      </div>
       <Section id="contact" title="Follow Us!">
         <p className="text-center  text-sm md:text-base">
           ↓日々の活動の様子や最新情報を発信しています↓
@@ -245,7 +216,7 @@ const Home: NextPage = () => {
         <div className="max-w-2xl mx-auto mt-5">
           <a
             className="twitter-timeline"
-            data-height="1200"
+            data-height="800"
             data-theme="dark"
             href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
           >
