@@ -162,28 +162,42 @@ const Home: NextPage = () => {
           <MainButton url={URL.rover} label="SEE OUR ROVERS" />
         </div>
       </FadeIn>
-      <div
-        ref={fundingRef}
-        className="w-full bg-black flex flex-col items-center py-10"
-      >
-        <h3 className="mb-4 text-xl pt-10 pb-4">
-          ご支援ありがとうございました!
-        </h3>
-        <div className="flex justify-center items-center gap-4 py-4">
-          <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
-            <h4 className="text-sm">支援者数</h4>
-            <p className="w-16 md:w-20 text-center text-4xl md:text-5xl font-display">
-              <CountUp active={fundingInView} to={37} time={1000} />
-            </p>
+      <div ref={fundingRef} className="w-full flex flex-col items-center py-10">
+        <h3 className="mb-4 text-xl pt-10">ご支援ありがとうございました!</h3>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-4">
+          <div className="w-2/3 md:w-1/3">
+            <img
+              src="/images/campfire.png"
+              alt=""
+              className="w-full object-contain"
+            />
           </div>
-          <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
-            <h4 className="text-sm">支援総額</h4>
-            <p className="w-56 md:w-64 text-4xl md:text-5xl font-display">
-              ¥
-              <CountUp active={fundingInView} from={190} to={230} time={1000} />
-              ,
-              <CountUp active={fundingInView} from={450} to={500} time={1500} />
-            </p>
+          <div className="flex justify-center items-center">
+            <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
+              <h4 className="text-sm">支援者数</h4>
+              <p className="w-16 md:w-20 text-center text-4xl md:text-5xl font-display">
+                <CountUp active={fundingInView} to={37} time={1000} />
+              </p>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
+              <h4 className="text-sm">支援総額</h4>
+              <p className="w-56 md:w-64 text-4xl md:text-5xl font-display">
+                ¥
+                <CountUp
+                  active={fundingInView}
+                  from={190}
+                  to={230}
+                  time={1000}
+                />
+                ,
+                <CountUp
+                  active={fundingInView}
+                  from={450}
+                  to={500}
+                  time={1500}
+                />
+              </p>
+            </div>
           </div>
         </div>
         <ul className="flex gap-2 flex-wrap px-4 md:px-32 text-sm pb-4 justify-center">
