@@ -9,15 +9,15 @@ const HyakuBanch: NextPage = () => {
         <img
           src="/images/brand_marks/100banch.png"
           alt="100BANCH"
-          className="hidden md:block w-64"
+          className="hidden md:block w-56"
         />
         <img
           src="/images/brand_marks/100banch_wide.png"
           alt="100BANCH"
-          className="block md:hidden w-64"
+          className="block md:hidden w-48"
         />
       </a>
-      <p className="font-sans">
+      <p className="text-sm md:text-base text-center md:text-start">
         GARAGE Program第70期プロジェクト
         <br />
         <a

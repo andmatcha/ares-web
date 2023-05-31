@@ -16,8 +16,8 @@ const FadeIn: NextPage<Props> = ({
   as: CustomTag = "div",
 }) => {
   const { ref, inView } = useInView({
+    rootMargin: "-10% 0%",
     triggerOnce: true,
-    delay: 400,
     ...options,
   });
   return (
