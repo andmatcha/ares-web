@@ -81,11 +81,11 @@ const Team: NextPage = () => {
               key={index}
               className="w-full lg:w-1/2 flex flex-wrap justify-center items-center gap-2 lg:gap-4 px-2"
             >
-              <div>
+              <div className="pb-4">
                 <h4 className="text-xl lg:text-2xl pb-2">{name}</h4>
                 <Paragraph className="lg:h-28 xl:h-20">{description}</Paragraph>
               </div>
-              <div className="w-full px-10">
+              <div className="w-2/3 md:w-full px-10">
                 <img src={imagePath} alt="" className="w-full object-contain" />
               </div>
             </div>
