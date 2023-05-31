@@ -83,7 +83,7 @@ const Team: NextPage = () => {
             >
               <div>
                 <h4 className="text-xl lg:text-2xl pb-2">{name}</h4>
-                <Paragraph className="lg:h-32">{description}</Paragraph>
+                <Paragraph className="lg:h-28 xl:h-20">{description}</Paragraph>
               </div>
               <div className="w-full px-10">
                 <img src={imagePath} alt="" className="w-full object-contain" />
