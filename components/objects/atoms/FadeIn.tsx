@@ -17,7 +17,7 @@ const FadeIn: NextPage<Props> = ({
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    delay: 400,
+    rootMargin: "-10% 0%",
     ...options,
   });
   return (

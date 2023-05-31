@@ -9,7 +9,9 @@ const MainVisual: NextPage = () => {
       <div className="h-20 md:h-0"></div>
       <Slide
         images={mainImages}
-        className="absolute top-0 left-0 w-full h-full overflow-hidden"
+        settings={{
+          className: "absolute top-0 left-0 w-full h-full overflow-hidden",
+        }}
       />
       <div className="absolute top-0 left-0 w-full h-full bg-main-bg/75">
         <div className="w-full h-full flex flex-col justify-end gap-2 pl-2 md:pl-20 pb-[30vh] md:pb-20">

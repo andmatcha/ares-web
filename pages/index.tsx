@@ -19,8 +19,12 @@ import { branches } from "../const/team";
 import URL from "../const/url";
 
 const Home: NextPage = () => {
-  const { ref: teamRef, inView: teamInView } = useInView({ delay: 800 });
-  const { ref: fundingRef, inView: fundingInView } = useInView({ delay: 800 });
+  const { ref: teamRef, inView: teamInView } = useInView({
+    rootMargin: "-10% 0%",
+  });
+  const { ref: fundingRef, inView: fundingInView } = useInView({
+    rootMargin: "-10% 0%",
+  });
 
   const sortArticlesDec = () => {
     return articles.sort((a, b) => {
