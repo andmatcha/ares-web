@@ -44,16 +44,18 @@ const Home: NextPage = () => {
           options={{ triggerOnce: true, delay: 400 }}
           className="flex flex-col md:flex-row justify-center items-center gap-4"
         >
-          <img
-            src="/images/brand_marks/100banch.png"
-            alt="100BANCH"
-            className="hidden md:block w-64"
-          />
-          <img
-            src="/images/brand_marks/100banch_wide.png"
-            alt="100BANCH"
-            className="block md:hidden w-64"
-          />
+          <a href={URL.hyaku_banch} target="blank">
+            <img
+              src="/images/brand_marks/100banch.png"
+              alt="100BANCH"
+              className="hidden md:block w-64"
+            />
+            <img
+              src="/images/brand_marks/100banch_wide.png"
+              alt="100BANCH"
+              className="block md:hidden w-64"
+            />
+          </a>
           <p className="font-sans">
             GARAGE Program第70期プロジェクト
             <br />
