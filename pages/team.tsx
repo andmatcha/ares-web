@@ -54,7 +54,7 @@ const Team: NextPage = () => {
         <div className="w-full flex">
           <div className="w-full px-2 sm:px-10 md:px-[10%]">
             <h4 className="md:text-xl pb-4">基本情報</h4>
-            <ul className="w-full flex flex-col gap-4">
+            <ul className="w-full flex flex-col">
               {infoSets.map((infoSet, index) => (
                 <ListItem
                   key={index}
