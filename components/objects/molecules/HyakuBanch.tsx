@@ -17,7 +17,7 @@ const HyakuBanch: NextPage = () => {
           className="block md:hidden w-64"
         />
       </a>
-      <p className="font-sans">
+      <p className="font-sans text-center md:text-start">
         GARAGE Program第70期プロジェクト
         <br />
         <a
