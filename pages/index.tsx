@@ -19,8 +19,14 @@ import { branches } from "../const/team";
 import URL from "../const/url";
 
 const Home: NextPage = () => {
-  const { ref: teamRef, inView: teamInView } = useInView({ delay: 800 });
-  const { ref: fundingRef, inView: fundingInView } = useInView({ delay: 800 });
+  const { ref: teamRef, inView: teamInView } = useInView({
+    rootMargin: "-10% 0%",
+    triggerOnce: true,
+  });
+  const { ref: fundingRef, inView: fundingInView } = useInView({
+    rootMargin: "-10% 0%",
+    triggerOnce: true,
+  });
 
   const sortArticlesDec = () => {
     return articles.sort((a, b) => {
@@ -55,9 +61,9 @@ const Home: NextPage = () => {
       <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
         <FadeIn
           options={{ triggerOnce: true }}
-          className="flex gap-8 justify-center items-center pb-4"
+          className="flex gap-8 justify-center items-center pb-4 px-4"
         >
-          <h3 className="text-4xl md:text-5xl leading-relaxed md:leading-relaxed tracking-wider">
+          <h3 className="text-4xl md:text-5xl leading-relaxed md:leading-relaxed tracking-wider font-normal">
             ARES
             <br />
             Project
@@ -100,11 +106,11 @@ const Home: NextPage = () => {
               index % 2 === 0
                 ? "flex-col md:flex-row"
                 : "flex-col md:flex-row-reverse"
-            } justify-center items-center gap-4 md:gap-[10%]`}
+            } justify-center items-center gap-4 md:gap-10 px-4`}
           >
             <img src={imagePath} alt="" className="w-4/5 md:w-[45%]" />
             <div className="md:w-[45%]">
-              <h4 className="text-2xl">{name}</h4>
+              <h4 className="text-lg md:text-2xl pb-2">{name}</h4>
               <Paragraph>{description}</Paragraph>
             </div>
           </FadeIn>
@@ -118,19 +124,20 @@ const Home: NextPage = () => {
         as="section"
         className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg"
       >
-        <div className="flex gap-4 md:gap-[4%] flex-col items-center md:flex-row">
+        <div className="flex gap-4 md:gap-10 flex-col items-center md:flex-row">
           <img
             src="/images/mars1.png"
             alt=""
             className="hidden md:block md:w-[48%]"
           />
-          <Paragraph className="md:w-[48%]">
-            <h3 className="text-3xl md:text-4xl md:mt-10 tracking-wider pb-4">
+          <div className="md:w-[48%] px-4">
+            <h3 className="text-2xl md:text-4xl tracking-wider pb-2">
               URCとは？
             </h3>
-            University Rover
-            Challenge(URC)は大学生を対象とした世界最高峰のロボット工学コンテストです。URCは、毎年米国ユタ州南部の砂漠で開催され、それぞれのチームが、火星を調査する宇宙飛行士と一緒に働く次世代の火星探査機の設計と製作に挑戦しています。
-            <br />
+            <Paragraph>
+              University Rover
+              Challenge(URC)は大学生を対象とした世界最高峰のロボット工学コンテストです。URCは、毎年米国ユタ州南部の砂漠で開催され、それぞれのチームが、火星を調査する宇宙飛行士と一緒に働く次世代の火星探査機の設計と製作に挑戦しています。
+            </Paragraph>
             <a
               href={URL.urc_official}
               target="blank"
@@ -138,14 +145,16 @@ const Home: NextPage = () => {
             >
               URC公式サイト
             </a>
-          </Paragraph>
+          </div>
         </div>
       </FadeIn>
       <div className="flex flex-col justify-center items-center px-2 md:px-[10%]">
-        <h2 className="text-4xl pb-4">News</h2>
-        <div className="w-full flex flex-col justify-center gap-4">
+        <h2 className="text-3xl md:text-4xl pb-4">News</h2>
+        <div className="w-full flex flex-col justify-center gap-4 px-4">
           {sortedArticles.map((article) => (
-            <ArticleCard key={article.id} articleOverview={article} />
+            <FadeIn key={article.id}>
+              <ArticleCard articleOverview={article} />
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -163,8 +172,10 @@ const Home: NextPage = () => {
         </div>
       </FadeIn>
       <div ref={fundingRef} className="w-full flex flex-col items-center py-10">
-        <h3 className="mb-4 text-xl pt-10">ご支援ありがとうございました!</h3>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-4">
+        <h3 className="mb-4 text-xl md:text-2xl pt-10">
+          ご支援ありがとうございました!
+        </h3>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-8">
           <div className="w-2/3 md:w-1/3">
             <img
               src="/images/campfire.png"
@@ -200,16 +211,14 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <ul className="flex gap-2 flex-wrap px-4 md:px-32 text-sm pb-4 justify-center">
+        <ul className="flex gap-2 flex-wrap w-4/5 md:w-2/3 md:px-0 text-sm pb-4 justify-center">
           {supporters.map((supporter, i) => (
-            <>
-              <li key={i} className="inline-block">
-                {supporter} 様
-              </li>
+            <li key={i}>
+              <div className="inline-block">{supporter} 様</div>
               {i + 1 < supporters.length ? (
                 <span className=" text-gray-600">/</span>
               ) : undefined}
-            </>
+            </li>
           ))}
           <span className="text-sm">他</span>
         </ul>

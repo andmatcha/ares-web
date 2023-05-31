@@ -19,17 +19,17 @@ const ArticleCard: NextPage<Props> = ({
     return description;
   };
   return (
-    <div className="w-full md:h-48 flex flex-col md:flex-row gap-2 md:gap-8 px-[10%] md:px-8 py-8 hover:bg-[#1f1f1f] duration-500">
-      <div className="w-full md:w-1/4">
+    <div className="md:h-48 flex flex-col md:flex-row gap-4 md:gap-10 px-4 lg:px-10 py-8 hover:bg-[#1f1f1f] duration-500">
+      <div className="flex justify-center">
         <img
           src={THUMBNAIL_BASE_URL + thumbnail}
           alt=""
-          className="w-full h-full object-contain"
+          className="w-2/3 md:w-auto h-full object-contain"
         />
       </div>
       <div className="w-full md:w-3/4 flex flex-col">
-        <h3 className="text-lg md:text-xl tracking-wider">{title}</h3>
-        <p className="pb-2 text-gray-500 tracking-wider text-sm md:text-base">{date}</p>
+        <h3 className="md:text-lg tracking-wider">{title}</h3>
+        <p className="pb-2 text-gray-500 tracking-wider text-xs md:text-sm">{date}</p>
         <p className="tracking-wider leading-5 md:leading-6 text-xs md:text-sm">
           {trimDescription(description)}
         </p>
