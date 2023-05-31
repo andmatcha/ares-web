@@ -213,7 +213,7 @@ const Home: NextPage = () => {
         <p className="text-center  text-sm md:text-base">
           ↓日々の活動の様子や最新情報を発信しています↓
         </p>
-        <div className="max-w-2xl mx-auto mt-5">
+        <div className="max-w-4xl mx-auto mt-5">
           <a
             className="twitter-timeline"
             data-height="800"
