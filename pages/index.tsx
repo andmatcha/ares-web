@@ -21,9 +21,11 @@ import URL from "../const/url";
 const Home: NextPage = () => {
   const { ref: teamRef, inView: teamInView } = useInView({
     rootMargin: "-10% 0%",
+    triggerOnce: true,
   });
   const { ref: fundingRef, inView: fundingInView } = useInView({
     rootMargin: "-10% 0%",
+    triggerOnce: true,
   });
 
   const sortArticlesDec = () => {
@@ -150,7 +152,9 @@ const Home: NextPage = () => {
         <h2 className="text-3xl md:text-4xl pb-4">News</h2>
         <div className="w-full flex flex-col justify-center gap-4 px-4">
           {sortedArticles.map((article) => (
-            <ArticleCard key={article.id} articleOverview={article} />
+            <FadeIn key={article.id}>
+              <ArticleCard articleOverview={article} />
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -168,7 +172,9 @@ const Home: NextPage = () => {
         </div>
       </FadeIn>
       <div ref={fundingRef} className="w-full flex flex-col items-center py-10">
-        <h3 className="mb-4 text-xl pt-10">ご支援ありがとうございました!</h3>
+        <h3 className="mb-4 text-xl md:text-2xl pt-10">
+          ご支援ありがとうございました!
+        </h3>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-8">
           <div className="w-2/3 md:w-1/3">
             <img
@@ -205,7 +211,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <ul className="flex gap-2 flex-wrap px-4 md:px-32 text-sm pb-4 justify-center">
+        <ul className="flex gap-2 flex-wrap w-4/5 md:w-2/3 md:px-0 text-sm pb-4 justify-center">
           {supporters.map((supporter, i) => (
             <li key={i}>
               <div className="inline-block">{supporter} 様</div>
