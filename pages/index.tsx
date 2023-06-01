@@ -135,8 +135,8 @@ const Home: NextPage = () => {
               URCとは？
             </h3>
             <Paragraph>
-              University Rover
-              Challenge(URC)は大学生を対象とした世界最高峰のロボット工学コンテストです。URCは、毎年米国ユタ州南部の砂漠で開催され、それぞれのチームが、火星を調査する宇宙飛行士と一緒に働く次世代の火星探査機の設計と製作に挑戦しています。
+              University Rover Challenge (URC)
+              は、大学生・大学院生が開発した火星探査機の性能を競う国際大会です。毎年米国ユタ州南部の砂漠で開催され、参加チームは次世代火星探査機の設計と製作に挑戦しています。
             </Paragraph>
             <a
               href={URL.urc_official}
