@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import React, { ReactNode } from "react";
 
+import Paragraph from "./Paragraph";
 import { Member } from "../../../types";
 
 type Props = {
@@ -29,9 +29,7 @@ const MemberIntro: NextPage<Props> = ({
             <h5 className="text-xs text-gray-400">{university}</h5>
           </div>
         </div>
-        <p className="text-xs md:text-sm leading-5 md:leading-6">
-          {introduction}
-        </p>
+        <Paragraph size="small">{introduction}</Paragraph>
       </div>
     </li>
   );

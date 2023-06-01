@@ -22,8 +22,8 @@ const MainVisual: NextPage = () => {
             世界レベルの火星ローバーを日本から
           </p>
           <p className="mt-4 text-base md:text-xl max-w-xl leading-8 tracking-wider animate-[emerge2_4.5s_ease-out]">
-            私たちは世界有数のローバーのコンテストであるURC(University Rover
-            Challenge)の日本勢初出場を目指して活動しています。
+            私たちは、学生による火星探査機の世界大会 ”University Rover Challenge
+            (URC)”への日本勢初出場を目指して活動しています。
           </p>
         </div>
       </div>

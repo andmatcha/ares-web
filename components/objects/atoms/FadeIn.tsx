@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { IntersectionOptions, useInView } from "react-intersection-observer";
 
 type Props = {
