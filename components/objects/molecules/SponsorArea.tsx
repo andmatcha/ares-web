@@ -11,7 +11,7 @@ const SponsorArea: NextPage = () => {
             key={index}
             href={url}
             target="blank"
-            className="w-32 md:w-48 flex items-center"
+            className="w-32 md:w-48 h-20 md:h-24 flex items-center"
           >
             <img
               src={imagePath}
