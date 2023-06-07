@@ -143,7 +143,7 @@ const Home: NextPage = () => {
             className="hidden md:block md:w-[48%]"
           />
           <div className="md:w-[48%] px-4">
-            <h3 className="text-2xl md:text-4xl tracking-wider pb-2">
+            <h3 className="text-2xl md:text-3xl font-medium tracking-wider pb-2">
               URCとは？
             </h3>
             <Paragraph>
@@ -160,33 +160,37 @@ const Home: NextPage = () => {
           </div>
         </div>
       </FadeIn>
-      {/* <FadeIn
-        as="section"
-        className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg"
-      >
-        <div className="flex flex-col items-center gap-8">
-          <img
-            src="/images/kabuto_cad.gif"
-            alt=""
-            className="w-full max-w-xs md:max-w-lg"
-          />
-          <MainButton url={URL.rover} label="SEE OUR ROVERS" />
+      {/* ニュース */}
+      <div className="flex flex-col justify-center items-center px-2 lg:px-[10%]">
+        <h2 className="text-2xl md:text-3xl font-medium tracking-wider pb-4">
+          News
+        </h2>
+        <div className="w-full flex flex-col justify-center gap-4 px-4">
+          {sortedArticles.map((article, index) => (
+            <FadeIn key={index} options={{ delay: 150 * index }}>
+              <ArticleCard articleOverview={article} />
+            </FadeIn>
+          ))}
         </div>
-      </FadeIn> */}
-      <div ref={fundingRef} className="w-full flex flex-col items-center py-5">
-        <h3 className="mb-4 text-xl md:text-2xl pt-10">
+      </div>
+      {/* クラウドファンディングのお礼 */}
+      <div
+        ref={fundingRef}
+        className="w-full flex flex-col items-center px-4 py-4"
+      >
+        <h3 className="mb-4 text-2xl md:text-3xl pt-10 font-medium">
           ご支援ありがとうございました!
         </h3>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-8">
-          <div className="w-2/3 md:w-1/3">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-4">
+          <div className="w-2/3 md:w-2/5 lg:w-1/5">
             <img
               src="/images/campfire.png"
               alt=""
               className="w-full object-contain"
             />
           </div>
-          <div>
-            <div className="flex justify-center items-center">
+          <div className="w-full md:w-3/5 lg:w-2/5">
+            <div className="flex justify-center md:justify-start items-center">
               <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
                 <h4 className="text-sm">支援者数</h4>
                 <p className="w-16 md:w-20 text-center text-4xl md:text-5xl font-display">
@@ -213,7 +217,18 @@ const Home: NextPage = () => {
                 </p>
               </div>
             </div>
-            <div className="text-center">
+            <ul className="flex flex-wrap text-sm pb-2 gap-y-1 justify-center md:justify-start">
+              {supporters.map((supporter, i) => (
+                <li key={i}>
+                  <div className="inline-block">{supporter} 様</div>
+                  {i + 1 < supporters.length ? (
+                    <span className="px-1 text-gray-600">/</span>
+                  ) : undefined}
+                </li>
+              ))}
+              <span className="pl-1 text-sm">他</span>
+            </ul>
+            <div className="text-center md:text-left">
               <a
                 href={URL.campfire_project}
                 target="blank"
@@ -224,43 +239,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <ul className="flex flex-wrap w-4/5 md:w-3/4 md:px-0 text-sm pb-8 justify-center">
-          {supporters.map((supporter, i) => (
-            <li key={i}>
-              <div className="inline-block">{supporter} 様</div>
-              {i + 1 < supporters.length ? (
-                <span className="px-1 text-gray-600">/</span>
-              ) : undefined}
-            </li>
-          ))}
-          <span className="pl-1 text-sm">他</span>
-        </ul>
       </div>
-      <div className="flex flex-col justify-center items-center px-2 md:px-[10%]">
-        <h2 className="text-3xl md:text-4xl pb-4">News</h2>
-        <div className="w-full flex flex-col justify-center gap-4 px-4">
-          {sortedArticles.map((article, index) => (
-            <FadeIn key={index} options={{ delay: 150 * index }}>
-              <ArticleCard articleOverview={article} />
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-      <Section id="contact" title="Follow Us!">
-        <p className="text-center  text-sm md:text-base">
-          ↓日々の活動の様子や最新情報を発信しています↓
-        </p>
-        <div className="max-w-4xl mx-auto mt-5">
-          <a
-            className="twitter-timeline"
-            data-height="800"
-            data-theme="dark"
-            href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
-          >
-            Tweets by AresPjt2022
-          </a>
-        </div>
-      </Section>
     </Layout>
   );
 };

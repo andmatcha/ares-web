@@ -19,8 +19,8 @@ const ArticleCard: NextPage<Props> = ({
     return description;
   };
   return (
-    <div className="flex flex-col md:flex-row gap-4 md:gap-8 px-4 lg:px-10 py-2 md:py-4 hover:bg-[#1f1f1f] duration-500">
-      <div className="hidden md:flex md:justify-center w-1/6">
+    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 px-4 lg:px-10 py-2 md:py-4 hover:bg-[#1f1f1f] duration-500">
+      <div className="flex justify-center w-2/3 md:w-1/6">
         <img
           src={THUMBNAIL_BASE_URL + thumbnail}
           alt=""
@@ -28,20 +28,11 @@ const ArticleCard: NextPage<Props> = ({
         />
       </div>
       <div className="w-full md:w-5/6 flex flex-col gap-2">
-        <div className="flex items-end gap-4">
-          <div className="md:hidden w-1/5">
-            <img
-              src={THUMBNAIL_BASE_URL + thumbnail}
-              alt=""
-              className="w-full object-contain"
-            />
-          </div>
-          <div className="w-4/5">
-            <p className="pb-2 text-gray-500 tracking-wider text-xs md:text-sm">
-              {date}
-            </p>
-            <h3 className="text-sm md:text-lg tracking-wider">{title}</h3>
-          </div>
+        <div>
+          <p className="pb-1 text-gray-500 tracking-wider text-xs md:text-sm">
+            {date}
+          </p>
+          <h3 className="text-sm md:text-lg tracking-wider">{title}</h3>
         </div>
         <Paragraph size="small">{trimDescription(description)}</Paragraph>
       </div>

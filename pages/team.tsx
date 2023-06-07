@@ -119,6 +119,21 @@ const Team: NextPage = () => {
           </div>
         ))}
       </Section> */}
+      <Section id="contact" title="Follow Us!">
+        <p className="text-center  text-sm md:text-base">
+          ↓日々の活動の様子や最新情報を発信しています↓
+        </p>
+        <div className="max-w-4xl mx-auto mt-5">
+          <a
+            className="twitter-timeline"
+            data-height="500"
+            data-theme="dark"
+            href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
+          >
+            Tweets by AresPjt2022
+          </a>
+        </div>
+      </Section>
     </Layout>
   );
 };
