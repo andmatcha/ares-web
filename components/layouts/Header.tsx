@@ -4,7 +4,7 @@ import contents from "../../const/header";
 
 const Header = () => {
   return (
-    <header className="fixed w-screen h-20 flex items-center px-12 justify-center md:justify-between z-20">
+    <header className="fixed w-screen h-16 flex items-center px-12 justify-center md:justify-between z-20">
       <Link href="/">
         <h1 className="text-lg h-16 flex gap-2 items-center cursor-pointer">
           <img

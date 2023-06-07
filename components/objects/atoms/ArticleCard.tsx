@@ -28,7 +28,7 @@ const ArticleCard: NextPage<Props> = ({
         />
       </div>
       <div className="w-full md:w-5/6 flex flex-col gap-2">
-        <div className="flex items-center gap-4">
+        <div className="flex items-end gap-4">
           <div className="md:hidden w-1/5">
             <img
               src={THUMBNAIL_BASE_URL + thumbnail}
@@ -40,7 +40,7 @@ const ArticleCard: NextPage<Props> = ({
             <p className="pb-2 text-gray-500 tracking-wider text-xs md:text-sm">
               {date}
             </p>
-            <h3 className="text-sm md:text-lg tracking-wider pb-1">{title}</h3>
+            <h3 className="text-sm md:text-lg tracking-wider">{title}</h3>
           </div>
         </div>
         <Paragraph size="small">{trimDescription(description)}</Paragraph>

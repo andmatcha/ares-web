@@ -110,13 +110,20 @@ const Home: NextPage = () => {
           わたしたちの目標
         </h3>
         <div>
-          <ol className="flex flex-col md:flex-row gap-8">
+          <ol className="flex flex-col lg:flex-row gap-4 lg:gap-8">
             {goals.map(({ title, icon }, index) => (
-              <FadeIn as="li" options={{ delay: 150 * index }} key={index} className="flex flex-row md:flex-col justify-center md:justify-start items-center gap-4 md:w-1/5">
-                <div className="w-12 md:w-1/3">
+              <FadeIn
+                as="li"
+                options={{ delay: 150 * index }}
+                key={index}
+                className="flex flex-row lg:flex-col justify-center lg:justify-start items-center gap-4 lg:w-1/5"
+              >
+                <div className="w-12 lg:w-1/3">
                   <img src={icon} alt="" className="w-full" />
                 </div>
-                <Paragraph className="w-3/4 md:w-full md:text-center">{title}</Paragraph>
+                <Paragraph className="w-5/6 lg:w-full lg:text-center">
+                  {title}
+                </Paragraph>
               </FadeIn>
             ))}
           </ol>
@@ -127,7 +134,7 @@ const Home: NextPage = () => {
       </div>
       <FadeIn
         as="section"
-        className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg"
+        className="py-5 md:py-10 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg"
       >
         <div className="flex gap-4 md:gap-10 flex-col items-center md:flex-row">
           <img
@@ -153,17 +160,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </FadeIn>
-      <div className="flex flex-col justify-center items-center px-2 md:px-[10%]">
-        <h2 className="text-3xl md:text-4xl pb-4">News</h2>
-        <div className="w-full flex flex-col justify-center gap-4 px-4">
-          {sortedArticles.map((article, index) => (
-            <FadeIn key={index} options={{ delay: 150 * index }}>
-              <ArticleCard articleOverview={article} />
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-      <FadeIn
+      {/* <FadeIn
         as="section"
         className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg"
       >
@@ -175,8 +172,8 @@ const Home: NextPage = () => {
           />
           <MainButton url={URL.rover} label="SEE OUR ROVERS" />
         </div>
-      </FadeIn>
-      <div ref={fundingRef} className="w-full flex flex-col items-center py-10">
+      </FadeIn> */}
+      <div ref={fundingRef} className="w-full flex flex-col items-center py-5">
         <h3 className="mb-4 text-xl md:text-2xl pt-10">
           ご支援ありがとうございました!
         </h3>
@@ -188,53 +185,65 @@ const Home: NextPage = () => {
               className="w-full object-contain"
             />
           </div>
-          <div className="flex justify-center items-center">
-            <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
-              <h4 className="text-sm">支援者数</h4>
-              <p className="w-16 md:w-20 text-center text-4xl md:text-5xl font-display">
-                <CountUp active={fundingInView} to={37} time={1000} />
-              </p>
+          <div>
+            <div className="flex justify-center items-center">
+              <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
+                <h4 className="text-sm">支援者数</h4>
+                <p className="w-16 md:w-20 text-center text-4xl md:text-5xl font-display">
+                  <CountUp active={fundingInView} to={37} time={1000} />
+                </p>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
+                <h4 className="text-sm">支援総額</h4>
+                <p className="w-56 md:w-64 text-4xl md:text-5xl font-display">
+                  ¥
+                  <CountUp
+                    active={fundingInView}
+                    from={190}
+                    to={230}
+                    time={1000}
+                  />
+                  ,
+                  <CountUp
+                    active={fundingInView}
+                    from={450}
+                    to={500}
+                    time={1500}
+                  />
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
-              <h4 className="text-sm">支援総額</h4>
-              <p className="w-56 md:w-64 text-4xl md:text-5xl font-display">
-                ¥
-                <CountUp
-                  active={fundingInView}
-                  from={190}
-                  to={230}
-                  time={1000}
-                />
-                ,
-                <CountUp
-                  active={fundingInView}
-                  from={450}
-                  to={500}
-                  time={1500}
-                />
-              </p>
+            <div className="text-center">
+              <a
+                href={URL.campfire_project}
+                target="blank"
+                className="w-full text-left text-xs text-ares-red"
+              >
+                CAMPFIRE プロジェクトページ
+              </a>
             </div>
           </div>
         </div>
-        <ul className="flex gap-2 flex-wrap w-4/5 md:w-2/3 md:px-0 text-sm pb-4 justify-center">
+        <ul className="flex flex-wrap w-4/5 md:w-3/4 md:px-0 text-sm pb-8 justify-center">
           {supporters.map((supporter, i) => (
             <li key={i}>
               <div className="inline-block">{supporter} 様</div>
               {i + 1 < supporters.length ? (
-                <span className=" text-gray-600">/</span>
+                <span className="px-1 text-gray-600">/</span>
               ) : undefined}
             </li>
           ))}
-          <span className="text-sm">他</span>
+          <span className="pl-1 text-sm">他</span>
         </ul>
-        <div className="w-full text-center">
-          <a
-            href={URL.campfire_project}
-            target="blank"
-            className="w-full text-left text-xs text-ares-red"
-          >
-            CAMPFIRE プロジェクトページ
-          </a>
+      </div>
+      <div className="flex flex-col justify-center items-center px-2 md:px-[10%]">
+        <h2 className="text-3xl md:text-4xl pb-4">News</h2>
+        <div className="w-full flex flex-col justify-center gap-4 px-4">
+          {sortedArticles.map((article, index) => (
+            <FadeIn key={index} options={{ delay: 150 * index }}>
+              <ArticleCard articleOverview={article} />
+            </FadeIn>
+          ))}
         </div>
       </div>
       <Section id="contact" title="Follow Us!">

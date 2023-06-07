@@ -23,7 +23,7 @@ const Layout: NextPage<Props> = ({ title, children, allowTopSpace }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      {allowTopSpace && <div className="h-20" />}
+      {allowTopSpace && <div className="h-16" />}
       <main>{children}</main>
       <Footer />
     </>
