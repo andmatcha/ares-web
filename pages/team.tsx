@@ -85,7 +85,7 @@ const Team: NextPage = () => {
                 <h4 className="text-xl lg:text-2xl pb-2">{name}</h4>
                 <Paragraph className="lg:h-28 xl:h-20">{description}</Paragraph>
               </div>
-              <div className="w-2/3 md:w-full px-10">
+              <div className="w-3/4 lg:w-full px-10">
                 <img src={imagePath} alt="" className="w-full object-contain" />
               </div>
             </div>
@@ -119,6 +119,21 @@ const Team: NextPage = () => {
           </div>
         ))}
       </Section> */}
+      <Section id="contact" title="Follow Us!">
+        <p className="text-center  text-sm md:text-base">
+          ↓日々の活動の様子や最新情報を発信しています↓
+        </p>
+        <div className="max-w-4xl mx-auto mt-5">
+          <a
+            className="twitter-timeline"
+            data-height="500"
+            data-theme="dark"
+            href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
+          >
+            Tweets by AresPjt2022
+          </a>
+        </div>
+      </Section>
     </Layout>
   );
 };

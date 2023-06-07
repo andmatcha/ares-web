@@ -6,7 +6,7 @@ import Slide from "../atoms/Slide";
 const MainVisual: NextPage = () => {
   return (
     <div className="relative h-screen">
-      <div className="h-20 md:h-0"></div>
+      <div className="h-16 md:h-0"></div>
       <Slide
         images={mainImages}
         settings={{
