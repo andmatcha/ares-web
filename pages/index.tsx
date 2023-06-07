@@ -15,7 +15,7 @@ import SponsorArea from "../components/objects/molecules/SponsorArea";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import { articles } from "../const/articles";
 import supporters from "../const/supporters";
-import { branches } from "../const/team";
+import { branches, goals } from "../const/team";
 import URL from "../const/url";
 
 const Home: NextPage = () => {
@@ -102,6 +102,26 @@ const Home: NextPage = () => {
         </FadeIn>
         <MainButton url={URL.team} label="SEE MORE" />
       </section>
+      <FadeIn
+        as="section"
+        className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-4 md:gap-10 text-lg"
+      >
+        <h3 className="text-3xl md:text-5xl font-medium tracking-wider pb-2">
+          わたしたちの目標
+        </h3>
+        <div>
+          <ol className="flex flex-col md:flex-row gap-8">
+            {goals.map(({ title, icon }, index) => (
+              <FadeIn as="li" options={{ delay: 150 * index }} key={index} className="flex flex-row md:flex-col justify-center md:justify-start items-center gap-4 md:w-1/5">
+                <div className="w-12 md:w-1/3">
+                  <img src={icon} alt="" className="w-full" />
+                </div>
+                <Paragraph className="w-3/4 md:w-full md:text-center">{title}</Paragraph>
+              </FadeIn>
+            ))}
+          </ol>
+        </div>
+      </FadeIn>
       <div className="block md:hidden w-screen h-24 overflow-hidden mt-4">
         <img src="/images/mars1.png" alt="" className="w-screen" />
       </div>
