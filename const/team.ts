@@ -19,7 +19,7 @@ export const goals = [
     icon: "/images/icons/launch.svg",
   },
   {
-    title: "探査ローバーの技術を応用して、地球の環境問題を解決する",
+    title: "探査ローバーの技術を応用し、地球の環境問題を解決する",
     icon: "/images/icons/show_love.svg",
   },
 ];
