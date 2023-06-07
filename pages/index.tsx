@@ -63,58 +63,43 @@ const Home: NextPage = () => {
           options={{ triggerOnce: true }}
           className="flex gap-8 justify-center items-center pb-4 px-4"
         >
-          <h3 className="text-4xl md:text-5xl leading-relaxed md:leading-relaxed tracking-wider font-normal">
+          <h3 className="text-4xl md:text-6xl leading-relaxed md:leading-relaxed tracking-wider font-normal">
             ARES
             <br />
             Project
             <br />
             とは？
           </h3>
-          <Paragraph className="w-3/5">
-            火星探査機の学生世界大会 “University Rover Challenge (URC)”
-            へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
-          </Paragraph>
+          <div className="w-3/5 flex flex-col gap-8">
+            <Paragraph>
+              火星探査機の学生世界大会 “University Rover Challenge (URC)”
+              へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
+            </Paragraph>
+            <div
+              ref={teamRef}
+              className="flex justify-center items-center gap-4 md:gap-10"
+            >
+              <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
+                <div className="text-4xl md:text-6xl flex items-center justify-center">
+                  <div className="w-16 md:w-28 flex justify-end">
+                    <CountUp active={teamInView} from={0} to={30} time={1200} />
+                  </div>
+                  +
+                </div>
+                <span className="text-sm">members</span>
+              </div>
+              <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
+                <div className="text-4xl md:text-6xl flex items-center justify-center">
+                  <div className="w-16 md:w-28 flex justify-end">
+                    <CountUp active={teamInView} from={0} to={40} time={1600} />
+                  </div>
+                  +
+                </div>
+                <span className="text-sm">patrons</span>
+              </div>
+            </div>
+          </div>
         </FadeIn>
-        <div
-          ref={teamRef}
-          className="flex justify-center items-center gap-10 pb-4"
-        >
-          <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
-            <div className="text-4xl md:text-6xl flex items-center justify-center">
-              <div className="w-16 md:w-28 flex justify-end">
-                <CountUp active={teamInView} from={0} to={30} time={1200} />
-              </div>
-              +
-            </div>
-            <span className="text-sm">members</span>
-          </div>
-          <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
-            <div className="text-4xl md:text-6xl flex items-center justify-center">
-              <div className="w-16 md:w-28 flex justify-end">
-                <CountUp active={teamInView} from={0} to={40} time={1600} />
-              </div>
-              +
-            </div>
-            <span className="text-sm">patrons</span>
-          </div>
-        </div>
-        {branches.map(({ name, description, imagePath }, index) => (
-          <FadeIn
-            key={index}
-            options={{ rootMargin: "-20% 0px" }}
-            className={`max-w-6xl flex ${
-              index % 2 === 0
-                ? "flex-col md:flex-row"
-                : "flex-col md:flex-row-reverse"
-            } justify-center items-center gap-4 md:gap-10 px-4`}
-          >
-            <img src={imagePath} alt="" className="w-4/5 md:w-[45%]" />
-            <div className="md:w-[45%]">
-              <h4 className="text-lg md:text-2xl pb-2">{name}</h4>
-              <Paragraph>{description}</Paragraph>
-            </div>
-          </FadeIn>
-        ))}
         <MainButton url={URL.team} label="SEE MORE" />
       </section>
       <div className="block md:hidden w-screen h-24 overflow-hidden mt-4">
