@@ -1,5 +1,29 @@
 import { Member } from "../types";
 
+export const goals = [
+  {
+    title: "世界最高峰のローバー大会へ出場し、上位入賞する",
+    icon: "/images/icons/trophy.svg",
+  },
+  {
+    title:
+      "日本の学生宇宙開発において、探査ローバー開発という新しい分野を開拓する",
+    icon: "/images/icons/bulb.svg",
+  },
+  {
+    title: "日本の学生の技術力を高め、未来の宇宙開発に貢献する",
+    icon: "/images/icons/graduation.svg",
+  },
+  {
+    title: "わたしたちの活動を実際に火星や月で活躍するローバーに役立てる",
+    icon: "/images/icons/launch.svg",
+  },
+  {
+    title: "探査ローバーの技術を応用して、地球の環境問題を解決する",
+    icon: "/images/icons/show_love.svg",
+  },
+];
+
 export const infoSets = [
   {
     title: "発足",
