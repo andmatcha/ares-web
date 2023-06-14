@@ -4,13 +4,6 @@ import React, { useState } from "react";
 import Hamburger from "./Hamburger";
 import contents from "../../const/header";
 
-// type Props = {
-//   open: boolean;
-//   onClick: MouseEventHandler;
-// };
-
-// export const HamburgerMenu = ({ open, onClick }: Props) => {
-
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const handleMenuOpen = () => {
@@ -18,8 +11,8 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-screen h-20 flex items-center justify-center px-12 md:justify-between z-20 relative">
-      <div className="absolute"></div>
+    <header className="fixed w-screen h-20 flex items-center justify-center px-12 md:justify-between z-20">
+      {/* ロゴ部分 */}
       <Link href="/">
         <h1 className="text-lg h-16 flex gap-2 items-center cursor-pointer ">
           <div className="h-20 flex items-center">
@@ -29,38 +22,35 @@ const Header = () => {
               className="h-3/4 md:h-full object-contain"
             />
           </div>
+        </h1>
+      </Link>
+      {/* ハンバーガーアイコン */}
+      <button
+        onClick={handleMenuOpen}
+        type="button"
+        className="absolute right-10 md:hidden"
+      >
+        <img src="/images/icons/hamburger_menu_icon.svg" alt="" />
+      </button>
+      {/* メニュー SP表示 */}
+      {openMenu && (
+        <div className="md:hidden fixed bg-slate-50 top-0 w-full h-screen flex flex-col pt-8 text-black  ease-linear duration-300">
+          <Hamburger />
           <button
             onClick={handleMenuOpen}
             type="button"
-            className="absolute right-10 "
+            className="absolute right-10"
           >
             <img
-              src="/images/icons/hamburger_menu_icon.svg"
+              src="/images/icons/hamburger_menu_close.svg"
               alt=""
               className="md:hidden"
             />
           </button>
-        </h1>
-      </Link>
-      <nav
-        className={
-          openMenu
-            ? "md:hidden fixed bg-slate-50 top-0 w-full h-screen flex flex-col pt-8 text-black  ease-linear duration-300"
-            : "hidden md:flex ease-linear duration-300"
-        }
-      >
-        <Hamburger />
-        <button
-          onClick={handleMenuOpen}
-          type="button"
-          className="absolute right-10"
-        >
-          <img
-            src="/images/icons/hamburger_menu_close.svg"
-            alt=""
-            className="md:hidden"
-          />
-        </button>
+        </div>
+      )}
+      {/* メニュー PC表示 */}
+      <nav className="flex ease-linear duration-300">
         <ul className="hidden md:flex items-center gap-10 text-xs font-display">
           {contents.menu.map((menuItem, index) => (
             <li
