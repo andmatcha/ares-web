@@ -5,13 +5,13 @@ import sponsors from "../../../const/sponsors";
 const SponsorArea: NextPage = () => {
   return (
     <div className="py-10 bg-black">
-      <div className="flex flex-wrap justify-center items-center gap-12 px-8">
+      <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 md:gap-12 px-8">
         {sponsors.map(({ name, imagePath, url }, index) => (
           <a
             key={index}
             href={url}
             target="blank"
-            className="w-32 md:w-48 flex items-center"
+            className="w-32 md:w-48 h-20 md:h-24 flex items-center"
           >
             <img
               src={imagePath}

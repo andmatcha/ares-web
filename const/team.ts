@@ -1,5 +1,29 @@
 import { Member } from "../types";
 
+export const goals = [
+  {
+    title: "世界最高峰のローバー大会へ出場し、上位入賞する",
+    icon: "/images/icons/trophy.svg",
+  },
+  {
+    title:
+      "日本の学生宇宙開発において、探査ローバー開発という新しい分野を開拓する",
+    icon: "/images/icons/bulb.svg",
+  },
+  {
+    title: "日本の学生の技術力を高め、未来の宇宙開発に貢献する",
+    icon: "/images/icons/graduation.svg",
+  },
+  {
+    title: "わたしたちの活動を実際に火星や月で活躍するローバーに役立てる",
+    icon: "/images/icons/launch.svg",
+  },
+  {
+    title: "探査ローバーの技術を応用し、地球の環境問題を解決する",
+    icon: "/images/icons/show_love.svg",
+  },
+];
+
 export const infoSets = [
   {
     title: "発足",
@@ -14,7 +38,7 @@ export const infoSets = [
     description: "東北大学・慶應義塾大学",
   },
   {
-    title: "プロジェクトマネージャー",
+    title: "代表",
     description: "阿依ダニシ",
   },
 ];
@@ -23,13 +47,13 @@ export const branches = [
   {
     name: "東北支部",
     description:
-      "東北支部では、主にローバーの本体を担当しています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています。",
+      "ローバーの設計・製作を担当。自律走行技術や起伏に富む砂漠での走破性を実現する機体を開発。",
     imagePath: "/images/tohoku_members.jpg",
   },
   {
-    name: "慶應支部",
+    name: "東京支部",
     description:
-      "慶應支部では、主にアーム部分を担当しています。大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるため、アームは重要な役割を果たします。",
+      "ローバーに搭載するロボットアームの設計・製作を担当。宇宙船の修理から岩石サンプルの回収まで、あらゆる環境に適応可能なロボットアームを開発。",
     imagePath: "/images/keio_members.jpg",
   },
 ];
