@@ -1,5 +1,29 @@
 import { Member } from "../types";
 
+export const goals = [
+  {
+    title: "世界最高峰のローバー大会へ出場し、上位入賞する",
+    icon: "/images/icons/trophy.svg",
+  },
+  {
+    title:
+      "日本の学生宇宙開発において、探査ローバー開発という新しい分野を開拓する",
+    icon: "/images/icons/bulb.svg",
+  },
+  {
+    title: "日本の学生の技術力を高め、未来の宇宙開発に貢献する",
+    icon: "/images/icons/graduation.svg",
+  },
+  {
+    title: "わたしたちの活動を実際に火星や月で活躍するローバーに役立てる",
+    icon: "/images/icons/launch.svg",
+  },
+  {
+    title: "探査ローバーの技術を応用し、地球の環境問題を解決する",
+    icon: "/images/icons/show_love.svg",
+  },
+];
+
 export const infoSets = [
   {
     title: "発足",
@@ -14,7 +38,7 @@ export const infoSets = [
     description: "東北大学・慶應義塾大学",
   },
   {
-    title: "プロジェクトマネージャー",
+    title: "代表",
     description: "阿依ダニシ",
   },
 ];
@@ -23,13 +47,13 @@ export const branches = [
   {
     name: "東北支部",
     description:
-      "東北支部では、主にローバーの本体を担当しています。整備されていない地形でミッションを進めることができるようにそれぞれの得意分野を活かして開発しています。",
+      "ローバーの設計・製作を担当。自律走行技術や起伏に富む砂漠での走破性を実現する機体を開発。",
     imagePath: "/images/tohoku_members.jpg",
   },
   {
-    name: "慶應支部",
+    name: "東京支部",
     description:
-      "慶應支部では、主にアーム部分を担当しています。大会では宇宙飛行士のサポートを前提としたミッションや岩を移動させるミッションがあるため、アームは重要な役割を果たします。",
+      "ローバーに搭載するロボットアームの設計・製作を担当。宇宙船の修理から岩石サンプルの回収まで、あらゆる環境に適応可能なロボットアームを開発。",
     imagePath: "/images/keio_members.jpg",
   },
 ];
@@ -69,15 +93,15 @@ export const subTeams = [
 
 export const members: Member[] = [
   {
-    name: "阿依ダニシ",
-    university: "東北大学",
+    name: "阿依 ダニシ",
+    university: "東北大学 工学研究科 航空宇宙工学専攻 吉田・桒原研究室",
     introduction:
       "1999年京都で生まれ、埼玉で育つ。両親がどちらもウイグル族でありながら、日本国籍を有して日本人として生きている特殊人物。 将来の夢は火星探査ミッションに関わる開発を通して、宇宙探査機エンジニアとして成長し、その知識と技術を持った宇宙飛行士になることである。小学生の頃から未知なロマンに溢れた宇宙に興味を持ち、学部生時代より火星探査UAVの研究を独自に行う。現在では新しい月面探査ロボットの研究ともに、火星探査ローバーの世界大会URCの日本初挑戦を目指す団体の代表を務めている。",
     imagePath: "/images/members/danishi_ai.jpg",
     isLeader: true,
   },
   {
-    name: "長岡佳汰",
+    name: "長岡 佳汰",
     university:
       "東北大学 工学部 機械知能・航空工学科 航空宇宙コース 吉田・桒原研究室",
     introduction:
@@ -86,7 +110,7 @@ export const members: Member[] = [
     isLeader: true,
   },
   {
-    name: "永原陵司",
+    name: "永原 陵司",
     university: "慶應義塾大学 理工学部 機械工学科",
     introduction:
       "2002年 東京都生まれ、小さい頃から物作りが好きで小学4年生の頃からロボット教室に通い始め本格的にロボットづくりを始める。高校1,2年次に国際標準オリンピック2年連続日本代表に選ばれ、世界の壁を学ぶ。また、高校2年次にFIRST Global Challenge 日本代表チームリーダーを務め、196カ国の国とロボット競技で競い合った。小さい頃に出会ったアニメ「宇宙兄弟」をきっかけに、宇宙工学を目指し、慶應義塾大学にAO入試で合格。入学後、阿依との出会いをきっかけにARES Projectを立ち上げ、本格的にローバー開発に励む。将来は、自分の作った探査機を宇宙で動かしたいと考えている。",

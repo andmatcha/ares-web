@@ -1,8 +1,24 @@
 import { NextPage } from "next";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
-const Paragraph: NextPage<{ children?: ReactNode, className?: string }> = ({ children, className }) => {
-  return <div className={`tracking-widest text-xs md:text-sm leading-6 md:leading-8 ${className}`}>{children}</div>;
+type Props = {
+  children?: ReactNode;
+  className?: string;
+  size?: "small";
+};
+
+const Paragraph: NextPage<Props> = ({ children, className, size }) => {
+  return (
+    <div
+      className={`tracking-widest ${
+        size === "small"
+          ? "text-xs md:text-sm leading-5 md:leading-6"
+          : "text-sm md:text-base leading-6 md:leading-7"
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Paragraph;

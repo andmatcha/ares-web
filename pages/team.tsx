@@ -7,7 +7,6 @@ import ListItem from "../components/objects/atoms/ListItem";
 import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import Section from "../components/objects/molecules/Section";
-import SponsorArea from "../components/objects/molecules/SponsorArea";
 import { branches, infoSets, members, teamContents } from "../const/team";
 
 const Team: NextPage = () => {
@@ -37,7 +36,7 @@ const Team: NextPage = () => {
           </div>
           <h3 className="text-2xl md:text-4xl tracking-widest">ARES Project</h3>
         </div>
-        <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4">
+        <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
           <div className="md:w-2/5">
             <img
               src="/images/group_photo1.png"
@@ -54,7 +53,7 @@ const Team: NextPage = () => {
         <div className="w-full flex">
           <div className="w-full px-2 sm:px-10 md:px-[10%]">
             <h4 className="md:text-xl pb-4">基本情報</h4>
-            <ul className="w-full flex flex-col gap-4">
+            <ul className="w-full flex flex-col">
               {infoSets.map((infoSet, index) => (
                 <ListItem
                   key={index}
@@ -82,11 +81,11 @@ const Team: NextPage = () => {
               key={index}
               className="w-full lg:w-1/2 flex flex-wrap justify-center items-center gap-2 lg:gap-4 px-2"
             >
-              <div>
+              <div className="pb-4">
                 <h4 className="text-xl lg:text-2xl pb-2">{name}</h4>
-                <Paragraph className="lg:h-32">{description}</Paragraph>
+                <Paragraph className="lg:h-28 xl:h-20">{description}</Paragraph>
               </div>
-              <div className="w-full px-10">
+              <div className="w-3/4 lg:w-full px-10">
                 <img src={imagePath} alt="" className="w-full object-contain" />
               </div>
             </div>
@@ -120,8 +119,21 @@ const Team: NextPage = () => {
           </div>
         ))}
       </Section> */}
-
-      <SponsorArea />
+      <Section id="contact" title="Follow Us!">
+        <p className="text-center  text-sm md:text-base">
+          ↓日々の活動の様子や最新情報を発信しています↓
+        </p>
+        <div className="max-w-4xl mx-auto mt-5">
+          <a
+            className="twitter-timeline"
+            data-height="500"
+            data-theme="dark"
+            href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
+          >
+            Tweets by AresPjt2022
+          </a>
+        </div>
+      </Section>
     </Layout>
   );
 };

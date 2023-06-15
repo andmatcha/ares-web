@@ -1,9 +1,15 @@
 import { NextPage } from "next";
-import React from "react";
+
+import HyakuBanch from "../objects/molecules/HyakuBanch";
+import SponsorArea from "../objects/molecules/SponsorArea";
 
 const Footer: NextPage = () => {
   return (
     <footer className="w-full">
+      <div>
+        <SponsorArea />
+        <HyakuBanch />
+      </div>
       <div className="w-full flex flex-col items-center bg-black">
         {/* <div className="w-20">
           <img

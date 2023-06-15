@@ -6,10 +6,12 @@ import Slide from "../atoms/Slide";
 const MainVisual: NextPage = () => {
   return (
     <div className="relative h-screen">
-      <div className="h-20 md:h-0"></div>
+      <div className="h-16 md:h-0"></div>
       <Slide
         images={mainImages}
-        className="absolute top-0 left-0 w-full h-full overflow-hidden"
+        settings={{
+          className: "absolute top-0 left-0 w-full h-full overflow-hidden",
+        }}
       />
       <div className="absolute top-0 left-0 w-full h-full bg-main-bg/75">
         <div className="w-full h-full flex flex-col justify-end gap-2 pl-2 md:pl-20 pb-[30vh] md:pb-20">
@@ -20,8 +22,8 @@ const MainVisual: NextPage = () => {
             世界レベルの火星ローバーを日本から
           </p>
           <p className="mt-4 text-base md:text-xl max-w-xl leading-8 tracking-wider animate-[emerge2_4.5s_ease-out]">
-            私たちは世界有数のローバーのコンテストであるURC(University Rover
-            Challenge)の日本勢初出場を目指して活動しています。
+            私たちは、学生による火星探査機の世界大会 ”University Rover Challenge
+            (URC)”への日本勢初出場を目指して活動しています。
           </p>
         </div>
       </div>
