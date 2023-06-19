@@ -1,104 +1,61 @@
 import { NextPage } from "next";
+import { useMemo, useState } from "react";
 
 import Layout from "../components/layouts/Layout";
+import Paragraph from "../components/objects/atoms/Paragraph";
+import { rovers } from "../const/rover";
 
 const Team: NextPage = () => {
+  const [selectedRoverIndex, setSelectedRoverIndex] = useState(0);
+
+  const onClickRover = (index: number) => {
+    setSelectedRoverIndex(index);
+  };
+
+  const selectedRover = useMemo(() => {
+    return rovers[selectedRoverIndex];
+  }, [selectedRoverIndex]);
   return (
-    <Layout title="Our Rover">
-      <div className="w-full h-20"></div>
-      <div className="px-40">
+    <Layout allowTopSpace title="Our Rover">
+      <div className="px-4 lg:px-20">
         <div>
-          <h1 className="border-b text-5xl pb-4">Our Rovers</h1>
+          <h1 className="border-b text-3xl lg:text-5xl pb-4">Our Rovers</h1>
         </div>
+        {/* ローバー選択エリア */}
         <div>
-          <ul className="flex gap-4 py-8">
-            <li className="flex flex-col gap-2 justify-center items-center opacity-60">
-              <div className="rounded-full overflow-hidden w-24 h-24 border-2">
-                <img
-                  src="/images/ares1.jpg"
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-sm">ARES 1</p>
-            </li>
-            <li className="flex flex-col gap-2 justify-center items-center opacity-60">
-              <div className="rounded-full overflow-hidden w-24 h-24 border-2">
-                <img
-                  src="/images/ares2.jpg"
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-sm">ARES 2</p>
-            </li>
-            <li className="flex flex-col gap-2 justify-center items-center opacity-60">
-              <div className="rounded-full overflow-hidden w-24 h-24 border-2">
-                <img
-                  src="/images/ares3.jpg"
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-sm">ARES 3</p>
-            </li>
-            <li className="flex flex-col gap-2 justify-center items-center">
-              <div className="rounded-full overflow-hidden w-24 h-24 border-2">
-                <img
-                  src="/images/ares4.png"
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-sm">ARES 4</p>
-            </li>
+          <ul className="flex flex-wrap gap-4 py-8">
+            {rovers.map(({ name, imagePath }, index) => (
+              <li
+                key={index}
+                onClick={() => onClickRover(index)}
+                className={`flex flex-col gap-2 justify-center items-center ${
+                  index !== selectedRoverIndex && "opacity-60"
+                }`}
+              >
+                <div className="rounded-full overflow-hidden w-16 md:w-24 h-16 md:h-24 border-2">
+                  <img
+                    src={imagePath}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-xs lg:text-sm">{name}</p>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="flex gap-5">
-          <div className="w-3/5">
+        {/* ローバー詳細エリア */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-5 py-4">
+          <div className="w-2/3 lg:w-2/5">
             <img
-              src="/images/ares4.png"
-              alt="ARES 3"
+              src={selectedRover.imagePath}
+              alt={selectedRover.name}
               className="w-full object-contain"
             />
           </div>
-          <div className="py-4 flex flex-col gap-8">
-            <h2 className="text-5xl">ARES 4</h2>
-            <ul className="flex flex-col items-start gap-4">
-              <li className="flex items-baseline gap-4">
-                <div className="text-sm">制作年:</div>
-                <div className="text-lg">2023</div>
-              </li>
-              <li className="flex items-baseline gap-4">
-                <div className="text-sm">制作期間:</div>
-                <div className="text-lg">99日</div>
-              </li>
-              <li className="flex items-baseline gap-4">
-                <div className="text-sm">制作費:</div>
-                <div className="text-xl">¥99,999</div>
-              </li>
-              <li className="flex flex-col gap-4">
-                <div className="flex h-7 items-end">
-                  <div className="text-sm">特徴:</div>
-                </div>
-                <div className="text-base pl-4">
-                  <ul className="flex flex-col gap-4 list-disc">
-                    <li>
-                      Modular Interchangeable payloads for specialised rover
-                    </li>
-                    <li>
-                      configurations Six wheel double bogie suspension system
-                    </li>
-                    <li>
-                      Board-to-board connectors via a custom backplane board 6
-                    </li>
-                    <li>
-                      Degree of Freedom Robotic Arm Two finger parallel end
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
+          <div className="lg:py-4 flex flex-col gap-4 lg:w-3/5">
+            <h2 className="text-3xl font-medium">{selectedRover.name}</h2>
+            <Paragraph>{selectedRover.description}</Paragraph>
           </div>
         </div>
       </div>
