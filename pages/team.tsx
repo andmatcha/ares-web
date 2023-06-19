@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
@@ -12,6 +12,13 @@ import { branches, infoSets, members, teamContents } from "../const/team";
 const Team: NextPage = () => {
   const leaders = useMemo(() => {
     return members.filter((member) => member.isLeader);
+  }, []);
+
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
   }, []);
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
