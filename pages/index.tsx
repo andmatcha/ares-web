@@ -10,12 +10,11 @@ import FadeIn from "../components/objects/atoms/FadeIn";
 import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import HyakuBanch from "../components/objects/molecules/HyakuBanch";
-import Section from "../components/objects/molecules/Section";
 import SponsorArea from "../components/objects/molecules/SponsorArea";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import { articles } from "../const/articles";
 import supporters from "../const/supporters";
-import { branches, goals } from "../const/team";
+import { goals } from "../const/team";
 import URL from "../const/url";
 
 const Home: NextPage = () => {
