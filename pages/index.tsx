@@ -33,14 +33,6 @@ const Home: NextPage = () => {
     });
   };
   const sortedArticles = useMemo(() => sortArticlesDec(), []);
-
-  useEffect(() => {
-    const s = document.createElement("script");
-    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
-    s.setAttribute("async", "true");
-    document.head.appendChild(s);
-  }, []);
-
   return (
     <Layout title="ARES Project">
       <MainVisual />
