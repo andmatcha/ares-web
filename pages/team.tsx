@@ -3,6 +3,7 @@ import { useEffect, useMemo } from "react";
 
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
+import Hero from "../components/objects/atoms/Hero";
 import ListItem from "../components/objects/atoms/ListItem";
 import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
@@ -23,16 +24,7 @@ const Team: NextPage = () => {
   }, []);
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
-      <div className="w-full relative">
-        <img
-          src="/images/leaders_wide.jpg"
-          alt=""
-          className="w-full object-cover opacity-40"
-        />
-        <div className="absolute top-0 left-0 w-full h-full md:px-40 flex justify-center md:justify-start items-center">
-          <h2 className="text-xl md:text-6xl tracking-widest">Our Team</h2>
-        </div>
-      </div>
+      <Hero title="Our Team" imagePath="/images/leaders_wide.jpg" />
       {/* ARES全体紹介 */}
       <Section id="about" className="flex flex-col gap-10 items-center">
         <div className="flex -mb-8 md:mb-0 justify-center items-center gap-4">

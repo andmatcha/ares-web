@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { useMemo, useState } from "react";
 
 import Layout from "../components/layouts/Layout";
+import Hero from "../components/objects/atoms/Hero";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import { rovers } from "../const/rover";
 
@@ -17,10 +18,8 @@ const Team: NextPage = () => {
   }, [selectedRoverIndex]);
   return (
     <Layout allowTopSpace title="Our Rover">
+      <Hero title="Our Rovers" imagePath="/images/rovers/ares4_wide.jpg" />
       <div className="px-4 lg:px-20">
-        <div>
-          <h1 className="border-b text-3xl lg:text-5xl pb-4">Our Rovers</h1>
-        </div>
         {/* ローバー選択エリア */}
         <div>
           <ul className="flex flex-wrap gap-4 py-8">
@@ -46,7 +45,7 @@ const Team: NextPage = () => {
         </div>
         {/* ローバー詳細エリア */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-5 py-4">
-          <div className="w-2/3 lg:w-2/5">
+          <div className="w-2/3 lg:w-2/5 rounded-md overflow-hidden">
             <img
               src={selectedRover.imagePath}
               alt={selectedRover.name}
