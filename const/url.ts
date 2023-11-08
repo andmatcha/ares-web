@@ -19,6 +19,12 @@ const URL = {
   misumi: "https://www.misumi.co.jp/",
   telstar: "http://spacemgz-telstar.com/",
   hyaku_banch: "https://100banch.com/",
+  fourthai: "https://www.4th.ai/",
+  amulapo: "https://amulapo-inc.com/",
+  cyport: "https://www.cyport.co.jp/",
+  robotis: "https://e-shop.robotis.co.jp/",
+  sk_honpo: "https://skhonpo.com/",
+  utyu_banashi: "http://ryosasaki.net/",
 };
 
 export default URL;
