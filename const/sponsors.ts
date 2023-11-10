@@ -8,14 +8,34 @@ const sponsors: Sponsor[] = [
     url: URL.ablab,
   },
   {
-    name: "iVicon Japan",
-    imagePath: "/images/brand_marks/ivicon_japan.png",
-    url: URL.ivicon_japan,
+    name: "amulapo",
+    imagePath: "/images/brand_marks/amulapo.png",
+    url: URL.amulapo,
+  },
+  {
+    name: "autodesk",
+    imagePath: "/images/brand_marks/autodesk.png",
+    url: URL.autodesk,
+  },
+  {
+    name: "cyport",
+    imagePath: "/images/brand_marks/cyport.jpg",
+    url: URL.cyport,
+  },
+  {
+    name: "4th.ai",
+    imagePath: "/images/brand_marks/4thai.jpg",
+    url: URL.fourthai,
   },
   {
     name: "工機ホールディングス",
     imagePath: "/images/brand_marks/hikoki.jpg",
     url: URL.hikoki,
+  },
+  {
+    name: "iVicon Japan",
+    imagePath: "/images/brand_marks/ivicon_japan.png",
+    url: URL.ivicon_japan,
   },
   {
     name: "マブチモーター",
@@ -33,24 +53,9 @@ const sponsors: Sponsor[] = [
     url: URL.misumi,
   },
   {
-    name: "TELSTAR",
-    imagePath: "/images/brand_marks/telstar.jpg",
-    url: URL.telstar,
-  },
-  {
-    name: "4th.ai",
-    imagePath: "/images/brand_marks/4thai.jpg",
-    url: URL.fourthai,
-  },
-  {
-    name: "amulapo",
-    imagePath: "/images/brand_marks/amulapo.png",
-    url: URL.amulapo,
-  },
-  {
-    name: "cyport",
-    imagePath: "/images/brand_marks/cyport.jpg",
-    url: URL.cyport,
+    name: "日本精工",
+    imagePath: "/images/brand_marks/nsk.png",
+    url: URL.nsk,
   },
   {
     name: "ROBOTIS",
@@ -61,6 +66,16 @@ const sponsors: Sponsor[] = [
     name: "SK本舗",
     imagePath: "/images/brand_marks/SKhonpo.jpg",
     url: URL.sk_honpo,
+  },
+  {
+    name: "sorae",
+    imagePath: "/images/brand_marks/sorae.png",
+    url: URL.sorae,
+  },
+  {
+    name: "TELSTAR",
+    imagePath: "/images/brand_marks/telstar.jpg",
+    url: URL.telstar,
   },
   {
     name: "宇宙ばなし",
