@@ -47,13 +47,13 @@ export const branches = [
   {
     name: "東北支部",
     description:
-      "ローバーの設計・製作を担当。自律走行技術や起伏に富む砂漠での走破性を実現する機体を開発。",
+      "ローバーの設計・製作を担当。自律走行技術や起伏に富む砂漠での走破性を実現する機体を開発しています。",
     imagePath: "/images/tohoku_members.jpg",
   },
   {
     name: "東京支部",
     description:
-      "ローバーに搭載するロボットアームの設計・製作を担当。宇宙船の修理から岩石サンプルの回収まで、あらゆる環境に適応可能なロボットアームを開発。",
+      "ローバーに搭載するロボットアームの設計・製作を担当。宇宙船の修理から岩石サンプルの回収まで、あらゆる環境に適応可能なロボットアームを開発しています。",
     imagePath: "/images/keio_members.jpg",
   },
 ];
@@ -61,32 +61,37 @@ export const branches = [
 export const subTeams = [
   {
     name: "機構班",
-    description: "",
-    imagePath: "",
+    description:
+      "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+    imagePath: "/images/arm_cad.png",
     memberIds: [],
   },
   {
     name: "制御班",
-    description: "",
-    imagePath: "",
+    description:
+      "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+    imagePath: "/images/group_photo1.png",
     memberIds: [],
   },
   {
     name: "電装班",
-    description: "",
-    imagePath: "",
+    description:
+      "電装班は、火星探査ローバーの電気システムを設計・開発しています。EAGLEソフトウェアを使い、高品質なPCB基板を設計しています。安定した電源回路やArduino・STM32マイコンを活用し、ローバー制御や広範な通信システムの開発を行っています。役割分担し、チーム全体で基板設計と試験を進め、高い完成度を追求しています。",
+    imagePath: "/images/group_photo1.png",
     memberIds: [],
   },
   {
-    name: "バイオ班",
-    description: "",
-    imagePath: "",
+    name: "サイエンス班",
+    description:
+      "火星に地球外生命体はいるのか？URC大会ではこの深遠な問いに立ち向かい、サンプル内での生命体の有無の分析を行います。ERC大会では火星地質学に基づいて独自のローバーの探査ルートを考案。その計画と仮説に沿った走行、サンプル回収を行うようアーム班や電装班などと協力して開発を行っています。論文に関する議論や機構の話し合いを重ね、工学・理学知識を融合させてより良い分析方法を模索しています。",
+    imagePath: "/images/group_photo1.png",
     memberIds: [],
   },
   {
-    name: "広報局・会計局",
-    description: "",
-    imagePath: "",
+    name: "広報班",
+    description:
+      "広報班は、外部の企業や団体の方との連携、イベントの企画、WEBサイトや各種SNSの運営を行っています。より多くの方々に私たちの活動を知ってもらい、応援していただくことを目指しています。",
+    imagePath: "/images/group_photo1.png",
     memberIds: [],
   },
 ];
@@ -118,77 +123,3 @@ export const members: Member[] = [
     isLeader: true,
   },
 ];
-
-// 動作確認用 要修正
-export const teamContents = {
-  branches: [
-    {
-      title: "機構班",
-      imagePath: "/images/keio_members.jpg",
-      paragraph:
-        "班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。班の説明。",
-      members: [
-        {
-          imagePath: "/images/arm1.png",
-          name: "aaaさん",
-        },
-        {
-          imagePath: "/images/arm2.png",
-          name: "bbbさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "cccさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "dddさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "eeeさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "fffさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "gggさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "hhhさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "iiiさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "llllさん",
-        },
-      ],
-    },
-    {
-      title: "制御班",
-      imagePath: "/images/tohoku_members.jpg",
-      paragraph:
-        "制御します！！！！制御します！！！！制御します！！！！制御します！！！！制御します！！！！",
-      members: [
-        {
-          imagePath: "/images/arm1.png",
-          name: "aaaさん",
-        },
-        {
-          imagePath: "/images/arm2.png",
-          name: "bbbさん",
-        },
-        {
-          imagePath: "/images/arm3.png",
-          name: "cccさん",
-        },
-      ],
-    },
-  ],
-};
