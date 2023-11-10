@@ -4,6 +4,7 @@ const URL = {
   rover: "/rover",
   team: "/team",
   blog: "/blog",
+  contact: "/contact",
 
   // 外部ページ
   campfire_project: "https://camp-fire.jp/projects/view/632663",
