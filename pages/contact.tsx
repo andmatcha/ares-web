@@ -1,7 +1,13 @@
 import { NextPage } from "next";
 
+import Layout from "../components/layouts/Layout";
+
 const Contact: NextPage = () => {
-  return <div>Contact</div>;
+  return (
+    <Layout title="CONTACT" allowTopSpace>
+      <div></div>
+    </Layout>
+  );
 };
 
 export default Contact;
