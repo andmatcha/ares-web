@@ -77,7 +77,7 @@ const Team: NextPage = () => {
         </FadeIn>
       </Section>
       {/* 班紹介 */}
-      <Section id="sub-teams" title="Sub-Teams">
+      {/* <Section id="sub-teams" title="Sub-Teams">
         <FadeIn className="flex flex-col justify-center items-center gap-6">
           {subTeams.map(({ name, description, imagePath }, index) => (
             <TeamCard key={index} title={name} imagePath={imagePath}>
@@ -85,7 +85,7 @@ const Team: NextPage = () => {
             </TeamCard>
           ))}
         </FadeIn>
-      </Section>
+      </Section> */}
       {/* 幹部紹介 */}
       <Section id="leaders" title="Leaders">
         <ul className="flex flex-col gap-10 w-full items-center">
