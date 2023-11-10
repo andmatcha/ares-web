@@ -2,6 +2,7 @@ import { NextPage } from "next";
 
 import Layout from "../components/layouts/Layout";
 import Hero from "../components/objects/atoms/Hero";
+import MainButton from "../components/objects/atoms/MainButton";
 
 const Contact: NextPage = () => {
   return (
@@ -39,7 +40,7 @@ const Contact: NextPage = () => {
               ></textarea>
             </div>
             <div className="flex flex-col gap-2 px-4 py-2">
-              <button className="flex justify-center bg-white text-black w-20 px-4 py-2 rounded-sm">
+              <button type="submit" className="flex justify-center bg-white text-black w-20 px-4 py-2 rounded-sm">
                 送信
               </button>
             </div>
