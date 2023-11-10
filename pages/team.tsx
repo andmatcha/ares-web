@@ -3,11 +3,13 @@ import { useEffect, useMemo } from "react";
 
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
+import Hero from "../components/objects/atoms/Hero";
 import ListItem from "../components/objects/atoms/ListItem";
 import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
+import TeamCard from "../components/objects/atoms/TeamCard";
 import Section from "../components/objects/molecules/Section";
-import { branches, infoSets, members, teamContents } from "../const/team";
+import { branches, infoSets, members, subTeams } from "../const/team";
 
 const Team: NextPage = () => {
   const leaders = useMemo(() => {
@@ -22,16 +24,8 @@ const Team: NextPage = () => {
   }, []);
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
-      <div className="w-full relative">
-        <img
-          src="/images/leaders_wide.jpg"
-          alt=""
-          className="w-full object-cover opacity-40"
-        />
-        <div className="absolute top-0 left-0 w-full h-full md:px-40 flex justify-center md:justify-start items-center">
-          <h2 className="text-xl md:text-6xl tracking-widest">Our Team</h2>
-        </div>
-      </div>
+      <Hero title="Our Team" imagePath="/images/leaders_wide.jpg" />
+      {/* ARES全体紹介 */}
       <Section id="about" className="flex flex-col gap-10 items-center">
         <div className="flex -mb-8 md:mb-0 justify-center items-center gap-4">
           <div className="w-20 md:w-40">
@@ -44,7 +38,7 @@ const Team: NextPage = () => {
           <h3 className="text-2xl md:text-4xl tracking-widest">ARES Project</h3>
         </div>
         <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
-          <div className="md:w-2/5">
+          <div className="md:w-2/5 rounded-sm overflow-hidden">
             <img
               src="/images/group_photo1.png"
               alt=""
@@ -72,6 +66,27 @@ const Team: NextPage = () => {
           </div>
         </div>
       </Section>
+      {/* 支部紹介 */}
+      <Section id="branches" title="Branches">
+        <FadeIn className="flex flex-col justify-center items-center lg:items-start gap-10">
+          {branches.map(({ name, description, imagePath }, index) => (
+            <TeamCard key={index} title={name} imagePath={imagePath}>
+              {description}
+            </TeamCard>
+          ))}
+        </FadeIn>
+      </Section>
+      {/* 班紹介 */}
+      <Section id="sub-teams" title="Sub-Teams">
+        <FadeIn className="flex flex-col justify-center items-center gap-6">
+          {subTeams.map(({ name, description, imagePath }, index) => (
+            <TeamCard key={index} title={name} imagePath={imagePath}>
+              {description}
+            </TeamCard>
+          ))}
+        </FadeIn>
+      </Section>
+      {/* 幹部紹介 */}
       <Section id="leaders" title="Leaders">
         <ul className="flex flex-col gap-10 w-full items-center">
           {leaders.map((member, index) => (
@@ -81,51 +96,7 @@ const Team: NextPage = () => {
           ))}
         </ul>
       </Section>
-      <Section id="branches" title="Branches">
-        <FadeIn className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10">
-          {branches.map(({ name, description, imagePath }, index) => (
-            <div
-              key={index}
-              className="w-full lg:w-1/2 flex flex-wrap justify-center items-center gap-2 lg:gap-4 px-2"
-            >
-              <div className="pb-4">
-                <h4 className="text-xl lg:text-2xl pb-2">{name}</h4>
-                <Paragraph className="lg:h-28 xl:h-20">{description}</Paragraph>
-              </div>
-              <div className="w-3/4 lg:w-full px-10">
-                <img src={imagePath} alt="" className="w-full object-contain" />
-              </div>
-            </div>
-          ))}
-        </FadeIn>
-      </Section>
-
-      {/* 班紹介 一旦スコープアウト */}
-      {/* <Section id="sub-teams" title="Sub-Teams">
-        {teamContents.branches.map((branch, index) => (
-          <div key={index}>
-            <p className="text-2xl font-bold ">{branch.title}</p>
-            <div className="flex justify-center gap-20 m-10">
-              <img src={branch.imagePath} className="md:w-[45%]" alt="" />
-              {branch.paragraph}
-            </div>
-            <p>メンバー紹介</p>
-            <div className="grid grid-cols-4 gap-20 m-10">
-              {branch.members.map((member, memberIndex) => (
-                <div
-                  key={memberIndex}
-                  className={`flex justify-center items-center `}
-                >
-                  <div key={index}>
-                    <img src={member.imagePath} alt="" />
-                    <div className="text-center">{member.name}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </Section> */}
+      {/* Twitter */}
       <Section id="contact" title="Follow Us!">
         <p className="text-center  text-sm md:text-base">
           ↓日々の活動の様子や最新情報を発信しています↓
