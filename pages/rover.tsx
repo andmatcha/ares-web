@@ -7,7 +7,9 @@ import Paragraph from "../components/objects/atoms/Paragraph";
 import { rovers } from "../const/rover";
 
 const Team: NextPage = () => {
-  const [selectedRoverIndex, setSelectedRoverIndex] = useState(0);
+  const [selectedRoverIndex, setSelectedRoverIndex] = useState(
+    rovers.length - 1
+  );
 
   const onClickRover = (index: number) => {
     setSelectedRoverIndex(index);
