@@ -6,18 +6,10 @@ export const useMail = () => {
   const [message, setMessage] = useState("");
 
   const send = async () => {
+    console.log({ name, email, message });
     await fetch("/api/mail", {
       method: "POST",
-      body: `
-名前
-${name}
-
-メールアドレス
-${email}
-
-お問い合わせ内容
-${message}
-`,
+      body: JSON.stringify({ name, email, message }),
     });
   };
 
