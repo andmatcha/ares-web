@@ -2,9 +2,10 @@ import { NextPage } from "next";
 
 import Layout from "../components/layouts/Layout";
 import Hero from "../components/objects/atoms/Hero";
-import MainButton from "../components/objects/atoms/MainButton";
+import { useMail } from "../hooks/useMail";
 
 const Contact: NextPage = () => {
+  const { setName, setEmail, setMessage, send } = useMail();
   return (
     <Layout title="CONTACT" allowTopSpace>
       <Hero title="CONTACT" imagePath="/images/leaders_wide.jpg" />
@@ -17,6 +18,7 @@ const Contact: NextPage = () => {
                 type="text"
                 name="name"
                 id="name"
+                onChange={(e) => setName(e.target.value)}
                 className="h-8 bg-white text-black flex items-center rounded-sm p-2"
               />
             </div>
@@ -26,6 +28,7 @@ const Contact: NextPage = () => {
                 type="email"
                 name="email"
                 id="email"
+                onChange={(e) => setEmail(e.target.value)}
                 className="h-8 bg-white text-black flex items-center rounded-sm p-2"
               />
             </div>
@@ -34,13 +37,18 @@ const Contact: NextPage = () => {
               <textarea
                 name="message"
                 id="message"
+                onChange={(e) => setMessage(e.target.value)}
                 cols={30}
                 rows={16}
                 className="bg-white text-black flex items-center rounded-sm p-2 "
               ></textarea>
             </div>
             <div className="flex flex-col gap-2 px-4 py-2">
-              <button type="submit" className="flex justify-center bg-white text-black w-20 px-4 py-2 rounded-sm">
+              <button
+                type="button"
+                onClick={send}
+                className="flex justify-center bg-white text-black w-20 px-4 py-2 rounded-sm"
+              >
                 送信
               </button>
             </div>
