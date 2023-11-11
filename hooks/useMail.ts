@@ -6,7 +6,6 @@ export const useMail = () => {
   const [message, setMessage] = useState("");
 
   const send = async () => {
-    console.log({ name, email, message });
     await fetch("/api/mail", {
       method: "POST",
       body: JSON.stringify({ name, email, message }),

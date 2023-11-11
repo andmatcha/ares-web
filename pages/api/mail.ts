@@ -24,7 +24,7 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
     </p>
     <section style="background-color: #f5f5f5; padding: 20px;">
     <p>【お名前】</p>
-    <p style="padding: 0px 10px">${mailData.name}様</p>
+    <p style="padding: 0px 10px">${mailData.name} 様</p>
     <p>【メッセージ内容】</p>
     <p style="padding: 0px 10px">${mailData.message}</p>
     <p>【返信先メールアドレス】</p>
