@@ -58,6 +58,11 @@ const sponsors: Sponsor[] = [
     url: URL.nsk,
   },
   {
+    name: "PFM",
+    imagePath: "/images/brand_marks/pfm.jpg",
+    url: URL.pfm,
+  },
+  {
     name: "ROBOTIS",
     imagePath: "/images/brand_marks/robotis.jpg",
     url: URL.robotis,
