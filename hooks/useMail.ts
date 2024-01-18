@@ -1,11 +1,7 @@
 import { useState } from "react";
 
 export const useMail = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const send = async () => {
+  const send = async (name: string, email: string, message: string) => {
     await fetch("/api/mail", {
       method: "POST",
       body: JSON.stringify({ name, email, message }),
@@ -13,9 +9,6 @@ export const useMail = () => {
   };
 
   return {
-    setName,
-    setEmail,
-    setMessage,
     send,
   };
 };
