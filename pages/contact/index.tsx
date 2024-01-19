@@ -36,8 +36,9 @@ const Contact: NextPage = () => {
   const onSubmit: SubmitHandler<FormData> = ({ name, email, message }) => {
     setIsSending(true);
     send(name, email, message).then(() => {
-      router.push("/contact/success");
-      setIsSending(false);
+      router.push("/contact/success").then(() => {
+        setIsSending(false);
+      });
     });
   };
 
@@ -115,7 +116,38 @@ const Contact: NextPage = () => {
             <div className="flex gap-2 px-4 py-2 justify-center">
               <Button type="submit">送信</Button>
             </div>
-            <div className="p-4">Email: ares2022.tu@gmail.com</div>
+            <div className="mt-4 p-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6">
+                  <img
+                    src="/images/icons/x.svg"
+                    alt=""
+                    className="w-full h-full"
+                  />
+                </div>
+                <p>@AresPjt2022</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6">
+                  <img
+                    src="/images/icons/instagram.svg"
+                    alt=""
+                    className="w-full h-full"
+                  />
+                </div>
+                <p>@ares_project_official</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6">
+                  <img
+                    src="/images/icons/envelope.svg"
+                    alt=""
+                    className="w-full h-full"
+                  />
+                </div>
+                <p>ares2022.tu@gmail.com</p>
+              </div>
+            </div>
           </div>
         </div>
       </form>
