@@ -1,9 +1,11 @@
 import { NextPage } from "next";
 import { useRouter } from "next/router";
+import { Suspense, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import Layout from "../../components/layouts/Layout";
 import Hero from "../../components/objects/atoms/Hero";
+import Loader from "../../components/objects/atoms/Loader";
 import { useMail } from "../../hooks/useMail";
 
 interface FormData {
@@ -20,7 +22,10 @@ const Contact: NextPage = () => {
     formState: { errors },
     trigger,
   } = useForm<FormData>();
+
   const { send } = useMail();
+
+  const [isSending, setIsSending] = useState<boolean>(false);
 
   // onBlur イベントでバリデーションを実行する関数
   const handleBlur = async (fieldName: keyof FormData) => {
@@ -28,18 +33,25 @@ const Contact: NextPage = () => {
   };
 
   const onSubmit: SubmitHandler<FormData> = ({ name, email, message }) => {
-    // 送信時の処理をここに追加
+    setIsSending(true);
     send(name, email, message).then(() => {
-      router.push('/contact/success');
-    })
+      router.push("/contact/success");
+      setIsSending(false);
+    });
   };
 
-  return (
+  return isSending ? (
+    // メッセージ送信中の画面
+    <div className="w-screen h-screen">
+      <Loader message="SENDING" />
+    </div>
+  ) : (
+    // メッセージ送信前の画面
     <Layout title="CONTACT" allowTopSpace>
       <Hero title="CONTACT" imagePath="/images/leaders_wide.jpg" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex p-4">
-          <div className="w-1/2">
+          <div className="w-full lg:w-1/2">
             {/* お名前の入力フィールド */}
             <div className="flex flex-col gap-2 px-4 py-2">
               <label htmlFor="name">お名前</label>
@@ -99,7 +111,7 @@ const Contact: NextPage = () => {
                 )}
               </div>
             </div>
-            <div className="flex flex-col gap-2 px-4 py-2">
+            <div className="flex gap-2 px-4 py-2 justify-center lg:justify-start">
               <button
                 type="submit"
                 className="flex justify-center bg-white text-black w-20 px-4 py-2 rounded-sm"
