@@ -11,6 +11,10 @@ const URL = {
   hyaku_banch_project: "https://100banch.com/projects/ares-project",
   urc_official: "https://urc.marssociety.org/",
 
+  // SNS
+  instagram: "https://www.instagram.com/ares_project_official",
+  x: "https://twitter.com/arespjt2022",
+
   // スポンサー等のサイト
   ablab: "https://ablab.space/",
   amulapo: "https://amulapo-inc.com/",
