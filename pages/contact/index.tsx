@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import Layout from "../../components/layouts/Layout";
@@ -28,7 +28,7 @@ const Contact: NextPage = () => {
     trigger,
   } = useForm<FormData>();
 
-  const { send } = useMail();
+  const { sendToAres, sendToCustomer } = useMail();
 
   const [isSending, setIsSending] = useState<boolean>(false);
 
@@ -39,11 +39,24 @@ const Contact: NextPage = () => {
 
   const onSubmit: SubmitHandler<FormData> = ({ name, email, message }) => {
     setIsSending(true);
-    send(name, email, message).then(() => {
-      router.push("/contact/success").then(() => {
+    // ARESのアドレスにお知らせメールを送信
+    sendToAres(name, email, message)
+      .then(() => {
+        // 問い合わせ元のアドレスに確認メールを送信
+        sendToCustomer(name, email, message);
+      })
+      .then(() => {
+        // 送信完了時、完了ページに遷移
+        router.push("/contact/success");
+      })
+      .catch(() => {
+        // 送信失敗時、エラーページに遷移
+        router.push("/contact/error");
+      })
+      .finally(() => {
+        // いずれの場合も送信中フラグをリセット
         setIsSending(false);
       });
-    });
   };
 
   return isSending ? (
@@ -121,7 +134,7 @@ const Contact: NextPage = () => {
                 onBlur={() => handleBlur("message")}
                 cols={30}
                 rows={16}
-                className="bg-white text-black flex items-center rounded-sm p-2 "
+                className="bg-white text-black flex items-center rounded-sm p-2"
               ></textarea>
               <div className="h-4">
                 {errors.message && (

@@ -4,23 +4,25 @@ import Layout from "../../components/layouts/Layout";
 
 const Success = () => {
   return (
-    <Layout title="送信完了">
+    <Layout title="送信失敗">
       <div className="w-full h-screen flex justify-center items-center">
         <div className="flex flex-col justify-center items-center gap-4">
           <div className="w-32 h-32">
             <img
-              src="/images/icons/check-circle.svg"
+              src="/images/icons/exclamation-triangle.svg"
               alt=""
               className="w-full"
             />
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
-            <h2 className="text-center text-2xl">お問い合わせ完了</h2>
+            <h2 className="text-center text-2xl">
+              何らかのエラーが発生しました
+            </h2>
             <p className="text-center text-sm mb-2">
-              担当者より返信を差し上げますのでお待ち下さい
+              お手数ですが時間を置いてもう一度お試しください
             </p>
-            <Link href="/" className="text-ares-red ease-in-out">
-              トップページへ戻る
+            <Link href="/contact" className="text-ares-red ease-in-out">
+              問い合わせフォームへ戻る
             </Link>
           </div>
         </div>
