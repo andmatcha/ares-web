@@ -123,6 +123,7 @@ const Contact: NextPage = () => {
             <div className="mt-4 p-4 flex flex-col sm:flex-row justify-center items-center gap-6">
               <Link
                 href={URL.twitter}
+                target="_blank"
                 className="flex items-center gap-2 py-1 px-4 border rounded-3xl duration-300 fill-white hover:text-black hover:bg-white hover:fill-black"
               >
                 <div className="w-5 h-5">
@@ -132,6 +133,7 @@ const Contact: NextPage = () => {
               </Link>
               <Link
                 href={URL.instagram}
+                target="_blank"
                 className="flex items-center gap-2 py-1 px-4 border rounded-3xl duration-300 fill-white hover:text-black hover:bg-white hover:fill-black"
               >
                 <div className="w-5 h-5">
