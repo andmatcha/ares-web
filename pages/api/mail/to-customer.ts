@@ -20,7 +20,7 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
     text: mailData.message,
     html: `
     <p>
-    以下の内容でお問い合せが完了しました。担当者より返信いたしますのでお待ち下さい。
+    以下の内容でお問い合せが完了しました。担当者より返信を差し上げますのでお待ち下さい。
     </p>
     <section style="background-color: #f5f5f5; padding: 20px;">
     <p>【お名前】</p>

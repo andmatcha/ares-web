@@ -11,7 +11,7 @@ export const useMail = () => {
     email: string,
     message: string
   ) => {
-    await fetch("/api/mail/to-ares", {
+    await fetch("/api/mail/to-customer", {
       method: "POST",
       body: JSON.stringify({ name, email, message }),
     });
