@@ -64,7 +64,13 @@ const Contact: NextPage = () => {
               <input
                 type="text"
                 id="name"
-                {...register("name", { required: "名前は必須です" })}
+                {...register("name", {
+                  required: "名前は必須です",
+                  maxLength: {
+                    value: 100,
+                    message: "100文字以内で入力してください",
+                  },
+                })}
                 onBlur={() => handleBlur("name")}
                 className="h-8 bg-white text-black flex items-center rounded-sm p-2"
               />
@@ -86,6 +92,10 @@ const Contact: NextPage = () => {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                     message: "有効なメールアドレスを入力してください",
                   },
+                  maxLength: {
+                    value: 256,
+                    message: "有効なメールアドレスを入力してください",
+                  },
                 })}
                 onBlur={() => handleBlur("email")}
                 className="h-8 bg-white text-black flex items-center rounded-sm p-2"
@@ -103,6 +113,10 @@ const Contact: NextPage = () => {
                 id="message"
                 {...register("message", {
                   required: "問い合わせ内容は必須です",
+                  maxLength: {
+                    value: 2000,
+                    message: "2000文字以内で入力してください",
+                  },
                 })}
                 onBlur={() => handleBlur("message")}
                 cols={30}
