@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const useMail = () => {
   const send = async (name: string, email: string, message: string) => {
     await fetch("/api/mail", {

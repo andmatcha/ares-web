@@ -8,6 +8,8 @@ import Layout from "../../components/layouts/Layout";
 import Button from "../../components/objects/atoms/Button";
 import Hero from "../../components/objects/atoms/Hero";
 import Loader from "../../components/objects/atoms/Loader";
+import Instagram from "../../components/objects/icons/instagram";
+import Twitter from "../../components/objects/icons/twitter";
 import URL from "../../const/url";
 import { useMail } from "../../hooks/useMail";
 
@@ -118,25 +120,22 @@ const Contact: NextPage = () => {
             <div className="flex gap-2 px-4 py-2 justify-center">
               <Button type="submit">送信</Button>
             </div>
-              <div className="mt-4 p-4 flex flex-col sm:flex-row justify-center items-center gap-6"
+            <div className="mt-4 p-4 flex flex-col sm:flex-row justify-center items-center gap-6">
+              <Link
+                href={URL.twitter}
+                className="flex items-center gap-2 py-1 px-4 border rounded-3xl duration-300 fill-white hover:text-black hover:bg-white hover:fill-black"
               >
-              <Link href={URL.x} className="flex items-center gap-2 py-1 px-4 border rounded-3xl">
                 <div className="w-5 h-5">
-                  <img
-                    src="/images/icons/x.svg"
-                    alt=""
-                    className="w-full h-full"
-                  />
+                  <Twitter className="w-full h-full fill-inherit" />
                 </div>
                 <p>@AresPjt2022</p>
               </Link>
-              <Link href={URL.instagram} className="flex items-center gap-2 py-1 px-4 border rounded-3xl">
+              <Link
+                href={URL.instagram}
+                className="flex items-center gap-2 py-1 px-4 border rounded-3xl duration-300 fill-white hover:text-black hover:bg-white hover:fill-black"
+              >
                 <div className="w-5 h-5">
-                  <img
-                    src="/images/icons/instagram.svg"
-                    alt=""
-                    className="w-full h-full"
-                  />
+                  <Instagram className="w-full h-full fill-inherit" />
                 </div>
                 <p>@ares_project_official</p>
               </Link>

@@ -13,7 +13,7 @@ const URL = {
 
   // SNS
   instagram: "https://www.instagram.com/ares_project_official",
-  x: "https://twitter.com/arespjt2022",
+  twitter: "https://twitter.com/arespjt2022",
 
   // スポンサー等のサイト
   ablab: "https://ablab.space/",
