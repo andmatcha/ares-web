@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import Layout from "../../components/layouts/Layout";
