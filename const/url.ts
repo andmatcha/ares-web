@@ -4,11 +4,16 @@ const URL = {
   rover: "/rover",
   team: "/team",
   blog: "/blog",
+  contact: "/contact",
 
   // 外部ページ
   campfire_project: "https://camp-fire.jp/projects/view/632663",
   hyaku_banch_project: "https://100banch.com/projects/ares-project",
   urc_official: "https://urc.marssociety.org/",
+
+  // SNS
+  instagram: "https://www.instagram.com/ares_project_official",
+  twitter: "https://twitter.com/arespjt2022",
 
   // スポンサー等のサイト
   ablab: "https://ablab.space/",

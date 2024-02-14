@@ -14,6 +14,10 @@ const headerContents = {
       path: URL.blog,
       label: "BLOG",
     },
+    {
+      path: URL.contact,
+      label: "CONTACT",
+    },
   ],
 };
 
