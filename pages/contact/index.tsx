@@ -67,7 +67,7 @@ const Contact: NextPage = () => {
   ) : (
     // メッセージ送信前の画面
     <Layout title="CONTACT" allowTopSpace>
-      <Hero title="CONTACT" imagePath="/images/leaders_wide.jpg" />
+      <Hero title="CONTACT" imagePath="/images/hero_1.jpg" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex p-4 justify-center">
           <div className="w-full lg:w-1/2">

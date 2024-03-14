@@ -1,6 +1,7 @@
 export type ArticleOverview = {
   id: number;
   date: string;
+  tags: number[];
   title: string;
   thumbnail: string;
   description: string;
@@ -9,6 +10,10 @@ export type ArticleOverview = {
 export type Article = ArticleOverview & {
   author: string;
   type: string;
-  tags: string[];
   content: string;
+};
+
+export type Tag = {
+  id: number;
+  label: string;
 };
