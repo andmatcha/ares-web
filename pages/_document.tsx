@@ -18,6 +18,9 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
             rel="stylesheet"
           />
+          {/* twitter card */}
+          <meta name="twitter:image" content="https://arespjt.jp/images/ares_logo_white.png" />
+          <meta name="twitter:card" content="summary"></meta>
         </Head>
         <body>
           <Main />
