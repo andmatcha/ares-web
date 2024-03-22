@@ -19,7 +19,7 @@ export const articles: Article[] = [
     author: "Jin Aoyagi",
     type: "news",
     tags: [1],
-    content:
+    body:
       "11月25,26日にビッグパレットふくしまで開催された「ロボット・航空宇宙フェスタふくしま2022」に参加しました。スポンサーであるABLab様のブース内で展示を行い、当プロジェクトの紹介、支援の呼びかけを行いました。また、当プロジェクトのメンバーが講演を行いました。",
   },
   {
@@ -32,7 +32,7 @@ export const articles: Article[] = [
     author: "Jin Aoyagi",
     type: "news",
     tags: [1],
-    content:
+    body:
       "2月1~3日に東京ビッグサイトで開催された「2023 国際宇宙産業展 ISIEX」に参加しました。スポンサーであるABLab様のブース内で展示を行い、多くの方に私たちの活動を知っていただきました。最新の機体である「ARES4」を公開しました。",
   },
   {
@@ -45,7 +45,7 @@ export const articles: Article[] = [
     author: "Jin Aoyagi",
     type: "news",
     tags: [2],
-    content:
+    body:
       "4月13日、20日に放送された「探求の階段」に、代表の阿依ダニシおよびARES Projectメンバーが出演しました。",
   },
 ];

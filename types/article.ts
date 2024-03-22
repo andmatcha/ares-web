@@ -10,7 +10,7 @@ export type ArticleOverview = {
 export type Article = ArticleOverview & {
   author: string;
   type: string;
-  content: string;
+  body: string;
 };
 
 export type Tag = {

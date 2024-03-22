@@ -39,7 +39,7 @@ const ArticlePage: NextPage = () => {
           <div className="pb-16">
             <img src={THUMBNAIL_BASE_URL + article?.thumbnail} alt="" />
           </div>
-          <p className="text-sm md:text-base tracking-wide leading-8">{article?.content}</p>
+          <p className="text-sm md:text-base tracking-wide leading-8">{article?.body}</p>
         </div>
       </div>
     </Layout>
