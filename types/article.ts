@@ -1,19 +1,10 @@
-export type ArticleOverview = {
+export type Article = {
   id: number;
   date: string;
-  tags: number[];
-  title: string;
-  thumbnail: string;
-  description: string;
-};
-
-export type Article = ArticleOverview & {
   author: string;
-  type: string;
+  category: string;
+  thumbnail: string;
+  title: string;
+  description: string;
   body: string;
-};
-
-export type Tag = {
-  id: number;
-  label: string;
 };

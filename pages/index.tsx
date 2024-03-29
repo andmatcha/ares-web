@@ -159,7 +159,7 @@ const Home: NextPage = () => {
         <div className="w-full flex flex-col justify-center gap-4 px-4">
           {sortedArticles.map((article, index) => (
             <FadeIn key={index} options={{ delay: 150 * index }}>
-              <ArticleCard articleOverview={article} />
+              <ArticleCard article={article} />
             </FadeIn>
           ))}
         </div>

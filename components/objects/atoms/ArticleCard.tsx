@@ -1,15 +1,15 @@
 import { NextPage } from "next";
 
 import Paragraph from "./Paragraph";
-import { tags, THUMBNAIL_BASE_URL } from "../../../const/articles";
-import { ArticleOverview } from "../../../types/article";
+import { THUMBNAIL_BASE_URL } from "../../../const/articles";
+import { Article } from "../../../types/article";
 
 type Props = {
-  articleOverview: ArticleOverview;
+  article: Article;
 };
 
 const ArticleCard: NextPage<Props> = ({
-  articleOverview: { date, tags: tagIds, title, thumbnail, description },
+  article: { date, category, title, thumbnail, description },
 }) => {
   const trimDescription = (description: string) => {
     const TEXT_LIMIT = 100;
@@ -19,9 +19,6 @@ const ArticleCard: NextPage<Props> = ({
     return description;
   };
 
-  const getTagLabel = (tagId: number) => {
-    return tags.find((tag) => tag.id === tagId)?.label;
-  };
   return (
     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 px-4 lg:px-10 py-2 md:py-4 rounded-md hover:bg-[#1f1f1f] duration-500">
       <div className="flex justify-center md:h-32">
@@ -38,11 +35,9 @@ const ArticleCard: NextPage<Props> = ({
               {date}
             </div>
             <div className="md:flex gap-2 hidden">
-              {tagIds.map((tagId) => (
-                <div key={tagId} className="border border-gray-500 py-1 px-2 text-xs text-gray-500 rounded-xl">
-                  {getTagLabel(tagId)}
-                </div>
-              ))}
+              <div className="border border-gray-500 py-1 px-2 text-xs text-gray-500 rounded-xl">
+                {category}
+              </div>
             </div>
           </div>
           <h3 className="text-sm md:text-lg tracking-wider">{title}</h3>

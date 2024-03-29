@@ -12,7 +12,7 @@ const BlogHome = () => {
       <div className="flex md:flex-col flex-wrap gap-4 p-4">
         {articles.map((article) => (
           <Link href={`/blog/${article.id}`} key={article.id}>
-            <ArticleCard articleOverview={article}></ArticleCard>
+            <ArticleCard article={article}></ArticleCard>
           </Link>
         ))}
       </div>
