@@ -68,6 +68,11 @@ const sponsors: Sponsor[] = [
     url: URL.robotis,
   },
   {
+    name: "しぶちょー技術研究所",
+    imagePath: "/images/brand_marks/sibucho.png",
+    url: URL.sibucho,
+  },
+  {
     name: "SK本舗",
     imagePath: "/images/brand_marks/SKhonpo.jpg",
     url: URL.sk_honpo,
