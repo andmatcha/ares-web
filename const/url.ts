@@ -30,6 +30,7 @@ const URL = {
   nsk: "https://www.nsk.com/jp/",
   pfm: "https://pfm-jp.com/",
   robotis: "https://e-shop.robotis.co.jp/",
+  sibucho: "https://sibucho-laboratory.com/",
   sk_honpo: "https://skhonpo.com/",
   sorae: "https://sorae.info/",
   telstar: "http://spacemgz-telstar.com/",
