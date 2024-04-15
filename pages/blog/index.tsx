@@ -1,11 +1,15 @@
+import { NextPage } from "next";
 import Link from "next/link";
 
-import Layout from "../../components/layouts/Layout";
-import ArticleCard from "../../components/objects/atoms/ArticleCard";
-import Hero from "../../components/objects/atoms/Hero";
-import { articles } from "../../const/articles";
+import Layout from "../../app/_components/layouts/Layout";
+import ArticleCard from "../../app/_components/objects/atoms/ArticleCard";
+import Hero from "../../app/_components/objects/atoms/Hero";
+import { articles } from "../../app/_common/constants/articles";
+import { Article } from "../../app/_common/types/article";
 
-const BlogHome = () => {
+const BlogHome: NextPage = async () => {
+  // const res = await fetch("/api/articles");
+  // const articles: Article[] = await res.json();
   return (
     <Layout title="BLOG" allowTopSpace>
       <Hero title="BLOG" imagePath="/images/hero_2.jpg" />

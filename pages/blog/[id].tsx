@@ -2,15 +2,16 @@ import dayjs from "dayjs";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 
-import Layout from "../../components/layouts/Layout";
-import { THUMBNAIL_BASE_URL } from "../../const/articles";
-import { useArticle } from "../../hooks/useArticle";
+import Layout from "../../app/_components/layouts/Layout";
+import { THUMBNAIL_BASE_URL } from "../../app/_common/constants/articles";
+import { Article } from "../../app/_common/types/article";
 
-const ArticlePage: NextPage = () => {
+const ArticlePage: NextPage = async () => {
   const router = useRouter();
-  const { getArticleFromId } = useArticle();
+  // const res = await fetch("/api/articles");
+  // const articles: Article[] = await res.json();
   const articleId = Number(router.query.id);
-  const article = getArticleFromId(articleId);
+  const article = articles.find((article) => article.id === articleId);
   return (
     <Layout title={article?.title ?? "ARES Project"} allowTopSpace>
       <div className="xl:mx-[10%] lg:mx-[5%] mx-8 my-10 flex flex-col md:flex-row justify-center items-center md:items-start gap-4 xl:gap-[5%]">
@@ -39,7 +40,9 @@ const ArticlePage: NextPage = () => {
           <div className="pb-16">
             <img src={THUMBNAIL_BASE_URL + article?.thumbnail} alt="" />
           </div>
-          <p className="text-sm md:text-base tracking-wide leading-8">{article?.body}</p>
+          <p className="text-sm md:text-base tracking-wide leading-8">
+            {article?.body}
+          </p>
         </div>
       </div>
     </Layout>
