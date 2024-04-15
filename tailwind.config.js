@@ -6,8 +6,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['"Noto Sans JP"', 'sans-serif'],
-      'display': ['Orbitron', 'sans-serif'],
+      montserrat: ["var(--font-montserrat)"],
+      noto_sans_jp: ["var(--font-noto_sans_jp)"],
+      orbitron: ["var(--font-orbitron)"],
     },
     extend: {
       colors: {
