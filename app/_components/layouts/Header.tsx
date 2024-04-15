@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 import Drawer from "./Drawer";
-import contents from "../../const/header";
+import contents from "../../_common/constants/header";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);

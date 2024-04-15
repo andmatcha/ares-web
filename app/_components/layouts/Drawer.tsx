@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Link from "next/link";
 
-import contents from "../../const/header";
+import contents from "../../_common/constants/header";
 
 type Props = {
   open: boolean;
@@ -9,7 +9,11 @@ type Props = {
 
 const Drawer: NextPage<Props> = ({ open }: Props) => {
   return (
-    <nav className={`${open ? "block" : "hidden"} md:hidden fixed w-2/3 h-screen top-0 right-0`}>
+    <nav
+      className={`${
+        open ? "block" : "hidden"
+      } md:hidden fixed w-2/3 h-screen top-0 right-0`}
+    >
       <div className="flex w-full h-full flex-col pt-8">
         <div className="absolute w-full h-full top-0 bg-black opacity-50"></div>
         <ul className="md:hidden flex flex-col items-center gap-10 text-m font-display pt-10 z-10">

@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 import Paragraph from "./Paragraph";
-import { Member } from "../../../types";
+import { Member } from "../../../_common/types";
 
 type Props = {
   member: Member;

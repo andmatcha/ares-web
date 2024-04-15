@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-import URL from "../../../const/url";
+import URL from "../../../_common/constants/url";
 
 const HyakuBanch: NextPage = () => {
   return (

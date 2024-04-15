@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-import sponsors from "../../../const/sponsors";
+import sponsors from "../../../_common/constants/sponsors";
 
 const SponsorArea: NextPage = () => {
   return (

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import { mainImages } from "../../../const/images";
+import { mainImages } from "../../../_common/constants/images";
 import Slide from "../atoms/Slide";
 
 const MainVisual: NextPage = () => {
