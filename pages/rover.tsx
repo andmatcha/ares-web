@@ -1,10 +1,10 @@
 import { NextPage } from "next";
 import { useMemo, useState } from "react";
 
-import Layout from "../components/layouts/Layout";
-import Hero from "../components/objects/atoms/Hero";
-import Paragraph from "../components/objects/atoms/Paragraph";
-import { rovers } from "../const/rover";
+import Layout from "../app/_components/layouts/Layout";
+import Hero from "../app/_components/objects/atoms/Hero";
+import Paragraph from "../app/_components/objects/atoms/Paragraph";
+import { rovers } from "../app/_common/constants/rover";
 
 const Team: NextPage = () => {
   const [selectedRoverIndex, setSelectedRoverIndex] = useState(

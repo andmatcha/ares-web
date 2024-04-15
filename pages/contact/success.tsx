@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Layout from "../../components/layouts/Layout";
+import Layout from "../../app/_components/layouts/Layout";
 
 const Success = () => {
   return (

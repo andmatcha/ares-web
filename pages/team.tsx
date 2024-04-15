@@ -1,15 +1,20 @@
 import { NextPage } from "next";
 import { useEffect, useMemo } from "react";
 
-import Layout from "../components/layouts/Layout";
-import FadeIn from "../components/objects/atoms/FadeIn";
-import Hero from "../components/objects/atoms/Hero";
-import ListItem from "../components/objects/atoms/ListItem";
-import MemberIntro from "../components/objects/atoms/MemberIntro";
-import Paragraph from "../components/objects/atoms/Paragraph";
-import TeamCard from "../components/objects/atoms/TeamCard";
-import Section from "../components/objects/molecules/Section";
-import { branches, infoSets, members, subTeams } from "../const/team";
+import Layout from "../app/_components/layouts/Layout";
+import FadeIn from "../app/_components/objects/atoms/FadeIn";
+import Hero from "../app/_components/objects/atoms/Hero";
+import ListItem from "../app/_components/objects/atoms/ListItem";
+import MemberIntro from "../app/_components/objects/atoms/MemberIntro";
+import Paragraph from "../app/_components/objects/atoms/Paragraph";
+import TeamCard from "../app/_components/objects/atoms/TeamCard";
+import Section from "../app/_components/objects/molecules/Section";
+import {
+  branches,
+  infoSets,
+  members,
+  subTeams,
+} from "../app/_common/constants/team";
 
 const Team: NextPage = () => {
   const leaders = useMemo(() => {

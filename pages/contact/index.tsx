@@ -4,14 +4,14 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import Layout from "../../components/layouts/Layout";
-import Button from "../../components/objects/atoms/Button";
-import Hero from "../../components/objects/atoms/Hero";
-import Loader from "../../components/objects/atoms/Loader";
-import Instagram from "../../components/objects/icons/instagram";
-import Twitter from "../../components/objects/icons/twitter";
-import URL from "../../const/url";
-import { useMail } from "../../hooks/useMail";
+import Layout from "../../app/_components/layouts/Layout";
+import Button from "../../app/_components/objects/atoms/Button";
+import Hero from "../../app/_components/objects/atoms/Hero";
+import Loader from "../../app/_components/objects/atoms/Loader";
+import Instagram from "../../app/_components/objects/icons/instagram";
+import Twitter from "../../app/_components/objects/icons/twitter";
+import URL from "../../app/_common/constants/url";
+import { useMail } from "../../app/_common/hooks/useMail";
 
 interface FormData {
   name: string;

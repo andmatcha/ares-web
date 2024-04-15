@@ -3,19 +3,19 @@ import type { NextPage } from "next";
 import { useEffect, useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 
-import Layout from "../components/layouts/Layout";
-import ArticleCard from "../components/objects/atoms/ArticleCard";
-import CountUp from "../components/objects/atoms/CountUp";
-import FadeIn from "../components/objects/atoms/FadeIn";
-import MainButton from "../components/objects/atoms/MainButton";
-import Paragraph from "../components/objects/atoms/Paragraph";
-import HyakuBanch from "../components/objects/molecules/HyakuBanch";
-import SponsorArea from "../components/objects/molecules/SponsorArea";
-import MainVisual from "../components/objects/organisms/MainVisual";
-import { articles } from "../const/articles";
-import supporters from "../const/supporters";
-import { goals } from "../const/team";
-import URL from "../const/url";
+import Layout from "../app/_components/layouts/Layout";
+import ArticleCard from "../app/_components/objects/atoms/ArticleCard";
+import CountUp from "../app/_components/objects/atoms/CountUp";
+import FadeIn from "../app/_components/objects/atoms/FadeIn";
+import MainButton from "../app/_components/objects/atoms/MainButton";
+import Paragraph from "../app/_components/objects/atoms/Paragraph";
+import HyakuBanch from "../app/_components/objects/molecules/HyakuBanch";
+import SponsorArea from "../app/_components/objects/molecules/SponsorArea";
+import MainVisual from "../app/_components/objects/organisms/MainVisual";
+import { articles } from "../app/_common/constants/articles";
+import supporters from "../app/_common/constants/supporters";
+import { goals } from "../app/_common/constants/team";
+import URL from "../app/_common/constants/url";
 
 const Home: NextPage = () => {
   const { ref: teamRef, inView: teamInView } = useInView({
