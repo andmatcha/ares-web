@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const LocaleSwitcher = ({ href }: { href: string }) => {
   return (
-    <div className="flex gap-2 text-sm">
+    <div className="flex items-center gap-2 text-xs">
       <Link
         href={href}
         locale="ja"

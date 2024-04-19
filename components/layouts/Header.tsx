@@ -28,27 +28,26 @@ const Header = () => {
         </h1>
       </Link>
       {/* メニュー表示切り替えボタン */}
-      <button
-        onClick={handleMenuOpen}
-        type="button"
-        className="absolute right-10 md:hidden z-20"
-      >
-        <img
-          src={
-            openMenu
-              ? "/images/icons/hamburger_menu_close.svg"
-              : "/images/icons/hamburger_menu_icon.svg"
-          }
-          alt=""
-        />
-      </button>
+      <div className="flex items-center gap-2 absolute right-10 md:hidden z-20">
+        <LocaleSwitcher href={router.asPath} />
+        <button onClick={handleMenuOpen} type="button" className="">
+          <img
+            src={
+              openMenu
+                ? "/images/icons/hamburger_menu_close.svg"
+                : "/images/icons/hamburger_menu_icon.svg"
+            }
+            alt=""
+          />
+        </button>
+      </div>
       {/* メニュー SP表示 */}
       <Drawer open={openMenu} />
-      <div className="flex items-center gap-16">
+      <div className="hidden md:flex items-center gap-16">
         <LocaleSwitcher href={router.asPath} />
         {/* メニュー PC表示 */}
         <nav className="flex ease-linear duration-300">
-          <ul className="hidden md:flex items-center gap-10 text-xs font-display">
+          <ul className="flex items-center gap-10 text-xs font-display">
             {contents.menu.map((menuItem, index) => (
               <li
                 key={index}
