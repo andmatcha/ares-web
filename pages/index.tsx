@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
 import type { NextPage } from "next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useEffect, useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -17,7 +19,17 @@ import supporters from "../const/supporters";
 import { goals } from "../const/team";
 import URL from "../const/url";
 
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
+
 const Home: NextPage = () => {
+  const { t } = useTranslation("common");
+
   const { ref: teamRef, inView: teamInView } = useInView({
     rootMargin: "-10% 0%",
     triggerOnce: true,
@@ -55,17 +67,16 @@ const Home: NextPage = () => {
           className="flex gap-8 justify-center items-center pb-4 px-4"
         >
           <h3 className="text-4xl md:text-6xl leading-relaxed md:leading-relaxed tracking-wider font-normal">
+            {t("home.whats")}
+            <br />
             ARES
             <br />
             Project
             <br />
-            とは？
+            {t("home.question")}
           </h3>
           <div className="w-3/5 flex flex-col gap-8">
-            <Paragraph>
-              火星探査機の学生世界大会 “University Rover Challenge (URC)”
-              へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
-            </Paragraph>
+            <Paragraph>{t("home.description")}</Paragraph>
             <div
               ref={teamRef}
               className="flex justify-center items-center gap-4 md:gap-10"
@@ -98,7 +109,7 @@ const Home: NextPage = () => {
         className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-4 md:gap-10 text-lg"
       >
         <h3 className="text-3xl md:text-5xl font-medium tracking-wider pb-2">
-          わたしたちの目標
+          {t("home.goal.title")}
         </h3>
         <div>
           <ol className="flex flex-col lg:flex-row gap-4 lg:gap-8">
@@ -113,7 +124,7 @@ const Home: NextPage = () => {
                   <img src={icon} alt="" className="w-full" />
                 </div>
                 <Paragraph className="w-5/6 lg:w-full lg:text-center">
-                  {title}
+                  {t(`home.goal.goals.${index}`)}
                 </Paragraph>
               </FadeIn>
             ))}
