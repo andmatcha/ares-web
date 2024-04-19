@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
+import { useTranslation } from "next-i18next";
 
 import { mainImages } from "../../../const/images";
 import Slide from "../atoms/Slide";
 
 const MainVisual: NextPage = () => {
+  const { t } = useTranslation("common");
   return (
     <div className="relative h-screen">
       <div className="h-16 md:h-0"></div>
@@ -19,11 +21,10 @@ const MainVisual: NextPage = () => {
             A<span className="text-red-600">R</span>ES Project
           </h2>
           <p className="text-xl md:text-3xl animate-[emerge2_3s_ease-out]">
-            世界レベルの火星ローバーを日本から
+            {t("main-visual.slogan")}
           </p>
           <p className="mt-4 text-base md:text-xl max-w-xl leading-8 tracking-wider animate-[emerge2_4.5s_ease-out]">
-            私たちは、学生による火星探査機の世界大会 ”University Rover Challenge
-            (URC)”への日本勢初出場を目指して活動しています。
+            {t("main-visual.description")}
           </p>
         </div>
       </div>
