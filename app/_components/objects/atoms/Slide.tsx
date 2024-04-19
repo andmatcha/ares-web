@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import Slider, { Settings } from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,10 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 type Props = {
   images: { src: string; alt: string }[];
   className?: string;
-  settings?: Settings;
+  // settings?: Settings;
 };
 
-const Slide: NextPage<Props> = ({ images, settings }: Props) => {
+const Slide: NextPage<Props> = ({ images }: Props) => {
   const defaultSettings = {
     fade: true,
     speed: 1500,
@@ -20,15 +19,15 @@ const Slide: NextPage<Props> = ({ images, settings }: Props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    ...settings,
+    // ...settings,
   };
 
-  return (
-    <Slider {...defaultSettings}>
-      {images.map((image, index) => (
-        <img key={index} src={image.src} alt={image.alt} />
-      ))}
-    </Slider>
+  return (<></>
+    // <Slider {...defaultSettings}>
+    //   {images.map((image, index) => (
+    //     <img key={index} src={image.src} alt={image.alt} />
+    //   ))}
+    // </Slider>
   );
 };
 

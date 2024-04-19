@@ -9,6 +9,7 @@ export const montserrat = Montserrat({
 
 // 日本語フォント
 export const noto_sans_jp = Noto_Sans_JP({
+  preload: false,
   variable: "--font-noto-sans-jp",
 });
 

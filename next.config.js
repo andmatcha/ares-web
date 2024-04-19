@@ -4,4 +4,7 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+const createNextIntlPlugin = require('next-intl/plugin');
+const withNextIntl = createNextIntlPlugin('./app/_common/utils/i18n.ts');
+
+module.exports = withNextIntl(nextConfig);

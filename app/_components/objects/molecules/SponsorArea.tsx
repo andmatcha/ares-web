@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-
 import sponsors from "../../../_common/constants/sponsors";
 
 const SponsorArea: NextPage = () => {
