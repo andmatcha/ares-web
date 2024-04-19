@@ -1,14 +1,17 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 import Drawer from "./Drawer";
 import contents from "../../const/header";
+import { LocaleSwitcher } from "../objects/atoms/LocaleSwitcher";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const handleMenuOpen = () => {
     setOpenMenu(!openMenu);
   };
+  const router = useRouter();
 
   return (
     <header className="fixed w-screen h-16 flex items-center justify-center px-12 md:justify-between z-20">
@@ -25,35 +28,37 @@ const Header = () => {
         </h1>
       </Link>
       {/* メニュー表示切り替えボタン */}
-      <button
-        onClick={handleMenuOpen}
-        type="button"
-        className="absolute right-10 md:hidden z-20"
-      >
-        <img
-          src={
-            openMenu
-              ? "/images/icons/hamburger_menu_close.svg"
-              : "/images/icons/hamburger_menu_icon.svg"
-          }
-          alt=""
-        />
-      </button>
+      <div className="flex items-center gap-2 absolute right-10 md:hidden z-20">
+        <LocaleSwitcher href={router.asPath} />
+        <button onClick={handleMenuOpen} type="button" className="">
+          <img
+            src={
+              openMenu
+                ? "/images/icons/hamburger_menu_close.svg"
+                : "/images/icons/hamburger_menu_icon.svg"
+            }
+            alt=""
+          />
+        </button>
+      </div>
       {/* メニュー SP表示 */}
       <Drawer open={openMenu} />
-      {/* メニュー PC表示 */}
-      <nav className="flex ease-linear duration-300">
-        <ul className="hidden md:flex items-center gap-10 text-xs font-display">
-          {contents.menu.map((menuItem, index) => (
-            <li
-              key={index}
-              className="cursor-pointer hover:text-red-600 duration-300"
-            >
-              <Link href={menuItem.path}>{menuItem.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="hidden md:flex items-center gap-16">
+        <LocaleSwitcher href={router.asPath} />
+        {/* メニュー PC表示 */}
+        <nav className="flex ease-linear duration-300">
+          <ul className="flex items-center gap-10 text-xs font-display">
+            {contents.menu.map((menuItem, index) => (
+              <li
+                key={index}
+                className="cursor-pointer hover:text-red-600 duration-300"
+              >
+                <Link href={menuItem.path}>{menuItem.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

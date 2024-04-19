@@ -1,0 +1,21 @@
+{
+  "main-visual": {
+    "slogan": "From Japan, a World-Class Mars Rover.",
+    "description": "A Student Project Developing Mars Rovers"
+  },
+  "home": {
+    "whats": "What's",
+    "question": "?",
+    "description": "This is a student project developing mars rovers. We've been working towards participating the University Rover Challenge(URC), and finally, we have been qualified for the competition as the first team of Japanese students.",
+    "goal": {
+      "title": "Our Goals",
+      "goals": [
+        "To compete in and achieve high rankings in the world's premier rover competitions.",
+        "To pioneer the new field of exploration rover development in Japanese student space exploration.",
+        "To enhance the technical capabilities of Japanese students and contribute to the future of space exploration.",
+        "To apply our activities to rovers that will actively operate on Mars and the Moon.",
+        "To apply exploration rover technology to solving environmental issues on Earth."
+      ]
+    }
+  }
+}
