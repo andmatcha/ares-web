@@ -29,7 +29,7 @@ const Header = () => {
       </Link>
       {/* メニュー表示切り替えボタン */}
       <div className="flex items-center gap-2 absolute right-10 md:hidden z-20">
-        <LocaleSwitcher href={router.asPath} />
+        <LocaleSwitcher href={router.asPath} locale={router.locale ?? ""} />
         <button onClick={handleMenuOpen} type="button" className="">
           <img
             src={
@@ -44,7 +44,7 @@ const Header = () => {
       {/* メニュー SP表示 */}
       <Drawer open={openMenu} />
       <div className="hidden md:flex items-center gap-16">
-        <LocaleSwitcher href={router.asPath} />
+        <LocaleSwitcher href={router.asPath} locale={router.locale ?? ""} />
         {/* メニュー PC表示 */}
         <nav className="flex ease-linear duration-300">
           <ul className="flex items-center gap-10 text-xs font-display">
