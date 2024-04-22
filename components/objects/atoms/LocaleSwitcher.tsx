@@ -12,21 +12,23 @@ export const LocaleSwitcher = ({
       <Link
         href={href}
         locale="ja"
-        className={`cursor-pointer hover:text-red-600 duration-300 ${
-          locale === "ja" ? "text-gray-400" : "text-white"
+        className={`cursor-pointer hover:text-red-600 duration-300 flex ${
+          locale === "ja" ? "text-gray-400 pointer-events-none" : "text-white"
         }`}
       >
-        JA
+        <img src="/images/icons/ja.png" alt="" className="h-4" />
+        <span>JA</span>
       </Link>
       /
       <Link
         href={href}
         locale="en"
-        className={`cursor-pointer hover:text-red-600 duration-300 ${
-          locale === "en" ? "text-gray-400" : "text-white"
+        className={`cursor-pointer hover:text-red-600 duration-300 flex ${
+          locale === "en" ? "text-gray-400 pointer-events-none" : "text-white"
         }`}
       >
-        EN
+        <img src="/images/icons/en.png" alt="" className="h-4" />
+        <span>EN</span>
       </Link>
     </div>
   );
