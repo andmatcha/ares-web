@@ -17,12 +17,12 @@ const Header = () => {
     <header className="fixed w-screen h-16 flex items-center justify-center px-12 md:justify-between z-20 bg-black sm:bg-transparent bg-opacity-0 hover:bg-opacity-60 duration-300">
       {/* ロゴ部分 */}
       <Link href="/">
-        <h1 className="text-lg h-16 flex gap-2 items-center cursor-pointer ">
+        <h1 className="text-lg h-16 flex gap-2 items-center cursor-pointer">
           <div className="h-16 flex items-center">
             <img
               src="/images/ares_logo_white.png"
               alt="ARES"
-              className="h-3/4 md:h-full object-contain"
+              className="h-3/4 md:h-full object-contain z-20"
             />
           </div>
         </h1>
