@@ -1,8 +1,10 @@
 import { NextPage } from "next";
+import { useTranslation } from "next-i18next";
 
 import URL from "../../../const/url";
 
 const HyakuBanch: NextPage = () => {
+  const { t } = useTranslation("common");
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-4 bg-black px-8 py-10">
       <a href={URL.hyaku_banch} target="blank">
@@ -18,14 +20,14 @@ const HyakuBanch: NextPage = () => {
         />
       </a>
       <p className="text-sm md:text-base text-center md:text-start">
-        GARAGE Program第70期プロジェクト
+        {t("100banch.title")}
         <br />
         <a
           href={URL.hyaku_banch_project}
           target="blank"
           className="w-full text-left text-xs text-ares-red"
         >
-          100BANCH プロジェクトページ
+          {t("100banch.website")}
         </a>
       </p>
     </div>
