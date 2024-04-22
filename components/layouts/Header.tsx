@@ -14,7 +14,7 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <header className="fixed w-screen h-16 flex items-center justify-center px-12 md:justify-between z-20">
+    <header className="fixed w-screen h-16 flex items-center justify-center px-12 md:justify-between z-20 bg-black sm:bg-transparent bg-opacity-0 hover:bg-opacity-60 duration-300">
       {/* ロゴ部分 */}
       <Link href="/">
         <h1 className="text-lg h-16 flex gap-2 items-center cursor-pointer ">
@@ -28,7 +28,7 @@ const Header = () => {
         </h1>
       </Link>
       {/* メニュー表示切り替えボタン */}
-      <div className="flex items-center gap-2 absolute right-10 md:hidden z-20">
+      <div className="flex items-center gap-2 absolute right-4 md:hidden z-20">
         <LocaleSwitcher href={router.asPath} locale={router.locale ?? ""} />
         <button onClick={handleMenuOpen} type="button" className="">
           <img
