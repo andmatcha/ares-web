@@ -99,21 +99,20 @@ const Home: NextPage = () => {
             >
               <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
                 <div className="text-4xl md:text-6xl flex items-center justify-center">
-                  <div className="w-16 md:w-28 flex justify-end">
-                    <CountUp active={teamInView} from={0} to={30} time={1200} />
+                  <div className="w-16 md:w-28 flex justify-center">
+                    <CountUp active={teamInView} from={0} to={40} time={1200} />
                   </div>
-                  +
                 </div>
                 <span className="text-sm">members</span>
               </div>
               <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
                 <div className="text-4xl md:text-6xl flex items-center justify-center">
-                  <div className="w-16 md:w-28 flex justify-end">
-                    <CountUp active={teamInView} from={0} to={40} time={1600} />
+                  <div className="w-16 md:w-28 flex justify-center">
+                    <CountUp active={teamInView} from={0} to={60} time={1600} />
                   </div>
                   +
                 </div>
-                <span className="text-sm">patrons</span>
+                <span className="text-sm">backers</span>
               </div>
             </div>
           </div>
