@@ -50,9 +50,11 @@ const Home: NextPage = () => {
   return (
     <Layout title="ARES Project">
       <MainVisual />
-      <SponsorArea />
+      <div className="hidden md:block">
+        <SponsorArea />
+      </div>
       <div className="bg-black">
-        <FadeIn>
+        <FadeIn className="hidden md:block">
           <HyakuBanch />
         </FadeIn>
       </div>
@@ -63,6 +65,18 @@ const Home: NextPage = () => {
           className="w-full object-cover"
         />
       </div>
+      {/* <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
+        <div className="flex justify-center items-center">
+          <div className="w-80">
+            <img
+              src="/images/ares_urc2024_comment.jpg"
+              alt=""
+              className="w-full"
+            />
+          </div>
+          <div></div>
+        </div>
+      </section> */}
       <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
         <FadeIn
           options={{ triggerOnce: true }}
@@ -162,7 +176,7 @@ const Home: NextPage = () => {
         </div>
       </FadeIn>
       {/* ニュース */}
-      <div className="flex flex-col justify-center items-center px-2 lg:px-[10%]">
+      {/* <div className="flex flex-col justify-center items-center px-2 lg:px-[10%]">
         <h2 className="text-2xl md:text-3xl font-medium tracking-wider pb-4">
           News
         </h2>
@@ -173,7 +187,7 @@ const Home: NextPage = () => {
             </FadeIn>
           ))}
         </div>
-      </div>
+      </div> */}
       {/* クラウドファンディングのお礼 */}
       <div
         ref={fundingRef}
