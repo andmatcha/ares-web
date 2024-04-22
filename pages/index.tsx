@@ -1,8 +1,9 @@
 import dayjs from "dayjs";
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layouts/Layout";
@@ -29,6 +30,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
+  const { locale } = useRouter();
 
   const { ref: teamRef, inView: teamInView } = useInView({
     rootMargin: "-10% 0%",
@@ -48,9 +50,11 @@ const Home: NextPage = () => {
   return (
     <Layout title="ARES Project">
       <MainVisual />
-      <SponsorArea />
+      <div className="hidden md:block">
+        <SponsorArea />
+      </div>
       <div className="bg-black">
-        <FadeIn>
+        <FadeIn className="hidden md:block">
           <HyakuBanch />
         </FadeIn>
       </div>
@@ -61,6 +65,18 @@ const Home: NextPage = () => {
           className="w-full object-cover"
         />
       </div>
+      {/* <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
+        <div className="flex justify-center items-center">
+          <div className="w-80">
+            <img
+              src="/images/ares_urc2024_comment.jpg"
+              alt=""
+              className="w-full"
+            />
+          </div>
+          <div></div>
+        </div>
+      </section> */}
       <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
         <FadeIn
           options={{ triggerOnce: true }}
@@ -68,7 +84,7 @@ const Home: NextPage = () => {
         >
           <h3 className="text-4xl md:text-6xl leading-relaxed md:leading-relaxed tracking-wider font-normal">
             {t("home.whats")}
-            <br />
+            {locale === "ja" ? "" : <br />}
             ARES
             <br />
             Project
@@ -83,21 +99,20 @@ const Home: NextPage = () => {
             >
               <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
                 <div className="text-4xl md:text-6xl flex items-center justify-center">
-                  <div className="w-16 md:w-28 flex justify-end">
-                    <CountUp active={teamInView} from={0} to={30} time={1200} />
+                  <div className="w-16 md:w-28 flex justify-center">
+                    <CountUp active={teamInView} from={0} to={40} time={1200} />
                   </div>
-                  +
                 </div>
                 <span className="text-sm">members</span>
               </div>
               <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
                 <div className="text-4xl md:text-6xl flex items-center justify-center">
-                  <div className="w-16 md:w-28 flex justify-end">
-                    <CountUp active={teamInView} from={0} to={40} time={1600} />
+                  <div className="w-16 md:w-28 flex justify-center">
+                    <CountUp active={teamInView} from={0} to={60} time={1600} />
                   </div>
                   +
                 </div>
-                <span className="text-sm">patrons</span>
+                <span className="text-sm">backers</span>
               </div>
             </div>
           </div>
@@ -146,24 +161,21 @@ const Home: NextPage = () => {
           />
           <div className="md:w-[48%] px-4">
             <h3 className="text-2xl md:text-3xl font-medium tracking-wider pb-2">
-              URCとは？
+              {t("home.urc.title")}
             </h3>
-            <Paragraph>
-              University Rover Challenge (URC)
-              は、大学生・大学院生が開発した火星探査機の性能を競う国際大会です。毎年米国ユタ州南部の砂漠で開催され、参加チームは次世代火星探査機の設計と製作に挑戦しています。
-            </Paragraph>
+            <Paragraph>{t("home.urc.description")}</Paragraph>
             <a
               href={URL.urc_official}
               target="blank"
               className="w-full text-left text-xs text-ares-red"
             >
-              URC公式サイト
+              {t("home.urc.website")}
             </a>
           </div>
         </div>
       </FadeIn>
       {/* ニュース */}
-      <div className="flex flex-col justify-center items-center px-2 lg:px-[10%]">
+      {/* <div className="flex flex-col justify-center items-center px-2 lg:px-[10%]">
         <h2 className="text-2xl md:text-3xl font-medium tracking-wider pb-4">
           News
         </h2>
@@ -174,14 +186,14 @@ const Home: NextPage = () => {
             </FadeIn>
           ))}
         </div>
-      </div>
+      </div> */}
       {/* クラウドファンディングのお礼 */}
       <div
         ref={fundingRef}
         className="w-full flex flex-col items-center px-4 py-4"
       >
         <h3 className="mb-4 text-2xl md:text-3xl pt-10 font-medium">
-          ご支援ありがとうございました!
+          {t("home.funding.title")}
         </h3>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-4">
           <div className="w-2/3 md:w-2/5 lg:w-1/5">
@@ -193,14 +205,22 @@ const Home: NextPage = () => {
           </div>
           <div className="w-full md:w-3/5 lg:w-2/5">
             <div className="flex justify-center md:justify-start items-center">
-              <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
-                <h4 className="text-sm">支援者数</h4>
+              <div
+                className={`flex ${
+                  locale === "ja" ? "flex-col font-" : "flex-col-reverse"
+                } justify-center items-center gap-2 p-4 min-w-fit`}
+              >
+                <h4 className="text-sm">{t("home.funding.backers")}</h4>
                 <p className="w-16 md:w-20 text-center text-4xl md:text-5xl font-display">
                   <CountUp active={fundingInView} to={37} time={1000} />
                 </p>
               </div>
-              <div className="flex flex-col justify-center items-center gap-2 p-4 min-w-fit">
-                <h4 className="text-sm">支援総額</h4>
+              <div
+                className={`flex ${
+                  locale === "ja" ? "flex-col font-" : "flex-col-reverse"
+                } justify-center items-center gap-2 p-4 min-w-fit`}
+              >
+                <h4 className="text-sm">{t("home.funding.raised")}</h4>
                 <p className="w-56 md:w-64 text-4xl md:text-5xl font-display">
                   ¥
                   <CountUp
@@ -236,7 +256,7 @@ const Home: NextPage = () => {
                 target="blank"
                 className="w-full text-left text-xs text-ares-red"
               >
-                CAMPFIRE プロジェクトページ
+                {t("home.funding.website")}
               </a>
             </div>
           </div>
