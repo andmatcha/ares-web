@@ -16,6 +16,21 @@
         "To apply our activities to rovers that will actively operate on Mars and the Moon.",
         "To apply exploration rover technology to solving environmental issues on Earth."
       ]
+    },
+    "urc": {
+      "title": "What's URC?",
+      "description": "The University Rover Challenge (URC) is the world premier robotics competition for college students. Held annually in the desert of southern Utah in the U.S., participants compete in the abilities of their mars rovers to accomplish various missions.",
+      "website": "URC Official Website"
+    },
+    "funding": {
+      "title": "Thank You for Your Support!",
+      "website": "CAMPFIRE Website",
+      "backers": "backers",
+      "raised": "raised"
     }
+  },
+  "100banch": {
+    "title": "GARAGE Program 70th Project",
+    "website": "100BANCH Website"
   }
 }

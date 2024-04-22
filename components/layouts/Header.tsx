@@ -14,22 +14,22 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <header className="fixed w-screen h-16 flex items-center justify-center px-12 md:justify-between z-20">
+    <header className="fixed w-screen h-16 flex items-center justify-center px-12 md:justify-between z-20 bg-black sm:bg-transparent bg-opacity-0 hover:bg-opacity-60 duration-300">
       {/* ロゴ部分 */}
       <Link href="/">
-        <h1 className="text-lg h-16 flex gap-2 items-center cursor-pointer ">
+        <h1 className="text-lg h-16 flex gap-2 items-center cursor-pointer">
           <div className="h-16 flex items-center">
             <img
               src="/images/ares_logo_white.png"
               alt="ARES"
-              className="h-3/4 md:h-full object-contain"
+              className="h-3/4 md:h-full object-contain z-20"
             />
           </div>
         </h1>
       </Link>
       {/* メニュー表示切り替えボタン */}
-      <div className="flex items-center gap-2 absolute right-10 md:hidden z-20">
-        <LocaleSwitcher href={router.asPath} />
+      <div className="flex items-center gap-2 absolute right-4 md:hidden z-20">
+        <LocaleSwitcher href={router.asPath} locale={router.locale ?? ""} />
         <button onClick={handleMenuOpen} type="button" className="">
           <img
             src={
@@ -44,7 +44,7 @@ const Header = () => {
       {/* メニュー SP表示 */}
       <Drawer open={openMenu} />
       <div className="hidden md:flex items-center gap-16">
-        <LocaleSwitcher href={router.asPath} />
+        <LocaleSwitcher href={router.asPath} locale={router.locale ?? ""} />
         {/* メニュー PC表示 */}
         <nav className="flex ease-linear duration-300">
           <ul className="flex items-center gap-10 text-xs font-display">

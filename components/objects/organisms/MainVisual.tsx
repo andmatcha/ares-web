@@ -12,6 +12,7 @@ const MainVisual: NextPage = () => {
       <Slide
         images={mainImages}
         settings={{
+          autoplaySpeed: 3000,
           className: "absolute top-0 left-0 w-full h-full overflow-hidden",
         }}
       />

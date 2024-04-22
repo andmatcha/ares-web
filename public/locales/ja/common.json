@@ -1,7 +1,7 @@
 {
   "main-visual": {
     "slogan": "世界レベルの火星ローバーを日本から",
-    "description": "\"University Rover Challenge(URC)\"2024年大会に日本初出場する、大学の枠を越えた学生プロジェクト"
+    "description": "\"University Rover Challenge (URC)\"2024年大会に日本初出場する、大学の枠を越えた学生プロジェクト"
   },
   "home": {
     "whats": "",
@@ -16,6 +16,21 @@
         "わたしたちの活動を実際に火星や月で活躍するローバーに役立てる",
         "探査ローバーの技術を応用し、地球の環境問題を解決する"
       ]
+    },
+    "urc": {
+      "title": "URCとは?",
+      "description": "University Rover Challenge (URC)は、大学生・大学院生を対象とした、世界トップクラスのロボット工学コンテストです。毎年米国ユタ州南部の砂漠で開催され、参加チームは次世代火星探査機の設計と製作に挑戦しています。",
+      "website": "URC公式サイト"
+    },
+    "funding": {
+      "title": "ご支援ありがとうございました!",
+      "website": "CAMPFIRE プロジェクトページ",
+      "backers": "支援者数",
+      "raised": "支援総額"
     }
+  },
+  "100banch":{
+    "title": "GARAGE Program第70期プロジェクト",
+    "website": "100BANCH プロジェクトページ"
   }
 }
