@@ -70,7 +70,7 @@ const Home: NextPage = () => {
         >
           <h3 className="text-4xl md:text-6xl leading-relaxed md:leading-relaxed tracking-wider font-normal">
             {t("home.whats")}
-            <br />
+            {locale === "ja" ? "" : <br />}
             ARES
             <br />
             Project
