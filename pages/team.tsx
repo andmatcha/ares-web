@@ -24,7 +24,7 @@ const Team: NextPage = () => {
   }, []);
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
-      <Hero title="Our Team" imagePath="/images/tohoku_ares.jpg" />
+      <Hero title="Our Team" imagePath="/images/tohoku_ares_wide.jpg" />
       {/* ARES全体紹介 */}
       <Section id="about" className="flex flex-col gap-10 items-center">
         <div className="flex -mb-8 md:mb-0 justify-center items-center gap-4">
