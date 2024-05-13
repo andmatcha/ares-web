@@ -18,6 +18,11 @@ const sponsors: Sponsor[] = [
     url: URL.autodesk,
   },
   {
+    name: "chums",
+    imagePath: "/images/brand_marks/chums.jpg",
+    url: URL.chums,
+  },
+  {
     name: "cyport",
     imagePath: "/images/brand_marks/cyport.jpg",
     url: URL.cyport,
