@@ -19,6 +19,7 @@ const URL = {
   ablab: "https://ablab.space/",
   amulapo: "https://amulapo-inc.com/",
   autodesk: "https://www.autodesk.co.jp/",
+  chums: "https://www.chums.jp/",
   cyport: "https://www.cyport.co.jp/",
   fourthai: "https://www.4th.ai/",
   hikoki: "https://www.koki-holdings.co.jp/",
