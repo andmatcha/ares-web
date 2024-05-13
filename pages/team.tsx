@@ -1,5 +1,7 @@
 import { NextPage } from "next";
-import { useEffect, useMemo } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
@@ -11,10 +13,39 @@ import TeamCard from "../components/objects/atoms/TeamCard";
 import Section from "../components/objects/molecules/Section";
 import { branches, infoSets, members, subTeams } from "../const/team";
 
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
+
 const Team: NextPage = () => {
-  const leaders = useMemo(() => {
-    return members.filter((member) => member.isLeader);
-  }, []);
+  const { t } = useTranslation();
+  const leaders = [
+    {
+      name: t("team.leaders.pm.name"),
+      university: t("team.leaders.pm.university"),
+      introduction: t("team.leaders.pm.introduction"),
+      imagePath: "/images/members/danishi_ai.jpg",
+      isLeader: true,
+    },
+    {
+      name: t("team.leaders.tohoku_lead.name"),
+      university: t("team.leaders.tohoku_lead.university"),
+      introduction: t("team.leaders.tohoku_lead.introduction"),
+      imagePath: "/images/members/kota_matsuhashi.jpg",
+      isLeader: true,
+    },
+    {
+      name: t("team.leaders.tokyo_lead.name"),
+      university: t("team.leaders.tokyo_lead.university"),
+      introduction: t("team.leaders.tokyo_lead.introduction"),
+      imagePath: "/images/members/ryoji_nagahara.jpg",
+      isLeader: true,
+    },
+  ];
 
   useEffect(() => {
     const s = document.createElement("script");
