@@ -6,8 +6,8 @@ export const rovers = [
 ];
 
 export const mainImages = [
-  { src: "/images/rovers/ares5.jpg", alt: "ARES5" },
-  { src: "/images/rovers/ares5_1.jpg", alt: "ARES5" },
+  { src: "/images/rovers/ares6.jpg", alt: "ARES5" },
+  { src: "/images/rovers/ares6_1.jpg", alt: "ARES5" },
   { src: "/images/drone.jpg", alt: "Drone" },
   { src: "/images/tohoku_field.jpg", alt: "Tohoku Field" },
 ];

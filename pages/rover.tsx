@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useMemo, useState } from "react";
 
 import Layout from "../components/layouts/Layout";
@@ -7,6 +8,7 @@ import Paragraph from "../components/objects/atoms/Paragraph";
 import { rovers } from "../const/rover";
 
 const Team: NextPage = () => {
+  const { locale } = useRouter();
   const [selectedRoverIndex, setSelectedRoverIndex] = useState(
     rovers.length - 1
   );
@@ -56,7 +58,11 @@ const Team: NextPage = () => {
           </div>
           <div className="lg:py-4 flex flex-col gap-4 lg:w-3/5">
             <h2 className="text-3xl font-medium">{selectedRover.name}</h2>
-            <Paragraph>{selectedRover.description}</Paragraph>
+            <Paragraph>
+              {locale === "ja"
+                ? selectedRover.description.ja
+                : selectedRover.description.en}
+            </Paragraph>
           </div>
         </div>
       </div>
