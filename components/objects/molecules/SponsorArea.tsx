@@ -11,7 +11,7 @@ const SponsorArea: NextPage = () => {
     const sizeClass = () => {
       switch (size) {
         case "small":
-          return "w-32 md:w-48 h-20 md:h-24";
+          return "w-32 md:w-48 h-16 md:h-24";
         case "medium":
           return "w-48 md:w-64 h-24 md:h-32";
         case "large":
@@ -43,15 +43,15 @@ const SponsorArea: NextPage = () => {
     <>
       {sponsorArea(
         sponsors.filter((sponsor) => sponsor.rank === RANK.DIAMOND),
-        "large" // 51200
+        "large"
       )}
       {sponsorArea(
         sponsors.filter((sponsor) => sponsor.rank === RANK.GOLD),
-        "medium" // 32768
+        "medium"
       )}
       {sponsorArea(
         sponsors.filter((sponsor) => sponsor.rank === RANK.OTHER),
-        "small" //18432
+        "small"
       )}
     </>
   );
