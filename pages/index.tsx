@@ -50,21 +50,6 @@ const Home: NextPage = () => {
   return (
     <Layout title="ARES Project">
       <MainVisual />
-      <div className="hidden md:block">
-        <SponsorArea />
-      </div>
-      <div className="bg-black">
-        <FadeIn className="hidden md:block">
-          <HyakuBanch />
-        </FadeIn>
-      </div>
-      <div className="w-screen overflow-hidden">
-        <img
-          src="/images/rovers/ares4_wide.jpg"
-          alt="ARES4"
-          className="w-full object-cover"
-        />
-      </div>
       {/* <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
         <div className="flex justify-center items-center">
           <div className="w-80">
@@ -119,6 +104,13 @@ const Home: NextPage = () => {
         </FadeIn>
         <MainButton url={URL.team} label="SEE MORE" />
       </section>
+      <div className="w-screen overflow-hidden">
+        <img
+          src="/images/rovers/ares4_wide.jpg"
+          alt="ARES4"
+          className="w-full object-cover"
+        />
+      </div>
       <FadeIn
         as="section"
         className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-4 md:gap-10 text-lg"
