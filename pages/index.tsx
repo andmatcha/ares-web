@@ -65,6 +65,7 @@ const Home: NextPage = () => {
           className="w-full object-cover"
         />
       </div>
+      {/* ここを更新しました */}
       {/* <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
         <div className="flex justify-center items-center">
           <div className="w-80">
