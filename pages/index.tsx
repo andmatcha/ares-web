@@ -7,13 +7,11 @@ import { useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layouts/Layout";
-import ArticleCard from "../components/objects/atoms/ArticleCard";
+// import ArticleCard from "../components/objects/atoms/ArticleCard";
 import CountUp from "../components/objects/atoms/CountUp";
 import FadeIn from "../components/objects/atoms/FadeIn";
 import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
-import HyakuBanch from "../components/objects/molecules/HyakuBanch";
-import SponsorArea from "../components/objects/molecules/SponsorArea";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import { articles } from "../const/articles";
 import supporters from "../const/supporters";
