@@ -1,14 +1,10 @@
-export type ArticleOverview = {
+export type Article = {
   id: number;
+  thumbnail: string;
   date: string;
   title: string;
-  thumbnail: string;
-  description: string;
-};
-
-export type Article = ArticleOverview & {
-  author: string;
-  type: string;
-  tags: string[];
-  content: string;
+  category: string;
+  body: string;
+  is_published: boolean;
+  is_top: boolean;
 };
