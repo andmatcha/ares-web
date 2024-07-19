@@ -12,4 +12,5 @@ export type Sponsor = {
   name: string;
   imagePath: string;
   url: string;
+  rank: number;
 };
