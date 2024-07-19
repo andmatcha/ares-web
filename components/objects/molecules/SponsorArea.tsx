@@ -11,7 +11,7 @@ const SponsorArea: NextPage = () => {
     const sizeClass = () => {
       switch (size) {
         case "small":
-          return "w-32 md:w-48 h-16 md:h-24";
+          return "w-28 md:w-44 h-14 md:h-20";
         case "medium":
           return "w-48 md:w-64 h-24 md:h-32";
         case "large":
