@@ -21,7 +21,7 @@ const Article: NextPage = () => {
           <img
             src={`/images/thumbnails/${article.thumbnail}`}
             alt=""
-            className="w-1/2"
+            className="w-2/3"
           />
         </div>
         <div className="tracking-wider text-gray-400">
@@ -34,7 +34,7 @@ const Article: NextPage = () => {
         </h2>
         <p className="py-16">
           {/* 本文 */}
-          {article.body}
+          { article.body}
         </p>
       </div>
     </Layout>
