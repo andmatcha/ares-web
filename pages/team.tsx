@@ -1,28 +1,47 @@
-import { NextPage } from "next";
+import { GetServerSidePropsContext, NextPage } from "next";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
 import Hero from "../components/objects/atoms/Hero";
-import ListItem from "../components/objects/atoms/ListItem";
 import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import TeamCard from "../components/objects/atoms/TeamCard";
 import Section from "../components/objects/molecules/Section";
-import { branches, infoSets, members, subTeams } from "../const/team";
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export const getServerSideProps = async ({
+  locale,
+}: GetServerSidePropsContext) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale ?? "ja", ["common"])),
     },
   };
-}
+};
 
 const Team: NextPage = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
+
+  const subTeams = [
+    {
+      name: t("team.subTeams.tohoku.name"),
+      description: t("team.subTeams.tohoku.description"),
+      imagePath: "/images/tohoku_members.jpg",
+    },
+    {
+      name: t("team.subTeams.tokyo.name"),
+      description: t("team.subTeams.tokyo.description"),
+      imagePath: "/images/keio_members.jpg",
+    },
+    {
+      name: t("team.subTeams.science.name"),
+      description: t("team.subTeams.science.description"),
+      imagePath: "/images/science_members.jpg",
+    },
+  ];
+
   const leaders = [
     {
       name: t("team.leaders.pm.name"),
@@ -71,54 +90,26 @@ const Team: NextPage = () => {
         <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
           <div className="md:w-2/5 rounded-sm overflow-hidden">
             <img
-              src="/images/ares_members.jpg"
+              src="/images/ares_urc3.jpg"
               alt=""
               className="w-full object-contain"
             />
           </div>
-          <Paragraph className="md:w-3/5">
-            火星探査機の学生世界大会 “University Rover Challenge (URC)” および
-            “European Rover Challenge (ERC)”
-            へ、日本チームとして初の出場を目指す学生団体プロジェクトです。東北大学・慶應義塾大学を主な拠点として活動しています。
-          </Paragraph>
+          <Paragraph className="md:w-3/5">{t("team.about")}</Paragraph>
         </div>
-        <div className="w-full flex">
-          <div className="w-full px-2 sm:px-10 md:px-[10%]">
-            <h4 className="md:text-xl pb-4">基本情報</h4>
-            <ul className="w-full flex flex-col">
-              {infoSets.map((infoSet, index) => (
-                <ListItem
-                  key={index}
-                  title={infoSet.title}
-                  description={infoSet.description}
-                />
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
-      {/* 支部紹介 */}
-      <Section id="branches" title="Branches">
-        <FadeIn className="flex flex-col justify-center items-center lg:items-start gap-10">
-          {branches.map(({ name, description, imagePath }, index) => (
-            <TeamCard key={index} title={name} imagePath={imagePath}>
-              {description}
-            </TeamCard>
-          ))}
-        </FadeIn>
       </Section>
       {/* 班紹介 */}
-      {/* <Section id="sub-teams" title="Sub-Teams">
-        <FadeIn className="flex flex-col justify-center items-center gap-6">
+      <Section id="sub-teams" title={t("team.team_composition")}>
+        <FadeIn className="flex flex-col justify-center items-center lg:items-start gap-10">
           {subTeams.map(({ name, description, imagePath }, index) => (
             <TeamCard key={index} title={name} imagePath={imagePath}>
               {description}
             </TeamCard>
           ))}
         </FadeIn>
-      </Section> */}
-      {/* 幹部紹介 */}
-      <Section id="leaders" title="Leaders">
+      </Section>
+      {/* リーダー紹介 */}
+      <Section id="leaders" title={t("team.leaders.title")}>
         <ul className="flex flex-col gap-10 w-full items-center">
           {leaders.map((member, index) => (
             <FadeIn key={index}>

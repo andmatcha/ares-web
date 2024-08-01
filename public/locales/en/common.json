@@ -4,9 +4,6 @@
     "description": "A Student Project Developing Mars Rovers"
   },
   "home": {
-    "whats": "What's",
-    "question": "?",
-    "description": "This is a student project developing mars rovers. We've been working towards participating the University Rover Challenge(URC), and finally, we participated in the competition as the first team of Japanese students in 2024.",
     "goal": {
       "title": "Our Goals",
       "goals": [
@@ -28,7 +25,24 @@
     "website": "100BANCH Website"
   },
   "team": {
+    "about": "We are a Japanese student team dedicated to designing and developing the next-generation Mars rover. Since our project establishment in 2022, we have expanded our team members and worked towards to compete in the University Rover Challenge (URC). In 2024, we became the first Japanese student team to compete in the URC, facing off against teams from around the world. Our team consists of over 40 students from multiple universities, with Tohoku University and Keio University serving as our main bases of operation.",
+    "team_composition": "Team Composition",
+    "subTeams": {
+      "tohoku": {
+        "name": "Tohoku Team",
+        "description": "The Tohoku team is responsible for the design and manufacturing of the rover. They are developing a vehicle that achieves autonomous driving technology and high mobility in rugged desert terrain."
+      },
+      "tokyo": {
+        "name": "Tokyo Team",
+        "description": "The Tokyo team is responsible for the design and manufacturing of the robotic arm to be mounted on the rover. They are developing a robotic arm that can adapt to various environments, such as repairing spacecraft and collecting rock samples."
+      },
+      "science": {
+        "name": "Science Team",
+        "description": "The Science sub-team, responsible for the scientific mission of the University Rover Challenge (URC), is divided into two primary divisions: Science Research team and Science Engineering team. In the science mission, conducting scientific analyses is essential to facilitate the search for life on Mars. During the URC2024, the mission's objectives included four key tasks: observing geological layers, measuring subsurface temperature and humidity, collecting soil samples, and searching for signs of life. The Science Research team is tasked with determining appropriate analysis methods and investigating local geological features. Conversely, the Science Engineering team is responsible for developing the sampling machinery and analytical equipment. Despite the challenges faced from both theoretical and engineering perspectives, the collaborative effort towards mission success exemplifies the unique nature of space exploration."
+      }
+    },
     "leaders": {
+      "title": "Leaders",
       "pm": {
         "name": "AI Danishi (Project Manager)",
         "university": "Department of Mechanical and Aerospace Engineering, TOHOKU University",
