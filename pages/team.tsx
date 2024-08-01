@@ -32,7 +32,7 @@ export const getServerSideProps = async ({
 };
 
 const Team: NextPage = () => {
-  const { t } = useTranslation("common");
+  const { t, i18n } = useTranslation("common");
   const [subTeams, setSubTeams] = useState<SubTeam[]>([]);
   const [leaders, setLeaders] = useState<Member[]>([]);
 
@@ -78,7 +78,7 @@ const Team: NextPage = () => {
         isLeader: true,
       },
     ]);
-  }, [t]);
+  }, [t, i18n.language]);
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
       <Hero title="Our Team" imagePath="/images/tohoku_ares_wide.jpg" />
