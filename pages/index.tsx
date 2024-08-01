@@ -27,7 +27,7 @@ const Home: NextPage = () => {
   const tile = (title: string, image: string, link: string) => {
     return (
       <Link href={link}>
-        <div className="w-72 h-48 relative overflow-hidden rounded-md group hover:cursor-pointer">
+        <div className="w-72 h-28 md:h-48 relative overflow-hidden rounded-md group hover:cursor-pointer">
           <img
             src={image}
             alt=""
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
   };
   const sortedArticles = useMemo(() => sortArticlesDec(), []);
   return (
-    <Layout title="ARES Project">
+    <Layout title="ARES Project" withSponsor>
       <MainVisual />
       {/* <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
         <FadeIn
@@ -91,8 +91,8 @@ const Home: NextPage = () => {
           </div>
         </FadeIn>
       </section> */}
-      <section className="py-10 px-2 flex flex-col items-center gap-10 text-lg">
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-8">
+      <section className="py-8 px-2 flex flex-col items-center gap-10 text-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
           {tile("TEAM", "/images/ares_urc2.jpg", URL.team)}
           {tile("ROVERS", "/images/rovers/ares4_wide.jpg", URL.rover)}
           {tile("FUNDING", "/images/tohoku_field.jpg", URL.funding)}
@@ -101,21 +101,23 @@ const Home: NextPage = () => {
       </section>
       <section className="">
         <h3 className="text-center text-3xl py-4 font-display">MOVIES</h3>
-        <div className="flex justify-center gap-8">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/l_ktA90qlF4?si=0C9CpjViTHNwmkAb"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/wqzaqmNvUX4?si=LDszVIpLnRoM2ek8"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 px-16">
+          <div className="relative aspect-[16/9] w-full md:w-1/2">
+            <iframe
+              src="https://www.youtube.com/embed/l_ktA90qlF4?si=0C9CpjViTHNwmkAb"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="absolute inset-0 w-full h-full"
+            ></iframe>
+          </div>
+          <div className="relative aspect-[16/9] w-full md:w-1/2">
+            <iframe
+              src="https://www.youtube.com/embed/wqzaqmNvUX4?si=LDszVIpLnRoM2ek8"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="absolute inset-0 w-full h-full"
+            ></iframe>
+          </div>
         </div>
       </section>
       {/* <div className="w-screen overflow-hidden">

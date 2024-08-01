@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['"Noto Sans JP"', 'sans-serif'],
+      'sans': ['Noto Sans JP', 'sans-serif'],
       'display': ['Orbitron', 'sans-serif'],
     },
     extend: {
@@ -46,5 +46,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

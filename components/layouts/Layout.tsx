@@ -9,9 +9,10 @@ interface Props {
   title: string;
   children: ReactNode;
   allowTopSpace?: boolean;
+  withSponsor?: boolean;
 }
 
-const Layout: NextPage<Props> = ({ title, children, allowTopSpace }) => {
+const Layout: NextPage<Props> = ({ title, children, allowTopSpace, withSponsor }) => {
   return (
     <>
       <Head>
@@ -25,7 +26,7 @@ const Layout: NextPage<Props> = ({ title, children, allowTopSpace }) => {
       <Header />
       {allowTopSpace && <div className="h-16" />}
       <main>{children}</main>
-      <Footer />
+      <Footer withSponsor={withSponsor} />
     </>
   );
 };

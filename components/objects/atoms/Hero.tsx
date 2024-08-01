@@ -14,7 +14,7 @@ const Hero: NextPage<Props> = ({ title, imagePath }) => {
         className="w-full object-cover opacity-40 -top-40"
       />
       <div className="absolute top-0 left-0 w-full h-full md:px-40 flex justify-center md:justify-start items-center">
-        <h2 className="text-xl md:text-6xl tracking-widest">{title}</h2>
+        <h2 className="text-xl md:text-6xl tracking-widest font-display">{title}</h2>
       </div>
     </div>
   );

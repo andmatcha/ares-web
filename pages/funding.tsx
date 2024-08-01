@@ -39,14 +39,14 @@ const Funding: NextPage = () => {
     triggerOnce: true,
   });
   return (
-    <Layout title="資金調達">
-      <Hero title="資金調達" imagePath="/images/rovers/ares4_wide.jpg" />
+    <Layout title="FUNDING">
+      <Hero title="FUNDING" imagePath="/images/rovers/ares4_wide.jpg" />
       {/* CAMPFIRE */}
       <div
         className="w-full flex flex-col items-center px-4 py-4"
         ref={campfireRef}
       >
-        <h3 className="w-full text-xl md:text-2xl py-2 font-sans lg:w-4/5">
+        <h3 className="w-full text-xl md:text-2xl py-2 lg:w-4/5">
           2022.11 − 2023.01 クラウドファンディング（CAMPFIRE）
         </h3>
         <div className="flex flex-col md:flex-row justify-center gap-8 py-4">
@@ -76,7 +76,7 @@ const Funding: NextPage = () => {
         className="w-full flex flex-col items-center px-4 py-4"
         ref={readyforRef}
       >
-        <h3 className="w-full text-xl md:text-2xl py-2 font-sans lg:w-4/5">
+        <h3 className="w-full text-xl md:text-2xl py-2 lg:w-4/5">
           2024.04 − 2024.06 クラウドファンディング（READYFOR）
         </h3>
         <div className="flex flex-col md:flex-row justify-center gap-8 py-4">
