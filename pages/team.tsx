@@ -4,12 +4,15 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useEffect } from "react";
 
 import Layout from "../components/layouts/Layout";
+import ExternalLink from "../components/objects/atoms/ExternalLink";
 import FadeIn from "../components/objects/atoms/FadeIn";
 import Hero from "../components/objects/atoms/Hero";
 import MemberIntro from "../components/objects/atoms/MemberIntro";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import TeamCard from "../components/objects/atoms/TeamCard";
 import Section from "../components/objects/molecules/Section";
+import { goals } from "../const/team";
+import URL from "../const/url";
 
 export const getServerSideProps = async ({
   locale,
@@ -65,13 +68,6 @@ const Team: NextPage = () => {
       isLeader: true,
     },
   ];
-
-  useEffect(() => {
-    const s = document.createElement("script");
-    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
-    s.setAttribute("async", "true");
-    document.head.appendChild(s);
-  }, []);
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
       <Hero title="Our Team" imagePath="/images/tohoku_ares_wide.jpg" />
@@ -98,6 +94,49 @@ const Team: NextPage = () => {
           <Paragraph className="md:w-3/5">{t("team.about")}</Paragraph>
         </div>
       </Section>
+      <Section id="goal" title={t("home.goal.title")}>
+        <FadeIn
+          as="section"
+          className="px-2 md:px-[6%] flex flex-col items-center gap-4 md:gap-10 text-lg"
+        >
+          <div>
+            <ol className="flex flex-col lg:flex-row gap-4 lg:gap-8">
+              {goals.map(({ icon }, index) => (
+                <FadeIn
+                  as="li"
+                  options={{ delay: 150 * index }}
+                  key={index}
+                  className="flex flex-row lg:flex-col justify-center lg:justify-start items-center gap-4 lg:w-1/5"
+                >
+                  <div className="w-12 lg:w-1/3">
+                    <img src={icon} alt="" className="w-full" />
+                  </div>
+                  <Paragraph className="w-5/6 lg:w-full lg:text-center">
+                    {t(`home.goal.goals.${index}`)}
+                  </Paragraph>
+                </FadeIn>
+              ))}
+            </ol>
+          </div>
+        </FadeIn>
+      </Section>
+      <FadeIn
+        as="section"
+        className="py-5 md:py-10 px-2 md:px-[12%] flex flex-col items-center gap-10 text-lg"
+      >
+        <div className="flex gap-4 md:gap-10 flex-col items-center lg:flex-row">
+          <img src="/images/mars1.png" alt="" className="w-2/3 lg:w-[48%]" />
+          <div className="w-full lg:w-[48%] px-4">
+            <h3 className="text-2xl md:text-3xl font-medium tracking-wider pb-2 text-center lg:text-left">
+              {t("home.urc.title")}
+            </h3>
+            <Paragraph>{t("home.urc.description")}</Paragraph>
+            <ExternalLink href={URL.urc_official}>
+              {t("home.urc.website")}
+            </ExternalLink>
+          </div>
+        </div>
+      </FadeIn>
       {/* 班紹介 */}
       <Section id="sub-teams" title={t("team.team_composition")}>
         <FadeIn className="flex flex-col justify-center items-center lg:items-start gap-10">
@@ -117,22 +156,6 @@ const Team: NextPage = () => {
             </FadeIn>
           ))}
         </ul>
-      </Section>
-      {/* Twitter */}
-      <Section id="contact" title="Follow Us!">
-        <p className="text-center  text-sm md:text-base">
-          ↓日々の活動の様子や最新情報を発信しています↓
-        </p>
-        <div className="max-w-4xl mx-auto mt-5">
-          <a
-            className="twitter-timeline"
-            data-height="500"
-            data-theme="dark"
-            href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
-          >
-            Tweets by AresPjt2022
-          </a>
-        </div>
       </Section>
     </Layout>
   );

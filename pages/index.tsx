@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import Layout from "../components/layouts/Layout";
 import FadeIn from "../components/objects/atoms/FadeIn";
@@ -47,6 +47,13 @@ const Home: NextPage = () => {
     });
   };
   const sortedArticles = useMemo(() => sortArticlesDec(), []);
+
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
+  }, []);
   return (
     <Layout title="ARES Project" withSponsor>
       <MainVisual />
@@ -91,7 +98,7 @@ const Home: NextPage = () => {
           </div>
         </FadeIn>
       </section> */}
-      <section className="py-8 px-2 flex flex-col items-center gap-10 text-lg">
+      <section className="py-16 px-2 flex flex-col items-center gap-10 text-lg">
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
           {tile("TEAM", "/images/ares_urc2.jpg", URL.team)}
           {tile("ROVERS", "/images/rovers/ares4_wide.jpg", URL.rover)}
@@ -99,89 +106,42 @@ const Home: NextPage = () => {
           {tile("CONTACT", "/images/ares_jacket.jpg", URL.contact)}
         </div>
       </section>
-      <section className="">
-        <h3 className="text-center text-3xl py-4 font-display">MOVIES</h3>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 px-16">
-          <div className="relative aspect-[16/9] w-full md:w-1/2">
-            <iframe
-              src="https://www.youtube.com/embed/l_ktA90qlF4?si=0C9CpjViTHNwmkAb"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              className="absolute inset-0 w-full h-full"
-            ></iframe>
-          </div>
-          <div className="relative aspect-[16/9] w-full md:w-1/2">
-            <iframe
-              src="https://www.youtube.com/embed/wqzaqmNvUX4?si=LDszVIpLnRoM2ek8"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              className="absolute inset-0 w-full h-full"
-            ></iframe>
+      <section className="flex flex-col lg:flex-row items-center lg:items-start py-8 px-4 md:px-16 gap-16">
+        <div className="w-full lg:w-1/2">
+          <h3 className="text-center text-3xl py-4 font-display">MOVIES</h3>
+          <div className="flex flex-col justify-center items-center gap-4">
+            <div className="relative aspect-[16/9] w-full">
+              <iframe
+                src="https://www.youtube.com/embed/l_ktA90qlF4?si=0C9CpjViTHNwmkAb"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+            <div className="relative aspect-[16/9] w-full">
+              <iframe
+                src="https://www.youtube.com/embed/wqzaqmNvUX4?si=LDszVIpLnRoM2ek8"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
           </div>
         </div>
-      </section>
-      {/* <div className="w-screen overflow-hidden">
-        <img
-          src="/images/rovers/ares4_wide.jpg"
-          alt="ARES4"
-          className="w-full object-cover"
-        />
-      </div> */}
-      <FadeIn
-        as="section"
-        className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-4 md:gap-10 text-lg"
-      >
-        <h3 className="text-3xl md:text-5xl font-medium tracking-wider pb-2">
-          {t("home.goal.title")}
-        </h3>
-        <div>
-          <ol className="flex flex-col lg:flex-row gap-4 lg:gap-8">
-            {goals.map(({ title, icon }, index) => (
-              <FadeIn
-                as="li"
-                options={{ delay: 150 * index }}
-                key={index}
-                className="flex flex-row lg:flex-col justify-center lg:justify-start items-center gap-4 lg:w-1/5"
-              >
-                <div className="w-12 lg:w-1/3">
-                  <img src={icon} alt="" className="w-full" />
-                </div>
-                <Paragraph className="w-5/6 lg:w-full lg:text-center">
-                  {t(`home.goal.goals.${index}`)}
-                </Paragraph>
-              </FadeIn>
-            ))}
-          </ol>
-        </div>
-      </FadeIn>
-      <div className="block md:hidden w-screen h-24 overflow-hidden mt-4">
-        <img src="/images/mars1.png" alt="" className="w-screen" />
-      </div>
-      <FadeIn
-        as="section"
-        className="py-5 md:py-10 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg"
-      >
-        <div className="flex gap-4 md:gap-10 flex-col items-center md:flex-row">
-          <img
-            src="/images/mars1.png"
-            alt=""
-            className="hidden md:block md:w-[48%]"
-          />
-          <div className="md:w-[48%] px-4">
-            <h3 className="text-2xl md:text-3xl font-medium tracking-wider pb-2">
-              {t("home.urc.title")}
-            </h3>
-            <Paragraph>{t("home.urc.description")}</Paragraph>
+        <div className="w-full lg:w-1/2">
+          <h3 className="text-center text-3xl py-4 font-display">POSTS</h3>
+          <div className="max-w-4xl mx-auto pb-4">
             <a
-              href={URL.urc_official}
-              target="blank"
-              className="w-full text-left text-xs text-ares-red"
+              className="twitter-timeline"
+              data-height="960"
+              data-theme="dark"
+              href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
             >
-              {t("home.urc.website")}
+              Posts by AresPjt2022
             </a>
           </div>
         </div>
-      </FadeIn>
+      </section>
     </Layout>
   );
 };
