@@ -1,3 +1,5 @@
+
+import LanguageIcon from "@mui/icons-material/Language";
 import Link from "next/link";
 
 export const LocaleSwitcher = ({
@@ -9,27 +11,26 @@ export const LocaleSwitcher = ({
 }) => {
   return (
     <div className="flex items-center gap-2 text-xs">
-      <Link
-        href={href}
-        locale="ja"
-        className={`cursor-pointer hover:text-red-600 duration-300 flex ${
-          locale === "ja" ? "text-gray-400 pointer-events-none" : "text-white"
-        }`}
-      >
-        <img src="/images/icons/ja.png" alt="" className="h-4" />
-        <span>JA</span>
-      </Link>
-      /
-      <Link
-        href={href}
-        locale="en"
-        className={`cursor-pointer hover:text-red-600 duration-300 flex ${
-          locale === "en" ? "text-gray-400 pointer-events-none" : "text-white"
-        }`}
-      >
-        <img src="/images/icons/en.png" alt="" className="h-4" />
-        <span>EN</span>
-      </Link>
+      {locale === "en" && (
+        <Link
+          href={href}
+          locale="ja"
+          className="cursor-pointer hover:text-red-600 duration-300 flex items-center text-white"
+        >
+          <LanguageIcon className="h-4" />
+          <span className="">JA</span>
+        </Link>
+      )}
+      {locale === "ja" && (
+        <Link
+          href={href}
+          locale="en"
+          className="cursor-pointer hover:text-red-600 duration-300 flex items-center text-white"
+        >
+          <LanguageIcon className="h-4" />
+          <span className="align-middle">EN</span>
+        </Link>
+      )}
     </div>
   );
 };
