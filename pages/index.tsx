@@ -1,16 +1,10 @@
-import dayjs from "dayjs";
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 
 import Layout from "../components/layouts/Layout";
-import FadeIn from "../components/objects/atoms/FadeIn";
-import Paragraph from "../components/objects/atoms/Paragraph";
 import MainVisual from "../components/objects/organisms/MainVisual";
-import { articles } from "../const/articles";
-import { goals } from "../const/team";
 import URL from "../const/url";
 
 export async function getStaticProps({ locale }: { locale: string }) {
@@ -22,8 +16,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
 }
 
 const Home: NextPage = () => {
-  const { t } = useTranslation("common");
-
   const tile = (title: string, image: string, link: string) => {
     return (
       <Link href={link}>
@@ -40,13 +32,6 @@ const Home: NextPage = () => {
       </Link>
     );
   };
-
-  const sortArticlesDec = () => {
-    return articles.sort((a, b) => {
-      return dayjs(a.date).isAfter(b.date) ? -1 : 1;
-    });
-  };
-  const sortedArticles = useMemo(() => sortArticlesDec(), []);
 
   useEffect(() => {
     const s = document.createElement("script");

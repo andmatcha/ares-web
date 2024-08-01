@@ -1,7 +1,6 @@
 import { GetServerSidePropsContext, NextPage } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useEffect } from "react";
 
 import Layout from "../components/layouts/Layout";
 import ExternalLink from "../components/objects/atoms/ExternalLink";
