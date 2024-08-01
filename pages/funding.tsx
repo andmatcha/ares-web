@@ -39,7 +39,7 @@ const Funding: NextPage = () => {
     triggerOnce: true,
   });
   return (
-    <Layout title="FUNDING">
+    <Layout title="FUNDING" allowTopSpace>
       <Hero title="FUNDING" imagePath="/images/rovers/ares4_wide.jpg" />
       {/* CAMPFIRE */}
       <div

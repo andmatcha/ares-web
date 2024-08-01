@@ -57,47 +57,6 @@ const Home: NextPage = () => {
   return (
     <Layout title="ARES Project" withSponsor>
       <MainVisual />
-      {/* <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
-        <FadeIn
-          options={{ triggerOnce: true }}
-          className="flex gap-8 justify-center items-center pb-4 px-4"
-        >
-          <h3 className="text-4xl md:text-6xl leading-relaxed md:leading-relaxed tracking-wider font-normal">
-            {t("home.whats")}
-            {locale === "ja" ? "" : <br />}
-            ARES
-            <br />
-            Project
-            <br />
-            {t("home.question")}
-          </h3>
-          <div className="w-3/5 flex flex-col gap-8">
-            <Paragraph>{t("home.description")}</Paragraph>
-            <div
-              ref={teamRef}
-              className="flex justify-center items-center gap-4 md:gap-10"
-            >
-              <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
-                <div className="text-4xl md:text-6xl flex items-center justify-center">
-                  <div className="w-16 md:w-28 flex justify-center">
-                    <CountUp active={teamInView} from={0} to={40} time={1200} />
-                  </div>
-                </div>
-                <span className="text-sm">members</span>
-              </div>
-              <div className="flex flex-col justify-center items-end md:items-center gap-2 font-display">
-                <div className="text-4xl md:text-6xl flex items-center justify-center">
-                  <div className="w-16 md:w-28 flex justify-center">
-                    <CountUp active={teamInView} from={0} to={60} time={1600} />
-                  </div>
-                  +
-                </div>
-                <span className="text-sm">backers</span>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-      </section> */}
       <section className="py-16 px-2 flex flex-col items-center gap-10 text-lg">
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
           {tile("TEAM", "/images/ares_urc2.jpg", URL.team)}

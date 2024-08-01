@@ -10,10 +10,10 @@ const headerContents = {
       path: URL.rover,
       label: "ROVERS",
     },
-    // {
-    //   path: URL.blog,
-    //   label: "BLOG",
-    // },
+    {
+      path: URL.funding,
+      label: "FUNDING",
+    },
     {
       path: URL.contact,
       label: "CONTACT",
