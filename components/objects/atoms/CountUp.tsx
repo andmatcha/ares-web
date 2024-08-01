@@ -19,7 +19,7 @@ const CountUp: NextPage<Props> = ({ active, from, to, time }: Props) => {
     }, time / (to - (from ?? 0)));
     return () => clearTimeout(timer);
   });
-  return <span>{count}</span>;
+  return <span>{count.toLocaleString()}</span>;
 };
 
 export default CountUp;
