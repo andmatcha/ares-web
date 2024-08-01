@@ -9,7 +9,7 @@ const ExternalLink: NextPage<{ href: string; children: ReactNode }> = ({
     <a
       href={href}
       target="blank"
-      className="w-full text-left text-xs text-ares-red"
+      className="w-full text-left text-xs text-ares-red hover:underline"
     >
       {children}
     </a>

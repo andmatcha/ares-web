@@ -1,3 +1,5 @@
+import { read } from "fs";
+
 const URL = {
   // 内部ページ
   home: "/",
@@ -9,6 +11,7 @@ const URL = {
 
   // 外部ページ
   campfire_project: "https://camp-fire.jp/projects/view/632663",
+  readyfor_project: "https://readyfor.jp/projects/ares_project",
   hyaku_banch_project: "https://100banch.com/projects/ares-project",
   urc_official: "https://urc.marssociety.org/",
 

@@ -1,20 +1,15 @@
 import dayjs from "dayjs";
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useMemo } from "react";
-import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layouts/Layout";
-import CountUp from "../components/objects/atoms/CountUp";
 import FadeIn from "../components/objects/atoms/FadeIn";
-import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import { articles } from "../const/articles";
-import supporters from "../const/supporters";
 import { goals } from "../const/team";
 import URL from "../const/url";
 
@@ -28,16 +23,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
-  const { locale } = useRouter();
-
-  const { ref: teamRef, inView: teamInView } = useInView({
-    rootMargin: "-10% 0%",
-    triggerOnce: true,
-  });
-  const { ref: fundingRef, inView: fundingInView } = useInView({
-    rootMargin: "-10% 0%",
-    triggerOnce: true,
-  });
 
   const tile = (title: string, image: string, link: string) => {
     return (
