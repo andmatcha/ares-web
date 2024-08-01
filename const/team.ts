@@ -43,21 +43,6 @@ export const infoSets = [
   },
 ];
 
-export const branches = [
-  {
-    name: "東北支部",
-    description:
-      "ローバーの設計・製作を担当。自律走行技術や起伏に富む砂漠での走破性を実現する機体を開発しています。",
-    imagePath: "/images/tohoku_members.jpg",
-  },
-  {
-    name: "東京支部",
-    description:
-      "ローバーに搭載するロボットアームの設計・製作を担当。宇宙船の修理から岩石サンプルの回収まで、あらゆる環境に適応可能なロボットアームを開発しています。",
-    imagePath: "/images/keio_members.jpg",
-  },
-];
-
 export const subTeams = [
   {
     name: "機構班",
