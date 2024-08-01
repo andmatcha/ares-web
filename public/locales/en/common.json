@@ -21,12 +21,6 @@
       "title": "What's URC?",
       "description": "The University Rover Challenge (URC) is the world premier robotics competition for college students. Held annually in the desert of southern Utah in the U.S., participants compete in the abilities of their mars rovers to accomplish various missions.",
       "website": "URC Official Website"
-    },
-    "funding": {
-      "title": "Thank You for Your Support!",
-      "website": "CAMPFIRE Website",
-      "backers": "backers",
-      "raised": "raised"
     }
   },
   "100banch": {
@@ -50,6 +44,13 @@
         "university": "Department of Mechanical Engineering, KEIO University",
         "introduction": "Born in Tokyo in 2002, I have enjoyed making things since childhood and began attending robotics classes in the fourth grade of elementary school, which sparked my serious interest in robot building. In my first and second years of high school, I was selected as a representative for Japan in the International Science Olympiad two years in a row, where I learned about the global standards in the field. In my second year of high school, I served as the team leader for Japan’s representative team in the FIRST Global Challenge, competing in robotics with teams from 196 countries. Inspired by the anime “Space Brothers” I watched as a child, I aimed for a career in aerospace engineering and was admitted to Keio University through the AO entrance exam system. After entering university, I met Ai, which led to the launch of the ARES Project, focusing intensively on rover development. In the future, I hope to operate a space probe I’ve designed in space."
       }
-  }
+    }
+  },
+  "funding": {
+    "title": "FUNDING",
+    "campfire": "CAMPFIRE Website",
+    "readyfor": "READYFOR Website",
+    "backers": "backers",
+    "raised": "raised"
   }
 }

@@ -1,20 +1,15 @@
 import dayjs from "dayjs";
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useMemo } from "react";
-import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layouts/Layout";
-// import ArticleCard from "../components/objects/atoms/ArticleCard";
-import CountUp from "../components/objects/atoms/CountUp";
 import FadeIn from "../components/objects/atoms/FadeIn";
-import MainButton from "../components/objects/atoms/MainButton";
 import Paragraph from "../components/objects/atoms/Paragraph";
 import MainVisual from "../components/objects/organisms/MainVisual";
 import { articles } from "../const/articles";
-import supporters from "../const/supporters";
 import { goals } from "../const/team";
 import URL from "../const/url";
 
@@ -28,16 +23,23 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
-  const { locale } = useRouter();
 
-  const { ref: teamRef, inView: teamInView } = useInView({
-    rootMargin: "-10% 0%",
-    triggerOnce: true,
-  });
-  const { ref: fundingRef, inView: fundingInView } = useInView({
-    rootMargin: "-10% 0%",
-    triggerOnce: true,
-  });
+  const tile = (title: string, image: string, link: string) => {
+    return (
+      <Link href={link}>
+        <div className="w-72 h-28 md:h-48 relative overflow-hidden rounded-md group hover:cursor-pointer">
+          <img
+            src={image}
+            alt=""
+            className="absolute w-full h-full object-cover opacity-60 transition-opacity group-hover:opacity-100"
+          />
+          <h3 className="absolute text-3xl font-display bottom-4 left-4">
+            {title}
+          </h3>
+        </div>
+      </Link>
+    );
+  };
 
   const sortArticlesDec = () => {
     return articles.sort((a, b) => {
@@ -46,21 +48,9 @@ const Home: NextPage = () => {
   };
   const sortedArticles = useMemo(() => sortArticlesDec(), []);
   return (
-    <Layout title="ARES Project">
+    <Layout title="ARES Project" withSponsor>
       <MainVisual />
       {/* <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
-        <div className="flex justify-center items-center">
-          <div className="w-80">
-            <img
-              src="/images/ares_urc2024_comment.jpg"
-              alt=""
-              className="w-full"
-            />
-          </div>
-          <div></div>
-        </div>
-      </section> */}
-      <section className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-10 text-lg">
         <FadeIn
           options={{ triggerOnce: true }}
           className="flex gap-8 justify-center items-center pb-4 px-4"
@@ -100,15 +90,43 @@ const Home: NextPage = () => {
             </div>
           </div>
         </FadeIn>
-        <MainButton url={URL.team} label="SEE MORE" />
+      </section> */}
+      <section className="py-8 px-2 flex flex-col items-center gap-10 text-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
+          {tile("TEAM", "/images/ares_urc2.jpg", URL.team)}
+          {tile("ROVERS", "/images/rovers/ares4_wide.jpg", URL.rover)}
+          {tile("FUNDING", "/images/tohoku_field.jpg", URL.funding)}
+          {tile("CONTACT", "/images/ares_jacket.jpg", URL.contact)}
+        </div>
       </section>
-      <div className="w-screen overflow-hidden">
+      <section className="">
+        <h3 className="text-center text-3xl py-4 font-display">MOVIES</h3>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 px-16">
+          <div className="relative aspect-[16/9] w-full md:w-1/2">
+            <iframe
+              src="https://www.youtube.com/embed/l_ktA90qlF4?si=0C9CpjViTHNwmkAb"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="absolute inset-0 w-full h-full"
+            ></iframe>
+          </div>
+          <div className="relative aspect-[16/9] w-full md:w-1/2">
+            <iframe
+              src="https://www.youtube.com/embed/wqzaqmNvUX4?si=LDszVIpLnRoM2ek8"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="absolute inset-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      {/* <div className="w-screen overflow-hidden">
         <img
           src="/images/rovers/ares4_wide.jpg"
           alt="ARES4"
           className="w-full object-cover"
         />
-      </div>
+      </div> */}
       <FadeIn
         as="section"
         className="py-10 md:py-20 px-2 md:px-[10%] flex flex-col items-center gap-4 md:gap-10 text-lg"
@@ -164,94 +182,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </FadeIn>
-      {/* ニュース */}
-      {/* <div className="flex flex-col justify-center items-center px-2 lg:px-[10%]">
-        <h2 className="text-2xl md:text-3xl font-medium tracking-wider pb-4">
-          News
-        </h2>
-        <div className="w-full flex flex-col justify-center gap-4 px-4">
-          {sortedArticles.map((article, index) => (
-            <FadeIn key={index} options={{ delay: 150 * index }}>
-              <ArticleCard articleOverview={article} />
-            </FadeIn>
-          ))}
-        </div>
-      </div> */}
-      {/* クラウドファンディングのお礼 */}
-      <div
-        ref={fundingRef}
-        className="w-full flex flex-col items-center px-4 py-4"
-      >
-        <h3 className="mb-4 text-2xl md:text-3xl pt-10 font-medium">
-          {t("home.funding.title")}
-        </h3>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-4">
-          <div className="w-2/3 md:w-2/5 lg:w-1/5">
-            <img
-              src="/images/campfire.png"
-              alt=""
-              className="w-full object-contain"
-            />
-          </div>
-          <div className="w-full md:w-3/5 lg:w-2/5">
-            <div className="flex justify-center md:justify-start items-center">
-              <div
-                className={`flex ${
-                  locale === "ja" ? "flex-col font-" : "flex-col-reverse"
-                } justify-center items-center gap-2 p-4 min-w-fit`}
-              >
-                <h4 className="text-sm">{t("home.funding.backers")}</h4>
-                <p className="w-16 md:w-20 text-center text-4xl md:text-5xl font-display">
-                  <CountUp active={fundingInView} to={37} time={1000} />
-                </p>
-              </div>
-              <div
-                className={`flex ${
-                  locale === "ja" ? "flex-col font-" : "flex-col-reverse"
-                } justify-center items-center gap-2 p-4 min-w-fit`}
-              >
-                <h4 className="text-sm">{t("home.funding.raised")}</h4>
-                <p className="w-56 md:w-64 text-4xl md:text-5xl font-display">
-                  ¥
-                  <CountUp
-                    active={fundingInView}
-                    from={190}
-                    to={230}
-                    time={1000}
-                  />
-                  ,
-                  <CountUp
-                    active={fundingInView}
-                    from={450}
-                    to={500}
-                    time={1500}
-                  />
-                </p>
-              </div>
-            </div>
-            <ul className="flex flex-wrap text-sm pb-2 gap-y-1 justify-center md:justify-start">
-              {supporters.map((supporter, i) => (
-                <li key={i}>
-                  <div className="inline-block">{supporter} 様</div>
-                  {i + 1 < supporters.length ? (
-                    <span className="px-1 text-gray-600">/</span>
-                  ) : undefined}
-                </li>
-              ))}
-              <span className="pl-1 text-sm">他</span>
-            </ul>
-            <div className="text-center md:text-left">
-              <a
-                href={URL.campfire_project}
-                target="blank"
-                className="w-full text-left text-xs text-ares-red"
-              >
-                {t("home.funding.website")}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </Layout>
   );
 };

@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
 
 import URL from "../../../const/url";
+import ExternalLink from "../atoms/ExternalLink";
 
 const HyakuBanch: NextPage = () => {
   const { t } = useTranslation("common");
@@ -22,13 +23,9 @@ const HyakuBanch: NextPage = () => {
       <p className="text-sm md:text-base text-center md:text-start">
         {t("100banch.title")}
         <br />
-        <a
-          href={URL.hyaku_banch_project}
-          target="blank"
-          className="w-full text-left text-xs text-ares-red"
-        >
+        <ExternalLink href={URL.hyaku_banch_project}>
           {t("100banch.website")}
-        </a>
+        </ExternalLink>
       </p>
     </div>
   );
