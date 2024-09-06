@@ -37,6 +37,7 @@ const sponsors: Sponsor[] = [
     imagePath: "/images/brand_marks/ceratec_japan.png",
     url: URL.ceratec_japan,
     rank: RANK.OTHER,
+    bgWhite: true,
   },
   {
     name: "CHUMS",
