@@ -13,4 +13,5 @@ export type Sponsor = {
   imagePath: string;
   url: string;
   rank: number;
+  bgWhite?: boolean;
 };

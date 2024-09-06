@@ -21,8 +21,10 @@ const URL = {
 
   // スポンサー等のサイト
   ablab: "https://ablab.space/",
+  asone: "https://www.as-1.co.jp/",
   amulapo: "https://amulapo-inc.com/",
   autodesk: "https://www.autodesk.co.jp/",
+  ceratec_japan: "https://www.crtj.co.jp/",
   chums: "https://www.chums.jp/",
   cyport: "https://www.cyport.co.jp/",
   fourthai: "https://www.4th.ai/",
