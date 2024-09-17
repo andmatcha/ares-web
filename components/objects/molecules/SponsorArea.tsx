@@ -21,12 +21,14 @@ const SponsorArea: NextPage = () => {
     return (
       <div className="py-10 bg-black">
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 md:gap-12 px-8">
-          {sponsorList.map(({ name, imagePath, url }, index) => (
+          {sponsorList.map(({ name, imagePath, url, bgWhite }, index) => (
             <a
               key={index}
               href={url}
               target="blank"
-              className={`${sizeClass()} flex items-center`}
+              className={`${sizeClass()} flex items-center ${
+                bgWhite && "bg-white"
+              }`}
             >
               <img
                 src={imagePath}

@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext, NextPage } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Layout from "../components/layouts/Layout";
 import ExternalLink from "../components/objects/atoms/ExternalLink";
@@ -13,61 +13,72 @@ import TeamCard from "../components/objects/atoms/TeamCard";
 import Section from "../components/objects/molecules/Section";
 import { goals } from "../const/team";
 import URL from "../const/url";
+import { Member } from "../types";
+
+type SubTeam = {
+  name: string;
+  description: string;
+  imagePath: string;
+};
 
 export const getServerSideProps = async ({
   locale,
 }: GetServerSidePropsContext) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "ja", ["common"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
     },
   };
 };
 
 const Team: NextPage = () => {
-  const { t } = useTranslation("common");
+  const { t, i18n } = useTranslation("common");
+  const [subTeams, setSubTeams] = useState<SubTeam[]>([]);
+  const [leaders, setLeaders] = useState<Member[]>([]);
 
-  const subTeams = [
-    {
-      name: t("team.subTeams.tohoku.name"),
-      description: t("team.subTeams.tohoku.description"),
-      imagePath: "/images/tohoku_members.jpg",
-    },
-    {
-      name: t("team.subTeams.tokyo.name"),
-      description: t("team.subTeams.tokyo.description"),
-      imagePath: "/images/keio_members.jpg",
-    },
-    {
-      name: t("team.subTeams.science.name"),
-      description: t("team.subTeams.science.description"),
-      imagePath: "/images/science_members.jpg",
-    },
-  ];
+  useEffect(() => {
+    setSubTeams([
+      {
+        name: t("team.subTeams.tohoku.name"),
+        description: t("team.subTeams.tohoku.description"),
+        imagePath: "/images/tohoku_members.jpg",
+      },
+      {
+        name: t("team.subTeams.tokyo.name"),
+        description: t("team.subTeams.tokyo.description"),
+        imagePath: "/images/keio_members.jpg",
+      },
+      {
+        name: t("team.subTeams.science.name"),
+        description: t("team.subTeams.science.description"),
+        imagePath: "/images/science_members.jpg",
+      },
+    ]);
 
-  const leaders = [
-    {
-      name: t("team.leaders.pm.name"),
-      university: t("team.leaders.pm.university"),
-      introduction: t("team.leaders.pm.introduction"),
-      imagePath: "/images/members/danishi_ai.jpg",
-      isLeader: true,
-    },
-    {
-      name: t("team.leaders.tohoku_lead.name"),
-      university: t("team.leaders.tohoku_lead.university"),
-      introduction: t("team.leaders.tohoku_lead.introduction"),
-      imagePath: "/images/members/kota_matsuhashi.jpg",
-      isLeader: true,
-    },
-    {
-      name: t("team.leaders.tokyo_lead.name"),
-      university: t("team.leaders.tokyo_lead.university"),
-      introduction: t("team.leaders.tokyo_lead.introduction"),
-      imagePath: "/images/members/ryoji_nagahara.jpg",
-      isLeader: true,
-    },
-  ];
+    setLeaders([
+      {
+        name: t("team.leaders.pm.name"),
+        university: t("team.leaders.pm.university"),
+        introduction: t("team.leaders.pm.introduction"),
+        imagePath: "/images/members/danishi_ai.jpg",
+        isLeader: true,
+      },
+      {
+        name: t("team.leaders.tohoku_lead.name"),
+        university: t("team.leaders.tohoku_lead.university"),
+        introduction: t("team.leaders.tohoku_lead.introduction"),
+        imagePath: "/images/members/kota_matsuhashi.jpg",
+        isLeader: true,
+      },
+      {
+        name: t("team.leaders.tokyo_lead.name"),
+        university: t("team.leaders.tokyo_lead.university"),
+        introduction: t("team.leaders.tokyo_lead.introduction"),
+        imagePath: "/images/members/ryoji_nagahara.jpg",
+        isLeader: true,
+      },
+    ]);
+  }, [t, i18n.language]);
   return (
     <Layout title="チーム紹介 - ARES Project" allowTopSpace>
       <Hero title="Our Team" imagePath="/images/tohoku_ares_wide.jpg" />

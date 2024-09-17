@@ -21,10 +21,13 @@ const URL = {
 
   // スポンサー等のサイト
   ablab: "https://ablab.space/",
+  asone: "https://www.as-1.co.jp/",
   amulapo: "https://amulapo-inc.com/",
   autodesk: "https://www.autodesk.co.jp/",
+  ceratec_japan: "https://www.crtj.co.jp/",
   chums: "https://www.chums.jp/",
   cyport: "https://www.cyport.co.jp/",
+  digi_international: "https://www.digi.com/",
   fourthai: "https://www.4th.ai/",
   hikoki: "https://www.koki-holdings.co.jp/",
   hyaku_banch: "https://100banch.com/",
@@ -38,6 +41,7 @@ const URL = {
   sibucho: "https://sibucho-laboratory.com/",
   sk_honpo: "https://skhonpo.com/",
   sorae: "https://sorae.info/",
+  st: "https://www.st.com/",
   telstar: "http://spacemgz-telstar.com/",
   utyu_banashi: "http://ryosasaki.net/",
 };

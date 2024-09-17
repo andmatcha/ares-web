@@ -10,7 +10,7 @@ const Footer: NextPage<{ withSponsor?: boolean }> = ({ withSponsor = false }) =>
         {withSponsor && (
           <>
             <SponsorArea />
-            <HyakuBanch />
+            {/* <HyakuBanch /> */}
           </>
         )}
       </div>
