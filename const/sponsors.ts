@@ -52,6 +52,13 @@ const sponsors: Sponsor[] = [
     rank: RANK.OTHER,
   },
   {
+    name: "Digi International",
+    imagePath: "/images/brand_marks/digi_international.png",
+    url: URL.digi_international,
+    rank: RANK.OTHER,
+    bgWhite: true,
+  },
+  {
     name: "4th.ai",
     imagePath: "/images/brand_marks/4thai.jpg",
     url: URL.fourthai,
@@ -61,6 +68,12 @@ const sponsors: Sponsor[] = [
     name: "工機ホールディングス",
     imagePath: "/images/brand_marks/hikoki.jpg",
     url: URL.hikoki,
+    rank: RANK.OTHER,
+  },
+  {
+    name: "100 BANCH",
+    imagePath: "/images/brand_marks/100banch_wide.png",
+    url: URL.hyaku_banch,
     rank: RANK.OTHER,
   },
   {
@@ -116,6 +129,13 @@ const sponsors: Sponsor[] = [
     imagePath: "/images/brand_marks/sorae.png",
     url: URL.sorae,
     rank: RANK.OTHER,
+  },
+  {
+    name: "st",
+    imagePath: "/images/brand_marks/st.png",
+    url: URL.st,
+    rank: RANK.OTHER,
+    bgWhite: true,
   },
   {
     name: "TELSTAR",
