@@ -1,7 +1,7 @@
 {
   "main-visual": {
     "slogan": "From Japan, a World-Class Mars Rover.",
-    "description": "A Student Project Developing Mars Rovers"
+    "description": "We are the student team developing Mars rovers aiming for victory in the University Rover Challenge (URC)."
   },
   "home": {
     "goal": {
@@ -25,7 +25,7 @@
     "website": "100BANCH Website"
   },
   "team": {
-    "about": "We are a Japanese student team dedicated to designing and developing the next-generation Mars rover. Since our project establishment in 2022, we have expanded our team members and worked towards to compete in the University Rover Challenge (URC). In 2024, we became the first Japanese student team to compete in the URC, facing off against teams from around the world. Our team consists of over 40 students from multiple universities, with Tohoku University and Keio University serving as our main bases of operation.",
+    "about": "We are a Japanese student team dedicated to designing and developing the next-generation Mars rover. Since our project establishment in 2022, we have expanded our team members and worked towards to compete in the University Rover Challenge (URC). In 2024, we became the first Japanese student team to compete in the URC, facing off against teams from around the world. Our team consists of over 40 students from multiple universities, with Tohoku University and Keio University serving as our main bases of operation. We are currently working towards winning the next competition.",
     "team_composition": "Team Composition",
     "subTeams": {
       "tohoku": {

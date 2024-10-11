@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import React from "react";
 
 import { RANK, sponsors } from "../../../const/sponsors";
 import { Sponsor } from "../../../types";
