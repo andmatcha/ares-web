@@ -40,6 +40,12 @@ const sponsors: Sponsor[] = [
     bgWhite: true,
   },
   {
+    name: "creality",
+    imagePath: "/images/brand_marks/creality.png",
+    url: URL.creality,
+    rank: RANK.OTHER,
+  },
+  {
     name: "CHUMS",
     imagePath: "/images/brand_marks/chums.jpg",
     url: URL.chums,
@@ -135,7 +141,6 @@ const sponsors: Sponsor[] = [
     imagePath: "/images/brand_marks/st.png",
     url: URL.st,
     rank: RANK.OTHER,
-    bgWhite: true,
   },
   {
     name: "TELSTAR",

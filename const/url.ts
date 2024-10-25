@@ -25,6 +25,7 @@ const URL = {
   amulapo: "https://amulapo-inc.com/",
   autodesk: "https://www.autodesk.co.jp/",
   ceratec_japan: "https://www.crtj.co.jp/",
+  creality: "https://www.creality.com/jp",
   chums: "https://www.chums.jp/",
   cyport: "https://www.cyport.co.jp/",
   digi_international: "https://www.digi.com/",
