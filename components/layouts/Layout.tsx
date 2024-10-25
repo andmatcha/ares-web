@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React from "react";
 import { ReactNode } from "react";
 
@@ -13,14 +14,21 @@ interface Props {
   withSponsor?: boolean;
 }
 
-const Layout: NextPage<Props> = ({ title, children, allowTopSpace, withSponsor }) => {
+const Layout: NextPage<Props> = ({
+  title,
+  children,
+  allowTopSpace,
+  withSponsor,
+}) => {
+  const { locale } = useRouter();
+
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta
           name="description"
-          content="URC日本初出場をめざす学生団体ARES オフィシャルウェブサイト"
+          content={locale ==="ja" ? "University Rover Challenge (URC)優勝を目指す学生プロジェクト。URC2024年大会に日本初出場。" : "A student project aiming to win the University Rover Challenge (URC)."}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
