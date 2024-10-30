@@ -44,6 +44,7 @@ const URL = {
   sorae: "https://sorae.info/",
   st: "https://www.st.com/",
   telstar: "http://spacemgz-telstar.com/",
+  uchida: "/", // 未設定
   utyu_banashi: "http://ryosasaki.net/",
 };
 

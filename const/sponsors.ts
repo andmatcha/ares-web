@@ -149,6 +149,12 @@ const sponsors: Sponsor[] = [
     rank: RANK.OTHER,
   },
   {
+    name: "Uchida",
+    imagePath: "/images/brand_marks/uchida.png",
+    url: URL.uchida,
+    rank: RANK.DIAMOND,
+  },
+  {
     name: "宇宙ばなし",
     imagePath: "/images/brand_marks/utyu_banashi.jpg",
     url: URL.utyu_banashi,
