@@ -13,7 +13,8 @@ const URL = {
   campfire_project: "https://camp-fire.jp/projects/view/632663",
   readyfor_project: "https://readyfor.jp/projects/ares_project",
   hyaku_banch_project: "https://100banch.com/projects/ares-project",
-  tohoku_university_fund: "https://www.kikin.tohoku.ac.jp/project/Student_Activities/ARES",
+  tohoku_university_fund:
+    "https://www.kikin.tohoku.ac.jp/project/Student_Activities/ARES",
   urc_official: "https://urc.marssociety.org/",
 
   // SNS
@@ -45,7 +46,7 @@ const URL = {
   sorae: "https://sorae.info/",
   st: "https://www.st.com/",
   telstar: "http://spacemgz-telstar.com/",
-  uchida: "/", // 未設定
+  uchida: "https://uchida-k.co.jp/",
   utyu_banashi: "http://ryosasaki.net/",
 };
 
