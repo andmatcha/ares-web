@@ -39,7 +39,7 @@ const Funding: NextPage = () => {
     triggerOnce: true,
   });
   return (
-    <Layout title="FUNDING">
+    <Layout title="FUNDING" allowTopSpace>
       <Hero title="FUNDING" imagePath="/images/rovers/ares4_wide.jpg" />
       {/* CAMPFIRE */}
       <div
@@ -49,7 +49,7 @@ const Funding: NextPage = () => {
         <h3 className="w-full text-xl md:text-2xl py-2 lg:w-4/5">
           2022.11 − 2023.01 クラウドファンディング（CAMPFIRE）
         </h3>
-        <div className="flex flex-col md:flex-row justify-center gap-8 py-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-4">
           <div className="w-2/3 md:w-2/5 lg:w-1/5">
             <img
               src="/images/campfire.png"
@@ -79,7 +79,7 @@ const Funding: NextPage = () => {
         <h3 className="w-full text-xl md:text-2xl py-2 lg:w-4/5">
           2024.04 − 2024.06 クラウドファンディング（READYFOR）
         </h3>
-        <div className="flex flex-col md:flex-row justify-center gap-8 py-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-4">
           <div className="w-2/3 md:w-2/5 lg:w-1/5">
             <img
               src="/images/readyfor.jpg"
@@ -98,7 +98,7 @@ const Funding: NextPage = () => {
               raised={1877000}
             />
             <CrowdFundingBackersList backers={readyforBackers} />
-            <div className="flex gap-4 py-2">
+            <div className="flex gap-4 py-2 flex-wrap justify-center">
               {readyforBackersImage.map((image, index) => (
                 <img
                   key={index}
