@@ -149,6 +149,12 @@ const sponsors: Sponsor[] = [
     rank: RANK.OTHER,
   },
   {
+    name: "TKK",
+    imagePath: "/images/brand_marks/tkk.png",
+    url: "",
+    rank: RANK.OTHER,
+  },
+  {
     name: "Uchida",
     imagePath: "/images/brand_marks/uchida.png",
     url: URL.uchida,
@@ -162,4 +168,4 @@ const sponsors: Sponsor[] = [
   },
 ];
 
-export {RANK, sponsors };
+export { RANK, sponsors };
