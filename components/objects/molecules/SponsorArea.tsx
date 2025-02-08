@@ -1,10 +1,21 @@
 import { NextPage } from "next";
+import Link from "next/link";
 import React from "react";
 
 import { RANK, sponsors } from "../../../const/sponsors";
 import { Sponsor } from "../../../types";
 
 const SponsorArea: NextPage = () => {
+  const handleClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sponsor: Sponsor
+  ) => {
+    event.preventDefault();
+    if (sponsor.url !== "") {
+      window.open(sponsor.url, "_blank");
+    }
+  };
+
   const sponsorArea = (
     sponsorList: Sponsor[],
     size: "small" | "medium" | "large"
@@ -22,21 +33,22 @@ const SponsorArea: NextPage = () => {
     return (
       <div className="py-10 bg-black">
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 md:gap-12 px-8">
-          {sponsorList.map(({ name, imagePath, url, bgWhite }, index) => (
-            <a
+          {sponsorList.map((sponsor, index) => (
+            <Link
+              role="button"
+              onClick={(event) => handleClick(event, sponsor)}
               key={index}
-              href={url}
-              target="blank"
+              href={sponsor.url}
               className={`${sizeClass()} flex items-center ${
-                bgWhite && "bg-white"
+                sponsor.bgWhite && "bg-white"
               }`}
             >
               <img
-                src={imagePath}
-                alt={name}
+                src={sponsor.imagePath}
+                alt={sponsor.name}
                 className="w-full h-full object-contain"
               />
-            </a>
+            </Link>
           ))}
         </div>
       </div>
