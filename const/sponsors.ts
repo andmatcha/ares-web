@@ -153,6 +153,7 @@ const sponsors: Sponsor[] = [
     imagePath: "/images/brand_marks/tkk.png",
     url: "",
     rank: RANK.OTHER,
+    bgWhite: true,
   },
   {
     name: "Uchida",
