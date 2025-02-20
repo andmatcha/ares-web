@@ -152,7 +152,7 @@ const sponsors: Sponsor[] = [
     name: "TKK",
     imagePath: "/images/brand_marks/tkk.png",
     url: "",
-    rank: RANK.OTHER,
+    rank: RANK.GOLD,
     bgWhite: true,
   },
   {
