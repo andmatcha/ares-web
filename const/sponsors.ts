@@ -18,7 +18,7 @@ const sponsors: Sponsor[] = [
     name: "amulapo",
     imagePath: "/images/brand_marks/amulapo.png",
     url: URL.amulapo,
-    rank: RANK.GOLD,
+    rank: RANK.OTHER,
   },
   {
     name: "アズワン",
@@ -30,7 +30,7 @@ const sponsors: Sponsor[] = [
     name: "autodesk",
     imagePath: "/images/brand_marks/autodesk.png",
     url: URL.autodesk,
-    rank: RANK.OTHER,
+    rank: RANK.GOLD,
   },
   {
     name: "CERATEC JAPAN",
@@ -151,7 +151,7 @@ const sponsors: Sponsor[] = [
   {
     name: "TKK",
     imagePath: "/images/brand_marks/tkk.png",
-    url: "",
+    url: "https://www.tokai-mmc.co.jp/index.html",
     rank: RANK.GOLD,
     bgWhite: true,
   },
