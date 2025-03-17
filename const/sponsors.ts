@@ -24,7 +24,7 @@ const sponsors: Sponsor[] = [
     name: "アズワン",
     imagePath: "/images/brand_marks/asone.jpg",
     url: URL.asone,
-    rank: RANK.OTHER,
+    rank: RANK.GOLD,
   },
   {
     name: "autodesk",
