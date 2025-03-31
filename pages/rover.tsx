@@ -23,7 +23,7 @@ const Team: NextPage = () => {
   return (
     <Layout allowTopSpace title="Our Rover">
       <Hero title="Our Rovers" imagePath="/images/rovers/ares4_wide.jpg" />
-      <div className="px-4 lg:px-20">
+      <div className="px-4 xl:px-[5%]">
         {/* ローバー選択エリア */}
         <div>
           <ul className="flex flex-wrap gap-4 py-8">
@@ -48,15 +48,15 @@ const Team: NextPage = () => {
           </ul>
         </div>
         {/* ローバー詳細エリア */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-5 py-4">
-          <div className="w-2/3 lg:w-2/5 rounded-md overflow-hidden">
+        <div className="flex flex-col xl:flex-row justify-center items-center gap-5 py-4">
+          <div className="w-4/5 xl:w-2/5 rounded-md overflow-hidden">
             <img
               src={selectedRover.imagePath}
               alt={selectedRover.name}
               className="w-full object-contain"
             />
           </div>
-          <div className="lg:py-4 flex flex-col gap-4 lg:w-3/5">
+          <div className="lg:py-4 flex flex-col gap-4 w-full xl:w-2/5">
             <h2 className="text-3xl font-medium">{selectedRover.name}</h2>
             <Paragraph>
               {locale === "ja"

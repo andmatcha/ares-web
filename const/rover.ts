@@ -55,4 +55,12 @@ export const rovers = [
     },
     imagePath: "/images/rovers/ares7.jpg",
   },
+  {
+    name: "ARES 8",
+    description: {
+      ja: "ARES8では、従来のアルミフレーム構造からアルミ板金構造へと筐体を刷新し、軽量化と高強度化を両立した。板金の肉抜き部分には組子細工の模様をあしらい、日本らしさを表現するとともに、拡張パーツの取り付けが可能な機能性も備えた。ステアリング機構では、荷重がかかる部分のプリントパーツを金属やCFRP製パーツに置き換えることで、さらなる軽量化と高強度を実現した。タイヤはテラメカニクスに関する文献を参考に、URC大会会場の地表に最適化した設計とし、性能向上を図った。制御システムでは、蛇行走行を可能にする機能を盛り込み、操縦者が直感的に操作できるように設計。さらに、LiDARやカメラなど複数のセンサー情報を活用して自動で経路を生成し、高度な自律走行を実現した。アームはカーボンチューブを用いて軽量化と強度向上を図り、各関節にはブラシレスモーターを採用。パワフルかつ繊細な動作が可能で、最大8.5kgの持ち上げにも対応している。配線経路を工夫することで指先先端の無限回転を実現し、さらに、従来機で問題となっていた高負荷時の関節逆転を防ぐため、ウォームギアによるセルフロック機構も搭載している。",
+      en: "In ARES8, the chassis has been redesigned from a conventional aluminum frame structure to a lightweight yet highly durable aluminum sheet-metal structure. The cutout sections feature traditional Japanese Kumiko patterns, expressing a sense of Japanese identity while also allowing for the attachment of expansion parts, enhancing functionality. In the steering system, parts under high load previously made with 3D-printed materials have been replaced with components made of metal and CFRP, achieving both weight reduction and increased strength. The tires were designed based on literature on terramechanics and optimized for the terrain of the URC competition site, resulting in improved performance. The control system enables meandering driving and is designed for intuitive operation. Moreover, by integrating multiple sensors such as LiDAR and cameras, the rover can autonomously generate paths, enabling advanced autonomous navigation. The arm structure uses carbon tubes to reduce weight and enhance strength, while brushless motors in each joint enable powerful yet precise movements, with a proven capacity to lift up to 8.5 kg. Careful routing of the wiring allows for continuous rotation at the fingertip, and a self-locking mechanism using worm gears prevents joint backdriving under heavy loads—an issue in previous models.",
+    },
+    imagePath: "/images/rovers/ares8.jpg",
+  },
 ];
