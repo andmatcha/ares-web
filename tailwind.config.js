@@ -8,6 +8,9 @@ module.exports = {
     fontFamily: {
       'sans': ['Noto Sans JP', 'sans-serif'],
       'display': ['Orbitron', 'sans-serif'],
+      NotoSansJP: ["var(--font-NotoSansJP)"],
+      Orbitron: ["var(--font-Orbitron)"],
+      Roboto: ["var(--font-Roboto)"]
     },
     extend: {
       colors: {
