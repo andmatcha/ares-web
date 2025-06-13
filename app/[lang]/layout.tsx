@@ -1,3 +1,4 @@
+import { dir } from "i18next";
 import { Metadata } from "next";
 import { Noto_Sans_JP, Orbitron, Roboto } from "next/font/google";
 
@@ -23,8 +24,14 @@ export const metadata: Metadata = {
   description: "",
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => (
-  <html lang="ja">
+const RootLayout = ({
+  children,
+  params: { lang },
+}: Readonly<{
+  children: React.ReactNode;
+  params: { lang: string };
+}>) => (
+  <html lang={lang} dir={dir(lang)}>
     <body
       className={`${notoSansJp.variable} ${orbitron.variable} ${roboto.variable} font-NotoSansJP`}
     >
