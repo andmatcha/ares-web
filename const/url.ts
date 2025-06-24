@@ -30,6 +30,7 @@ const URL = {
   creality: "https://www.creality.com/jp",
   chums: "https://www.chums.jp/",
   cyport: "https://www.cyport.co.jp/",
+  denso: "", // todo
   digi_international: "https://www.digi.com/",
   fourthai: "https://www.4th.ai/",
   hikoki: "https://www.koki-holdings.co.jp/",

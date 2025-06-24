@@ -27,7 +27,7 @@ const SponsorArea: NextPage = () => {
         case "medium":
           return "w-48 md:w-64 h-24 md:h-32";
         case "large":
-          return "w-64 md:w-80 h-32 md:h-40";
+          return "w-64 md:w-96 h-32 md:h-40";
       }
     };
     return (
@@ -63,6 +63,10 @@ const SponsorArea: NextPage = () => {
       {sponsorArea(
         sponsors.filter((sponsor) => sponsor.rank === RANK.GOLD),
         "medium"
+      )}
+      {sponsorArea(
+        sponsors.filter((sponsor) => sponsor.rank === RANK.SILVER),
+        "small"
       )}
       {sponsorArea(
         sponsors.filter((sponsor) => sponsor.rank === RANK.OTHER),
