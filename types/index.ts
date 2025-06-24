@@ -1,5 +1,3 @@
-import { type } from "os";
-
 export type Member = {
   name: string;
   university: string;
