@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useEffect } from "react";
 
 import Layout from "../components/layouts/Layout";
 import MainVisual from "../components/objects/organisms/MainVisual";
@@ -32,13 +31,6 @@ const Home: NextPage = () => {
       </Link>
     );
   };
-
-  useEffect(() => {
-    const s = document.createElement("script");
-    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
-    s.setAttribute("async", "true");
-    document.head.appendChild(s);
-  }, []);
 
   return (
     <Layout title="ARES Project" withSponsor>
@@ -97,19 +89,6 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        {/* 2025/07/30 埋め込みが機能しないのでコメントアウト */}
-        {/* <div className="w-full lg:w-1/2">
-          <h3 className="text-center text-3xl py-4 font-display">POSTS</h3>
-          <div className="max-w-4xl mx-auto pb-4">
-            <a
-              className="twitter-timeline"
-              data-height="600"
-              href="https://twitter.com/AresPjt2022?ref_src=twsrc%5Etfw"
-            >
-              Tweets by AresPjt2022
-            </a>
-          </div>
-        </div> */}
       </section>
     </Layout>
   );
