@@ -6,8 +6,9 @@ export const rovers = [
 ];
 
 export const mainImages = [
-  { src: "/images/ares_urc.jpg", alt: "urc" },
-  { src: "/images/rovers/ares6_1.jpg", alt: "ARES5" },
-  { src: "/images/drone.jpg", alt: "Drone" },
-  { src: "/images/tohoku_field.jpg", alt: "Tohoku Field" },
+  { src: "/images/urc2025_01.jpg", alt: "URC2025" },
+  { src: "/images/urc2025_03.jpg", alt: "URC2025" },
+  { src: "/images/ares8_01.jpg", alt: "ARES8" },
+  { src: "/images/ares8_02.jpg", alt: "ARES8" },
+  { src: "/images/urc2025_02.jpg", alt: "URC2025" },
 ];
