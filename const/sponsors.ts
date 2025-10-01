@@ -132,6 +132,12 @@ const sponsors: Sponsor[] = [
     bgWhite: true,
   },
   {
+    name: "EasyEDA",
+    imagePath: "/images/brand_marks/easyeda.png",
+    url: URL.easyeda,
+    rank: RANK.SILVER,
+  },
+  {
     name: "HiKOKI",
     imagePath: "/images/brand_marks/hikoki.jpg",
     url: URL.hikoki,
