@@ -32,6 +32,7 @@ const URL = {
   cyport: "https://www.cyport.co.jp/",
   denso: "", // todo
   digi_international: "https://www.digi.com/",
+  easyeda: "https://www.easyeda.com/",
   fourthai: "https://www.4th.ai/",
   hikoki: "https://www.koki-holdings.co.jp/",
   hyaku_banch: "https://100banch.com/",
