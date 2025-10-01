@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+"use client";
 import { ReactNode } from "react";
 import { IntersectionOptions, useInView } from "react-intersection-observer";
 
@@ -9,12 +9,12 @@ type Props = {
   as?: React.ElementType;
 };
 
-const FadeIn: NextPage<Props> = ({
+const FadeIn = ({
   children,
   options,
   className,
   as: CustomTag = "div",
-}) => {
+}: Props) => {
   const { ref, inView } = useInView({
     rootMargin: "-10% 0%",
     triggerOnce: true,

@@ -1,10 +1,8 @@
 import Link from "next/link";
 
-import Layout from "../../components/layouts/Layout";
-
-const Success = () => {
+export default function ContactSuccessPage() {
   return (
-    <Layout title="送信完了">
+    <>
       <div className="w-full h-screen flex justify-center items-center">
         <div className="flex flex-col justify-center items-center gap-4">
           <div className="w-32 h-32">
@@ -25,8 +23,6 @@ const Success = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export default Success;
+}

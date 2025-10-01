@@ -1,10 +1,10 @@
-import type { NextPage } from "next";
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 
 import { mainImages } from "../../../const/images";
 import Slide from "../atoms/Slide";
 
-const MainVisual: NextPage = () => {
+const MainVisual = () => {
   const { t } = useTranslation("common");
   return (
     <div className="relative h-screen">

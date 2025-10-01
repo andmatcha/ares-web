@@ -1,9 +1,12 @@
-import { NextPage } from "next";
+"use client";
 import { ReactNode } from "react";
 
-const ExternalLink: NextPage<{ href: string; children: ReactNode }> = ({
+const ExternalLink = ({
   href,
   children,
+}: {
+  href: string;
+  children: ReactNode;
 }) => {
   return (
     <a

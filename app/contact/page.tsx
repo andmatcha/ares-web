@@ -1,10 +1,9 @@
-import { NextPage } from "next";
+"use client";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import Layout from "../../components/layouts/Layout";
 import Button from "../../components/objects/atoms/Button";
 import Hero from "../../components/objects/atoms/Hero";
 import Loader from "../../components/objects/atoms/Loader";
@@ -19,7 +18,7 @@ interface FormData {
   message: string;
 }
 
-const Contact: NextPage = () => {
+export default function ContactPage() {
   const router = useRouter();
   const {
     register,
@@ -27,51 +26,32 @@ const Contact: NextPage = () => {
     formState: { errors },
     trigger,
   } = useForm<FormData>();
-
   const { sendToAres, sendToCustomer } = useMail();
-
   const [isSending, setIsSending] = useState<boolean>(false);
 
-  // onBlur イベントでバリデーションを実行する関数
   const handleBlur = async (fieldName: keyof FormData) => {
     await trigger(fieldName);
   };
 
   const onSubmit: SubmitHandler<FormData> = ({ name, email, message }) => {
     setIsSending(true);
-    // ARESのアドレスにお知らせメールを送信
     sendToAres(name, email, message)
-      .then(() => {
-        // 問い合わせ元のアドレスに確認メールを送信
-        sendToCustomer(name, email, message);
-      })
-      .then(() => {
-        // 送信完了時、完了ページに遷移
-        router.push("/contact/success");
-      })
-      .catch(() => {
-        // 送信失敗時、エラーページに遷移
-        router.push("/contact/error");
-      })
-      .finally(() => {
-        // いずれの場合も送信中フラグをリセット
-        setIsSending(false);
-      });
+      .then(() => sendToCustomer(name, email, message))
+      .then(() => router.push("/contact/success"))
+      .catch(() => router.push("/contact/error"))
+      .finally(() => setIsSending(false));
   };
 
   return isSending ? (
-    // メッセージ送信中の画面
     <div className="w-screen h-screen">
       <Loader message="SENDING" />
     </div>
   ) : (
-    // メッセージ送信前の画面
-    <Layout title="CONTACT" allowTopSpace>
+    <>
       <Hero title="CONTACT" imagePath="/images/rovers/ares4_wide.jpg" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex p-4 justify-center">
           <div className="w-full lg:w-1/2">
-            {/* お名前の入力フィールド */}
             <div className="flex flex-col gap-2 px-4 py-2">
               <label htmlFor="name">お名前</label>
               <input
@@ -93,7 +73,6 @@ const Contact: NextPage = () => {
                 )}
               </div>
             </div>
-            {/* メールアドレスの入力フィールド */}
             <div className="flex flex-col justify-end gap-2 px-4 py-2">
               <label htmlFor="email">メールアドレス</label>
               <input
@@ -119,7 +98,6 @@ const Contact: NextPage = () => {
                 )}
               </div>
             </div>
-            {/* お問い合わせ内容の入力フィールド */}
             <div className="flex flex-col gap-2 px-4 py-2">
               <label htmlFor="message">お問い合わせ内容</label>
               <textarea
@@ -182,8 +160,6 @@ const Contact: NextPage = () => {
           </div>
         </div>
       </form>
-    </Layout>
+    </>
   );
-};
-
-export default Contact;
+}

@@ -1,10 +1,10 @@
-import { NextPage } from "next";
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 
 import URL from "../../../const/url";
 import ExternalLink from "../atoms/ExternalLink";
 
-const HyakuBanch: NextPage = () => {
+const HyakuBanch = () => {
   const { t } = useTranslation("common");
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-4 bg-black px-8 py-10">

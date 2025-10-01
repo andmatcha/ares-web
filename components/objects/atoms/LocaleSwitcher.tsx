@@ -1,6 +1,7 @@
-
-import LanguageIcon from "@mui/icons-material/Language";
+"use client";
 import Link from "next/link";
+
+import { LanguageIcon } from "../../../lib/mui";
 
 export const LocaleSwitcher = ({
   href,
