@@ -1,17 +1,19 @@
 "use client";
-import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useMemo, useState } from "react";
 
-import ExternalLink from "../../../components/objects/atoms/ExternalLink";
-import FadeIn from "../../../components/objects/atoms/FadeIn";
-import Hero from "../../../components/objects/atoms/Hero";
-import MemberIntro from "../../../components/objects/atoms/MemberIntro";
-import Paragraph from "../../../components/objects/atoms/Paragraph";
-import TeamCard from "../../../components/objects/atoms/TeamCard";
-import Section from "../../../components/objects/molecules/Section";
-import { goals } from "../../../const/team";
-import URL from "../../../const/url";
-import { Member } from "../../../types";
+import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+
+import ExternalLink from "@/components/objects/atoms/ExternalLink";
+import FadeIn from "@/components/objects/atoms/FadeIn";
+import Hero from "@/components/objects/atoms/Hero";
+import MemberIntro from "@/components/objects/atoms/MemberIntro";
+import Paragraph from "@/components/objects/atoms/Paragraph";
+import TeamCard from "@/components/objects/atoms/TeamCard";
+import Section from "@/components/objects/molecules/Section";
+
+import { goals } from "@/const/team";
+import URL from "@/const/url";
+import { Member } from "@/types/index";
 
 type SubTeam = {
   name: string;

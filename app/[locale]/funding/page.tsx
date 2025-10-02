@@ -1,17 +1,19 @@
 "use client";
+
 import { useLocale, useTranslations } from "next-intl";
 import { useInView } from "react-intersection-observer";
 
-import ExternalLink from "../../../components/objects/atoms/ExternalLink";
-import Hero from "../../../components/objects/atoms/Hero";
-import CrowdFundingBackersList from "../../../components/objects/molecules/CrowdfundingBackersList";
-import CrowdfundingCounter from "../../../components/objects/molecules/CrowdfundingCounter";
+import ExternalLink from "@/components/objects/atoms/ExternalLink";
+import Hero from "@/components/objects/atoms/Hero";
+import CrowdFundingBackersList from "@/components/objects/molecules/CrowdfundingBackersList";
+import CrowdfundingCounter from "@/components/objects/molecules/CrowdfundingCounter";
+
 import {
   campfireBackers,
   readyforBackers,
   readyforBackersImage,
-} from "../../../const/backers";
-import URL from "../../../const/url";
+} from "@/const/backers";
+import URL from "@/const/url";
 
 export default function FundingPage() {
   const t = useTranslations();

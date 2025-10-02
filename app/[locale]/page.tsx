@@ -1,7 +1,9 @@
 "use client";
-import MainVisual from "../../components/objects/organisms/MainVisual";
-import URL from "../../const/url";
-import { Link } from "../../i18n/routing";
+
+import MainVisual from "@/components/objects/organisms/MainVisual";
+
+import URL from "@/const/url";
+import { Link } from "@/i18n/routing";
 
 export default function HomePage() {
   const tile = (title: string, image: string, link: string) => {

@@ -1,4 +1,3 @@
-// server component
 import "destyle.css";
 import "../../styles/globals.css";
 import type { Metadata, Viewport } from "next";
@@ -7,8 +6,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { ReactNode } from "react";
 
-import Footer from "../../components/layouts/Footer";
-import Header from "../../components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],

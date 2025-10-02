@@ -1,9 +1,11 @@
 "use client";
+
 import { useMemo, useState } from "react";
 
-import Hero from "../../../components/objects/atoms/Hero";
-import Paragraph from "../../../components/objects/atoms/Paragraph";
-import { rovers } from "../../../const/rover";
+import Hero from "@/components/objects/atoms/Hero";
+import Paragraph from "@/components/objects/atoms/Paragraph";
+
+import { rovers } from "@/const/rover";
 
 export default function RoverPage() {
   const [selectedRoverIndex, setSelectedRoverIndex] = useState(
