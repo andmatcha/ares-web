@@ -1,0 +1,48 @@
+import { defineConfig } from "eslint-define-config";
+
+export default defineConfig([
+  {
+    "extends": "next/core-web-vitals",
+    "rules": {
+      "@next/next/no-img-element": "off",
+      "sort-imports": [
+        "error",
+        { "ignoreCase": true, "ignoreDeclarationSort": true }
+      ],
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            ["sibling", "parent"],
+            "object"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "react",
+              "group": "builtin",
+              "position": "before"
+            },
+            {
+              "pattern": ".*/UI/**",
+              "group": "internal",
+              "position": "before"
+            },
+            {
+              "pattern": "./*.module.css",
+              "group": "index",
+              "position": "after"
+            }
+          ],
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+          }
+        }
+      ]
+    }
+  }
+])
