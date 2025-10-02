@@ -1,6 +1,6 @@
 "use client";
 
-import CountUp from "../atoms/CountUp";
+import CountUp from "@/components/objects/atoms/CountUp";
 
 const CrowdfundingCounter = ({
   locale,

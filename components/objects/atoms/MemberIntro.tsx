@@ -1,7 +1,8 @@
 "use client";
 
-import Paragraph from "./Paragraph";
-import { Member } from "../../../types";
+import Paragraph from "@/components/objects/atoms/Paragraph";
+
+import { Member } from "@/types/index";
 
 type Props = {
   member: Member;

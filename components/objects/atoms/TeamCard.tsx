@@ -1,7 +1,7 @@
 "use client";
 import { ReactNode } from "react";
 
-import Paragraph from "./Paragraph";
+import Paragraph from "@/components/objects/atoms/Paragraph";
 
 type Props = {
   title: string;

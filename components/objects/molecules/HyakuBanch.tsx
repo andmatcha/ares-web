@@ -1,8 +1,10 @@
 "use client";
 import { useTranslations } from "next-intl";
 
-import URL from "../../../const/url";
-import ExternalLink from "../atoms/ExternalLink";
+import ExternalLink from "@/components/objects/atoms/ExternalLink";
+
+import URL from "@/const/url";
+
 
 const HyakuBanch = () => {
   const t = useTranslations("common");

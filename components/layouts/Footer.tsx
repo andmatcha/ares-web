@@ -1,7 +1,8 @@
 "use client";
 
-import { usePathname } from "../../i18n/routing";
-import SponsorArea from "../objects/molecules/SponsorArea";
+import SponsorArea from "@/components/objects/molecules/SponsorArea";
+
+import { usePathname } from "@/i18n/routing";
 
 const Footer: { (props: { withSponsor?: boolean }): JSX.Element } = ({
   withSponsor = false,

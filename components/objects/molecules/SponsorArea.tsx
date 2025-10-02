@@ -2,8 +2,8 @@
 import Link from "next/link";
 import React from "react";
 
-import { RANK, sponsors } from "../../../const/sponsors";
-import { Sponsor } from "../../../types";
+import { RANK, sponsors } from "@/const/sponsors";
+import { Sponsor } from "@/types/index";
 
 const SponsorArea = () => {
   const handleClick = (

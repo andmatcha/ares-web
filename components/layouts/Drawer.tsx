@@ -1,7 +1,7 @@
 "use client";
-import { Link } from "../../i18n/routing";
 
-import contents from "../../const/header";
+import contents from "@/const/header";
+import { Link } from "@/i18n/routing";
 
 type Props = {
   open: boolean;

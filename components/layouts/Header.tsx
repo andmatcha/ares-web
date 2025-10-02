@@ -2,10 +2,11 @@
 import { useLocale } from "next-intl";
 import React, { useState } from "react";
 
-import Drawer from "./Drawer";
-import contents from "../../const/header";
-import { Link, usePathname } from "../../i18n/routing";
-import { LocaleSwitcher } from "../objects/atoms/LocaleSwitcher";
+import Drawer from "@/components/layouts/Drawer";
+import { LocaleSwitcher } from "@/components/objects/atoms/LocaleSwitcher";
+
+import contents from "@/const/header";
+import { Link, usePathname } from "@/i18n/routing";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);

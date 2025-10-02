@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 import React from "react";
 import { ReactNode } from "react";
 
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
 
 interface Props {
   title: string;

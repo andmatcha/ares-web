@@ -1,8 +1,9 @@
 "use client";
 import { useTranslations } from "next-intl";
 
-import { mainImages } from "../../../const/images";
-import Slide from "../atoms/Slide";
+import Slide from "@/components/objects/atoms/Slide";
+
+import { mainImages } from "@/const/images";
 
 const MainVisual = () => {
   const t = useTranslations();

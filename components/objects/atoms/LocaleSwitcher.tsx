@@ -1,6 +1,7 @@
 "use client";
-import { Link, usePathname } from "../../../i18n/routing";
-import { LanguageIcon } from "../../../lib/mui";
+
+import { Link, usePathname } from "@/i18n/routing";
+import { LanguageIcon } from "@/lib/mui";
 
 export const LocaleSwitcher = ({
   href,
