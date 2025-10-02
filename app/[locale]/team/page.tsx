@@ -10,7 +10,6 @@ import MemberIntro from "@/components/objects/atoms/MemberIntro";
 import Paragraph from "@/components/objects/atoms/Paragraph";
 import TeamCard from "@/components/objects/atoms/TeamCard";
 import Section from "@/components/objects/molecules/Section";
-
 import { goals } from "@/const/team";
 import URL from "@/const/url";
 import { Member } from "@/types/index";

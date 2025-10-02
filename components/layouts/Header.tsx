@@ -4,7 +4,6 @@ import React, { useState } from "react";
 
 import Drawer from "@/components/layouts/Drawer";
 import { LocaleSwitcher } from "@/components/objects/atoms/LocaleSwitcher";
-
 import contents from "@/const/header";
 import { Link, usePathname } from "@/i18n/routing";
 

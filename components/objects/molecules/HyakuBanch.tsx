@@ -2,7 +2,6 @@
 import { useTranslations } from "next-intl";
 
 import ExternalLink from "@/components/objects/atoms/ExternalLink";
-
 import URL from "@/const/url";
 
 

@@ -8,7 +8,6 @@ import Hero from "@/components/objects/atoms/Hero";
 import Loader from "@/components/objects/atoms/Loader";
 import Instagram from "@/components/objects/icons/instagram";
 import Twitter from "@/components/objects/icons/twitter";
-
 import URL from "@/const/url";
 import { useMail } from "@/hooks/useMail";
 import { Link, useRouter } from "@/i18n/routing";

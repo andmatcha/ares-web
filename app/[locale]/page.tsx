@@ -1,7 +1,6 @@
 "use client";
 
 import MainVisual from "@/components/objects/organisms/MainVisual";
-
 import URL from "@/const/url";
 import { Link } from "@/i18n/routing";
 

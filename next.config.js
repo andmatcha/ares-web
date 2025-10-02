@@ -5,6 +5,10 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  webpack: config => {
+    config.resolve.alias["@"] = path.resolve(__dirname, ".");
+    return config;
+  }
 }
 
 const createNextIntlPlugin = require('next-intl/plugin');

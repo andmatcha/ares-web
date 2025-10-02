@@ -1,7 +1,6 @@
 "use client";
 
 import Paragraph from "@/components/objects/atoms/Paragraph";
-
 import { Member } from "@/types/index";
 
 type Props = {

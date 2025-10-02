@@ -7,7 +7,6 @@ import ExternalLink from "@/components/objects/atoms/ExternalLink";
 import Hero from "@/components/objects/atoms/Hero";
 import CrowdFundingBackersList from "@/components/objects/molecules/CrowdfundingBackersList";
 import CrowdfundingCounter from "@/components/objects/molecules/CrowdfundingCounter";
-
 import {
   campfireBackers,
   readyforBackers,

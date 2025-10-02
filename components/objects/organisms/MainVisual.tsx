@@ -2,7 +2,6 @@
 import { useTranslations } from "next-intl";
 
 import Slide from "@/components/objects/atoms/Slide";
-
 import { mainImages } from "@/const/images";
 
 const MainVisual = () => {
