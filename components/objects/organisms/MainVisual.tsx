@@ -21,7 +21,7 @@ const MainVisual = () => {
       />
       <div className="absolute top-0 left-0 w-full h-full bgmainbg75">
         <div className="w-full h-full flex flex-col justify-end gap-2 pl-2 md:pl-20 pb-[30vh] md:pb-20">
-          <h2 className=" font-display text-4xl md:text-6xl animate-[emerge1_3s_ease-out] tracking-wider">
+          <h2 className="font-display text-4xl md:text-6xl animate-[emerge1_3s_ease-out] tracking-wider">
             A<span className="text-red-600">R</span>ES Project
           </h2>
           <p className="text-xl md:text-3xl animate-[emerge2_3s_ease-out]">

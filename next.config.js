@@ -6,8 +6,12 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
-  webpack: config => {
+  webpack: (config, { dev }) => {
     config.resolve.alias["@"] = path.resolve(__dirname, ".");
+    // 開発時はWebpackのFSキャッシュを無効化してENOENTの再発を防ぐ
+    if (dev) {
+      config.cache = false;
+    }
     return config;
   }
 }

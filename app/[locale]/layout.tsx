@@ -1,4 +1,3 @@
-import "destyle.css";
 import "../../styles/globals.css";
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP, Orbitron } from "next/font/google";
