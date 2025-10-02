@@ -10,9 +10,9 @@ import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/Header";
 
 const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
   weight: ["300", "400", "500"],
   display: "swap",
+  preload: false,
   variable: "--font-noto-sans-jp",
 });
 

@@ -1,7 +1,10 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 
-import Slide from "@/components/objects/atoms/Slide";
+const Slide = dynamic(() => import("@/components/objects/atoms/Slide"), {
+  ssr: false,
+});
 import { mainImages } from "@/const/images";
 
 const MainVisual = () => {
@@ -16,7 +19,7 @@ const MainVisual = () => {
           className: "absolute top-0 left-0 w-full h-full overflow-hidden",
         }}
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-main-bg/75">
+      <div className="absolute top-0 left-0 w-full h-full bgmainbg75">
         <div className="w-full h-full flex flex-col justify-end gap-2 pl-2 md:pl-20 pb-[30vh] md:pb-20">
           <h2 className=" font-display text-4xl md:text-6xl animate-[emerge1_3s_ease-out] tracking-wider">
             A<span className="text-red-600">R</span>ES Project

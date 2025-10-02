@@ -17,7 +17,7 @@ export default function ContactSuccessPage() {
             <p className="text-center text-sm mb-2">
               担当者より返信を差し上げますのでお待ち下さい
             </p>
-            <Link href="/" className="text-ares-red ease-in-out">
+            <Link href="/" className="textaresred ease-in-out">
               トップページへ戻る
             </Link>
           </div>

@@ -12,7 +12,7 @@ const ExternalLink = ({
     <a
       href={href}
       target="blank"
-      className="w-full text-left text-xs text-ares-red hover:underline"
+      className="w-full text-left text-xs textaresred hover:underline"
     >
       {children}
     </a>

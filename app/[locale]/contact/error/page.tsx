@@ -19,7 +19,7 @@ export default function ContactErrorPage() {
             <p className="text-center text-sm mb-2">
               お手数ですが時間を置いてもう一度お試しください
             </p>
-            <Link href="/contact" className="text-ares-red ease-in-out">
+            <Link href="/contact" className="textaresred ease-in-out">
               問い合わせフォームへ戻る
             </Link>
           </div>
