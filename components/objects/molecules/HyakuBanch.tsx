@@ -1,11 +1,10 @@
 "use client";
-import { useTranslation } from "react-i18next";
-
 import URL from "../../../const/url";
+import { useT } from "../../I18nProvider";
 import ExternalLink from "../atoms/ExternalLink";
 
 const HyakuBanch = () => {
-  const { t } = useTranslation("common");
+  const t = useT("common");
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-4 bg-black px-8 py-10">
       <a href={URL.hyaku_banch} target="blank">

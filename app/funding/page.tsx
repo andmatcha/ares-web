@@ -1,7 +1,7 @@
 "use client";
-import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 
+import { useCurrentLocale, useT } from "../../components/I18nProvider";
 import ExternalLink from "../../components/objects/atoms/ExternalLink";
 import Hero from "../../components/objects/atoms/Hero";
 import CrowdFundingBackersList from "../../components/objects/molecules/CrowdfundingBackersList";
@@ -14,7 +14,8 @@ import {
 import URL from "../../const/url";
 
 export default function FundingPage() {
-  const { t, i18n } = useTranslation("common");
+  const t = useT("common");
+  const locale = useCurrentLocale();
 
   const { ref: campfireRef, inView: campfireInView } = useInView({
     rootMargin: "-10% 0%",
@@ -48,7 +49,7 @@ export default function FundingPage() {
           </div>
           <div className="w-full md:w-3/5 lg:w-3/5">
             <CrowdfundingCounter
-              locale={i18n.language ?? "en"}
+              locale={locale ?? "en"}
               inView={campfireInView}
               backers={37}
               raised={230500}
@@ -77,7 +78,7 @@ export default function FundingPage() {
           </div>
           <div className="w-full md:w-3/5 lg:w-3/5">
             <CrowdfundingCounter
-              locale={i18n.language ?? "en"}
+              locale={locale ?? "en"}
               inView={readyforInView}
               backers={105}
               raised={1877000}

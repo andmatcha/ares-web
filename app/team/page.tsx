@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
 
+import { useCurrentLocale, useT } from "../../components/I18nProvider";
 import ExternalLink from "../../components/objects/atoms/ExternalLink";
 import FadeIn from "../../components/objects/atoms/FadeIn";
 import Hero from "../../components/objects/atoms/Hero";
@@ -20,7 +20,8 @@ type SubTeam = {
 };
 
 export default function TeamPage() {
-  const { t, i18n } = useTranslation("common");
+  const t = useT("common");
+  const locale = useCurrentLocale();
   const [subTeams, setSubTeams] = useState<SubTeam[]>([]);
   const [leaders, setLeaders] = useState<Member[]>([]);
 
@@ -66,7 +67,7 @@ export default function TeamPage() {
         isLeader: true,
       },
     ]);
-  }, [t, i18n.language]);
+  }, [t, locale]);
 
   return (
     <>
