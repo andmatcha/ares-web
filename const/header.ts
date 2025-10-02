@@ -1,4 +1,4 @@
-import URL from "./url";
+import URL from "@/const/url";
 
 const headerContents = {
   menu: [

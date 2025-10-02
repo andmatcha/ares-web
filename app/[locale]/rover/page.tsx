@@ -1,14 +1,12 @@
-import { NextPage } from "next";
-import { useRouter } from "next/router";
+"use client";
+
 import { useMemo, useState } from "react";
 
-import Layout from "../components/layouts/Layout";
-import Hero from "../components/objects/atoms/Hero";
-import Paragraph from "../components/objects/atoms/Paragraph";
-import { rovers } from "../const/rover";
+import Hero from "@/components/objects/atoms/Hero";
+import Paragraph from "@/components/objects/atoms/Paragraph";
+import { rovers } from "@/const/rover";
 
-const Team: NextPage = () => {
-  const { locale } = useRouter();
+export default function RoverPage() {
   const [selectedRoverIndex, setSelectedRoverIndex] = useState(
     rovers.length - 1
   );
@@ -20,11 +18,11 @@ const Team: NextPage = () => {
   const selectedRover = useMemo(() => {
     return rovers[selectedRoverIndex];
   }, [selectedRoverIndex]);
+
   return (
-    <Layout allowTopSpace title="Our Rover">
+    <>
       <Hero title="Our Rovers" imagePath="/images/rovers/ares4_wide.jpg" />
       <div className="px-4 xl:px-[5%]">
-        {/* ローバー選択エリア */}
         <div>
           <ul className="flex flex-wrap gap-4 py-8">
             {rovers.map(({ name, imagePath }, index) => (
@@ -47,7 +45,6 @@ const Team: NextPage = () => {
             ))}
           </ul>
         </div>
-        {/* ローバー詳細エリア */}
         <div className="flex flex-col xl:flex-row justify-center items-center gap-5 py-4">
           <div className="w-4/5 xl:w-2/5 rounded-md overflow-hidden">
             <img
@@ -58,16 +55,10 @@ const Team: NextPage = () => {
           </div>
           <div className="lg:py-4 flex flex-col gap-4 w-full xl:w-2/5">
             <h2 className="text-3xl font-medium">{selectedRover.name}</h2>
-            <Paragraph>
-              {locale === "ja"
-                ? selectedRover.description.ja
-                : selectedRover.description.en}
-            </Paragraph>
+            <Paragraph>{selectedRover.description.ja}</Paragraph>
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export default Team;
+}

@@ -3,11 +3,12 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
-      'sans': ['Noto Sans JP', 'sans-serif'],
-      'display': ['Orbitron', 'sans-serif'],
+      'sans': ['var(--font-noto-sans-jp)', 'Noto Sans JP', 'sans-serif'],
+      'display': ['var(--font-orbitron)', 'Orbitron', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -46,7 +47,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [],
 }

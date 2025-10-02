@@ -1,13 +1,18 @@
-import { NextPage } from "next";
+"use client";
 
-import CountUp from "../atoms/CountUp";
+import CountUp from "@/components/objects/atoms/CountUp";
 
-const CrowdfundingCounter: NextPage<{
+const CrowdfundingCounter = ({
+  locale,
+  inView,
+  backers,
+  raised,
+}: {
   locale: string;
   inView: boolean;
   backers: number;
   raised: number;
-}> = ({ locale, inView, backers, raised }) => {
+}) => {
   return (
     <div className="flex justify-center md:justify-start items-center gap-8 pb-4">
       <div className="flex flex-col justify-center items-center gap-2 px-4 min-w-fit">

@@ -1,7 +1,7 @@
-import { NextPage } from "next";
+"use client";
 import { ReactNode } from "react";
 
-import Paragraph from "./Paragraph";
+import Paragraph from "@/components/objects/atoms/Paragraph";
 
 type Props = {
   title: string;
@@ -9,7 +9,7 @@ type Props = {
   children?: ReactNode;
 };
 
-const TeamCard: NextPage<Props> = ({ title, imagePath, children }) => {
+const TeamCard = ({ title, imagePath, children }: Props) => {
   return (
     <div className="w-full flex flex-col justify-center gap-1 bg-[#1f1f1f] p-6 rounded-md">
       <h4 className="text-xl lg:text-2xl pb-3 md:pb-6 font-medium">{title}</h4>

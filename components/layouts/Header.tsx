@@ -1,17 +1,19 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+"use client";
+import { useLocale } from "next-intl";
 import React, { useState } from "react";
 
-import Drawer from "./Drawer";
-import contents from "../../const/header";
-import { LocaleSwitcher } from "../objects/atoms/LocaleSwitcher";
+import Drawer from "@/components/layouts/Drawer";
+import { LocaleSwitcher } from "@/components/objects/atoms/LocaleSwitcher";
+import contents from "@/const/header";
+import { Link, usePathname } from "@/i18n/routing";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const handleMenuOpen = () => {
     setOpenMenu(!openMenu);
   };
-  const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale();
 
   return (
     <header className="fixed w-screen h-16 flex items-center justify-center px-12 md:justify-between z-20 bg-black sm:bg-transparent bg-opacity-0 hover:bg-opacity-60 duration-300">
@@ -29,7 +31,7 @@ const Header = () => {
       </Link>
       {/* メニュー表示切り替えボタン */}
       <div className="flex items-center gap-2 absolute right-4 md:hidden z-20">
-        <LocaleSwitcher href={router.asPath} locale={router.locale ?? ""} />
+        <LocaleSwitcher href={pathname ?? "/"} locale={locale ?? "en"} />
         <button onClick={handleMenuOpen} type="button" className="">
           <img
             src={
@@ -44,7 +46,7 @@ const Header = () => {
       {/* メニュー SP表示 */}
       <Drawer open={openMenu} />
       <div className="hidden md:flex items-center gap-16">
-        <LocaleSwitcher href={router.asPath} locale={router.locale ?? ""} />
+        <LocaleSwitcher href={pathname ?? "/"} locale={locale ?? "en"} />
         {/* メニュー PC表示 */}
         <nav className="flex ease-linear duration-300">
           <ul className="flex items-center gap-10 text-xs font-display">

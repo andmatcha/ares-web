@@ -1,9 +1,22 @@
+const path = require("path");
+
 /** @type {import('next').NextConfig} */
-const { i18n } = require('./next-i18next.config')
 const nextConfig = {
-  i18n,
   reactStrictMode: true,
-  swcMinify: true,
+  compiler: {
+    emotion: true,
+  },
+  webpack: (config, { dev }) => {
+    config.resolve.alias["@"] = path.resolve(__dirname, ".");
+    // 開発時はWebpackのFSキャッシュを無効化してENOENTの再発を防ぐ
+    if (dev) {
+      config.cache = false;
+    }
+    return config;
+  }
 }
 
-module.exports = nextConfig
+const createNextIntlPlugin = require('next-intl/plugin');
+const withNextIntl = createNextIntlPlugin();
+
+module.exports = withNextIntl(nextConfig);

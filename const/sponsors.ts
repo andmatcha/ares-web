@@ -1,5 +1,5 @@
-import URL from "./url";
-import { Sponsor } from "../types";
+import URL from "@/const/url";
+import { Sponsor } from "@/types/index";
 
 const RANK = {
   DIAMOND: 1,

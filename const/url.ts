@@ -1,5 +1,3 @@
-import { read } from "fs";
-
 const URL = {
   // 内部ページ
   home: "/",

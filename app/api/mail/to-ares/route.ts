@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { createTransport } from "nodemailer";
 
 const transporter = createTransport({
@@ -11,16 +10,16 @@ const transporter = createTransport({
   },
 });
 
-const send = async (req: NextApiRequest, res: NextApiResponse) => {
-  const mailData = JSON.parse(req.body);
+export async function POST(request: Request) {
+  const mailData = await request.json();
   await transporter.sendMail({
-    from: process.env.MAIL_TO,
-    to: mailData.email,
-    subject: `[ARES-WEB] お問い合わせ完了`,
+    from: mailData.email,
+    to: process.env.MAIL_TO,
+    subject: `[ARES-WEB] ${mailData.name}様よりお問い合わせがありました`,
     text: mailData.message,
     html: `
     <p>
-    以下の内容でお問い合せが完了しました。担当者より返信を差し上げますのでお待ち下さい。
+    以下のお問い合わせがありましたのでご確認ください。
     </p>
     <section style="background-color: #f5f5f5; padding: 20px;">
     <p>【お名前】</p>
@@ -34,15 +33,11 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
     <font size="2" color="#696969">
     ※このメールはARES WEBシステムより自動送信されています。
     <br>
-    ※このメールアドレスは配信専用です。お問い合わせは${process.env.MAIL_TO}にお願いいたします。
+    ※このメールアドレスは配信専用です。返信の際は、返信先メールアドレスをご利用ください。
     </font>
     </p>
     `,
   });
 
-  res.status(200).json({
-    success: true,
-  });
-};
-
-export default send;
+  return new Response(JSON.stringify({ success: true }), { status: 200 });
+}

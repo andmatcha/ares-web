@@ -1,34 +1,22 @@
-import { GetServerSidePropsContext, NextPage } from "next";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
 import { useInView } from "react-intersection-observer";
 
-import Layout from "../components/layouts/Layout";
-import ExternalLink from "../components/objects/atoms/ExternalLink";
-import Hero from "../components/objects/atoms/Hero";
-import CrowdFundingBackersList from "../components/objects/molecules/CrowdfundingBackersList";
-import CrowdfundingCounter from "../components/objects/molecules/CrowdfundingCounter";
+import ExternalLink from "@/components/objects/atoms/ExternalLink";
+import Hero from "@/components/objects/atoms/Hero";
+import CrowdFundingBackersList from "@/components/objects/molecules/CrowdfundingBackersList";
+import CrowdfundingCounter from "@/components/objects/molecules/CrowdfundingCounter";
 import {
   campfireBackers,
   readyforBackers,
   readyforBackersImage,
-} from "../const/backers";
-import URL from "../const/url";
+} from "@/const/backers";
+import URL from "@/const/url";
 
-export const getServerSideProps = async ({
-  locale,
-}: GetServerSidePropsContext) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common"])),
-    },
-  };
-};
-
-const Funding: NextPage = () => {
-  const { t } = useTranslation("common");
-  const { locale } = useRouter();
+export default function FundingPage() {
+  const t = useTranslations();
+  const locale = useLocale();
 
   const { ref: campfireRef, inView: campfireInView } = useInView({
     rootMargin: "-10% 0%",
@@ -38,10 +26,10 @@ const Funding: NextPage = () => {
     rootMargin: "-10% 0%",
     triggerOnce: true,
   });
+
   return (
-    <Layout title="FUNDING" allowTopSpace>
+    <>
       <Hero title="FUNDING" imagePath="/images/rovers/ares4_wide.jpg" />
-      {/* CAMPFIRE */}
       <div
         className="w-full flex flex-col items-center px-4 py-4"
         ref={campfireRef}
@@ -62,7 +50,7 @@ const Funding: NextPage = () => {
           </div>
           <div className="w-full md:w-3/5 lg:w-3/5">
             <CrowdfundingCounter
-              locale={locale ?? ""}
+              locale={locale ?? "en"}
               inView={campfireInView}
               backers={37}
               raised={230500}
@@ -71,7 +59,6 @@ const Funding: NextPage = () => {
           </div>
         </div>
       </div>
-      {/* READYFOR */}
       <div
         className="w-full flex flex-col items-center px-4 py-4"
         ref={readyforRef}
@@ -92,7 +79,7 @@ const Funding: NextPage = () => {
           </div>
           <div className="w-full md:w-3/5 lg:w-3/5">
             <CrowdfundingCounter
-              locale={locale ?? ""}
+              locale={locale ?? "en"}
               inView={readyforInView}
               backers={105}
               raised={1877000}
@@ -111,8 +98,6 @@ const Funding: NextPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export default Funding;
+}

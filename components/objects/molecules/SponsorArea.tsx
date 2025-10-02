@@ -1,11 +1,11 @@
-import { NextPage } from "next";
+"use client";
 import Link from "next/link";
 import React from "react";
 
-import { RANK, sponsors } from "../../../const/sponsors";
-import { Sponsor } from "../../../types";
+import { RANK, sponsors } from "@/const/sponsors";
+import { Sponsor } from "@/types/index";
 
-const SponsorArea: NextPage = () => {
+const SponsorArea = () => {
   const handleClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     sponsor: Sponsor
