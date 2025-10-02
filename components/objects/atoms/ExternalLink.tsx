@@ -1,15 +1,18 @@
-import { NextPage } from "next";
+"use client";
 import { ReactNode } from "react";
 
-const ExternalLink: NextPage<{ href: string; children: ReactNode }> = ({
+const ExternalLink = ({
   href,
   children,
+}: {
+  href: string;
+  children: ReactNode;
 }) => {
   return (
     <a
       href={href}
       target="blank"
-      className="w-full text-left text-xs text-ares-red hover:underline"
+      className="w-full text-left text-xs textaresred hover:underline"
     >
       {children}
     </a>

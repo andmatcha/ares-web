@@ -1,4 +1,4 @@
-import { Member } from "../types";
+import { Member } from "@/types/index";
 
 export const goals = [
   {

@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+"use client";
 import { ReactNode } from "react";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   size?: "small";
 };
 
-const Paragraph: NextPage<Props> = ({ children, className, size }) => {
+const Paragraph = ({ children, className, size }: Props) => {
   return (
     <div
       className={`tracking-widest ${

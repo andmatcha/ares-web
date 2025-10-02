@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+"use client";
 import { useEffect, useState } from "react";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
   time: number;
 };
 
-const CountUp: NextPage<Props> = ({ active, from, to, time }: Props) => {
+const CountUp = ({ active, from, to, time }: Props) => {
   const [count, setCount] = useState(from ?? 0);
   useEffect(() => {
     if (!active) return;

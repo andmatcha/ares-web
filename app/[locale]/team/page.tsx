@@ -1,19 +1,18 @@
-import { GetServerSidePropsContext, NextPage } from "next";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
-import Layout from "../components/layouts/Layout";
-import ExternalLink from "../components/objects/atoms/ExternalLink";
-import FadeIn from "../components/objects/atoms/FadeIn";
-import Hero from "../components/objects/atoms/Hero";
-import MemberIntro from "../components/objects/atoms/MemberIntro";
-import Paragraph from "../components/objects/atoms/Paragraph";
-import TeamCard from "../components/objects/atoms/TeamCard";
-import Section from "../components/objects/molecules/Section";
-import { goals } from "../const/team";
-import URL from "../const/url";
-import { Member } from "../types";
+import ExternalLink from "@/components/objects/atoms/ExternalLink";
+import FadeIn from "@/components/objects/atoms/FadeIn";
+import Hero from "@/components/objects/atoms/Hero";
+import MemberIntro from "@/components/objects/atoms/MemberIntro";
+import Paragraph from "@/components/objects/atoms/Paragraph";
+import TeamCard from "@/components/objects/atoms/TeamCard";
+import Section from "@/components/objects/molecules/Section";
+import { goals } from "@/const/team";
+import URL from "@/const/url";
+import { Member } from "@/types/index";
 
 type SubTeam = {
   name: string;
@@ -21,18 +20,9 @@ type SubTeam = {
   imagePath: string;
 };
 
-export const getServerSideProps = async ({
-  locale,
-}: GetServerSidePropsContext) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common"])),
-    },
-  };
-};
-
-const Team: NextPage = () => {
-  const { t, i18n } = useTranslation("common");
+export default function TeamPage() {
+  const t = useTranslations();
+  const locale = useLocale();
   const [subTeams, setSubTeams] = useState<SubTeam[]>([]);
   const [leaders, setLeaders] = useState<Member[]>([]);
 
@@ -78,11 +68,11 @@ const Team: NextPage = () => {
         isLeader: true,
       },
     ]);
-  }, [t, i18n.language]);
+  }, [t, locale]);
+
   return (
-    <Layout title="チーム紹介 - ARES Project" allowTopSpace>
+    <>
       <Hero title="Our Team" imagePath="/images/tohoku_ares_wide.jpg" />
-      {/* ARES全体紹介 */}
       <Section id="about" className="flex flex-col gap-10 items-center">
         <div className="flex -mb-8 md:mb-0 justify-center items-center gap-4">
           <div className="w-20 md:w-40">
@@ -148,7 +138,6 @@ const Team: NextPage = () => {
           </div>
         </div>
       </FadeIn>
-      {/* 班紹介 */}
       <Section id="sub-teams" title={t("team.team_composition")}>
         <FadeIn className="flex flex-col justify-center items-center lg:items-start gap-10">
           {subTeams.map(({ name, description, imagePath }, index) => (
@@ -158,7 +147,6 @@ const Team: NextPage = () => {
           ))}
         </FadeIn>
       </Section>
-      {/* リーダー紹介 */}
       <Section id="leaders" title={t("team.leaders.title")}>
         <ul className="flex flex-col gap-10 w-full items-center">
           {leaders.map((member, index) => (
@@ -168,8 +156,6 @@ const Team: NextPage = () => {
           ))}
         </ul>
       </Section>
-    </Layout>
+    </>
   );
-};
-
-export default Team;
+}

@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 
-import Paragraph from "./Paragraph";
-import { THUMBNAIL_BASE_URL } from "../../../const/articles";
-import { ArticleOverview } from "../../../types/article";
+import Paragraph from "@/components/objects/atoms/Paragraph";
+import { THUMBNAIL_BASE_URL } from "@/const/articles";
+import { ArticleOverview } from "@/types/article";
 
 type Props = {
   articleOverview: ArticleOverview;

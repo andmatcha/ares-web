@@ -1,8 +1,6 @@
-import { NextPage } from "next";
+"use client";
 
-const CrowdFundingBackersList: NextPage<{ backers: string[] }> = ({
-  backers,
-}) => {
+const CrowdFundingBackersList = ({ backers }: { backers: string[] }) => {
   return (
     <ul className="flex flex-wrap text-sm pb-2 gap-y-1 justify-center md:justify-start">
       {backers.map((backer, i) => (

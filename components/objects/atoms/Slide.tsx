@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+"use client";
 import Slider, { Settings } from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -10,7 +10,7 @@ type Props = {
   settings?: Settings;
 };
 
-const Slide: NextPage<Props> = ({ images, settings }: Props) => {
+const Slide = ({ images, settings }: Props) => {
   const defaultSettings = {
     fade: true,
     speed: 1500,

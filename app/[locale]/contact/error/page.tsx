@@ -1,10 +1,8 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
-import Layout from "../../components/layouts/Layout";
-
-const Success = () => {
+export default function ContactErrorPage() {
   return (
-    <Layout title="送信失敗">
+    <>
       <div className="w-full h-screen flex justify-center items-center">
         <div className="flex flex-col justify-center items-center gap-4">
           <div className="w-32 h-32">
@@ -21,14 +19,12 @@ const Success = () => {
             <p className="text-center text-sm mb-2">
               お手数ですが時間を置いてもう一度お試しください
             </p>
-            <Link href="/contact" className="text-ares-red ease-in-out">
+            <Link href="/contact" className="textaresred ease-in-out">
               問い合わせフォームへ戻る
             </Link>
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export default Success;
+}

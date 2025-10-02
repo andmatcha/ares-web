@@ -1,20 +1,24 @@
-import { NextPage } from "next";
+"use client";
 
-import Paragraph from "./Paragraph";
-import { Member } from "../../../types";
+import Paragraph from "@/components/objects/atoms/Paragraph";
+import { Member } from "@/types/index";
 
 type Props = {
   member: Member;
 };
 
-const MemberIntro: NextPage<Props> = ({
+const MemberIntro = ({
   member: { name, university, introduction, imagePath },
-}) => {
+}: Props) => {
   return (
     <li className="flex justify-center items-center gap-10 px-2">
       <div className="hidden md:block">
         <div className="w-40 h-40 rounded-full overflow-hidden">
-          <img src={imagePath} alt={name} className="w-full h-full object-cover" />
+          <img
+            src={imagePath}
+            alt={name}
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
       <div className="max-w-4xl md:w-4/5 flex flex-col gap-4">

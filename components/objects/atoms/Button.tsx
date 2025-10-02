@@ -1,11 +1,14 @@
+"use client";
 import { css } from "@emotion/react";
-import { NextPage } from "next";
 import { ReactNode } from "react";
 
-const Button: NextPage<{
+const Button = ({
+  type,
+  children,
+}: {
   type: "button" | "reset" | "submit";
   children: ReactNode;
-}> = ({ type, children }) => {
+}) => {
   return (
     <button
       type={type}
