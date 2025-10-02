@@ -1,4 +1,4 @@
-import { Article } from "../types/article";
+import { Article } from "@/types/article";
 
 export const THUMBNAIL_BASE_URL = "/images/thumbnails/";
 
