@@ -5,12 +5,9 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
-  i18n: {
-    locales: ["en", "ja"],
-    defaultLocale: "en",
-    // 明示的に制御するため自動検出はmiddlewareで行う
-    localeDetection: false,
-  },
 }
 
-module.exports = nextConfig
+const createNextIntlPlugin = require('next-intl/plugin');
+const withNextIntl = createNextIntlPlugin();
+
+module.exports = withNextIntl(nextConfig);

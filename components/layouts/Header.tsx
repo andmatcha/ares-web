@@ -1,11 +1,10 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import React, { useState } from "react";
 
 import Drawer from "./Drawer";
 import contents from "../../const/header";
-import { useCurrentLocale } from "../I18nProvider";
+import { Link, usePathname } from "../../i18n/routing";
 import { LocaleSwitcher } from "../objects/atoms/LocaleSwitcher";
 
 const Header = () => {
@@ -14,7 +13,7 @@ const Header = () => {
     setOpenMenu(!openMenu);
   };
   const pathname = usePathname();
-  const locale = useCurrentLocale();
+  const locale = useLocale();
 
   return (
     <header className="fixed w-screen h-16 flex items-center justify-center px-12 md:justify-between z-20 bg-black sm:bg-transparent bg-opacity-0 hover:bg-opacity-60 duration-300">

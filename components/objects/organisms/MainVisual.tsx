@@ -1,10 +1,11 @@
 "use client";
+import { useTranslations } from "next-intl";
+
 import { mainImages } from "../../../const/images";
-import { useT } from "../../I18nProvider";
 import Slide from "../atoms/Slide";
 
 const MainVisual = () => {
-  const t = useT("common");
+  const t = useTranslations();
   return (
     <div className="relative h-screen">
       <div className="h-16 md:h-0"></div>

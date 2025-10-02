@@ -1,10 +1,12 @@
+// server component
 import "destyle.css";
 import "../../styles/globals.css";
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP, Orbitron } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import { ReactNode } from "react";
 
-import { ClientI18nProvider } from "../../components/I18nProvider";
 import Footer from "../../components/layouts/Footer";
 import Header from "../../components/layouts/Header";
 
@@ -24,7 +26,9 @@ const orbitron = Orbitron({
 
 export const metadata: Metadata = {
   title: "ARES Project",
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export const viewport: Viewport = {
@@ -32,17 +36,25 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function LocaleLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const messages = await getMessages();
+  const locale = await getLocale();
   return (
-    <html lang="en" className={`${notoSansJP.variable} ${orbitron.variable}`}>
+    <html
+      lang={locale}
+      className={`${notoSansJP.variable} ${orbitron.variable}`}
+    >
       <body className={notoSansJP.className}>
-        <ClientI18nProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <main>{children}</main>
           <Footer />
-        </ClientI18nProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
 }
-
