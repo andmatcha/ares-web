@@ -19,7 +19,6 @@ const SponsorArea = () => {
   const sponsorArea = (
     sponsorList: Sponsor[],
     size: "small" | "medium" | "large",
-    label?: string
   ) => {
     const sizeClass = () => {
       switch (size) {
