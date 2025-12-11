@@ -35,6 +35,12 @@ const sponsors: Sponsor[] = [
     rank: RANK.DIAMOND,
   },
   {
+    name: "JAE",
+    imagePath: "/images/brand_marks/jae.png",
+    url: URL.jae,
+    rank: RANK.DIAMOND,
+  },
+  {
     name: "Tokyo Gem Science",
     imagePath: "/images/brand_marks/tokyo_gem_science.jpg",
     url: "", // todo
