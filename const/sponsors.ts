@@ -27,6 +27,7 @@ const sponsors: Sponsor[] = [
     imagePath: "/images/brand_marks/denso.png",
     url: URL.denso,
     rank: RANK.DIAMOND,
+    label: "Technical Advisor",
   },
   {
     name: "4th.ai",
