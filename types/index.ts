@@ -12,4 +12,5 @@ export type Sponsor = {
   url: string;
   rank: number;
   bgWhite?: boolean;
+  label?: string;
 };

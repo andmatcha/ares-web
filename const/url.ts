@@ -35,6 +35,7 @@ const URL = {
   hikoki: "https://www.koki-holdings.co.jp/",
   hyaku_banch: "https://100banch.com/",
   ivicon_japan: "https://ivicon.jp/",
+  jae: "https://www.jae.com/jp/",
   mabuchi: "https://www.mabuchi-motor.co.jp/",
   mazak: "https://www.mazak.jp/",
   misumi: "https://www.misumi.co.jp/",
