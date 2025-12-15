@@ -18,7 +18,7 @@ const SponsorArea = () => {
 
   const sponsorArea = (
     sponsorList: Sponsor[],
-    size: "small" | "medium" | "large"
+    size: "small" | "medium" | "large",
   ) => {
     const sizeClass = () => {
       switch (size) {
@@ -39,10 +39,15 @@ const SponsorArea = () => {
               onClick={(event) => handleClick(event, sponsor)}
               key={index}
               href={sponsor.url}
-              className={`${sizeClass()} flex items-center ${
+              className={`${sizeClass()} flex flex-col items-center ${
                 sponsor.bgWhite && "bg-white"
               }`}
             >
+              {sponsor.label && (
+                <span className="text-white mt-2 lg:mt-0">
+                  ― {sponsor.label} ―
+                </span>
+              )}
               <img
                 src={sponsor.imagePath}
                 alt={sponsor.name}

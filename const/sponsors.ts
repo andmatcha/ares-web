@@ -27,11 +27,18 @@ const sponsors: Sponsor[] = [
     imagePath: "/images/brand_marks/denso.png",
     url: URL.denso,
     rank: RANK.DIAMOND,
+    label: "Technical Advisor",
   },
   {
     name: "4th.ai",
     imagePath: "/images/brand_marks/4thai.jpg",
     url: URL.fourthai,
+    rank: RANK.DIAMOND,
+  },
+  {
+    name: "JAE",
+    imagePath: "/images/brand_marks/jae.png",
+    url: URL.jae,
     rank: RANK.DIAMOND,
   },
   {
