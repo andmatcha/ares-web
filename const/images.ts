@@ -8,7 +8,7 @@ export const rovers = [
 export const mainImages = [
   { src: "/images/urc2025_01.jpg", alt: "URC2025" },
   { src: "/images/urc2025_03.jpg", alt: "URC2025" },
-  { src: "/images/ares8_01.jpg", alt: "ARES8" },
-  { src: "/images/ares8_02.jpg", alt: "ARES8" },
+  { src: "/images/ares9_01.jpg", alt: "ARES9" },
+  { src: "/images/ares9_02.jpg", alt: "ARES9" },
   { src: "/images/urc2025_02.jpg", alt: "URC2025" },
 ];
