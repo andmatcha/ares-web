@@ -51,6 +51,16 @@ export default function HomePage() {
       <section className="flex flex-col lg:flex-row items-center lg:items-start py-8 px-4 md:px-16 gap-16">
         <div className="w-full">
           <h3 className="text-center text-3xl py-4 font-display">MOVIES</h3>
+          <div className="flex flex-col xl:flex-row justify-center items-center gap-4 mb-4">
+            <div className="relative aspect-[16/9] w-full lg:w-1/2">
+              <iframe
+                src="https://www.youtube.com/embed/4mA75nN-p7s?si=l4jcqoWCqbqlWugO"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+          </div>
           <div className="flex flex-col xl:flex-row justify-center items-center gap-4">
             <div className="relative aspect-[16/9] w-full lg:w-1/2">
               <iframe
