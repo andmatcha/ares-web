@@ -67,6 +67,12 @@ const sponsors: Sponsor[] = [
     rank: RANK.GOLD,
   },
   {
+    name: "岩沼精工",
+    imagePath: "/images/brand_marks/iwanuma_seiko.png",
+    url: URL.iwanuma,
+    rank: RANK.GOLD
+  },
+  {
     name: "Local Knowledge Platform",
     imagePath: "/images/brand_marks/local_knowledge_platform.jpg",
     url: "", // todo
