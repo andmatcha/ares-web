@@ -163,6 +163,12 @@ const sponsors: Sponsor[] = [
     rank: RANK.SILVER,
   },
   {
+    name: "小林焼付塗装",
+    imagePath: "/images/brand_marks/kobayashi.png",
+    url: URL.kobayashi,
+    rank: RANK.SILVER
+  },
+  {
     name: "マブチモーター",
     imagePath: "/images/brand_marks/mabuchi.jpg",
     url: URL.mabuchi,

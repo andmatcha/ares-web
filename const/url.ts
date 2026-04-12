@@ -37,6 +37,7 @@ const URL = {
   ivicon_japan: "https://ivicon.jp/",
   iwanuma: "https://www.iwanuma-seiko.jp/",
   jae: "https://www.jae.com/jp/",
+  kobayashi: "https://paint-kyt.co.jp/",
   mabuchi: "https://www.mabuchi-motor.co.jp/",
   mazak: "https://www.mazak.jp/",
   misumi: "https://www.misumi.co.jp/",
