@@ -46,6 +46,7 @@ const URL = {
   robotis: "https://e-shop.robotis.co.jp/",
   sibucho: "https://sibucho-laboratory.com/",
   sk_honpo: "https://skhonpo.com/",
+  sigma: "https://jp.optosigma.com/",
   sorae: "https://sorae.info/",
   st: "https://www.st.com/",
   telstar: "http://spacemgz-telstar.com/",

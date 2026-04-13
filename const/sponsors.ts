@@ -231,6 +231,12 @@ const sponsors: Sponsor[] = [
     url: "", // todo
     rank: RANK.OTHER,
   },
+  {
+    name: "シグマ光機",
+    imagePath: "/images/brand_marks/sigma_koki.jpg",
+    url: URL.sigma,
+    rank: RANK.OTHER
+  },
 ];
 
 export { RANK, sponsors };
