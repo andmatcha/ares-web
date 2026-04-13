@@ -67,6 +67,12 @@ const sponsors: Sponsor[] = [
     rank: RANK.GOLD,
   },
   {
+    name: "岩沼精工",
+    imagePath: "/images/brand_marks/iwanuma_seiko.png",
+    url: URL.iwanuma,
+    rank: RANK.GOLD
+  },
+  {
     name: "Local Knowledge Platform",
     imagePath: "/images/brand_marks/local_knowledge_platform.jpg",
     url: "", // todo
@@ -157,6 +163,12 @@ const sponsors: Sponsor[] = [
     rank: RANK.SILVER,
   },
   {
+    name: "小林焼付塗装",
+    imagePath: "/images/brand_marks/kobayashi.png",
+    url: URL.kobayashi,
+    rank: RANK.SILVER
+  },
+  {
     name: "マブチモーター",
     imagePath: "/images/brand_marks/mabuchi.jpg",
     url: URL.mabuchi,
@@ -218,6 +230,12 @@ const sponsors: Sponsor[] = [
     imagePath: "/images/brand_marks/saima.jpg",
     url: "", // todo
     rank: RANK.OTHER,
+  },
+  {
+    name: "シグマ光機",
+    imagePath: "/images/brand_marks/sigma_koki.jpg",
+    url: URL.sigma,
+    rank: RANK.OTHER
   },
 ];
 
