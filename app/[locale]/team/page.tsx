@@ -1,7 +1,6 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import ExternalLink from "@/components/objects/atoms/ExternalLink";
 import FadeIn from "@/components/objects/atoms/FadeIn";
@@ -22,53 +21,46 @@ type SubTeam = {
 
 export default function TeamPage() {
   const t = useTranslations();
-  const locale = useLocale();
-  const [subTeams, setSubTeams] = useState<SubTeam[]>([]);
-  const [leaders, setLeaders] = useState<Member[]>([]);
-
-  useEffect(() => {
-    setSubTeams([
-      {
-        name: t("team.subTeams.tohoku.name"),
-        description: t("team.subTeams.tohoku.description"),
-        imagePath: "/images/tohoku_members.jpg",
-      },
-      {
-        name: t("team.subTeams.tokyo.name"),
-        description: t("team.subTeams.tokyo.description"),
-        imagePath: "/images/keio_members.jpg",
-      },
-      {
-        name: t("team.subTeams.science.name"),
-        description: t("team.subTeams.science.description"),
-        imagePath: "/images/science_members.jpg",
-      },
-    ]);
-
-    setLeaders([
-      {
-        name: t("team.leaders.pm.name"),
-        university: t("team.leaders.pm.university"),
-        introduction: t("team.leaders.pm.introduction"),
-        imagePath: "/images/members/danishi_ai.jpg",
-        isLeader: true,
-      },
-      {
-        name: t("team.leaders.tohoku_lead.name"),
-        university: t("team.leaders.tohoku_lead.university"),
-        introduction: t("team.leaders.tohoku_lead.introduction"),
-        imagePath: "/images/members/kota_matsuhashi.jpg",
-        isLeader: true,
-      },
-      {
-        name: t("team.leaders.tokyo_lead.name"),
-        university: t("team.leaders.tokyo_lead.university"),
-        introduction: t("team.leaders.tokyo_lead.introduction"),
-        imagePath: "/images/members/ryoji_nagahara.jpg",
-        isLeader: true,
-      },
-    ]);
-  }, [t, locale]);
+  const subTeams: SubTeam[] = [
+    {
+      name: t("team.subTeams.tohoku.name"),
+      description: t("team.subTeams.tohoku.description"),
+      imagePath: "/images/tohoku_members.jpg",
+    },
+    {
+      name: t("team.subTeams.tokyo.name"),
+      description: t("team.subTeams.tokyo.description"),
+      imagePath: "/images/keio_members.jpg",
+    },
+    {
+      name: t("team.subTeams.science.name"),
+      description: t("team.subTeams.science.description"),
+      imagePath: "/images/science_members.jpg",
+    },
+  ];
+  const leaders: Member[] = [
+    {
+      name: t("team.leaders.pm.name"),
+      university: t("team.leaders.pm.university"),
+      introduction: t("team.leaders.pm.introduction"),
+      imagePath: "/images/members/danishi_ai.jpg",
+      isLeader: true,
+    },
+    {
+      name: t("team.leaders.tohoku_lead.name"),
+      university: t("team.leaders.tohoku_lead.university"),
+      introduction: t("team.leaders.tohoku_lead.introduction"),
+      imagePath: "/images/members/kota_matsuhashi.jpg",
+      isLeader: true,
+    },
+    {
+      name: t("team.leaders.tokyo_lead.name"),
+      university: t("team.leaders.tokyo_lead.university"),
+      introduction: t("team.leaders.tokyo_lead.introduction"),
+      imagePath: "/images/members/ryoji_nagahara.jpg",
+      isLeader: true,
+    },
+  ];
 
   return (
     <>
