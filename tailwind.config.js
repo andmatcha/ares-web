@@ -12,7 +12,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        'main-bg': '#1a1a1a',
+        'main-bg': '#ffffff',
         'ares-red': '#e60013'
       },
       keyframes: {

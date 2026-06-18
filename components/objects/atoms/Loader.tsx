@@ -58,7 +58,7 @@ const style = {
     position: relative;
     justify-content: center;
     align-items: center;
-    border: 1px solid #fafbfc;
+    border: 1px solid #111;
     border-radius: 50%;
   `,
   "venus-orbit": css`

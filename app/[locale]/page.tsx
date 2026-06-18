@@ -12,9 +12,10 @@ export default function HomePage() {
           <img
             src={image}
             alt=""
-            className="absolute w-full h-full object-cover opacity-60 transition-opacity group-hover:opacity-100"
+            className="absolute w-full h-full object-cover opacity-80 transition-opacity group-hover:opacity-100"
           />
-          <h3 className="absolute text-3xl font-display bottom-4 left-4">
+          <div className="absolute inset-0 bg-white/50 transition-colors group-hover:bg-white/25" />
+          <h3 className="absolute text-3xl font-display bottom-4 left-4 text-black">
             {title}
           </h3>
         </div>
@@ -33,7 +34,7 @@ export default function HomePage() {
             Projectでは、現在活動資金のためのご寄附を募集しております。皆様から頂いた資金は、機体の開発や科学分析に必要な物品の購入および大会や展示会の渡航費等に活用いたします。皆様のご支援を心よりお待ちしております。
           </p>
           <a href={URL.tohoku_university_fund} target="_blank" rel="noreferrer">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm md:text-base">
+            <button className="border border-black text-black px-4 py-2 rounded-md text-sm md:text-base duration-300 hover:bg-black hover:text-white">
               募金する
             </button>
             <p className="text-xs py-2 text-gray-400">

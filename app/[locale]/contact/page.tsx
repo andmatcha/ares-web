@@ -65,7 +65,7 @@ export default function ContactPage() {
                   },
                 })}
                 onBlur={() => handleBlur("name")}
-                className="h-8 bg-white text-black flex items-center rounded-sm p-2"
+                className="h-8 bg-white text-black flex items-center rounded-sm border border-gray-300 p-2"
               />
               <div className="h-4">
                 {errors.name && (
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   },
                 })}
                 onBlur={() => handleBlur("email")}
-                className="h-8 bg-white text-black flex items-center rounded-sm p-2"
+                className="h-8 bg-white text-black flex items-center rounded-sm border border-gray-300 p-2"
               />
               <div className="h-4">
                 {errors.email && (
@@ -112,7 +112,7 @@ export default function ContactPage() {
                 onBlur={() => handleBlur("message")}
                 cols={30}
                 rows={16}
-                className="bg-white text-black flex items-center rounded-sm p-2"
+                className="bg-white text-black flex items-center rounded-sm border border-gray-300 p-2"
               ></textarea>
               <div className="h-4">
                 {errors.message && (
@@ -129,7 +129,7 @@ export default function ContactPage() {
               <Link
                 href={URL.twitter}
                 target="_blank"
-                className="flex items-center gap-2 py-1 px-4 border rounded-3xl duration-300 fill-white hover:text-black hover:bg-white hover:fill-black"
+                className="flex items-center gap-2 py-1 px-4 border border-black rounded-3xl duration-300 fill-black hover:text-white hover:bg-black hover:fill-white"
               >
                 <div className="w-5 h-5">
                   <Twitter className="w-full h-full fill-inherit" />
@@ -139,19 +139,19 @@ export default function ContactPage() {
               <Link
                 href={URL.instagram}
                 target="_blank"
-                className="flex items-center gap-2 py-1 px-4 border rounded-3xl duration-300 fill-white hover:text-black hover:bg-white hover:fill-black"
+                className="flex items-center gap-2 py-1 px-4 border border-black rounded-3xl duration-300 fill-black hover:text-white hover:bg-black hover:fill-white"
               >
                 <div className="w-5 h-5">
                   <Instagram className="w-full h-full fill-inherit" />
                 </div>
                 <p>@ares_project_official</p>
               </Link>
-              <div className="flex items-center gap-2 py-1 px-4 border rounded-3xl">
+              <div className="flex items-center gap-2 py-1 px-4 border border-black rounded-3xl">
                 <div className="w-5 h-5">
                   <img
                     src="/images/icons/envelope.svg"
                     alt=""
-                    className="w-full h-full"
+                    className="w-full h-full invert"
                   />
                 </div>
                 <p>ares2022.tu@gmail.com</p>

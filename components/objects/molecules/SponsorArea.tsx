@@ -31,7 +31,7 @@ const SponsorArea = () => {
       }
     };
     return (
-      <div className="py-10 bg-black">
+      <div className="py-10 bg-white">
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 md:gap-12 px-8">
           {sponsorList.map((sponsor, index) => (
             <Link
@@ -44,7 +44,7 @@ const SponsorArea = () => {
               }`}
             >
               {sponsor.label && (
-                <span className="text-white mt-2 lg:mt-0">
+                <span className="text-gray-700 mt-2 lg:mt-0">
                   ― {sponsor.label} ―
                 </span>
               )}

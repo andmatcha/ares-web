@@ -69,7 +69,7 @@ export default function TeamPage() {
         <div className="flex -mb-8 md:mb-0 justify-center items-center gap-4">
           <div className="w-20 md:w-40">
             <img
-              src="/images/ares_logo_white.png"
+              src="/images/ares_logo_black.png"
               alt=""
               className="w-full object-contain"
             />
@@ -102,7 +102,7 @@ export default function TeamPage() {
                   className="flex flex-row lg:flex-col justify-center lg:justify-start items-center gap-4 lg:w-1/5"
                 >
                   <div className="w-12 lg:w-1/3">
-                    <img src={icon} alt="" className="w-full" />
+                    <img src={icon} alt="" className="w-full brightness-0" />
                   </div>
                   <Paragraph className="w-5/6 lg:w-full lg:text-center">
                     {t(`home.goal.goals.${index}`)}

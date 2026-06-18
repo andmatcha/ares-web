@@ -19,7 +19,7 @@ export const LocaleSwitcher = ({
       <Link
         href={currentHref}
         locale={targetLocale}
-        className="cursor-pointer hover:text-red-600 duration-300 flex items-center text-white"
+        className="cursor-pointer hover:text-red-600 duration-300 flex items-center text-black"
       >
         <LanguageIcon className="h-4" />
         <span className="align-middle">{targetLocale.toUpperCase()}</span>

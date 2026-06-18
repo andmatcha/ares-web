@@ -8,7 +8,7 @@ import URL from "@/const/url";
 const HyakuBanch = () => {
   const t = useTranslations("common");
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center gap-4 bg-black px-8 py-10">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-4 bg-white border-y border-gray-200 px-8 py-10">
       <a href={URL.hyaku_banch} target="blank">
         <img
           src="/images/brand_marks/100banch.png"
