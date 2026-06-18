@@ -1,2 +1,6 @@
 # SpecStory explanation file
 /.what-is-this.md
+
+# Generated local SpecStory artifacts
+/history/*.md
+/statistics.json
