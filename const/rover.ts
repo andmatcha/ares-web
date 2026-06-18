@@ -1,4 +1,6 @@
-export const rovers = [
+import { Rover } from "@/types/index";
+
+export const rovers: Rover[] = [
   {
     name: "ARES 1",
     description: {
