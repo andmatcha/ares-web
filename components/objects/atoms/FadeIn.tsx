@@ -20,11 +20,13 @@ const FadeIn = ({
     triggerOnce: true,
     ...options,
   });
+  const animationClassName = inView ? "animate-fade-in" : "opacity-0";
+  const fadeInClassName = className
+    ? `${animationClassName} ${className}`
+    : animationClassName;
+
   return (
-    <CustomTag
-      ref={ref}
-      className={`${inView ? "animate-fade-in" : "opacity-0"} ${className}`}
-    >
+    <CustomTag ref={ref} className={fadeInClassName}>
       {children}
     </CustomTag>
   );

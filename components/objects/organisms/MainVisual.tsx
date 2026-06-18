@@ -2,10 +2,11 @@
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 
+import { mainImages } from "@/const/images";
+
 const Slide = dynamic(() => import("@/components/objects/atoms/Slide"), {
   ssr: false,
 });
-import { mainImages } from "@/const/images";
 
 const MainVisual = () => {
   const t = useTranslations();

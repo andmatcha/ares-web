@@ -12,6 +12,8 @@ const Section = ({
   children?: ReactNode;
   className?: string;
 }) => {
+  const contentClassName = className ? `w-full ${className}` : "w-full";
+
   return (
     <section
       id={id}
@@ -22,7 +24,7 @@ const Section = ({
           {title}
         </h3>
       )}
-      <div className={`w-full ${className}`}>{children}</div>
+      <div className={contentClassName}>{children}</div>
     </section>
   );
 };

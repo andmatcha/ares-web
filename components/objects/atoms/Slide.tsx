@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 type Props = {
   images: { src: string; alt: string }[];
-  className?: string;
   settings?: Settings;
 };
 

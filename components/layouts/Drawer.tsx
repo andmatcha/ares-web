@@ -1,7 +1,6 @@
 "use client";
 
-import contents from "@/const/header";
-import { Link } from "@/i18n/routing";
+import HeaderMenu from "@/components/layouts/HeaderMenu";
 
 type Props = {
   open: boolean;
@@ -16,16 +15,10 @@ const Drawer = ({ open }: Props) => {
     >
       <div className="flex w-full h-full flex-col pt-16">
         <div className="absolute w-full h-full top-0 bg-white opacity-95"></div>
-        <ul className="md:hidden flex flex-col items-center gap-10 text-m font-display pt-10 z-10">
-          {contents.menu.map((menuItem, index) => (
-            <li
-              key={index}
-              className="cursor-pointer hover:text-red-600 duration-300 md:text-black"
-            >
-              <Link href={menuItem.path}>{menuItem.label}</Link>
-            </li>
-          ))}
-        </ul>
+        <HeaderMenu
+          className="md:hidden flex flex-col items-center gap-10 text-m font-display pt-10 z-10"
+          itemClassName="cursor-pointer hover:text-red-600 duration-300 md:text-black"
+        />
       </div>
     </nav>
   );

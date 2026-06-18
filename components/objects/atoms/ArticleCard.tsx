@@ -1,5 +1,3 @@
-import { NextPage } from "next";
-
 import Paragraph from "@/components/objects/atoms/Paragraph";
 import { THUMBNAIL_BASE_URL } from "@/const/articles";
 import { ArticleOverview } from "@/types/article";
@@ -8,16 +6,18 @@ type Props = {
   articleOverview: ArticleOverview;
 };
 
-const ArticleCard: NextPage<Props> = ({
+const DESCRIPTION_LIMIT = 100;
+
+const trimDescription = (description: string) => {
+  if (description.length > DESCRIPTION_LIMIT) {
+    return `${description.slice(0, DESCRIPTION_LIMIT)}...`;
+  }
+  return description;
+};
+
+const ArticleCard = ({
   articleOverview: { date, title, thumbnail, description },
-}) => {
-  const trimDescription = (description: string) => {
-    const TEXT_LIMIT = 100;
-    if (description.length > TEXT_LIMIT) {
-      return description.slice(0, TEXT_LIMIT) + "...";
-    }
-    return description;
-  };
+}: Props) => {
   return (
     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 px-4 lg:px-10 py-2 md:py-4 hover:bg-gray-100 duration-500">
       <div className="flex justify-center w-2/3 md:w-1/6">

@@ -3,8 +3,8 @@ import { useLocale } from "next-intl";
 import React, { useState } from "react";
 
 import Drawer from "@/components/layouts/Drawer";
+import HeaderMenu from "@/components/layouts/HeaderMenu";
 import { LocaleSwitcher } from "@/components/objects/atoms/LocaleSwitcher";
-import contents from "@/const/header";
 import { Link, usePathname } from "@/i18n/routing";
 
 const Header = () => {
@@ -32,7 +32,7 @@ const Header = () => {
       {/* メニュー表示切り替えボタン */}
       <div className="flex items-center gap-2 absolute right-4 md:hidden z-20">
         <LocaleSwitcher href={pathname ?? "/"} locale={locale ?? "en"} />
-        <button onClick={handleMenuOpen} type="button" className="">
+        <button onClick={handleMenuOpen} type="button">
           <img
             src={
               openMenu
@@ -50,16 +50,10 @@ const Header = () => {
         <LocaleSwitcher href={pathname ?? "/"} locale={locale ?? "en"} />
         {/* メニュー PC表示 */}
         <nav className="flex ease-linear duration-300">
-          <ul className="flex items-center gap-10 text-xs font-display">
-            {contents.menu.map((menuItem, index) => (
-              <li
-                key={index}
-                className="cursor-pointer hover:text-red-600 duration-300"
-              >
-                <Link href={menuItem.path}>{menuItem.label}</Link>
-              </li>
-            ))}
-          </ul>
+          <HeaderMenu
+            className="flex items-center gap-10 text-xs font-display"
+            itemClassName="cursor-pointer hover:text-red-600 duration-300"
+          />
         </nav>
       </div>
     </header>
