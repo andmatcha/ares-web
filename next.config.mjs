@@ -1,4 +1,9 @@
-const path = require("path");
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+import createNextIntlPlugin from "next-intl/plugin";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,9 +19,8 @@ const nextConfig = {
     }
     return config;
   }
-}
+};
 
-const createNextIntlPlugin = require('next-intl/plugin');
 const withNextIntl = createNextIntlPlugin();
 
-module.exports = withNextIntl(nextConfig);
+export default withNextIntl(nextConfig);
