@@ -1,23 +1,9 @@
-import path from "node:path"
-import { fileURLToPath } from "node:url"
-
-import { FlatCompat } from "@eslint/eslintrc"
-import importPlugin from "eslint-plugin-import"
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-const compat = new FlatCompat({ baseDirectory: __dirname })
+import nextVitals from "eslint-config-next/core-web-vitals"
 
 const config = [
+  ...nextVitals,
   {
-    ignores: [".next/**", "node_modules/**"]
-  },
-  ...compat.config({ extends: ["next/core-web-vitals"] }),
-  {
-    plugins: {
-      import: importPlugin
-    },
+    files: ["**/*.{js,jsx,mjs,ts,tsx,mts,cts}"],
     rules: {
       "@next/next/no-img-element": "off",
       "sort-imports": [

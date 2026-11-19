@@ -4,6 +4,8 @@
 </div>
 
 ## 開発環境
+- `nvm install`で`.nvmrc`に指定されたNode.js 26 LTSを使用
+- Yarnが未インストールの場合は`npm install --global yarn@1.22.22`でインストール
 - `yarn install`でパッケージをインストール
 - `yarn dev`で開発用サーバー起動
 - ブラウザで`localhost:3000`にアクセスするとトップページが表示される
