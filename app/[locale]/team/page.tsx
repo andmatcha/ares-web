@@ -23,7 +23,7 @@ const memberSections = [
   {
     id: "leaders",
     members: [
-      { id: "seiya", imagePath: "/images/members/seiya_nishimura.png" },
+      { id: "seiya", imagePath: "/images/members/seiya_nishimura.jpg" },
       { id: "shinnosuke", imagePath: "/images/members/shinnosuke_kumagai.jpg" },
     ],
   },
