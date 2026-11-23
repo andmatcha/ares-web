@@ -63,4 +63,21 @@ export const rovers = [
     },
     imagePath: "/images/rovers/ares8.jpg",
   },
+  {
+    name: "ARES 9",
+    description: {
+      ja: "ARES 9は、鳥取ローバーチャレンジ（TRC 2026）のエキスパート部門で優勝し、国際大会ではURC 2026で世界8位、ERC 2026で世界9位に入った機体である。ERCではProbingとPresentationの2部門で1位を獲得した。なかでも、フィールド上のプローブ3個を回収するProbingでは、2分14秒の大会新記録を樹立した。走行系は、前世代の四輪独立操舵とロッカー機構を受け継ぎ、タイヤ径を300 mmから380 mmに拡大した。この大径タイヤは、ERCのプローブ回収で砂地を走破する際にも力を発揮した。また、前車軸を中心に旋回する「POI Mode」を追加し、URCのEquipment Servicing Mission（機器整備ミッション）で、作業対象に対する機体の位置を細かく調整した。ロボットアームは、グリッパーの再設計で把持力を高め、関節部品の金属化で耐久性の向上を図った。さらに、カメラで検出したキーの位置からアームの動きを計算し、キーボードを自動で操作する機能を開発した。自律走行では、RGB-Dカメラ、IMU、GPSの情報を活用し、地形の傾斜を考慮して走行経路を計画する。",
+      en: "ARES 9 won the Expert Division of the Tottori Rover Challenge (TRC 2026), placed eighth overall at the University Rover Challenge (URC 2026), and placed ninth overall at the European Rover Challenge (ERC 2026). At ERC, it took first place in both the Probing and Presentation tasks. In the Probing task, which required retrieving three probes from the field, ARES 9 set a new competition record of 2 minutes and 14 seconds. The rover retains its predecessor's four-wheel independent steering and rocker suspension, with tire diameter increased from 300 mm to 380 mm. The larger tires helped the rover traverse sandy terrain during the ERC probe recovery task. A new steering mode called POI Mode lets the rover pivot about its front axle. The team used it during URC's Equipment Servicing Mission to make fine adjustments to the rover's position relative to the equipment. The redesigned gripper provides greater gripping force, and metal joint components were introduced to improve the robotic arm's durability. The team also developed an automatic typing feature that detects key positions with a camera and calculates the arm movements needed to press them. For autonomous navigation, the rover uses data from an RGB-D camera, an IMU, and GPS to plan routes that account for terrain slope.",
+    },
+    imagePath: "/images/rovers/ares9.jpg",
+  },
+  {
+    name: "ARES X",
+    description: {
+      ja: "",
+      en: "",
+    },
+    imagePath: "
+    ",
+  },
 ];
