@@ -5,15 +5,18 @@ import { ReactNode } from "react";
 const Button = ({
   type,
   children,
+  disabled,
 }: {
   type: "button" | "reset" | "submit";
   children: ReactNode;
+  disabled?: boolean;
 }) => {
   return (
     <button
       type={type}
+      disabled={disabled}
       css={styles.button}
-      className="inline-block relative overflow-hidden w-fit text-xs md:text-base py-3 md:py-4 px-6 md:px-16 text-white text-center cursor-pointer border border-white duration-500 hover:text-main-bg max-w-xs"
+      className="inline-block relative overflow-hidden w-fit text-xs md:text-base py-3 md:py-4 px-6 md:px-16 text-white text-center cursor-pointer border border-white duration-500 enabled:hover:text-main-bg disabled:cursor-not-allowed disabled:opacity-50 max-w-xs"
     >
       <span className="relative">{children}</span>
     </button>
@@ -33,7 +36,7 @@ const styles = {
       transform: translateX(-100%);
       background: #fff;
     }
-    &:hover::before {
+    &:not(:disabled):hover::before {
       -webkit-transform: translateX(0%);
       transform: translateX(0%);
     }

@@ -22,6 +22,7 @@
     "destyle.css": "^4.0.1",
     "next": "^16.0.8",
     "next-intl": "^4.3.9",
+    "nodemailer": "^7.0.6",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-hook-form": "^7.48.2",
@@ -42,7 +43,6 @@
     "eslint-config-next": "15.5.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unused-imports": "^4.2.0",
-    "nodemailer": "^7.0.6",
     "postcss": "^8.4.18",
     "tailwindcss": "^4.1.14",
     "typescript": "~5.9.3"

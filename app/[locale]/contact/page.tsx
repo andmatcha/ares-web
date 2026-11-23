@@ -1,22 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import Button from "@/components/objects/atoms/Button";
 import Hero from "@/components/objects/atoms/Hero";
-import Loader from "@/components/objects/atoms/Loader";
 import Instagram from "@/components/objects/icons/instagram";
 import Twitter from "@/components/objects/icons/twitter";
 import URL from "@/const/url";
-import { useMail } from "@/hooks/useMail";
 import { Link, useRouter } from "@/i18n/routing";
+import { type ContactFields, contactLimits, isContactEmail } from "@/lib/contact";
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+import TurnstileWidget from "./TurnstileWidget";
+
+const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+const submissionErrorMessage = "お問い合わせを送信できませんでした。時間をおいてもう一度お試しください。";
 
 export default function ContactPage() {
   const router = useRouter();
@@ -25,31 +23,63 @@ export default function ContactPage() {
     handleSubmit,
     formState: { errors },
     trigger,
-  } = useForm<FormData>();
-  const { sendToAres, sendToCustomer } = useMail();
-  const [isSending, setIsSending] = useState<boolean>(false);
+  } = useForm<ContactFields>();
+  const [token, setToken] = useState<string | null>(null);
+  const [verificationAttempt, setVerificationAttempt] = useState(0);
+  const [verificationFailed, setVerificationFailed] = useState(false);
+  const [submissionError, setSubmissionError] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const sending = useRef(false);
 
-  const handleBlur = async (fieldName: keyof FormData) => {
+  const handleBlur = async (fieldName: keyof ContactFields) => {
     await trigger(fieldName);
   };
 
-  const onSubmit: SubmitHandler<FormData> = ({ name, email, message }) => {
-    setIsSending(true);
-    sendToAres(name, email, message)
-      .then(() => sendToCustomer(name, email, message))
-      .then(() => router.push("/contact/success"))
-      .catch(() => router.push("/contact/error"))
-      .finally(() => setIsSending(false));
+  const restartVerification = () => {
+    setToken(null);
+    setVerificationFailed(false);
+    setVerificationAttempt((attempt) => attempt + 1);
   };
 
-  return isSending ? (
-    <div className="w-screen h-screen">
-      <Loader message="SENDING" />
-    </div>
-  ) : (
+  const onSubmit: SubmitHandler<ContactFields> = async (data) => {
+    if (!token || sending.current) return;
+
+    sending.current = true;
+    setIsSending(true);
+    setSubmissionError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, token }),
+      });
+
+      if (response.ok) {
+        router.push("/contact/success");
+        return;
+      }
+
+      if (response.status === 403) {
+        setSubmissionError("送信前の確認が完了しませんでした。もう一度お試しください。");
+      } else if (response.status === 400 || response.status === 413) {
+        setSubmissionError("入力内容を確認して、もう一度お試しください。");
+      } else {
+        setSubmissionError(submissionErrorMessage);
+      }
+    } catch {
+      setSubmissionError(submissionErrorMessage);
+    }
+
+    restartVerification();
+    sending.current = false;
+    setIsSending(false);
+  };
+
+  return (
     <>
       <Hero title="CONTACT" imagePath="/images/rovers/ares4_wide.jpg" />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} aria-busy={isSending}>
         <div className="flex p-4 justify-center">
           <div className="w-full lg:w-1/2">
             <div className="flex flex-col gap-2 px-4 py-2">
@@ -57,10 +87,12 @@ export default function ContactPage() {
               <input
                 type="text"
                 id="name"
+                readOnly={isSending}
                 {...register("name", {
                   required: "名前は必須です",
+                  validate: (name) => !!name.trim() || "名前は必須です",
                   maxLength: {
-                    value: 100,
+                    value: contactLimits.name,
                     message: "100文字以内で入力してください",
                   },
                 })}
@@ -78,16 +110,10 @@ export default function ContactPage() {
               <input
                 type="email"
                 id="email"
+                readOnly={isSending}
                 {...register("email", {
                   required: "メールアドレスは必須です",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: "有効なメールアドレスを入力してください",
-                  },
-                  maxLength: {
-                    value: 256,
-                    message: "有効なメールアドレスを入力してください",
-                  },
+                  validate: (email) => isContactEmail(email) || "有効なメールアドレスを入力してください",
                 })}
                 onBlur={() => handleBlur("email")}
                 className="h-8 bg-white text-black flex items-center rounded-sm p-2"
@@ -102,10 +128,12 @@ export default function ContactPage() {
               <label htmlFor="message">お問い合わせ内容</label>
               <textarea
                 id="message"
+                readOnly={isSending}
                 {...register("message", {
                   required: "問い合わせ内容は必須です",
+                  validate: (message) => !!message.trim() || "問い合わせ内容は必須です",
                   maxLength: {
-                    value: 2000,
+                    value: contactLimits.message,
                     message: "2000文字以内で入力してください",
                   },
                 })}
@@ -122,8 +150,32 @@ export default function ContactPage() {
                 )}
               </div>
             </div>
-            <div className="flex gap-2 px-4 py-2 justify-center">
-              <Button type="submit">送信</Button>
+            <div className="flex flex-col items-center gap-3 px-4 py-2">
+              {siteKey && (
+                <TurnstileWidget
+                  key={verificationAttempt}
+                  siteKey={siteKey}
+                  onTokenChange={setToken}
+                  onError={setVerificationFailed}
+                />
+              )}
+              {submissionError && <p role="alert" className="text-sm">{submissionError}</p>}
+              {(!siteKey || verificationFailed) && (
+                <p role="alert" className="text-sm">
+                  送信前の確認を開始できませんでした。下に記載のメールアドレスからもお問い合わせいただけます。
+                </p>
+              )}
+              {siteKey && verificationFailed && (
+                <button type="button" className="cursor-pointer text-sm underline" onClick={restartVerification} disabled={isSending}>
+                  確認をやり直す
+                </button>
+              )}
+              <p role="status" className="empty:hidden text-sm">
+                {siteKey && !token && !verificationFailed && !isSending ? "送信前の確認を行っています。" : ""}
+              </p>
+              <Button type="submit" disabled={!token || isSending}>
+                {isSending ? "送信中…" : "送信"}
+              </Button>
             </div>
             <div className="mt-4 p-4 flex flex-col sm:flex-row justify-center items-center gap-6">
               <Link
