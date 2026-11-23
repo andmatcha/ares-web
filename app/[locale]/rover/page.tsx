@@ -1,5 +1,6 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { useMemo, useState } from "react";
 
 import Hero from "@/components/objects/atoms/Hero";
@@ -7,6 +8,7 @@ import Paragraph from "@/components/objects/atoms/Paragraph";
 import { rovers } from "@/const/rover";
 
 export default function RoverPage() {
+  const locale = useLocale() === "ja" ? "ja" : "en";
   const [selectedRoverIndex, setSelectedRoverIndex] = useState(
     rovers.length - 1
   );
@@ -54,8 +56,16 @@ export default function RoverPage() {
             />
           </div>
           <div className="lg:py-4 flex flex-col gap-4 w-full xl:w-2/5">
-            <h2 className="text-3xl font-medium">{selectedRover.name}</h2>
-            <Paragraph>{selectedRover.description.ja}</Paragraph>
+            <h2 className="text-3xl font-medium">
+              {selectedRover.name === "ARES X" ? (
+                <>
+                  ARES <span className="text-ares-red">X</span>
+                </>
+              ) : (
+                selectedRover.name
+              )}
+            </h2>
+            <Paragraph>{selectedRover.description[locale]}</Paragraph>
           </div>
         </div>
       </div>

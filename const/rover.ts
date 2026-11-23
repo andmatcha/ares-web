@@ -3,7 +3,7 @@ export const rovers = [
     name: "ARES 1",
     description: {
       ja: "ARESプロジェクト創立メンバー3名より、100プログラム活動期間中の2か月で製作。ローバーの基本的な開発に初めて挑戦する中、3人だけであっても形にすることができるのか検証するために製作された。足回りの機構・電装、ローバーならではの機構の重要性を認識し、さらなる開発が必要となるような機体となったが、ローバー世界大会に挑戦する決断をする大きなきっかけとなった。",
-      en: "ARESプロジェクト創立メンバー3名より、100プログラム活動期間中の2か月で製作。ローバーの基本的な開発に初めて挑戦する中、3人だけであっても形にすることができるのか検証するために製作された。足回りの機構・電装、ローバーならではの機構の重要性を認識し、さらなる開発が必要となるような機体となったが、ローバー世界大会に挑戦する決断をする大きなきっかけとなった。",
+      en: "The three founding members of ARES Project built ARES 1 in two months during the 100 Program. It was their first rover, built to see whether a team of three could turn the idea into a working prototype. The experience highlighted the importance of the running gear, electronics, and mechanisms specific to rovers. The prototype needed further development, and building it helped the team decide to enter international rover competitions.",
     },
     imagePath: "/images/rovers/ares1.jpg",
   },
@@ -11,7 +11,7 @@ export const rovers = [
     name: "ARES 2",
     description: {
       ja: "ARES1での知識不足を改善していくため、ロッカーボギー機構を採用した機体を開発。ロッカーボギー機構の解明及び学習のための機体であったが、実際に走行できるようにした。同様に、簡易的ではあるが初のアームを開発、今後の大型化につなげるための機体となった。",
-      en: "ARES1での知識不足を改善していくため、ロッカーボギー機構を採用した機体を開発。ロッカーボギー機構の解明及び学習のための機体であったが、実際に走行できるようにした。同様に、簡易的ではあるが初のアームを開発、今後の大型化につなげるための機体となった。",
+      en: "The team built ARES 2 to learn more about rover design after developing ARES 1. It was a working rover built to study how a rocker-bogie suspension behaves in motion. ARES 2 also carried the team's first robotic arm, a simple design that helped lay the groundwork for larger rovers.",
     },
     imagePath: "/images/rovers/ares2.jpg",
   },
@@ -19,7 +19,7 @@ export const rovers = [
     name: "ARES 3",
     description: {
       ja: "URCを見据え、機体を大型化した。様々な方からのアドバイス等により、ハードソフトウェアの両方の観点から6輪ではなく4輪を採用。ロッカーボギー機構ではなく別機構の採用検討を行った。電装系統は本番を想定したプロトタイプを採用しており、モーター・タイヤなどは実際の大会に利用する規模のものを搭載した。しかしながら大型化に伴う強度不足・安定性不足・機構の再変更などが必要となる機体となった。",
-      en: "URCを見据え、機体を大型化した。様々な方からのアドバイス等により、ハードソフトウェアの両方の観点から6輪ではなく4輪を採用。ロッカーボギー機構ではなく別機構の採用検討を行った。電装系統は本番を想定したプロトタイプを採用しており、モーター・タイヤなどは実際の大会に利用する規模のものを搭載した。しかしながら大型化に伴う強度不足・安定性不足・機構の再変更などが必要となる機体となった。",
+      en: "The team built a larger rover in preparation for the University Rover Challenge (URC). With input from advisers, it evaluated four- and six-wheel configurations from both hardware and software perspectives and settled on four wheels. It also explored alternatives to the rocker-bogie suspension. ARES 3 used prototype electronics and competition-sized motors and tires. Scaling up revealed the need for greater structural strength and stability, along with further changes to the mechanical design.",
     },
     imagePath: "/images/rovers/ares3.jpg",
   },
@@ -27,7 +27,7 @@ export const rovers = [
     name: "ARES 4",
     description: {
       ja: "ARES3をベースに、最終採用の機構を決定。電装・制御関連の改善、機体の安定性と強度を大幅に改善した機体である。機体本体の軽量化にも成功し、初めて海岸やテストフィールドで安定した走行試験を行った機体である。この機体は今後様々な検討試験を行う機体として1つの完成版としており、電装部分や制御関連のアップデートを継続していくものと位置付けている。",
-      en: "ARES3をベースに、最終採用の機構を決定。電装・制御関連の改善、機体の安定性と強度を大幅に改善した機体である。機体本体の軽量化にも成功し、初めて海岸やテストフィールドで安定した走行試験を行った機体である。この機体は今後様々な検討試験を行う機体として1つの完成版としており、電装部分や制御関連のアップデートを継続していくものと位置付けている。",
+      en: "Building on ARES 3, the team finalized the mechanical design and improved the electronics and control systems. ARES 4 was lighter, stronger, and more stable, and it was the team's first rover to complete stable driving tests on a beach and at a test field. The team designated it as a test platform for future experiments and continued upgrades to its electronics and control systems.",
     },
     imagePath: "/images/rovers/ares4.jpg",
   },
@@ -74,10 +74,9 @@ export const rovers = [
   {
     name: "ARES X",
     description: {
-      ja: "",
-      en: "",
+      ja: "ARES Xは、ARES 9で得られた実戦経験を元に、URC2027に向けて開発している機体。四輪操舵と380 mmのタイヤ経はARES 9から引き継ぎ、地面に接する外装が荷重で平らに広がる構造に改め、不整地でのグリップ向上を図った。ロボットアームは、全長を従来の約1.3倍となる1,500 mmに伸ばし、グリッパーの先端を小型化。前大会で課題となった模擬宇宙船への容器の収容や、工具箱の取っ手を掴む作業に対応しやすい設計となった。自律走行では、カメラ映像から推定した機体の動きと衛星測位を組み合わせて位置推定を改良し、ジェスチャーによる指示の認識や物体の自律回収にも取り組んでいる。",
+      en: "ARES X is being developed for URC 2027, drawing on lessons learned from competing with ARES 9. It retains ARES 9's four-wheel steering and 380 mm tire diameter. The outer layer of each tire has been redesigned to flatten and spread under load for better grip on rough terrain. The robotic arm has been extended to 1,500 mm, about 1.3 times its previous length, and has a smaller gripper tip. These changes are designed to make it easier to stow a container inside a mock spacecraft and grasp a toolbox handle, two tasks that proved challenging at the previous competition. For autonomous navigation, the rover combines motion estimates from camera images with satellite positioning to better estimate its location. The team is also developing features that allow the rover to recognize commands given through gestures and retrieve objects autonomously.",
     },
-    imagePath: "
-    ",
-  },
+    imagePath: "/images/rovers/aresx.jpg",
+  }
 ];
