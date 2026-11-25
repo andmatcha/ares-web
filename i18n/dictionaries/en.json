@@ -24,6 +24,9 @@
     "title": "GARAGE Program 70th Project",
     "website": "100BANCH Website"
   },
+  "rover": {
+    "comingSoon": "Coming soon"
+  },
   "team": {
     "about": "We are a Japanese student team dedicated to designing and developing the next-generation Mars rover. Since our project establishment in 2022, we have expanded our team members and worked towards to compete in the University Rover Challenge (URC). In 2024, we became the first Japanese student team to compete in the URC, facing off against teams from around the world. Our team consists of over 40 students from multiple universities, with Tohoku University and Keio University serving as our main bases of operation. We are currently working towards winning the next competition.",
     "team_composition": "Team Composition",
