@@ -843,6 +843,16 @@
     "@eslint/core" "^0.15.2"
     levn "^0.4.1"
 
+"@fontsource-variable/noto-sans-jp@^5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/noto-sans-jp/-/noto-sans-jp-5.3.1.tgz#bb525fd257bacb19f469a74cf19f9313e49427a6"
+  integrity sha512-/anGvJFc5y36f8DJ+3TSh2+KAvaRLA9PaLUMvneeY5s4j8m+8X4F3lE/sjTuG9YI5BX4sykvCk4TuJMG7ecMRQ==
+
+"@fontsource-variable/orbitron@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/orbitron/-/orbitron-5.3.0.tgz#2430145895ddde4f2863e0c97821a3d686c846ad"
+  integrity sha512-KwW0YX1DJNqF0v86W1hZonuauypCFaltGdpB6qwCeu5bUyHoFpeZ84aAjChZSRF7RWZFithg/il0nMwYxJgqDA==
+
 "@formatjs/ecma402-abstract@2.3.4":
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-2.3.4.tgz#e90c5a846ba2b33d92bc400fdd709da588280fbc"
