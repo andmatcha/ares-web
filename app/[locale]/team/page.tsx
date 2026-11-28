@@ -72,7 +72,11 @@ export default function TeamPage() {
 
   return (
     <>
-      <Hero title="Our Team" imagePath="/images/tohoku_ares_wide.jpg" />
+      <Hero
+        title="Our Team"
+        imagePath="/images/ERC-zentai.jpg"
+        imagePosition="center 51%"
+      />
       <Section id="about" className="flex flex-col gap-10 items-center">
         <div className="flex -mb-8 md:mb-0 justify-center items-center gap-4">
           <div className="w-20 md:w-40">
@@ -87,7 +91,7 @@ export default function TeamPage() {
         <div className="px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
           <div className="md:w-2/5 rounded-sm overflow-hidden">
             <img
-              src="/images/ares_urc3.jpg"
+              src="/images/zentai-team.jpg"
               alt=""
               className="w-full object-contain"
             />
