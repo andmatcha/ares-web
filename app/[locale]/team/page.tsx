@@ -36,7 +36,7 @@ export default function TeamPage() {
       {
         name: t("team.subTeams.tokyo.name"),
         description: t("team.subTeams.tokyo.description"),
-        imagePath: "/images/keio_members.jpg",
+        imagePath: "/images/tokyo_members.PNG",
       },
       {
         name: t("team.subTeams.science.name"),
