@@ -12,7 +12,6 @@ import TeamCard from "@/components/objects/atoms/TeamCard";
 import Section from "@/components/objects/molecules/Section";
 import { goals } from "@/const/team";
 import URL from "@/const/url";
-import { Member } from "@/types/index";
 
 type SubTeam = {
   name: string;
@@ -20,11 +19,28 @@ type SubTeam = {
   imagePath: string;
 };
 
+const memberSections = [
+  {
+    id: "leaders",
+    members: [
+      { id: "seiya", imagePath: "/images/members/seiya_nishimura.jpg" },
+      { id: "shinnosuke", imagePath: "/images/members/shinnosuke_kumagai.jpg" },
+    ],
+  },
+  {
+    id: "founders",
+    members: [
+      { id: "danishi", imagePath: "/images/members/danishi_ai.jpg" },
+      { id: "ryoji", imagePath: "/images/members/ryoji_nagahara.jpg" },
+      { id: "nagaoka", imagePath: "/images/members/keita_nagaoka.jpg" },
+    ],
+  },
+] as const;
+
 export default function TeamPage() {
   const t = useTranslations();
   const locale = useLocale();
   const [subTeams, setSubTeams] = useState<SubTeam[]>([]);
-  const [leaders, setLeaders] = useState<Member[]>([]);
 
   useEffect(() => {
     setSubTeams([
@@ -42,30 +58,6 @@ export default function TeamPage() {
         name: t("team.subTeams.science.name"),
         description: t("team.subTeams.science.description"),
         imagePath: "/images/science_members.jpg",
-      },
-    ]);
-
-    setLeaders([
-      {
-        name: t("team.leaders.pm.name"),
-        university: t("team.leaders.pm.university"),
-        introduction: t("team.leaders.pm.introduction"),
-        imagePath: "/images/members/danishi_ai.jpg",
-        isLeader: true,
-      },
-      {
-        name: t("team.leaders.tohoku_lead.name"),
-        university: t("team.leaders.tohoku_lead.university"),
-        introduction: t("team.leaders.tohoku_lead.introduction"),
-        imagePath: "/images/members/kota_matsuhashi.jpg",
-        isLeader: true,
-      },
-      {
-        name: t("team.leaders.tokyo_lead.name"),
-        university: t("team.leaders.tokyo_lead.university"),
-        introduction: t("team.leaders.tokyo_lead.introduction"),
-        imagePath: "/images/members/ryoji_nagahara.jpg",
-        isLeader: true,
       },
     ]);
   }, [t, locale]);
@@ -151,15 +143,27 @@ export default function TeamPage() {
           ))}
         </FadeIn>
       </Section>
-      <Section id="leaders" title={t("team.leaders.title")}>
-        <ul className="flex flex-col gap-10 w-full items-center">
-          {leaders.map((member, index) => (
-            <FadeIn key={index}>
-              <MemberIntro member={member} />
-            </FadeIn>
-          ))}
-        </ul>
-      </Section>
+      {memberSections.map(({ id, members }) => (
+        <Section key={id} id={id} title={t(`team.${id}.title`)}>
+          <ul className="mx-auto flex w-full max-w-6xl flex-col gap-10">
+            {members.map(({ id: memberId, imagePath }) => {
+              const profile = `team.${id}.${memberId}`;
+
+              return (
+                <MemberIntro
+                  key={memberId}
+                  member={{
+                    name: t(`${profile}.name`),
+                    university: t(`${profile}.university`),
+                    introduction: t(`${profile}.introduction`),
+                    imagePath,
+                  }}
+                />
+              );
+            })}
+          </ul>
+        </Section>
+      ))}
     </>
   );
 }
