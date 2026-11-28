@@ -1,41 +1,46 @@
 "use client";
 
+import Image from "next/image";
+
+import FadeIn from "@/components/objects/atoms/FadeIn";
 import Paragraph from "@/components/objects/atoms/Paragraph";
 import { Member } from "@/types/index";
 
 type Props = {
-  member: Member;
+  member: Pick<Member, "name" | "university" | "introduction"> & {
+    imagePath?: string;
+  };
 };
 
 const MemberIntro = ({
   member: { name, university, introduction, imagePath },
 }: Props) => {
   return (
-    <li className="flex justify-center items-center gap-10 px-2">
-      <div className="hidden md:block">
-        <div className="w-40 h-40 rounded-full overflow-hidden">
-          <img
+    <FadeIn
+      as="li"
+      className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-4 px-2 md:gap-x-10"
+    >
+      <div className="relative size-16 overflow-hidden rounded-full bg-white/10 md:size-40">
+        {imagePath && (
+          <Image
             src={imagePath}
             alt={name}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(min-width: 768px) 160px, 64px"
+            className="object-cover"
           />
-        </div>
+        )}
       </div>
-      <div className="max-w-4xl md:w-4/5 flex flex-col gap-4">
-        <div className="flex items-center gap-4">
-          <div className="block md:hidden">
-            <div className="w-16 h-16 rounded-full overflow-hidden">
-              <img src={imagePath} alt={name} className="h-full object-cover" />
-            </div>
-          </div>
-          <div>
-            <h4 className="tracking-wider pb-1">{name}</h4>
-            <h5 className="text-xs text-gray-400">{university}</h5>
-          </div>
+      <div className="contents md:flex md:flex-col md:gap-4">
+        <div>
+          <h4 className="tracking-wider pb-1">{name}</h4>
+          <p className="text-xs text-gray-400">{university}</p>
         </div>
-        <Paragraph size="small">{introduction}</Paragraph>
+        <Paragraph size="small" className="col-span-2">
+          {introduction}
+        </Paragraph>
       </div>
-    </li>
+    </FadeIn>
   );
 };
 
