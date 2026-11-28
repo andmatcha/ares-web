@@ -100,15 +100,6 @@ export const members: Member[] = [
     isLeader: false,
   },
   {
-    name: "松橋 康太",
-    university:
-      "東北大学 工学部 機械知能・航空工学科 航空宇宙コース 山本・古澤研究室",
-    introduction:
-      "2002年秋田県生まれ。漠然とした宇宙への憧れを抱き、東北大学へ進学する。たまたま入った学生団体でのハイブリッドロケットの開発をきっかけに、ものづくりの楽しさに魅了された。宇宙工学に幅広く興味を持ち、小型ローバの学生世界大会の学生運営も務める。将来は、航空宇宙分野の研究に携わりたいと考えている。ARES Projectでは、東北チームリーダーのみならずローバ機構リーダーとしても開発を行う。",
-    imagePath: "/images/members/kota_matsuhashi.jpg",
-    isLeader: true,
-  },
-  {
     name: "永原 陵司",
     university: "慶應義塾大学 理工学部 機械工学科",
     introduction:

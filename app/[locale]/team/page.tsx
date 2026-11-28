@@ -33,7 +33,6 @@ const memberSections = [
       { id: "danishi", imagePath: "/images/members/danishi_ai.jpg" },
       { id: "ryoji", imagePath: "/images/members/ryoji_nagahara.jpg" },
       { id: "nagaoka", imagePath: "/images/members/keita_nagaoka.jpg" },
-      { id: "matsuhashi", imagePath: "/images/members/kota_matsuhashi.jpg" },
     ],
   },
 ] as const;
