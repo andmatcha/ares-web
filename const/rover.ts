@@ -3,7 +3,7 @@ export const rovers = [
     name: "ARES 1",
     description: {
       ja: "ARESプロジェクト創立メンバー3名より、100プログラム活動期間中の2か月で製作。ローバーの基本的な開発に初めて挑戦する中、3人だけであっても形にすることができるのか検証するために製作された。足回りの機構・電装、ローバーならではの機構の重要性を認識し、さらなる開発が必要となるような機体となったが、ローバー世界大会に挑戦する決断をする大きなきっかけとなった。",
-      en: "ARESプロジェクト創立メンバー3名より、100プログラム活動期間中の2か月で製作。ローバーの基本的な開発に初めて挑戦する中、3人だけであっても形にすることができるのか検証するために製作された。足回りの機構・電装、ローバーならではの機構の重要性を認識し、さらなる開発が必要となるような機体となったが、ローバー世界大会に挑戦する決断をする大きなきっかけとなった。",
+      en: "The three founding members of ARES Project built ARES 1 in two months during the 100 Program. It was their first rover, built to see whether a team of three could turn the idea into a working prototype. The experience highlighted the importance of the running gear, electronics, and mechanisms specific to rovers. The prototype needed further development, and building it helped the team decide to enter international rover competitions.",
     },
     imagePath: "/images/rovers/ares1.jpg",
   },
@@ -11,7 +11,7 @@ export const rovers = [
     name: "ARES 2",
     description: {
       ja: "ARES1での知識不足を改善していくため、ロッカーボギー機構を採用した機体を開発。ロッカーボギー機構の解明及び学習のための機体であったが、実際に走行できるようにした。同様に、簡易的ではあるが初のアームを開発、今後の大型化につなげるための機体となった。",
-      en: "ARES1での知識不足を改善していくため、ロッカーボギー機構を採用した機体を開発。ロッカーボギー機構の解明及び学習のための機体であったが、実際に走行できるようにした。同様に、簡易的ではあるが初のアームを開発、今後の大型化につなげるための機体となった。",
+      en: "The team built ARES 2 to learn more about rover design after developing ARES 1. It was a working rover built to study how a rocker-bogie suspension behaves in motion. ARES 2 also carried the team's first robotic arm, a simple design that helped lay the groundwork for larger rovers.",
     },
     imagePath: "/images/rovers/ares2.jpg",
   },
@@ -19,7 +19,7 @@ export const rovers = [
     name: "ARES 3",
     description: {
       ja: "URCを見据え、機体を大型化した。様々な方からのアドバイス等により、ハードソフトウェアの両方の観点から6輪ではなく4輪を採用。ロッカーボギー機構ではなく別機構の採用検討を行った。電装系統は本番を想定したプロトタイプを採用しており、モーター・タイヤなどは実際の大会に利用する規模のものを搭載した。しかしながら大型化に伴う強度不足・安定性不足・機構の再変更などが必要となる機体となった。",
-      en: "URCを見据え、機体を大型化した。様々な方からのアドバイス等により、ハードソフトウェアの両方の観点から6輪ではなく4輪を採用。ロッカーボギー機構ではなく別機構の採用検討を行った。電装系統は本番を想定したプロトタイプを採用しており、モーター・タイヤなどは実際の大会に利用する規模のものを搭載した。しかしながら大型化に伴う強度不足・安定性不足・機構の再変更などが必要となる機体となった。",
+      en: "The team built a larger rover in preparation for the University Rover Challenge (URC). With input from advisers, it evaluated four- and six-wheel configurations from both hardware and software perspectives and settled on four wheels. It also explored alternatives to the rocker-bogie suspension. ARES 3 used prototype electronics and competition-sized motors and tires. Scaling up revealed the need for greater structural strength and stability, along with further changes to the mechanical design.",
     },
     imagePath: "/images/rovers/ares3.jpg",
   },
@@ -27,7 +27,7 @@ export const rovers = [
     name: "ARES 4",
     description: {
       ja: "ARES3をベースに、最終採用の機構を決定。電装・制御関連の改善、機体の安定性と強度を大幅に改善した機体である。機体本体の軽量化にも成功し、初めて海岸やテストフィールドで安定した走行試験を行った機体である。この機体は今後様々な検討試験を行う機体として1つの完成版としており、電装部分や制御関連のアップデートを継続していくものと位置付けている。",
-      en: "ARES3をベースに、最終採用の機構を決定。電装・制御関連の改善、機体の安定性と強度を大幅に改善した機体である。機体本体の軽量化にも成功し、初めて海岸やテストフィールドで安定した走行試験を行った機体である。この機体は今後様々な検討試験を行う機体として1つの完成版としており、電装部分や制御関連のアップデートを継続していくものと位置付けている。",
+      en: "Building on ARES 3, the team finalized the mechanical design and improved the electronics and control systems. ARES 4 was lighter, stronger, and more stable, and it was the team's first rover to complete stable driving tests on a beach and at a test field. The team designated it as a test platform for future experiments and continued upgrades to its electronics and control systems.",
     },
     imagePath: "/images/rovers/ares4.jpg",
   },
@@ -63,4 +63,14 @@ export const rovers = [
     },
     imagePath: "/images/rovers/ares8.jpg",
   },
+  {
+    name: "ARES 9",
+    description: {
+      ja: "ARES 9は、鳥取ローバーチャレンジ（TRC 2026）のエキスパート部門で優勝し、国際大会ではURC 2026で世界8位、ERC 2026で世界9位に入った機体である。ERCではProbingとPresentationの2部門で1位を獲得した。なかでも、フィールド上のプローブ3個を回収するProbingでは、2分14秒の大会新記録を樹立した。走行系は、前世代の四輪独立操舵とロッカー機構を受け継ぎ、タイヤ径を300 mmから380 mmに拡大した。この大径タイヤは、ERCのプローブ回収で砂地を走破する際にも力を発揮した。また、前車軸を中心に旋回する「POI Mode」を追加し、URCのEquipment Servicing Mission（機器整備ミッション）で、作業対象に対する機体の位置を細かく調整した。ロボットアームは、グリッパーの再設計で把持力を高め、関節部品の金属化で耐久性の向上を図った。さらに、カメラで検出したキーの位置からアームの動きを計算し、キーボードを自動で操作する機能を開発した。自律走行では、RGB-Dカメラ、IMU、GPSの情報を活用し、地形の傾斜を考慮して走行経路を計画する。",
+      en: "ARES 9 won the Expert Division of the Tottori Rover Challenge (TRC 2026), placed eighth overall at the University Rover Challenge (URC 2026), and placed ninth overall at the European Rover Challenge (ERC 2026). At ERC, it took first place in both the Probing and Presentation tasks. In the Probing task, which required retrieving three probes from the field, ARES 9 set a new competition record of 2 minutes and 14 seconds. The rover retains its predecessor's four-wheel independent steering and rocker suspension, with tire diameter increased from 300 mm to 380 mm. The larger tires helped the rover traverse sandy terrain during the ERC probe recovery task. A new steering mode called POI Mode lets the rover pivot about its front axle. The team used it during URC's Equipment Servicing Mission to make fine adjustments to the rover's position relative to the equipment. The redesigned gripper provides greater gripping force, and metal joint components were introduced to improve the robotic arm's durability. The team also developed an automatic typing feature that detects key positions with a camera and calculates the arm movements needed to press them. For autonomous navigation, the rover uses data from an RGB-D camera, an IMU, and GPS to plan routes that account for terrain slope.",
+    },
+    imagePath: "/images/rovers/ares9.jpg",
+  },
 ];
+
+export const upcomingRover = { name: "ARES X", imagePath: null };
