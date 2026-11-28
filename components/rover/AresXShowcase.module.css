@@ -1,0 +1,270 @@
+.showcase {
+  --heading-top: 4.5rem;
+  --stage-limit: 47rem;
+  --title-size: clamp(2.5rem, 7vw, 6.25rem);
+  --title-height: calc(1.55 * var(--title-size));
+  --stage-top: calc(var(--heading-top) + var(--title-height));
+  margin-inline: auto;
+  max-width: 88rem;
+  padding-bottom: clamp(3rem, 8vw, 7rem);
+}
+
+.title {
+  font-family: var(--font-orbitron), sans-serif;
+  font-size: var(--title-size);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  padding-block: 0.2em 0.35em;
+}
+
+.story[data-sticky-title="true"] .title {
+  background-color: #1a1a1a;
+  position: sticky;
+  top: var(--heading-top);
+  z-index: 3;
+}
+
+.introPhoto {
+  border-radius: 0.5rem;
+  display: block;
+  height: auto;
+  /* Reserve space for the heading before the 3D view pins in place. */
+  margin: 0 auto var(--title-height);
+  width: min(100%, 58rem);
+}
+
+.stage {
+  background: #101318;
+  border: 1px solid #343a43;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 68fr) minmax(0, 32fr);
+  grid-template-rows: minmax(0, 1fr);
+  height: min(calc(100svh - var(--heading-top) - 0.75rem), var(--stage-limit));
+  min-height: 24rem;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.track[data-animated="true"]::after {
+  content: "";
+  display: block;
+  height: 165svh;
+}
+
+.track[data-animated="true"] .stage {
+  height: min(calc(100svh - var(--stage-top) - 0.75rem), var(--stage-limit));
+  min-height: 0;
+  position: sticky;
+  top: var(--stage-top);
+}
+
+.viewport {
+  background:
+    radial-gradient(ellipse at 53% 55%, #39414b 0, #242a33 43%, #171c23 82%),
+    #171c23;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.viewport::before {
+  background: radial-gradient(circle, #acb9c53b 0.8px, transparent 1px) 50% 50% / 1.2rem 1.2rem;
+  content: "";
+  inset: 0;
+  mask-image: radial-gradient(ellipse at center, transparent 20%, #000 82%);
+  pointer-events: none;
+  position: absolute;
+}
+
+.loading {
+  color: #d5dbe3;
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.canvas,
+.callout {
+  inset: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.canvas {
+  pointer-events: none;
+}
+
+.caption {
+  align-content: center;
+  background: linear-gradient(150deg, #1c222b, #12161d 68%);
+  border-left: 1px solid #343a43;
+  display: grid;
+  padding: clamp(1.25rem, 3vw, 3rem);
+  position: relative;
+}
+
+.captionPin {
+  left: 0;
+  position: absolute;
+  top: 50%;
+}
+
+.captionCopy h3 {
+  color: #f6f7f9;
+  font-size: clamp(1.35rem, 2.6vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.captionCopy p {
+  color: #d5dbe3;
+  font-size: clamp(0.875rem, 1.1vw, 1.025rem);
+  line-height: 1.7;
+  margin-top: 0.85rem;
+}
+
+.views {
+  display: flex;
+  gap: 0.1rem;
+  margin: 0.9rem -0.2rem 0;
+}
+
+.views button {
+  align-items: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  height: 2.75rem;
+  justify-content: center;
+  width: 2.75rem;
+}
+
+.views button span {
+  background: #677281;
+  border-radius: 1rem;
+  height: 0.2rem;
+  width: 1.85rem;
+}
+
+.views button:hover span {
+  background: #e5e8ec;
+}
+
+.views button[aria-current="step"] span {
+  background: #ff495b;
+}
+
+.views button:focus-visible {
+  outline: 2px solid #f6f7f9;
+  outline-offset: -2px;
+}
+
+.scrollHint {
+  color: #a5adba;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  min-height: 1.1rem;
+}
+
+.callout {
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.callout g {
+  opacity: 0;
+}
+
+.callout path {
+  fill: none;
+  stroke: #ff5968;
+  stroke-width: 1.5;
+}
+
+.callout circle {
+  fill: #e60013;
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+.description {
+  color: #dbdee3;
+  margin: clamp(1.5rem, 4vw, 3.5rem) auto 0;
+  max-width: 72ch;
+}
+
+@media (max-width: 767px) and (min-height: 501px), (max-width: 560px) {
+  .showcase {
+    --stage-limit: 40rem;
+  }
+
+  .stage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) 13rem;
+  }
+
+  .caption {
+    align-content: start;
+    border-left: 0;
+    border-top: 1px solid #343a43;
+    padding: 0.95rem 1.2rem;
+  }
+
+  .captionPin {
+    left: 1.2rem;
+    top: 0;
+  }
+
+  .captionCopy p {
+    line-height: 1.55;
+    margin-top: 0.45rem;
+  }
+
+  .views {
+    margin-top: 0.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .stage {
+    grid-template-rows: minmax(0, 1fr) 14rem;
+  }
+}
+
+@media (min-width: 561px) and (max-height: 500px) {
+  .showcase {
+    --title-size: 2.5rem;
+  }
+
+  .stage {
+    grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  }
+
+  .caption {
+    align-content: safe center;
+    overflow-y: auto;
+    padding: 0.65rem 1rem;
+  }
+
+  .captionCopy h3 {
+    font-size: clamp(1.125rem, 2.7vw, 1.6rem);
+  }
+
+  .captionCopy p {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    margin-top: 0.4rem;
+  }
+
+  .views {
+    margin-top: 0.25rem;
+  }
+}

@@ -20,6 +20,29 @@
       "website": "URC Official Website"
     }
   },
+  "rover": {
+    "aresX": {
+      "loading": "Loading the 3D model",
+      "scroll": "Scroll to explore the rover",
+      "views": "ARES X views",
+      "overview": {
+        "title": "Designed for URC 2027",
+        "description": "Lessons from ARES 9 shaped this rover’s running gear, robotic arm, and autonomous navigation."
+      },
+      "traction": {
+        "title": "Grip on rough terrain",
+        "description": "The tire’s outer layer is designed to flatten under load for better grip on uneven ground."
+      },
+      "arm": {
+        "title": "An arm with more reach",
+        "description": "A 1,500 mm arm and a smaller gripper tip make it easier to reach recessed containers and grasp toolbox handles."
+      },
+      "navigation": {
+        "title": "Autonomous navigation",
+        "description": "The rover combines camera imagery and satellite positioning to estimate its location. Gesture recognition and autonomous object retrieval are in development."
+      }
+    }
+  },
   "100banch": {
     "title": "GARAGE Program 70th Project",
     "website": "100BANCH Website"

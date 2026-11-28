@@ -20,6 +20,29 @@
       "website": "URC公式サイト"
     }
   },
+  "rover": {
+    "aresX": {
+      "loading": "3Dモデルを読み込み中",
+      "scroll": "スクロールして機体を見る",
+      "views": "ARES X の表示切り替え",
+      "overview": {
+        "title": "URC 2027 に向けて",
+        "description": "ARES 9 で得た実戦経験をもとに、走行系、アーム、自律走行を改良した次世代ローバー。"
+      },
+      "traction": {
+        "title": "不整地を捉えるタイヤ",
+        "description": "荷重がかかるとタイヤの外層が平らに広がり、荒れた地面でのグリップ向上を狙います。"
+      },
+      "arm": {
+        "title": "奥まで届くアーム",
+        "description": "全長 1,500 mm のアームと小型のグリッパーで、奥にある容器や工具箱の取っ手にアクセスしやすくしました。"
+      },
+      "navigation": {
+        "title": "自律走行",
+        "description": "カメラ映像と衛星測位を組み合わせて位置を推定。ジェスチャー認識と物体の自律回収も開発中です。"
+      }
+    }
+  },
   "100banch": {
     "title": "GARAGE Program第70期プロジェクト",
     "website": "100BANCH プロジェクトページ"
