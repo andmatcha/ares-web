@@ -4,6 +4,11 @@
 @source "../components/**/*.{js,jsx,ts,tsx,mdx}";
 @source "../pages/**/*.{js,jsx,ts,tsx,mdx}";
 
+:root {
+  --font-noto-sans-jp: "Noto Sans JP Variable";
+  --font-orbitron: "Orbitron Variable";
+}
+
 @theme {
   --font-sans: var(--font-noto-sans-jp), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-orbitron), ui-sans-serif, system-ui, sans-serif;
@@ -84,7 +89,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-noto-sans-jp), ui-sans-serif, system-ui, sans-serif;
   font-weight: 300;
   background-color: #1a1a1a;
   color: #ffffff;
